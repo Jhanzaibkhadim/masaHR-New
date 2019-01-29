@@ -1,0 +1,125 @@
+page-login {
+
+    .bg{ 
+        background: url(../assets/imgs/Login/bacground@2x.png) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        color:white
+    }
+    .scroll-content{
+        padding-bottom: 0% !important;
+    }
+
+    .text{
+        justify-content: center;
+        font-size: 15px;
+    }
+    .logo{
+        width: 75%;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em;
+        margin-bottom:18% !important;
+        margin: auto;
+        margin-top: 15%;
+         
+    }
+
+    .icons{
+        color:white;
+        font-size: 2.3em;
+    }
+    .inputBox {
+        background: transparent;
+        color: white;
+        font-weight: 100;
+        height: 100%;
+        // padding-left: 0px !important;
+        // border: 1px solid white;
+    }
+    .text-input-md {
+        color:white;
+    }
+    // .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+    //     color:white;
+    // }
+     .input-has-focus{
+        border:none !important;
+        box-shadow: 0px !important;
+
+    }
+    .item-input-has-focus{
+        border:none !important;
+        box-shadow: 0px !important;
+
+    }
+    ::placeholder{
+        color:white !important;
+    }
+    .item-md.item-block .item-inner{
+        border:none !important;
+        box-shadow: none !important;
+
+    }
+    .icon-col{
+        // margin: auto;
+        align-self: flex-end;
+        text-align: center;
+        background: #9BC442;
+        border-right: 1px solid white;
+        padding: 1em;
+    }
+    .icons2{
+        width:72%;
+    }
+    .input-row{
+        width:90%;
+        margin: auto;
+        margin-top: 5%;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    .button-row{
+        width: 90%;
+        margin: auto;
+        justify-content: flex-end;
+        // margin-top: 10%;
+    }
+
+    .btn-row {
+        margin-top: 6%;
+    }
+    .forgot{
+        align-self: center;
+        padding-left: 15px;
+    }
+
+    .btn{
+        background: #9BC442;
+        color:white;
+        width: 90%;
+        border-radius: 5px;
+        font-weight: 500;
+        padding: 1.6em;
+    }
+
+    .footerText{
+        justify-content: center;
+        color:white;
+        padding: 1em 0em 1em 0em;
+        font-weight: 400;
+    }
+
+    .register{
+        font-weight: bold !important;
+        // font-size: 15px;
+    }
+    .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        top: 0px !important;
+        bottom: auto;
+        background-position: left 0 top 0;
+        height: 0px !important;
+    }
+}
