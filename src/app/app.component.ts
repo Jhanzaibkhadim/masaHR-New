@@ -8,6 +8,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { BasicInfoPage } from '../pages/basic-info/basic-info';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +28,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: DashboardPage },
       { title: 'List', component: ListPage },
-      { title: 'Admin Communications', component: AdminComumnicationsPage }
+      { title: 'Admin Communications', component: AdminComumnicationsPage },
+      { title: 'DashBoard', component: DashboardPage },
+      // { title: 'List', component: ListPage }
     ];
 
   }
