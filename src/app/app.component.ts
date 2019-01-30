@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { BasicInfoPage } from '../pages/basic-info/basic-info';
-import { DashboardPage } from '../pages/dashboard/dashboard';
 
 @Component({
   templateUrl: 'app.html'

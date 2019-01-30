@@ -97,21 +97,14 @@ page-dashboard {
     .second-row {
         background: #EBEBEB; // height: 80%;
         margin-top: 32%;
-        <<<<<<< HEAD padding: 10% 5% 10% 5%;
-        border-top-left-radius: 40% 12%;
-        border-top-right-radius: 40% 12%;
-    }
-    .box {
-        background: white; // height: 30%;
-        padding: 12px;
-        =======padding: 10% 4% 10% 4%;
+        padding: 10% 4% 10% 4%;
         border-top-left-radius: 40% 12%;
         border-top-right-radius: 40% 12%;
     }
     .box {
         background: white; // height: 30%;
         padding: 11px;
-        >>>>>>>2a5e59773e3bf3ed6edb7cb960a7c8bc0bcf9ca7 border-radius: 10px;
+        border-radius: 10px;
         border: 5px solid #EBEBEB;
     }
     .image img {
@@ -126,17 +119,15 @@ page-dashboard {
         font-weight: bold;
         width: 100%;
     }
-    <<<<<<< HEAD .text {
-        border-bottom: 3px solid rgb(56, 128, 228);
-        =======.text {
-            border-bottom: 4px solid rgb(56, 128, 228);
-            >>>>>>>2a5e59773e3bf3ed6edb7cb960a7c8bc0bcf9ca7 padding-bottom: 3%; // border-radius: 5px;
-        }
-        .contentt {
-            font-size: 13px;
-            color: gray;
-            height: 40px;
-            width: 100%;
-            text-overflow: ellipsis;
-        }
+    .text {
+        border-bottom: 4px solid rgb(56, 128, 228);
+        padding-bottom: 3%; // border-radius: 5px;
     }
+    .contentt {
+        font-size: 13px;
+        color: gray;
+        height: 40px;
+        width: 100%;
+        text-overflow: ellipsis;
+    }
+}
