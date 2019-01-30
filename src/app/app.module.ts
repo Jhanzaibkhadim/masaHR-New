@@ -1,3 +1,4 @@
+import { AdminComumnicationsPage } from './../pages/admin-comumnications/admin-comumnications';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -17,7 +18,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
     ListPage,
     LoginPage,
     DashboardPage,
-
+    AdminComumnicationsPage
   ],
   imports: [
     BrowserModule,
@@ -30,11 +31,12 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
     ListPage,
     LoginPage,
     DashboardPage,
+    AdminComumnicationsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

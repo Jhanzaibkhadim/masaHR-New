@@ -9,20 +9,20 @@ import { DashboardPage } from '../dashboard/dashboard';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
- 
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
 
-  userName:any;
-  password:any;
+  userName: any;
+  password: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
 
-  gotoHomePage(){
+  gotoHomePage() {
     this.navCtrl.setRoot(DashboardPage)
   }
   ionViewDidLoad() {
