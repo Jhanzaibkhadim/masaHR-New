@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BasicInfoPage } from '../basic-info/basic-info';
 
 /**
  * Generated class for the DashboardPage page.
@@ -21,4 +22,8 @@ export class DashboardPage {
     console.log('ionViewDidLoad DashboardPage');
   }
 
+
+  gotoBasicInformation(){
+    this.navCtrl.push(BasicInfoPage)
+  }
 }

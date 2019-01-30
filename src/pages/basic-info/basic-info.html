@@ -1,0 +1,107 @@
+<!-- <ion-header class="headerr">
+
+   
+    <button class="menu-btn" ion-button menuToggle float-left>
+      <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+     
+    </button>
+    <ion-title class="head-title">BASIC INFORMATION</ion-title>
+
+   
+
+</ion-header> -->
+
+
+<ion-content no-padding class="content-back">
+  <ion-row class="top">
+    <ion-row style="width:100%">
+      <ion-col no-padding col-2>
+          <button class="menu-btn" ion-button menuToggle float-left>
+              <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+            </button>
+      </ion-col>
+      <ion-col class="head-title" no-padding col-8>
+        <ion-row>
+            BASIC INFORMATION
+        </ion-row>
+      </ion-col>
+      <ion-col no-padding col-2>
+
+        </ion-col>
+    </ion-row>
+  
+    <!-- <ion-title class="head-title"></ion-title> -->
+  </ion-row>
+  <ion-row class="info">
+    <ion-col class="imagee" col-3>
+      <img style=" width:2.5em" src="assets/imgs/Overview/inbox@2x.png">
+    </ion-col>
+    <ion-col col-9>
+      Personal Information
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="details-row">
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked>Employee Name</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked>Employee Code</ion-label>
+        <ion-input type="number" [(ngModel)]="empCode"></ion-input>
+
+      </ion-item>
+    </ion-row>
+    <ion-row class="btns" radio-group [(ngModel)]="typee">
+      <ion-row class="type">
+        Sex
+      </ion-row>
+      <ion-col no-padding col-3>
+        <ion-row class="radio-btn">
+          <ion-item>
+            <ion-radio value="male"></ion-radio>
+          </ion-item>
+        </ion-row>
+        <ion-row class="text">
+          Male
+        </ion-row>
+      </ion-col>
+      <ion-col no-padding col-3>
+        <div class="radio-btn">
+          <ion-item>
+            <ion-radio value="female"></ion-radio>
+          </ion-item>
+        </div>
+        <ion-row class="text">
+          Female
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked>Mobile Number</ion-label>
+        <ion-input type="tel" [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked>Email Address</ion-label>
+        <ion-input type="email" [(ngModel)]="empCode"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked>Department</ion-label>
+        <ion-input type="number" [(ngModel)]="empCode"></ion-input>
+      </ion-item>
+    </ion-row>
+  </ion-row>
+
+</ion-content>
