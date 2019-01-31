@@ -1,3 +1,8 @@
+import { SalariesAndIncentiveListPage } from './../pages/salaries-and-incentive-list/salaries-and-incentive-list';
+import { LoansListPage } from './../pages/loans-list/loans-list';
+import { HrProceduresListPage } from './../pages/hr-procedures-list/hr-procedures-list';
+import { JobTerminationListingPage } from './../pages/job-termination-listing/job-termination-listing';
+import { ContractsListPage } from './../pages/contracts-list/contracts-list';
 import { DashboardPage } from './../pages/dashboard/dashboard';
 import { AdminComumnicationsPage } from './../pages/admin-comumnications/admin-comumnications';
 import { Component, ViewChild } from '@angular/core';
@@ -9,6 +14,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { BasicInfoPage } from '../pages/basic-info/basic-info';
+import { BasicInfoListPage } from '../pages/basic-info-list/basic-info-list';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,11 +31,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: DashboardPage },
-      { title: 'List', component: ListPage },
-      { title: 'Admin Communications', component: AdminComumnicationsPage },
       { title: 'DashBoard', component: DashboardPage },
-      // { title: 'List', component: ListPage }
+      { title: 'Admin Communications', component: AdminComumnicationsPage },
+      { title: 'Basic Information', component: BasicInfoListPage },
+      { title: 'Contracts List', component: ContractsListPage },
+      { title: 'Job Termination', component: JobTerminationListingPage },
+      { title: 'HR Procedures', component: HrProceduresListPage },
+      { title: 'Loans ', component: LoansListPage },
+      { title: 'Salaries and Incentives ', component: SalariesAndIncentiveListPage },
     ];
 
   }

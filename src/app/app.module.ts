@@ -1,3 +1,9 @@
+import { SalariesAndIncentiveListPage } from './../pages/salaries-and-incentive-list/salaries-and-incentive-list';
+import { LoansListPage } from './../pages/loans-list/loans-list';
+import { HrProceduresListPage } from './../pages/hr-procedures-list/hr-procedures-list';
+import { JobTerminationListingPage } from './../pages/job-termination-listing/job-termination-listing';
+import { ContractsListPage } from './../pages/contracts-list/contracts-list';
+import { BasicInfoListPage } from './../pages/basic-info-list/basic-info-list';
 import { AdminComumnicationsPage } from './../pages/admin-comumnications/admin-comumnications';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -20,7 +26,14 @@ import { BasicInfoPage } from '../pages/basic-info/basic-info';
     LoginPage,
     BasicInfoPage,
     DashboardPage,
-    AdminComumnicationsPage
+    AdminComumnicationsPage,
+    BasicInfoListPage,
+    ContractsListPage,
+    JobTerminationListingPage,
+    HrProceduresListPage,
+    LoansListPage,
+    SalariesAndIncentiveListPage
+
   ],
   imports: [
     BrowserModule,
@@ -35,6 +48,13 @@ import { BasicInfoPage } from '../pages/basic-info/basic-info';
     DashboardPage,
     AdminComumnicationsPage,
     BasicInfoPage,
+    BasicInfoListPage,
+    ContractsListPage,
+    JobTerminationListingPage,
+    HrProceduresListPage,
+    LoansListPage,
+    SalariesAndIncentiveListPage
+
   ],
   providers: [
     StatusBar,
