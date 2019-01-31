@@ -10,6 +10,10 @@ page-overview {
         background: transparent !important;
         box-shadow: none !important;
     }
+    .noti-icon{
+        padding-top: 10px;
+    text-align: center;
+    }
     .top{
         width: 100%;
         position: fixed;
@@ -148,18 +152,18 @@ page-overview {
         font-size: 11px;
     }
     .notification-count-div{
-        background: red;
+        background: #3880e4;
         border-radius: 56%;
         position: absolute;
-        width: 6vw;
+        width: 7vw;
         color: white;
-        padding: 2px;
-        height: 6vw;
+        // padding: 2px;
+        height: 7vw;
         justify-content: center;
         align-items: center;
-        left: 85px;
+        right: 10px;
         text-align: center;
-        top: -3px;
+        top: 4px;
         font-size: 11px
     }
     .notification-icon{
@@ -197,7 +201,7 @@ page-overview {
     }
     #container {
        
-        margin-left: 15%;
+        margin-left: 5%;
         // margin-top: 10%;
 
         // padding: 7px;
@@ -224,74 +228,153 @@ page-overview {
         justify-content: center;
     }
     .times-row{
-        width:100%;
-        // border-bottom:1px solid white;
-        // padding-bottom:25px;
-        color:#ffffff;
-        margin-top: 60%;
+        width: 94%;
+        color: #ffffff;
+        margin-top: 60% !important;
+        margin: auto;
+        margin-bottom: 5% !important;
     }
     .timeout{
         height: 50%;
         text-align: center;
         font-size: 10px;
         color:#ffffff;
-       
         justify-content: center;
     } 
     .time-row{
         width: 100%;
-        // padding-top: 10px;
-        margin-left: 2%;
     }
     
     .entryTime{
-        // margin-left: 5%;
         background: #FEB848;
-        
-        border-radius: 5px;
-        // align-self: center; #1CB3F8 #FB5859  
+        border:3px solid #eee;
+        border-radius: 8px; 
+        margin:auto;
     }
     .orangeImage{
         background: url(../assets/imgs/Overview/orange_half_clock@2x.png) no-repeat  right; 
-        padding: 20px 3px 20px 7px !important;
-        
-        background-size: contain;
+        // padding: 12px 3px 12px 7px !important;
+        background-size: 50%;
     }
     .exitTime{
-        // margin-left: 5%;
         background: #1CB3F8;
-        
-        border-radius: 5px;
-        // align-self: center; #1CB3F8 #FB5859  
+        border:3px solid #eee;
+        border-radius: 8px; 
+        margin:auto;
     }
     .blueImage{
-        background: url(../assets/imgs/Overview/blue_half_clock@2x.png) no-repeat  right; 
-        padding: 20px 3px 20px 7px !important;
-        
-        background-size: contain;
+        background: url(../assets/imgs/Overview/bue_half_clock@2x.png) no-repeat  right; 
+        // padding: 12px 3px 12px 7px !important;
+        background-size: 50%;
     }
     .delayedTime{
-        // margin-left: 5%;
         background: #FB5859 ;
-        
-        border-radius: 5px;
-        // align-self: center; #1CB3F8 #FB5859  
+        border:3px solid #eee;
+        border-radius: 8px; 
+        // margin:auto;
     }
     .redImage{
         background: url(../assets/imgs/Overview/red_half_clock@2x.png) no-repeat  right; 
-        padding: 20px 3px 20px 7px !important;
+        // padding: 12px 3px 12px 7px !important;
         
-        background-size: contain;
+        background-size: 48%;
+        position: absolute;
+        top: 0px;
     }
     .time-text{
         font-size: 12px;
+        padding-top: 12px;
+        padding-left: 7px;
+
     }
     .time-num{
         font-size: 13px;
         font-weight: bold;
+        padding-left: 7px;
+        padding-bottom: 12px;
     }
 
 
+    
+    
+    
+    
+    
+    
+    
+    .boxes{
+        width:93%;
+        margin:auto;
+        justify-content: center;
+        // padding-top:5%;
+    }
+    .svg-icon{
+        width:35%;
+    }
+   
+    .add{
+        color: white;
+       
+        border-radius: 50%;
+        position: absolute;
+        right: 4px;
+        font-size: 1.5em !important;
+        top: 3px
+    }
+    .boxes ion-col{
+        border: 5px solid #eee;
+        border-radius: 10px;
+        margin: auto;
+        padding: 5px;
+        height: 31vw;
+        background: white;
+    }
+
+    .boxes ion-icon{
+        font-size: 2em;
+    }
+    .boxes .img-row{
+        justify-content: center;
+        // font-size: 12px;
+        align-items:center;
+        height: 60%;
+        // padding: 6px 0px 6px 0px;
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        background: rgb(255, 255, 255);
+    }
+    .boxes .text-row{
+        justify-content: center;
+        font-size: 12px;
+        align-items:center;
+        height: 40%;
+        // padding: 6px 0px 6px 0px;
+
+        text-transform: capitalize;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background: rgb(255, 255, 255);
+        color:#000000;
+    }
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     .timeDiv{
         width:100%;
         margin-top: 2%;
