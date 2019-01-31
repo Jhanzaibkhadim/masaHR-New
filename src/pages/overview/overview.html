@@ -1,0 +1,107 @@
+<ion-content class="bg" no-padding>
+  <ion-row class="top">
+    <ion-row style="width:100%">
+      <ion-col no-padding col-2>
+        <button class="menu-btn" ion-button menuToggle float-left>
+          <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+        </button>
+      </ion-col>
+      <ion-col class="head-title" no-padding col-8>
+        <ion-row>
+          OVERVIEW
+        </ion-row>
+      </ion-col>
+      <ion-col no-padding col-2>
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="srch-bar">
+      <ion-searchbar class="srch" [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel">
+      </ion-searchbar>
+
+    </ion-row>
+    <!-- <ion-title class="head-title"></ion-title> -->
+  </ion-row>
+  <ion-row class="top-card">
+    <ion-col no-padding col-2>
+      <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
+    </ion-col>
+    <ion-col col-8 class="name-col" no-padding>
+      <ion-row class="name">
+        Attendance
+      </ion-row>
+      <ion-row class="designation">
+        02 December 2019
+      </ion-row>
+    </ion-col>
+
+    <ion-col class="icon-col" no-padding col-2>
+      <img src=" assets/imgs/Overview/calendar@2x.png" />
+      <!-- <ion-icon class="notification-icon" ios="ios-calendar" md="md-calendar"></ion-icon> -->
+    </ion-col>
+
+
+  </ion-row>
+
+  <ion-row class="times-row">
+
+    <ion-col col-3 no-padding>
+      <div id="container" class="outerCircle">
+        <div class="innercircle">
+          <ion-row class="timein">
+            8:00 AM
+
+          </ion-row>
+          <ion-row class="timeout">
+            5:00 PM
+
+          </ion-row>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col col-9 no-padding>
+      <ion-row class="time-row">
+        <ion-col class="entryTime" col-4>
+          <div class="orangeImage">
+            <ion-row class="time-text">
+              Entry Time
+            </ion-row>
+            <ion-row class="time-num">
+              08:30 Am
+            </ion-row>
+          </div>
+
+        </ion-col>
+        <ion-col class="exitTime" col-4>
+          <div class="blueImage">
+            <ion-row class="time-text">
+              Exit Time
+            </ion-row>
+            <ion-row class="time-num">
+              05:30 Pm
+            </ion-row>
+          </div>
+
+        </ion-col>
+        <ion-col class="delayedTime" col-4>
+          <div class="redImage">
+            <ion-row class="time-text">
+              Delayed Time
+            </ion-row>
+            <ion-row class="time-num">
+              00:30 M
+            </ion-row>
+          </div>
+
+        </ion-col>
+       
+        <!-- <div class="timeDiv">ENTRY TIME :</div>
+        <div class="timeDiv2">8:30 AM</div>
+        <div class="timeDiv">EXIT TIME :</div>
+        <div class="timeDiv2">5:00 PM</div>
+        <div class="timeDiv">DELAYED :</div>
+        <div class="timeDiv2">00:30 M</div> -->
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>

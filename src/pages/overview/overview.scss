@@ -1,0 +1,312 @@
+page-overview {
+
+    
+    .headerr{
+        background: #3880e4 !important;
+        padding: 2%;
+        height: 10%;
+    }
+    .menu-btn{
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    .top{
+        width: 100%;
+        position: fixed;
+        background: rgb(56, 128, 228) ;
+        height: 180px;
+        border-bottom-left-radius: 45% 37%;
+        border-bottom-right-radius: 45% 37%;
+        
+    }
+    .head-title{
+        margin-top: 10px;
+        font-size: 16px;
+        color: white;
+    }
+    .head-title ion-row{
+        justify-content: center;
+    }
+    
+    .bg{
+        background: #EBEBEB;
+    }
+    .bg .scroll-content{
+        padding-bottom: 0px !important;
+    }
+    .info{
+        width: 80%;
+        background: white;
+        padding: 0.8;
+        border-radius: 8px;
+        position: fixed;
+        margin-top: 60px;
+        left: 10%;
+        // font-size: 16px;
+    }
+    .info ion-col{
+        margin:auto;
+        font-size: 16px;
+
+    }
+    .info .imagee{
+        text-align: center;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .srch-icon{
+        color: white;
+        font-size: 2em;
+        margin-left: 5px;
+    }
+    .top-card{
+        background: #ffffff;
+        border-radius: 10px;
+        padding:10px;
+        position: fixed;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        top: 19%;
+        left: 15%;
+        width: 70%;
+        color: black;
+
+    }
+    .searchbar-input{
+        background:#ffffff !important;
+        border-radius: 20px !important;
+    }
+    .srch{
+        padding:0px !important;
+    }
+    .srch-bar{
+        position: fixed;
+        top: 10%;
+        left: 6%;
+        width: 86%;
+    }
+    .searchbar-ios{
+        padding: 0 !important;
+        min-height: 44px;
+        border-top: none !important;
+        border-bottom:none !important;
+        background:transparent !important;
+    }
+    .imagee{
+        border-radius: 50%;
+        width: 95%;
+        border: 2px solid rgb(6, 62, 247);
+        background: transparent;
+        // padding: 3px;
+    }
+    .name-col{
+        align-self: center;
+    }
+    .name{
+        width:100%;
+        font-size:13.5px;
+        text-transform: uppercase;
+        font-weight: 600;
+        // padding-top:1%;
+        padding-left:2%;
+        color:#000000;
+    }
+    .icon-col{
+        text-align: center;
+        margin: auto;
+        align-self: center;
+        background: #3880e4;
+        border-radius: 50%;
+        padding: 7px;
+    }
+    .icon-col img{
+        width:75%;
+    }
+    .notification-count{
+        background: red;
+        border-radius: 56%;
+        position: absolute;
+        width: 6vw;
+        color: white;
+        padding: 2px;
+        left: 27px;
+        text-align: center;
+        top: -11px;
+        font-size: 11px;
+    }
+    .notification-count-div{
+        background: red;
+        border-radius: 56%;
+        position: absolute;
+        width: 6vw;
+        color: white;
+        padding: 2px;
+        height: 6vw;
+        justify-content: center;
+        align-items: center;
+        left: 85px;
+        text-align: center;
+        top: -3px;
+        font-size: 11px
+    }
+    .notification-icon{
+        font-size: 2.3em;
+    }
+    
+    .designation{
+        width:100%;
+        padding-left:2%;
+        // font-weight: bold;
+        font-size:11px;
+        // justify-content: center;
+        // font-weight: 200;
+        padding-top:1%;
+        color:#818083;
+        // padding-left: 5%;
+    }
+    .titledash{
+        width: 90% !important;
+        float: right;
+    }
+    .titledash .toolbar-title{
+        color: white !important;
+        text-align: center;
+        text-transform: uppercase ;
+        padding:0px !important;
+        overflow: visible !important;
+    }
+    .toolbar-background{
+        background: transparent !important;
+        color: white !important;
+    }
+    .menu-icon{
+        color: white;
+    }
+    #container {
+       
+        margin-left: 15%;
+        // margin-top: 10%;
+
+        // padding: 7px;
+    }
+   
+    .innercircle{
+        
+        border-radius: 50%;
+        border: 4px solid #427feb;
+        // height: 85%;
+        // width: 66%;
+        padding: 22px 0px 22px 0px;
+        background: #76B4FF;
+        // position: absolute;
+        // margin: 10%;
+        // padding: 7px;
+    }
+    .timein{
+        height: 50%;
+        text-align: center;
+        font-size: 12px;
+        align-items: flex-end;
+        color:#ffffff;
+        justify-content: center;
+    }
+    .times-row{
+        width:100%;
+        // border-bottom:1px solid white;
+        // padding-bottom:25px;
+        color:#ffffff;
+        margin-top: 60%;
+    }
+    .timeout{
+        height: 50%;
+        text-align: center;
+        font-size: 10px;
+        color:#ffffff;
+       
+        justify-content: center;
+    } 
+    .time-row{
+        width: 100%;
+        // padding-top: 10px;
+        margin-left: 2%;
+    }
+    
+    .entryTime{
+        // margin-left: 5%;
+        background: #FEB848;
+        
+        border-radius: 5px;
+        // align-self: center; #1CB3F8 #FB5859  
+    }
+    .orangeImage{
+        background: url(../assets/imgs/Overview/orange_half_clock@2x.png) no-repeat  right; 
+        padding: 20px 3px 20px 7px !important;
+        
+        background-size: contain;
+    }
+    .exitTime{
+        // margin-left: 5%;
+        background: #1CB3F8;
+        
+        border-radius: 5px;
+        // align-self: center; #1CB3F8 #FB5859  
+    }
+    .blueImage{
+        background: url(../assets/imgs/Overview/blue_half_clock@2x.png) no-repeat  right; 
+        padding: 20px 3px 20px 7px !important;
+        
+        background-size: contain;
+    }
+    .delayedTime{
+        // margin-left: 5%;
+        background: #FB5859 ;
+        
+        border-radius: 5px;
+        // align-self: center; #1CB3F8 #FB5859  
+    }
+    .redImage{
+        background: url(../assets/imgs/Overview/red_half_clock@2x.png) no-repeat  right; 
+        padding: 20px 3px 20px 7px !important;
+        
+        background-size: contain;
+    }
+    .time-text{
+        font-size: 12px;
+    }
+    .time-num{
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+
+    .timeDiv{
+        width:100%;
+        margin-top: 2%;
+        width:45%;
+        padding-top: 5px;
+        font-weight: 300;
+        font-size: 13px;
+    }
+    .timeDiv2 {
+        border-radius: 5px;
+        // margin-left: 8%;
+        padding:5px;
+        font-size: 11px;
+        margin-top: 2%;
+        color:white;
+        background: #2C374D;
+    }
+}
