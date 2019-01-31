@@ -15,6 +15,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { BasicInfoPage } from '../pages/basic-info/basic-info';
 import { BasicInfoListPage } from '../pages/basic-info-list/basic-info-list';
+import { OverviewPage } from '../pages/overview/overview';
 
 @Component({
   templateUrl: 'app.html'
