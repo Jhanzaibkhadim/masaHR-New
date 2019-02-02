@@ -23,7 +23,7 @@ import { OverviewPage } from '../pages/overview/overview';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage
+  rootPage: any = DashboardPage
 
   pages: Array<{ title: string, component: any }>;
 

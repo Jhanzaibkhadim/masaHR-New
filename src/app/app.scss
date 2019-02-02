@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,86 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.menu-head .toolbar-background {
+    background: rgb(56, 128, 228) !important;
+}
+
+.menu-head .top {
+    width: 100%; // height: 3em;
+    background: rgb(56, 128, 228); // width: 500px;
+    height: 70px; // border: solid 5px #000;
+    // border-color: transparent transparent #000 transparent;
+    // border-radius: 0 0 85% 85%/30%;
+    border-bottom-left-radius: 45% 77%;
+    border-bottom-right-radius: 45% 77%; // border-radius: 0 0 240px 50%/60px;
+    // border-bottom-left-radius: 100%;
+    // border-bottom-right-radius: 100%;
+}
+
+.menu-head .toolbar {
+    min-height: 60px !important;
+}
+
+.menu-head .toolbar-title {
+    color: white;
+    text-align: left;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    font-size: 1.6rem !important;
+}
+
+.menu-head .header::after,
+.tabs[tabsPlacement="top"]>.tabbar::after,
+.footer::before,
+.tabs[tabsPlacement="bottom"]>.tabbar::before {
+    height: 0px !important;
+    background-position: left 0 top 0px !important; // position: absolute;
+    width: 100%;
+    height: 0px !important;
+    background-image: none !important
+}
+
+.menu-head .noti-icon {
+    float: right;
+}
+
+.menu-head .toolbar-content {
+    text-align: right;
+    color: #fff;
+}
+
+.menu-head .toolbar-content span {
+    margin-right: 4%;
+    font-size: 18px;
+}
+
+.menu-head .head-second {
+    background-color: #2F87FE;
+    width: 100%;
+    height: 16vh;
+    padding: 5%;
+    background-image: url("../assets/SideMenu/login_logo@3x@2x.png");
+}
+
+.person-img {
+    width: 4.5em;
+    border-radius: 150px;
+    border: 2px solid #fff;
+    float: left;
+}
+
+.menu-head .head-second .head-sec-inner {
+    float: left;
+    padding: 5%;
+    color: #fff; // login_logo@3x@2x
+}
+
+.menu-head .head-second .head-sec-inner p {
+    margin: auto;
+}
+
+.menu-head .head-second .head-sec-inner h4 {
+    margin: auto;
+}
+
+//Header End

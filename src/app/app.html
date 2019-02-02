@@ -1,9 +1,26 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
+  <ion-header class="menu-head">
+
+    <ion-navbar>
+      <!-- <ion-title>Admin Communications</ion-title> -->
+      <button ion-button menuToggle>
+        <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+        <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+
+      </button>
+      <span>Logout</span>
+      <img style="width: 2em;" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
+    </ion-navbar>
+
+    <div class="head-second">
+      <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
+      <div class="head-sec-inner">
+        <h4>Mohammad</h4>
+        <p>Sales Manager</p>
+      </div>
+    </div>
   </ion-header>
+
 
   <ion-content>
     <ion-list>
