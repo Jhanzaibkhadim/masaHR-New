@@ -70,7 +70,10 @@
     width: 100%;
     height: 16vh;
     padding: 5%;
-    background-image: url("../assets/SideMenu/login_logo@3x@2x.png");
+    background-image: url(../assets/imgs/SideMenu/login_logo@3x@2x.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 70%;
 }
 
 .person-img {
@@ -92,6 +95,20 @@
 
 .menu-head .head-second .head-sec-inner h4 {
     margin: auto;
+}
+
+.menu-list img {
+    width: 10%;
+    float: left
+}
+
+.menu-list p {
+    padding: 3%;
+    float: left
+}
+
+.bar-button-default {
+    color: #fff;
 }
 
 //Header End

@@ -1,3 +1,7 @@
+import { AddLeavePage } from './../pages/add-leave/add-leave';
+import { LeaveDetailsPage } from './../pages/leave-details/leave-details';
+import { LeavesPage } from './../pages/leaves/leaves';
+import { TabsPage } from './../pages/tabs/tabs';
 import { SalariesAndIncentiveListPage } from './../pages/salaries-and-incentive-list/salaries-and-incentive-list';
 import { LoansListPage } from './../pages/loans-list/loans-list';
 import { HrProceduresListPage } from './../pages/hr-procedures-list/hr-procedures-list';
@@ -34,7 +38,11 @@ import { OverviewPage } from '../pages/overview/overview';
     HrProceduresListPage,
     LoansListPage,
     SalariesAndIncentiveListPage,
-    OverviewPage
+    OverviewPage,
+    TabsPage,
+    LeavesPage,
+    LeaveDetailsPage,
+    AddLeavePage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,12 @@ import { OverviewPage } from '../pages/overview/overview';
     HrProceduresListPage,
     LoansListPage,
     SalariesAndIncentiveListPage,
-    OverviewPage
+    OverviewPage,
+    TabsPage,
+    LeavesPage,
+    LeaveDetailsPage,
+    AddLeavePage
+
 
   ],
   providers: [
