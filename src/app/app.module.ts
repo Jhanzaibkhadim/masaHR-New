@@ -23,6 +23,16 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { BasicInfoPage } from '../pages/basic-info/basic-info';
 import { OverviewPage } from '../pages/overview/overview';
 
+
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpModule, Http} from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +56,15 @@ import { OverviewPage } from '../pages/overview/overview';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
+    TranslateModule.forRoot({
+      loader: {
+           provide: TranslateLoader,
+           useFactory: (createTranslateLoader),
+           deps: [HttpClient]
+         }
+      })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -74,6 +92,7 @@ import { OverviewPage } from '../pages/overview/overview';
   providers: [
     StatusBar,
     SplashScreen,
+    HttpClient,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

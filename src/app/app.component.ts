@@ -18,6 +18,7 @@ import { LoginPage } from '../pages/login/login';
 import { BasicInfoPage } from '../pages/basic-info/basic-info';
 import { BasicInfoListPage } from '../pages/basic-info-list/basic-info-list';
 import { OverviewPage } from '../pages/overview/overview';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,9 +30,11 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any, img: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
+     
+      // this language will be used as a fallback when a translation isn't found in the current language
+      translate.setDefaultLang('en');
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
