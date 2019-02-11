@@ -1,3 +1,5 @@
+import { LeavesPage } from './../pages/leaves/leaves';
+import { TabsPage } from './../pages/tabs/tabs';
 import { SalariesAndIncentiveListPage } from './../pages/salaries-and-incentive-list/salaries-and-incentive-list';
 import { LoansListPage } from './../pages/loans-list/loans-list';
 import { HrProceduresListPage } from './../pages/hr-procedures-list/hr-procedures-list';
@@ -23,23 +25,26 @@ import { OverviewPage } from '../pages/overview/overview';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage
+  rootPage: any = TabsPage
 
-  pages: Array<{ title: string, component: any }>;
+  pages: Array<{ title: string, component: any, img: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'DashBoard', component: DashboardPage },
-      { title: 'Admin Communications', component: AdminComumnicationsPage },
-      { title: 'Basic Information', component: BasicInfoListPage },
-      { title: 'Contracts List', component: ContractsListPage },
-      { title: 'Job Termination', component: JobTerminationListingPage },
-      { title: 'HR Procedures', component: HrProceduresListPage },
-      { title: 'Loans ', component: LoansListPage },
-      { title: 'Salaries and Incentives ', component: SalariesAndIncentiveListPage },
+      { title: 'Dashboard', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
+      { title: 'Leaves', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
+      { title: 'Overview ', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
+      { title: 'Basic Information', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
+      { title: 'Contracts ', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
+      { title: 'HR Procedures ', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+      { title: 'Salaries and Incentives ', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
+      { title: 'Loans ', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
+      { title: 'Job Termination   ', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
+      { title: 'Admin Communications   ', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
+      { title: 'About', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
   }
