@@ -22,7 +22,7 @@
       </ion-col>
       <ion-col class="head-title" no-padding col-8>
         <ion-row>
-            BASIC INFORMATION
+           {{ ' BASIC_INFORMATION' | translate }}
         </ion-row>
       </ion-col>
       <ion-col no-padding col-2>
@@ -37,27 +37,30 @@
       <img style=" width:2.5em" src="assets/imgs/Overview/inbox@2x.png">
     </ion-col>
     <ion-col col-9>
-      Personal Information
+        {{ 'PERSONAL_INFORMATION' | translate }}
+
+      
     </ion-col>
   </ion-row>
 
   <ion-row class="details-row">
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Employee Name</ion-label>
+        <ion-label stacked>{{ 'EMPLOYEE_NAME' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="name"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Employee Code</ion-label>
+        <ion-label stacked>{{ 'EMPLOYEE_CODE' | translate }}</ion-label>
         <ion-input type="number" [(ngModel)]="empCode"></ion-input>
 
       </ion-item>
     </ion-row>
     <ion-row class="btns" radio-group [(ngModel)]="typee">
       <ion-row class="type">
-        Sex
+          {{ 'SEX' | translate }}
+           
       </ion-row>
       <ion-col no-padding col-3>
         <ion-row class="radio-btn">
@@ -66,7 +69,7 @@
           </ion-item>
         </ion-row>
         <ion-row class="text">
-          Male
+           {{ 'MALE' | translate }}
         </ion-row>
       </ion-col>
       <ion-col no-padding col-3>
@@ -76,7 +79,7 @@
           </ion-item>
         </div>
         <ion-row class="text">
-          Female
+           {{ 'FEMALE' | translate }}
         </ion-row>
 
       </ion-col>
@@ -86,19 +89,20 @@
 
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Mobile Number</ion-label>
+           
+           <ion-label stacked> {{ 'MOBILE_NUMBER' | translate }}</ion-label>
         <ion-input type="tel" [(ngModel)]="name"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Email Address</ion-label>
+        <ion-label stacked> {{ 'EMAIL_ADDRESS' | translate }}</ion-label>
         <ion-input type="email" [(ngModel)]="empCode"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Department</ion-label>
+        <ion-label stacked> {{ 'DEPARTMENT' | translate }}</ion-label>
         <ion-input type="number" [(ngModel)]="empCode"></ion-input>
       </ion-item>
     </ion-row>

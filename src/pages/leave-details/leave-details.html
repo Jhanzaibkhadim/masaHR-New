@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Leave Details</ion-title>
+    <ion-title>  {{ 'LEAVE_DETAILS' | translate }}</ion-title>
     <button ion-button menuToggle>
       <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
       <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
@@ -22,18 +22,18 @@
     <div class="custom-item" (click)="gotoLeavesDetail()">
       <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png"> -->
       <div class="atn-inner">
-        <p>Casual Leave</p>
+        <p> {{ 'CASUAL_LEAVE' | translate }}</p>
         <p>6/12/2018</p>
       </div>
       <div class="status-div">
-        <p>2 days</p>
-        <ion-badge slot="end" class="new-badg">New</ion-badge>
+        <p>2  {{ 'DAYS' | translate }}</p>
+        <ion-badge slot="end" class="new-badg"> {{ 'NEW' | translate }}</ion-badge>
       </div>
 
     </div>
     <div class="reason-div">
 
-      <h3>Reason:</h3>
+      <h3>{{ 'REASON' | translate }}:</h3>
 
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
       standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make

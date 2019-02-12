@@ -1,7 +1,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Leaves</ion-title>
+    <ion-title> {{ 'LEAVES' | translate }}
+    </ion-title>
     <button ion-button menuToggle>
       <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
       <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
@@ -22,12 +23,12 @@
     <div class="custom-item" (click)="gotoLeavesDetail()">
       <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png"> -->
       <div class="atn-inner">
-        <p>Casual Leave</p>
+        <p> {{ 'CASUAL_LEAVE' | translate }}</p>
         <p>6/12/2018</p>
       </div>
       <div class="status-div">
-        <p>2 days</p>
-        <ion-badge slot="end" class="new-badg">New</ion-badge>
+        <p>2 {{ 'DAYS' | translate }}</p>
+        <ion-badge slot="end" class="new-badg">  {{ 'NEW' | translate }}</ion-badge>
       </div>
 
     </div>
@@ -38,12 +39,12 @@
     <div class="custom-item" (click)="gotoLeavesDetail()">
       <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png"> -->
       <div class="atn-inner">
-        <p>Annual Leave</p>
+        <p>  {{ 'ANNUAL_LEAVES' | translate }}</p>
         <p>6/12/2018</p>
       </div>
       <div class="status-div">
-        <p>2 days</p>
-        <ion-badge slot="end" class="pend-badg">Pending</ion-badge>
+        <p>2  {{ 'DAYS' | translate }}</p>
+        <ion-badge slot="end" class="pend-badg">  {{ 'PENDING' | translate }}</ion-badge>
       </div>
 
     </div>
@@ -53,12 +54,12 @@
     <div class="custom-item" (click)="gotoLeavesDetail()">
       <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png"> -->
       <div class="atn-inner">
-        <p>Sick Leave</p>
+        <p>  {{ 'SICK_LEAVES' | translate }}</p>
         <p>6/12/2018</p>
       </div>
       <div class="status-div">
-        <p>2 days</p>
-        <ion-badge slot="end" class="success-badg">Approved</ion-badge>
+        <p>2 {{ 'DAYS' | translate }}</p>
+        <ion-badge slot="end" class="success-badg">  {{ 'APPROVED' | translate }}</ion-badge>
       </div>
 
     </div>

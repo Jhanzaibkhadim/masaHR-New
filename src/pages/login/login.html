@@ -10,7 +10,7 @@
 
 <ion-content class="bg" padding>
   <ion-row class="text">
-    LOGIN
+      {{ 'LOGIN' | translate }}
   </ion-row>
   <ion-row class="logo">
     <img src="assets/imgs/Login/splash_logo@3x@2x.png" />
@@ -41,18 +41,18 @@
   <ion-row class="btn-row">
     <ion-col class="forgot" col-6 >
       <ion-row>
-          Forgot Password ?
+           {{ 'FORGOT_PASSWORD' | translate }}
       </ion-row>
     </ion-col>
     <ion-col col-6 class="button-col" >
         <ion-row class="button-row">
-            <button ion-button class="btn" (click)="gotoHomePage()" >Login</button>
+            <button ion-button class="btn" (click)="gotoHomePage()" >  {{ 'LOGIN_BTN' | translate }}</button>
         </ion-row>
     </ion-col>
   </ion-row>
 </ion-content>
 <ion-footer>
   <ion-row class="footerText">
-    Don't have an account?  <span class="register"> Register here</span>
+     {{ 'NO_ACCOUNT' | translate }} <span class="register"> {{ 'REGISTER_HERE' | translate }}</span>
   </ion-row>
 </ion-footer>

@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Add Leave Request</ion-title>
+    <ion-title>  {{ 'ADD_LEAVE_REQUEST' | translate }}</ion-title>
     <button ion-button menuToggle>
       <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
       <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
@@ -17,13 +17,13 @@
   <ion-row class="details-row">
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Leaves Type</ion-label>
+        <ion-label stacked> {{ 'LEAVE_TYPE' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="leaveType"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>From Date</ion-label>
+        <ion-label stacked>  {{ 'FROM_DATE' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="fromDate"></ion-input>
 
       </ion-item>
@@ -31,7 +31,7 @@
 
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>To Date</ion-label>
+        <ion-label stacked>  {{ 'TO_DATE' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="toDate"></ion-input>
 
       </ion-item>
@@ -41,19 +41,19 @@
 
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Number of days</ion-label>
+        <ion-label stacked> {{ 'nUMBER_OF' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="noOfDays"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>Leave Reason</ion-label>
+        <ion-label stacked> {{ 'LEAVE_REASON' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="reason"></ion-input>
       </ion-item>
     </ion-row>
 
 
-    <button class="submit-btn" ion-button color="primary" (click)="submit()">Submit</button>
+    <button class="submit-btn" ion-button color="primary" (click)="submit()">   {{ 'SUBMIT' | translate }}</button>
 
 
   </ion-row>

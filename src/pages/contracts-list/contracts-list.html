@@ -1,7 +1,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Admin Communications</ion-title>
+     
+      <ion-title> {{ 'ADMIN_COMM' | translate }} </ion-title>
     <button ion-button menuToggle>
       <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
       <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
@@ -19,7 +20,7 @@
     <div class="attendance-panel">
       <img class="atn-img1" style="width: 3em;" src="assets/imgs/Dashboard/person.jpg">
       <div class="atn-inner">
-        <h5>ATTENDANCE</h5>
+        <h5>{{ 'ATTENDANCE' | translate}}</h5>
         <p>02 December 2019</p>
       </div>
       <div class="img2-div">
@@ -34,14 +35,14 @@
     <div class="custom-item">
       <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png">
       <div class="atn-inner">
-        <p>Employee Contracts</p>
+        <p> {{ 'EMPLOYEE_CONTRACT' | translate }}</p>
       </div>
     </div>
 
     <div class="custom-item">
       <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/mission@2x.png">
       <div class="atn-inner">
-        <p>Evaluation Period</p>
+        <p> {{ 'EVALUATION_PERIOD' | translate }}</p>
       </div>
     </div>
   </div>
