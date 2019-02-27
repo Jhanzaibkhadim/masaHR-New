@@ -30,11 +30,11 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any, img: any }>;
 
-  constructor(translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
      
       // this language will be used as a fallback when a translation isn't found in the current language
-      translate.setDefaultLang('en');
+      this.translate.setDefaultLang('en');
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
@@ -49,6 +49,7 @@ export class MyApp {
       { title: 'Admin Communications   ', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
       { title: 'About', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
     ];
+
 
   }
 
@@ -65,5 +66,17 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+
+  changeLanguage(id){
+    if(id ==1){
+      this.platform.setDir("ltr",true)
+      this.translate.setDefaultLang('en');
+    }else if(id == 2){
+      this.platform.setDir("rtl",true)
+      this.translate.setDefaultLang('ar');
+      
+    }
   }
 }

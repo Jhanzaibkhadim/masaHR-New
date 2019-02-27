@@ -111,4 +111,28 @@
     color: #fff;
 }
 
+
 //Header End
+
+
+// language
+.language{
+    padding: 1em;
+    font-size: 17px;
+    padding-top: 0px;
+    color: gray;
+}
+.language ion-icon{
+    margin-right: 7px;
+}
+.lang-type div{
+    width:100%;
+    color: gray;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    font-size: 14px;
+    border-bottom: 1px solid gray;
+
+}
