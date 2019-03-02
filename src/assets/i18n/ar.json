@@ -1,4 +1,5 @@
 {
+    "LOGOUT":"الخروج",
     "BASIC_INFO": "البيانات الأساسية",
     "LOREM_ISPUM": "نص تجربة",
     "JOB_TERMINATION": "إنهاء الخدمة",
@@ -80,5 +81,7 @@
     "ANNUAL_LEAVES": "الاجازات السنوية",
     "SICK_LEAVES": "الاجازات المرضية",
     "PENDING": "تحت الاجراء",
-    "APPROVED": "تم التصديق"
+    "APPROVED": "تم التصديق",
+    "DECEMBER":"ديسمبر"
+
 }

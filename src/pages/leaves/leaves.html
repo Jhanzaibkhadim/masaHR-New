@@ -1,15 +1,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title> {{ 'LEAVES' | translate }}
-    </ion-title>
-    <button ion-button menuToggle>
-      <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-      <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+    <ion-row>
+      <ion-col no-padding col-2>
+        <button ion-button menuToggle>
+          <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+          <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
 
-    </button>
-    <!-- <img style="width: 2em;" class="noti-icon" src="assets/imgs/add.png"> -->
-    <ion-icon class="noti-icon" name="add" (click)="gotoAddLeaves()"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col no-padding col-8>
+        <ion-title>{{ 'LEAVES' | translate }} </ion-title>
+
+      </ion-col>
+      <ion-col no-padding class="add-col" col-2>
+        <ion-icon name="add" (click)="gotoAddLeaves()"></ion-icon>
+
+
+
+      </ion-col>
+    </ion-row>
+
+
+
+
+
   </ion-navbar>
 
 </ion-header>
@@ -19,50 +34,50 @@
 
   <div class="cont-body">
 
-
-    <div class="custom-item" (click)="gotoLeavesDetail()">
-      <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png"> -->
-      <div class="atn-inner">
+    <ion-row class="boxes" (click)="gotoLeavesDetail()">
+      <ion-col col-6>
         <p> {{ 'CASUAL_LEAVE' | translate }}</p>
         <p>6/12/2018</p>
-      </div>
-      <div class="status-div">
+      </ion-col>
+      <ion-col col-6 class="col-right">
         <p>2 {{ 'DAYS' | translate }}</p>
-        <ion-badge slot="end" class="new-badg">  {{ 'NEW' | translate }}</ion-badge>
-      </div>
+        <ion-badge slot="end" class="new-badg"> {{ 'NEW' | translate }}</ion-badge>
 
-    </div>
+      </ion-col>
+    </ion-row>
 
-
-
-
-    <div class="custom-item" (click)="gotoLeavesDetail()">
-      <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png"> -->
-      <div class="atn-inner">
-        <p>  {{ 'ANNUAL_LEAVES' | translate }}</p>
+    <ion-row class="boxes" (click)="gotoLeavesDetail()">
+      <ion-col col-6>
+        <p> {{ 'ANNUAL_LEAVES' | translate }}</p>
         <p>6/12/2018</p>
-      </div>
-      <div class="status-div">
-        <p>2  {{ 'DAYS' | translate }}</p>
-        <ion-badge slot="end" class="pend-badg">  {{ 'PENDING' | translate }}</ion-badge>
-      </div>
-
-    </div>
-
-
-
-    <div class="custom-item" (click)="gotoLeavesDetail()">
-      <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png"> -->
-      <div class="atn-inner">
-        <p>  {{ 'SICK_LEAVES' | translate }}</p>
-        <p>6/12/2018</p>
-      </div>
-      <div class="status-div">
+      </ion-col>
+      <ion-col col-6 class="col-right">
         <p>2 {{ 'DAYS' | translate }}</p>
-        <ion-badge slot="end" class="success-badg">  {{ 'APPROVED' | translate }}</ion-badge>
-      </div>
+        <ion-badge slot="end" class="pend-badg"> {{ 'PENDING' | translate }}</ion-badge>
 
-    </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="boxes" (click)="gotoLeavesDetail()">
+      <ion-col col-6>
+        <p> {{ 'SICK_LEAVES' | translate }}</p>
+        
+        <p>6/12/2018</p>
+      </ion-col>
+      <ion-col class="col-right" col-6>
+        <p>2 {{ 'DAYS' | translate }}</p>
+        <ion-badge slot="end" class="success-badg"> {{ 'APPROVED' | translate }}</ion-badge>
+
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+
+
   </div>
 
 

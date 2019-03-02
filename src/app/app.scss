@@ -98,13 +98,14 @@
 }
 
 .menu-list img {
-    width: 10%;
-    float: left
+    // width: 10%;
+    // float: left
 }
 
 .menu-list p {
     padding: 3%;
-    float: left
+    // float: left
+    margin:0px !important;
 }
 
 .bar-button-default {
@@ -116,14 +117,20 @@
 
 
 // language
+.menu-list .label-md {
+    margin: 6px 7px 9px 0px;
+}
 .language{
-    padding: 1em;
+    padding:1em;
+    width:100%;
     font-size: 17px;
-    padding-top: 0px;
+    // padding-left: 1em;
     color: gray;
 }
+
 .language ion-icon{
     margin-right: 7px;
+    font-size: 1.7em;
 }
 .lang-type div{
     width:100%;

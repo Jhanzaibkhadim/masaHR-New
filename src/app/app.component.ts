@@ -28,6 +28,8 @@ export class MyApp {
 
   rootPage: any = TabsPage
 
+  logoutbtn:boolean=false;
+  dashboard:any;
   pages: Array<{ title: string, component: any, img: any }>;
 
   constructor(public translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
@@ -35,6 +37,18 @@ export class MyApp {
      
       // this language will be used as a fallback when a translation isn't found in the current language
       this.translate.setDefaultLang('en');
+     
+      // setTimeout(() => {
+      //   this.translate.get('DASHBOARD').subscribe(
+      //     value => {
+      //       console.log(value)
+      //       this.dashboard =  value;
+            
+      //     //  return value;
+      //     });
+      // }, 200);
+      
+     
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
@@ -53,6 +67,19 @@ export class MyApp {
 
   }
 
+  getTranslatedString(key){
+    return new Promise((resolve, reject) => {
+       
+      this.translate.get(key).subscribe(
+        (value) => {
+          console.log(value)
+          resolve(value)
+        //  return value;
+        }
+      )
+    });
+    
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -77,6 +104,13 @@ export class MyApp {
       this.platform.setDir("rtl",true)
       this.translate.setDefaultLang('ar');
       
+    }
+    console.log(this.platform.dir())
+    if(this.platform.dir() == 'rtl'){
+      this.logoutbtn = true;
+    }
+    else{
+      this.logoutbtn = false;
     }
   }
 }

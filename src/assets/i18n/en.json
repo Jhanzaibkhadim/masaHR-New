@@ -1,4 +1,6 @@
 {
+    "LOGOUT":"Logout",
+
     "BASIC_INFO":" Basic Information",
     "LOREM_ISPUM":" lorem ispummm",
     "JOB_TERMINATION":"Job Termination",
@@ -91,8 +93,8 @@
     "ANNUAL_LEAVES":"Annual Leaves",
     "SICK_LEAVES":"Sick Leaves",
     "PENDING":"Pending",
-    "APPROVED":"Approved"
-
+    "APPROVED":"Approved",
+     "DECEMBER":"DECEMBER"
 
     
 

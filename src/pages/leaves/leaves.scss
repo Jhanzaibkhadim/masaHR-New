@@ -19,7 +19,7 @@ page-leaves {
     }
     .toolbar-title {
         color: white;
-        text-align: left;
+        text-align: center;
         font-weight: 400 !important;
         text-transform: uppercase;
         font-size: 1.6rem !important;
@@ -41,7 +41,7 @@ page-leaves {
         color: #fff;
     }
     ion-title {
-        float: left;
+       text-align: center;
     } //Header End
     // Content-Header
     .cont-bg {
@@ -60,60 +60,38 @@ page-leaves {
     .searchbar .searchbar-input {
         border-radius: 150px;
     }
-    .attendance-panel {
-        width: 80%;
-        float: left;
-        /* padding: 5%; */
-        margin-left: 10%;
-        background: #fff;
-        float: left;
-        padding: 3%;
-        margin-left: 10%;
+    .add-col{
+        text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 1.5em;
+    }
+    .boxes{
+        width: 90%;
+        margin: auto;
+        background: white;
+        padding: 2%;
         border-radius: 15px;
         box-shadow: 2px 2px rgba(52, 52, 52, 0.10);
-    }
-    .attendance-panel .atn-img1 {
-        float: left;
-        border-radius: 150px;
-        border: 1px solid #337de7;
-    }
-    .attendance-panel .atn-img2 {
-        float: right;
-    }
-    .attendance-panel .atn-inner {
-        float: left;
-        margin-left: 4%;
-    }
-    .attendance-panel h5,
-    .attendance-panel p {
-        margin: auto;
-    }
-    .attendance-panel .img2-div {
-        float: right;
-        background: #2e7aea;
-        padding: 3%;
-        border-radius: 150px;
-    }
-    .cont-body .custom-item {
-        width: 90%;
-        float: left;
-        margin-left: 10%;
-        background: #fff;
-        float: left;
-        padding: 3%;
-        margin-left: 5%;
-        border-radius: 15px;
         margin-top: 3%;
-        -webkit-box-shadow: 2px 2px rgba(52, 52, 52, 0.1);
-        box-shadow: 2px 2px rgba(52, 52, 52, 0.1);
-    }
-    .custom-item .atn-img1 {
-        float: left;
-    }
-    .custom-item p {
+        }
+        
+        .boxes ion-col{
+        font-size: 16px;
+        align-self: center;
+        }
+    .boxes p {
         margin: auto;
         margin-top: 3%; // margin-left: 18%;
         font-size: 17px;
+    }
+    .col-right{
+        text-align: right;
+
+    }
+    .col-left{
+        text-align: left;
+        
     }
     .cont-body {
         margin-top: 10%;
@@ -121,14 +99,8 @@ page-leaves {
     .atn-inner {
         float: left;
     }
-    .status-div {
-        float: right;
-    }
-    .status-div {
-        float: right;
-        width: 25%;
-    }
-    .status-div ion-badge {
+     
+    ion-badge {
         margin-top: 5%;
     }
     .new-badg {

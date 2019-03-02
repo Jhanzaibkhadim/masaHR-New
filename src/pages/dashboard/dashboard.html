@@ -1,11 +1,24 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'DASHBOARD' | translate}}</ion-title>
-    <button ion-button menuToggle>
-      <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-      <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
-    </button>
+    <ion-row>
+      <ion-col no-padding col-2>
+        <button ion-button menuToggle>
+          <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+          <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+
+        </button>
+      </ion-col>
+      <ion-col no-padding col-8>
+        <ion-title>{{ 'DASHBOARD' | translate }} </ion-title>
+
+      </ion-col>
+      <ion-col no-padding style="text-align:center" col-2>
+        <!-- <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png"> -->
+
+      </ion-col>
+    </ion-row>
+
   </ion-navbar>
 
 </ion-header>
@@ -25,7 +38,7 @@
         MOHAMMED
       </ion-row>
       <ion-row class="designation">
-       {{ 'SALES_MANAGER' | translate }} 
+        {{ 'SALES_MANAGER' | translate }}
       </ion-row>
     </div>
 
@@ -40,12 +53,12 @@
           </div>
           <ion-row>
             <div class="heading-text">
-                {{ 'BASIC_INFO' | translate }}
-               
+              {{ 'BASIC_INFO' | translate }}
+
             </div>
             <div class="contentt">
               {{ 'LOREM_ISPUM' | translate }}
-               
+
             </div>
           </ion-row>
         </div>
@@ -57,11 +70,11 @@
         <ion-row class="text">
           <div class="heading-text">
             {{ 'CONTRACTS' | translate }}
-           
+
           </div>
           <div class="contentt">
             {{ 'LOREM_ISPUM' | translate }}
-             
+
           </div>
         </ion-row>
       </ion-col>
@@ -75,11 +88,11 @@
           <ion-row>
             <div class="heading-text">
               {{ 'HR_PROCEDURES' | translate }}
-              
+
             </div>
             <div class="contentt">
               {{ 'LOREM_ISPUM' | translate }}
-              
+
             </div>
           </ion-row>
         </div>
@@ -91,11 +104,11 @@
         <ion-row class="text">
           <div class="heading-text">
             {{ 'SALARIES_INCENTIVES' | translate }}
-            
+
           </div>
           <div class="contentt">
             {{ 'LOREM_ISPUM' | translate }}
-            
+
           </div>
         </ion-row>
       </ion-col>
@@ -108,12 +121,12 @@
           </div>
           <ion-row>
             <div class="heading-text">
-                {{ 'LOANS' | translate }}
-                
+              {{ 'LOANS' | translate }}
+
             </div>
             <div class="contentt">
               {{ 'LOREM_ISPUM' | translate }}
-               
+
             </div>
           </ion-row>
         </div>
@@ -125,11 +138,11 @@
         <ion-row class="text">
           <div class="heading-text">
             {{ 'JOB_TERMINATION' | translate }}
-            
+
           </div>
           <div class="contentt">
             {{ 'LOREM_ISPUM' | translate }}
-            
+
           </div>
         </ion-row>
       </ion-col>
