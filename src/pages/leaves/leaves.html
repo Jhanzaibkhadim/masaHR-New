@@ -39,7 +39,7 @@
         <p> {{ 'CASUAL_LEAVE' | translate }}</p>
         <p>6/12/2018</p>
       </ion-col>
-      <ion-col col-6 class="col-right">
+      <ion-col col-6 [ngClass]="moveToright ?'col-left':'col-right '">
         <p>2 {{ 'DAYS' | translate }}</p>
         <ion-badge slot="end" class="new-badg"> {{ 'NEW' | translate }}</ion-badge>
 
@@ -51,7 +51,7 @@
         <p> {{ 'ANNUAL_LEAVES' | translate }}</p>
         <p>6/12/2018</p>
       </ion-col>
-      <ion-col col-6 class="col-right">
+      <ion-col col-6 [ngClass]="moveToright ?'col-left':'col-right '">
         <p>2 {{ 'DAYS' | translate }}</p>
         <ion-badge slot="end" class="pend-badg"> {{ 'PENDING' | translate }}</ion-badge>
 
@@ -64,7 +64,7 @@
         
         <p>6/12/2018</p>
       </ion-col>
-      <ion-col class="col-right" col-6>
+      <ion-col [ngClass]="moveToright ?'col-left':'col-right '" col-6>
         <p>2 {{ 'DAYS' | translate }}</p>
         <ion-badge slot="end" class="success-badg"> {{ 'APPROVED' | translate }}</ion-badge>
 

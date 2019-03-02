@@ -61,17 +61,18 @@
           <ion-icon name="settings"></ion-icon>
       </ion-col>
       <ion-col col-8>
-          Language
+          {{  'LANGUAGE' | translate }}
       </ion-col>
     </ion-row>
 
     <!-- <div class="language">  </div> -->
-    <div class="lang-type">
+    <div [ngClass]=" logoutbtn == false ? 'lang-type':'language-type'">
       <div (click)="changeLanguage(1)">
         English
       </div>
       <div (click)="changeLanguage(2)">
-        Arabic
+          {{  'ARABIC' | translate }}
+      
       </div>
     </div>
   </ion-content>

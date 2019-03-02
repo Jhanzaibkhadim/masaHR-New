@@ -1,5 +1,7 @@
 {
     "LOGOUT":"الخروج",
+    "ARABIC":"عربى",
+    "LANGUAGE":"لغة",
     "BASIC_INFO": "البيانات الأساسية",
     "LOREM_ISPUM": "نص تجربة",
     "JOB_TERMINATION": "إنهاء الخدمة",

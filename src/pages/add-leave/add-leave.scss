@@ -19,7 +19,7 @@ page-add-leave {
     }
     .toolbar-title {
         color: white;
-        text-align: left;
+        text-align: center;
         font-weight: 400 !important;
         text-transform: uppercase;
         font-size: 1.6rem !important;
@@ -41,7 +41,8 @@ page-add-leave {
         color: #fff;
     }
     ion-title {
-        float: left;
+        // float: left;
+        text-align: center;
     } //Header End
     //
     //
