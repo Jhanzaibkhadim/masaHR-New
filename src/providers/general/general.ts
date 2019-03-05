@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class GeneralProvider {
 
+  direction:any;
   constructor(public http: HttpClient,public translate:TranslateService) {
     console.log('Hello GeneralProvider Provider');
   }

@@ -122,7 +122,8 @@
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-        <ion-row class="notification-count-div">21</ion-row>
+     
+      <ion-row  [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/mission@2x.png">
       </ion-row>
@@ -146,7 +147,7 @@
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-        <ion-row class="notification-count-div">21</ion-row>
+        <ion-row [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src="assets/imgs/Overview/salary@2x.png">
       </ion-row>
@@ -170,7 +171,7 @@
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-        <ion-row class="notification-count-div">21</ion-row>
+        <ion-row [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/support@2x.png">
       </ion-row>

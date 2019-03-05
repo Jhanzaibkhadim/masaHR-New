@@ -1,8 +1,8 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content"    >
   <ion-header class="menu-head">
 
     <ion-navbar>
-      <!-- <ion-title>Admin Communications</ion-title> -->
+      <!-- <ion-title>Admin Communications  [attr.side]="this.platform.dir()==='ltr'?'left':'right'"</ion-title> -->
       <ion-row>
         <ion-col col-2>
             <button ion-button menuToggle>
@@ -44,7 +44,7 @@
               </ion-col>
               <ion-col col-10>
                   <p>
-                      {{p.title}}
+                    {{ p.title | translate }}
                     </p>
               </ion-col>
             </ion-row>
@@ -67,10 +67,10 @@
 
     <!-- <div class="language">  </div> -->
     <div [ngClass]=" logoutbtn == false ? 'lang-type':'language-type'">
-      <div (click)="changeLanguage(1)">
+      <div *ngIf="logoutbtn" (click)="changeLanguage(1)">
         English
       </div>
-      <div (click)="changeLanguage(2)">
+      <div *ngIf="logoutbtn == false" (click)="changeLanguage(2)">
           {{  'ARABIC' | translate }}
       
       </div>

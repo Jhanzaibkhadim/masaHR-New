@@ -30,18 +30,11 @@ export class MyApp {
   rootPage: any = LoginPage
 
   logoutbtn:boolean=false;
-  dashboard:any;
+  
   pages: Array<{ title: string, component: any, img: any }>;
-  about: any;
-  job_term: any;
-  loans: any;
-  hrpro: any;
-  overview: any;
-  contracts: any;
-  basic_info: any;
-  admin: any;
-  salaries: any;
-  leaves: any;
+  menuSide: boolean= true;
+   
+   
 
   constructor(public translationProvider:GeneralProvider, public translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -57,70 +50,25 @@ export class MyApp {
       
      
     // used for an example of ngFor and navigation
-    this.getTranslatedString();
+    
     this.pages = [
-      { title: this.dashboard, component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
-      { title: this.leaves, component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
-      { title: this.overview, component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
-      { title:  this.basic_info, component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
-      { title: this.contracts, component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
-      { title: this.hrpro, component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
-      { title: this.salaries, component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
-      { title: this.loans, component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
-      { title: this.job_term, component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
-      { title: this.admin, component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
-      { title: this.about, component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
+      { title: 'DASHBOARD', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
+      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
+      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
+      { title:  'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
+      { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
+      { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+      { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
+      { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
+      { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
+      { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
+      { title: 'ABOUT', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
 
   }
 
-  getTranslatedString( ){
-    this.translationProvider.GetTranslatedString("DASHBOARD").then((res: any) => {
-       
-      this.dashboard = res;
-    });
-    this.translationProvider.GetTranslatedString("LEAVES").then((res: any) => {
-       
-      this.leaves = res;
-    });
-    this.translationProvider.GetTranslatedString("SALARIES_AND_INCENTIVES").then((res: any) => {
-       
-      this.salaries = res;
-    });
-    this.translationProvider.GetTranslatedString("ADMIN_COMM").then((res: any) => {
-       
-      this.admin = res;
-    });
-    this.translationProvider.GetTranslatedString("BASIC_INFORMATION").then((res: any) => {
-       
-      this.basic_info = res;
-    });
-    this.translationProvider.GetTranslatedString("CONTRACTS").then((res: any) => {
-       
-      this.contracts = res;
-    });
-    this.translationProvider.GetTranslatedString("OVERVIEW").then((res: any) => {
-       
-      this.overview = res;
-    });
-    this.translationProvider.GetTranslatedString("HR_PROCEDURES").then((res: any) => {
-       
-      this.hrpro = res;
-    });
-    this.translationProvider.GetTranslatedString("LOANS").then((res: any) => {
-       
-      this.loans = res;
-    });
-    this.translationProvider.GetTranslatedString("JOB_TERMINATION").then((res: any) => {
-       
-      this.job_term = res;
-    });
-    this.translationProvider.GetTranslatedString("ABOUT").then((res: any) => {
-       
-      this.about = res;
-    });
-  }
+   
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -139,9 +87,31 @@ export class MyApp {
 
   changeLanguage(id){
     if(id ==1){
+      this.menuSide = true;
+      // let element: HTMLElement = document.getElementById("sidemenu");
+      // console.log(element)
+
+      // if(element !== null){
+      //   element.setAttribute("ng-reflect-side", "left");
+      //   element.setAttribute("side", "left");
+
+
+      // }
+      this.translationProvider.direction="left"
       this.platform.setDir("ltr",true)
       this.translate.setDefaultLang('en');
     }else if(id == 2){
+      this.menuSide = false;
+      this.translationProvider.direction="right"
+
+      // let element: HTMLElement = document.getElementById("sidemenu");
+      // console.log(element)
+      // if(element !== null){
+      //   element.setAttribute("ng-reflect-side", "right");
+      //   element.setAttribute("side", "right");
+
+
+      // }
       this.platform.setDir("rtl",true)
       this.translate.setDefaultLang('ar');
       
