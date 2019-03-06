@@ -1,14 +1,23 @@
 <ion-header>
 
   <ion-navbar>
-     
-      <ion-title> {{ 'ADMIN_COMM' | translate }} </ion-title>
-    <button ion-button menuToggle>
-      <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-      <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+    <ion-row>
+      <ion-col no-padding col-2>
+        <button ion-button menuToggle>
+          <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+          <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
 
-    </button>
-    <img style="width: 2em;" class="noti-icon" src="assets/imgs/Overview/notification@2x.png">
+        </button>
+      </ion-col>
+      <ion-col no-padding col-8>
+        <ion-title>{{ 'CONTRACTS' | translate }} </ion-title>
+
+      </ion-col>
+      <ion-col no-padding style="text-align:center" col-2>
+        <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
+
+      </ion-col>
+    </ion-row>
   </ion-navbar>
 
 </ion-header>
@@ -17,34 +26,52 @@
 <ion-content class="cont-bg">
   <div class="cont-head">
     <ion-searchbar animated></ion-searchbar>
-    <div class="attendance-panel">
-      <img class="atn-img1" style="width: 3em;" src="assets/imgs/Dashboard/person.jpg">
-      <div class="atn-inner">
-        <h5>{{ 'ATTENDANCE' | translate}}</h5>
-        <p>02 December 2019</p>
-      </div>
-      <div class="img2-div">
-        <img class="atn-img2" style="width: 1.5em;" src="assets/imgs/Overview/calendar@2x.png">
-      </div>
-    </div>
+    <ion-row class="top-card">
+      <ion-col no-padding col-2>
+        <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
+      </ion-col>
+      <ion-col col-8 class="name-col" no-padding>
+        <ion-row class="name">
+          {{ 'ATTENDANCE' | translate }}
+
+        </ion-row>
+        <ion-row class="designation">
+          02 {{ 'DECEMBER' | translate }} 2019
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="icon-col" no-padding col-2>
+        <img src=" assets/imgs/Overview/calendar@2x.png" />
+        <!-- <ion-icon class="notification-icon" ios="ios-calendar" md="md-calendar"></ion-icon> -->
+      </ion-col>
+
+
+    </ion-row>
   </div>
 
   <div class="cont-body">
 
+    <ion-row class="boxes">
+      <ion-col col-2>
+        <img class="atn-img1" style="width: 3em;" src="assets/imgs/Dashboard/dashboard_contracts@2x.png">
 
-    <div class="custom-item">
-      <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png">
-      <div class="atn-inner">
+      </ion-col>
+      <ion-col>
         <p> {{ 'EMPLOYEE_CONTRACT' | translate }}</p>
-      </div>
-    </div>
 
-    <div class="custom-item">
-      <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/mission@2x.png">
-      <div class="atn-inner">
+      </ion-col>
+    </ion-row>
+    <ion-row class="boxes">
+      <ion-col col-2>
+        <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/evaluation@2x.png">
+      </ion-col>
+      <ion-col>
         <p> {{ 'EVALUATION_PERIOD' | translate }}</p>
-      </div>
-    </div>
+
+      </ion-col>
+    </ion-row>
+
+
   </div>
 
 </ion-content>

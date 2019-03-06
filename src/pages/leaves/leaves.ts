@@ -1,7 +1,7 @@
 import { AddLeavePage } from './../add-leave/add-leave';
 import { LeaveDetailsPage } from './../leave-details/leave-details';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 
 /**
  * Generated class for the LeavesPage page.
@@ -16,7 +16,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class LeavesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  moveToright:boolean=true;
+  constructor(public platform:Platform, public navCtrl: NavController, public navParams: NavParams) {
+    if(this.platform.dir() == 'rtl'){
+      this.moveToright = true;
+    }
+    else{
+      this.moveToright = false;
+    }
   }
 
   ionViewDidLoad() {

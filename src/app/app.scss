@@ -98,17 +98,64 @@
 }
 
 .menu-list img {
-    width: 10%;
-    float: left
+    // width: 10%;
+    // float: left
 }
 
 .menu-list p {
     padding: 3%;
-    float: left
+    // float: left
+    margin:0px !important;
 }
 
 .bar-button-default {
     color: #fff;
 }
 
+
 //Header End
+
+
+// language
+.menu-list .label-md {
+    margin: 6px 7px 9px 0px;
+}
+.language{
+    padding:1em;
+    width:100%;
+    font-size: 17px;
+    // padding-left: 1em;
+    color: gray;
+}
+
+.language ion-icon{
+    margin-right: 7px;
+    font-size: 1.7em;
+}
+.lang-type div{
+    width:93%;
+    color: gray;
+    padding-left: 20%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-width: 0.5px;
+    padding-right: 5%;
+
+    font-size: 14px;
+    border-bottom: 1px solid #dedede;
+
+}
+
+.language-type div{
+    width:93%;
+    color: gray;
+    padding-right: 20%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 2%;
+    padding-left: 5%;
+    font-size: 14px;
+    border-width: 0.5px;
+    border-bottom: 1px solid #dedede;
+
+}

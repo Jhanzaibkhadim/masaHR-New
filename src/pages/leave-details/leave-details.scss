@@ -19,7 +19,7 @@ page-leave-details {
     }
     .toolbar-title {
         color: white;
-        text-align: left;
+        text-align: center;
         font-weight: 400 !important;
         text-transform: uppercase;
         font-size: 1.6rem !important;
@@ -41,25 +41,45 @@ page-leave-details {
         color: #fff;
     }
     ion-title {
-        float: left;
-    } //Header End
-    // Content-Header
-    .cont-bg {
-        background: #EBEBEB;
-        background-color: #EBEBEB;
-    }
-    .cont-head {
-        width: 100%;
-        height: 21%;
-        background: #337de7;
-        border-radius: 0 0 140% 140%/60%;
-    }
-    .searchbar {
-        padding: 5%;
-    }
-    .searchbar .searchbar-input {
-        border-radius: 150px;
-    }
+        text-align: center;
+     } //Header End
+     // Content-Header
+     .cont-bg {
+         background: #EBEBEB;
+         background-color: #EBEBEB;
+     }
+     .cont-head {
+         width: 100%;
+         height: 21%;
+         background: #337de7;
+         border-radius: 0 0 140% 140%/60%;
+     }
+     .searchbar {
+         padding: 5%;
+     }
+     .searchbar .searchbar-input {
+         border-radius: 150px;
+     }
+     .add-col{
+         text-align: center;
+     margin: auto;
+     color: white;
+     font-size: 1.5em;
+     }
+     .boxes{
+         width: 90%;
+         margin: auto;
+         background: white;
+         padding: 2%;
+         border-radius: 15px;
+         box-shadow: 2px 2px rgba(52, 52, 52, 0.10);
+         margin-top: 3%;
+         }
+         
+         .boxes ion-col{
+         font-size: 16px;
+         align-self: center;
+         }
     .attendance-panel {
         width: 80%;
         float: left;

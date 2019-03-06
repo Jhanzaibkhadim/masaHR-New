@@ -26,15 +26,29 @@ import { TranslateService } from '@ngx-translate/core';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = TabsPage
+  rootPage: any = LoginPage
 
+  logoutbtn: boolean = false;
+  dashboard: any;
   pages: Array<{ title: string, component: any, img: any }>;
 
-  constructor(translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public translate: TranslateService, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-     
-      // this language will be used as a fallback when a translation isn't found in the current language
-      translate.setDefaultLang('en');
+
+    // this language will be used as a fallback when a translation isn't found in the current language
+    this.translate.setDefaultLang('ar');
+
+    // setTimeout(() => {
+    //   this.translate.get('DASHBOARD').subscribe(
+    //     value => {
+    //       console.log(value)
+    //       this.dashboard =  value;
+
+    //     //  return value;
+    //     });
+    // }, 200);
+
+
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
@@ -50,8 +64,22 @@ export class MyApp {
       { title: 'About', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
+
   }
 
+  getTranslatedString(key) {
+    return new Promise((resolve, reject) => {
+
+      this.translate.get(key).subscribe(
+        (value) => {
+          console.log(value)
+          resolve(value)
+          //  return value;
+        }
+      )
+    });
+
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -65,5 +93,24 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+
+  changeLanguage(id) {
+    if (id == 1) {
+      this.platform.setDir("ltr", true)
+      this.translate.setDefaultLang('en');
+    } else if (id == 2) {
+      this.platform.setDir("rtl", true)
+      this.translate.setDefaultLang('ar');
+
+    }
+    console.log(this.platform.dir())
+    if (this.platform.dir() == 'rtl') {
+      this.logoutbtn = true;
+    }
+    else {
+      this.logoutbtn = false;
+    }
   }
 }
