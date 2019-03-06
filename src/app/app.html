@@ -1,4 +1,4 @@
-<ion-menu [content]="content"    >
+<ion-menu [content]="content"  side="left"  >
   <ion-header class="menu-head">
 
     <ion-navbar>
@@ -25,13 +25,24 @@
      
      </ion-navbar>
 
-    <div class="head-second">
+     <ion-row class="head-second">
+        <ion-col col-3>
+           <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
+ 
+        </ion-col>
+        <ion-col col-9 class="head-sec-inner">
+           <h4>Mohammad</h4>
+           <p>{{ 'SALES_MANAGER' | translate }}</p>
+        </ion-col>
+      </ion-row>
+    <!-- <div class="head-second">
+      
       <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
       <div class="head-sec-inner">
         <h4>Mohammad</h4>
         <p>{{ 'SALES_MANAGER' | translate }}</p>
       </div>
-    </div>
+    </div> -->
   </ion-header>
 
 
@@ -58,7 +69,7 @@
 
     <ion-row class="language">
       <ion-col col-2>
-          <ion-icon name="settings"></ion-icon>
+          <ion-icon class="globeicon" name="globe"></ion-icon>
       </ion-col>
       <ion-col col-8>
           {{  'LANGUAGE' | translate }}

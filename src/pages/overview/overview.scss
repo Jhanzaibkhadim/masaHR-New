@@ -300,12 +300,36 @@ page-overview {
         position: absolute;
         top: 0px;
     }
-    .time-text{
+    [dir=ltr]{
+        .time-text{
+            font-size: 12px;
+            padding-top: 12px;
+            padding-left: 7px;
+    
+        }
+    }
+    [dir=rtl]{
+        .time-text{
+            font-size: 12px;
+            padding-top: 12px;
+            padding-right: 7px;
+    
+        }
+    }
+
+    .time-text-right{
+        font-size: 12px;
+        padding-top: 12px;
+        padding-right: 0px;
+
+    }
+    .time-text-left{
         font-size: 12px;
         padding-top: 12px;
         padding-left: 7px;
 
     }
+
     .time-num{
         font-size: 13px;
         font-weight: bold;
