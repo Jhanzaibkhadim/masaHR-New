@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GeneralProvider } from '../../providers/general/general';
 
 /**
  * Generated class for the OverviewPage page.
@@ -15,7 +16,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OverviewPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public translationProvider:GeneralProvider, public navCtrl: NavController, public navParams: NavParams) {
+  console.log(this.translationProvider.direction)
+  
   }
 
   ionViewDidLoad() {

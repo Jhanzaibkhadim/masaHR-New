@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DashboardPage } from '../dashboard/dashboard';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the LoginPage page.
@@ -23,7 +24,7 @@ export class LoginPage {
 
 
   gotoHomePage() {
-    this.navCtrl.setRoot(DashboardPage)
+    this.navCtrl.setRoot(TabsPage)
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');

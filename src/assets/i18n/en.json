@@ -2,6 +2,12 @@
     "LOGOUT": "Logout",
     "ARABIC": "Arabic",
     "LANGUAGE": "Language",
+    "PASSWORD": "Password",
+    "USERNAME": "User Name",
+    "ABOUT": " About",
+    "INVOICES": "INVOICES",
+    "EXPENSES": "EXPENSES",
+    "TIME_TRACING": " TIME  TRACING",
     "BASIC_INFO": " Basic Information",
     "LOREM_ISPUM": " lorem ispummm",
     "JOB_TERMINATION": "Job Termination",
@@ -84,7 +90,5 @@
     "SICK_LEAVES": "Sick Leaves",
     "PENDING": "Pending",
     "APPROVED": "Approved",
-    "DECEMBER": "DECEMBER",
-    "USERNAME": "User Name",
-    "PASSWORD": "Password"
+    "DECEMBER": "DECEMBER"
 }

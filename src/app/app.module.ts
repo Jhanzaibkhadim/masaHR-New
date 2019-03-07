@@ -29,6 +29,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http} from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { GeneralProvider } from '../providers/general/general';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -93,7 +94,8 @@ export function createTranslateLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
     HttpClient,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    GeneralProvider
   ]
 })
 export class AppModule { }

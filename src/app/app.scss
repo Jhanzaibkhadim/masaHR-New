@@ -12,6 +12,27 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+
+// font-family
+
+@font-face{
+    font-family: Tajawal;
+    src: url('../assets/fonts/tajawal.woff2') format('woff2');
+    }
+    
+    [dir=rtl] {
+        *:not(.icon):not(ion-icon) {
+            font-family: Tajawal;
+        }
+        * {
+            font-family: Tajawal;
+        }
+    }
+    // *{
+    // font-family: Tajawal;
+    // }
 .menu-head .toolbar-background {
     background: rgb(56, 128, 228) !important;
 }

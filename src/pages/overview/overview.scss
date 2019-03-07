@@ -151,21 +151,40 @@ page-overview {
         top: -11px;
         font-size: 11px;
     }
-    .notification-count-div{
-        background: #3880e4;
-        border-radius: 56%;
-        position: absolute;
-        width: 7vw;
-        color: white;
-        // padding: 2px;
-        height: 7vw;
-        justify-content: center;
-        align-items: center;
-        right: 10px;
-        text-align: center;
-        top: 4px;
-        font-size: 11px
-    }
+    // [dir=ltr] {
+        .notification-count-div-right{
+            background: #3880e4;
+            border-radius: 56%;
+            position: absolute;
+            width: 7vw;
+            color: white;
+            // padding: 2px;
+            height: 7vw;
+            justify-content: center;
+            align-items: center;
+            right: 10px;
+            text-align: center;
+            top: 4px;
+            font-size: 11px
+        }
+    // }
+    // [dir=ltr] {
+        .notification-count-div-left{
+            background: #3880e4;
+            border-radius: 56%;
+            position: absolute;
+            width: 7vw;
+            color: white;
+            // padding: 2px;
+            height: 7vw;
+            justify-content: center;
+            align-items: center;
+            left:  10px;
+            text-align: center;
+            top: 4px;
+            font-size: 11px
+        }
+    // }
     .notification-icon{
         font-size: 2.3em;
     }
