@@ -42,7 +42,7 @@ export class MyApp {
       // this language will be used as a fallback when a translation isn't found in the current language
       this.translate.setDefaultLang('ar');
      
-      this.changeLanguage(1)
+      this.changeLanguage(2)
       // if(this.translate.currentLang == 'ar'){
 
       // }
