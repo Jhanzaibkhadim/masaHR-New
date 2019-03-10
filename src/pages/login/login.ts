@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DashboardPage } from '../dashboard/dashboard';
 import { TabsPage } from '../tabs/tabs';
+import { GeneralProvider } from '../../providers/general/general';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,7 +20,7 @@ export class LoginPage {
 
   userName: any;
   password: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public translationProvider:GeneralProvider) {
   }
 
 

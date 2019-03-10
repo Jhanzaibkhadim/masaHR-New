@@ -39,8 +39,14 @@ page-login {
         // padding-left: 0px !important;
         // border: 1px solid white;
     }
-    .text-input-md {
+    .rightside .text-input-md {
         color:white;
+        text-align: right;
+    }
+    
+    .leftside .text-input-md {
+        color:white;
+        // text-align: right;
     }
     // .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
     //     color:white;

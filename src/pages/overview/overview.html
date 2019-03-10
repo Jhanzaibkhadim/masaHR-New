@@ -89,7 +89,7 @@
 
         </ion-col>
         <ion-col class="delayedTime" col-4>
-          <div class="redImage">
+          <div  [ngClass]="this.translationProvider.direction =='right'?'redImage-right':'redImage'">
             <ion-row [ngClass]="this.translationProvider.direction =='right'?'time-text-right':'time-text-left'">
               {{ 'DELAYED_TIME' | translate }}
 

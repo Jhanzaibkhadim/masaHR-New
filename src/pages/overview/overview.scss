@@ -292,6 +292,14 @@ page-overview {
         border-radius: 8px; 
         // margin:auto;
     }
+    .redImage-right{
+        background: url(../assets/imgs/Overview/red_half_clock@2x.png) no-repeat  right; 
+        // padding: 12px 3px 12px 7px !important;
+        
+        background-size: 48%;
+        // position: absolute;
+        // top: 0px;
+    }
     .redImage{
         background: url(../assets/imgs/Overview/red_half_clock@2x.png) no-repeat  right; 
         // padding: 12px 3px 12px 7px !important;
