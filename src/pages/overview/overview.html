@@ -17,7 +17,8 @@
       </ion-col>
     </ion-row>
     <ion-row class="srch-bar">
-      <ion-searchbar class="srch" [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel">
+      <ion-searchbar class="srch" placeholder=" {{ 'SEARCH' | translate }}" [(ngModel)]="myInput"
+        [showCancelButton]="shouldShowCancel">
       </ion-searchbar>
 
     </ion-row>
@@ -30,7 +31,7 @@
     <ion-col col-8 class="name-col" no-padding>
       <ion-row class="name">
         {{ 'ATTENDANCE' | translate }}
-        
+
       </ion-row>
       <ion-row class="designation">
         02 {{ 'DECEMBER' | translate }} 2019
@@ -63,11 +64,11 @@
     </ion-col>
     <ion-col style="margin:auto" col-9 no-padding>
       <ion-row class="time-row">
-        <ion-col   class="entryTime" col-4>
+        <ion-col class="entryTime" col-4>
           <div class="orangeImage">
-            <ion-row class="time-text">
-        {{ 'ENTRY_TIME' | translate }}
-              
+            <ion-row [ngClass]="this.translationProvider.direction =='right'?'time-text-right':'time-text-left'">
+              {{ 'ENTRY_TIME' | translate }}
+
             </ion-row>
             <ion-row class="time-num">
               08:30 Am
@@ -77,9 +78,9 @@
         </ion-col>
         <ion-col class="exitTime" col-4>
           <div class="blueImage">
-            <ion-row class="time-text">
-        {{ 'EXIT_TIME' | translate }}
-              
+            <ion-row [ngClass]="this.translationProvider.direction =='right'?'time-text-right':'time-text-left'">
+              {{ 'EXIT_TIME' | translate }}
+
             </ion-row>
             <ion-row class="time-num">
               05:30 Pm
@@ -89,9 +90,9 @@
         </ion-col>
         <ion-col class="delayedTime" col-4>
           <div class="redImage">
-            <ion-row class="time-text">
-        {{ 'DELAYED_TIME' | translate }}
-              
+            <ion-row [ngClass]="this.translationProvider.direction =='right'?'time-text-right':'time-text-left'">
+              {{ 'DELAYED_TIME' | translate }}
+
             </ion-row>
             <ion-row class="time-num">
               00:30 M
@@ -99,7 +100,7 @@
           </div>
 
         </ion-col>
-       
+
         <!-- <div class="timeDiv">ENTRY TIME :</div>
         <div class="timeDiv2">8:30 AM</div>
         <div class="timeDiv">EXIT TIME :</div>
@@ -114,23 +115,25 @@
     <ion-col col-6 no-padding>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/inbox@2x.png">
-           
+
       </ion-row>
       <ion-row class="text-row">
         {{ 'INBOX' | translate }}
-        
+
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-     
-      <ion-row  [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">21</ion-row>
+
+      <ion-row
+        [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
+        21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/mission@2x.png">
       </ion-row>
       <ion-row class="text-row">
         {{ 'MISSION' | translate }}
 
-        
+
       </ion-row>
     </ion-col>
   </ion-row>
@@ -139,22 +142,24 @@
     <ion-col col-6 no-padding>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/vacation@2x.png">
-           
+
       </ion-row>
       <ion-row class="text-row">
         {{ 'VACATION' | translate }}
-        
+
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-        <ion-row [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">21</ion-row>
+      <ion-row
+        [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
+        21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src="assets/imgs/Overview/salary@2x.png">
       </ion-row>
       <ion-row class="text-row">
         {{ 'SALARY' | translate }}
 
-       
+
       </ion-row>
     </ion-col>
   </ion-row>
@@ -163,21 +168,23 @@
     <ion-col col-6 no-padding>
       <ion-row class="img-row">
         <img class="svg-icon" src="assets/imgs/Overview/evaluation@2x.png">
-           
+
       </ion-row>
       <ion-row class="text-row">
         {{ 'EVALUATION' | translate }}
-         
+
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-        <ion-row [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">21</ion-row>
+      <ion-row
+        [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
+        21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/support@2x.png">
       </ion-row>
       <ion-row class="text-row">
         {{ 'SUPPORT' | translate }}
-        
+
       </ion-row>
     </ion-col>
   </ion-row>

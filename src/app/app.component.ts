@@ -52,7 +52,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
 
     this.pages = [
-      { title: 'DASHBOARD', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
+      { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
       { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
       { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
       { title: 'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
@@ -62,7 +62,7 @@ export class MyApp {
       { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
       { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
       { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
-      { title: 'ABOUT', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
+      { title: 'ABOUT', component: TabsPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
 

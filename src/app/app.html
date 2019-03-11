@@ -1,67 +1,78 @@
-<ion-menu [content]="content"    >
+<ion-menu [content]="content" side="left">
   <ion-header class="menu-head">
 
     <ion-navbar>
       <!-- <ion-title>Admin Communications  [attr.side]="this.platform.dir()==='ltr'?'left':'right'"</ion-title> -->
       <ion-row>
         <ion-col col-2>
-            <button ion-button menuToggle>
-                <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-                <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
-        
-              </button>
+          <button ion-button menuToggle>
+            <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+            <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+
+          </button>
         </ion-col>
         <ion-col col-6>
 
-          </ion-col>
-          <ion-col col-4>
-              <img style="width: 2em;" *ngIf="!logoutbtn" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
+        </ion-col>
+        <ion-col col-4>
+          <img style="width: 2em;" *ngIf="!logoutbtn" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
 
-              <span> {{ 'LOGOUT' | translate }}</span>
-              <img style="width: 2em;" *ngIf="logoutbtn" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
-            
-            </ion-col>
+          <span> {{ 'LOGOUT' | translate }}</span>
+          <img style="width: 2em;" *ngIf="logoutbtn" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
+
+        </ion-col>
       </ion-row>
-     
-     </ion-navbar>
 
-    <div class="head-second">
+    </ion-navbar>
+
+    <ion-row class="head-second">
+      <ion-col col-3>
+        <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
+
+      </ion-col>
+      <ion-col col-9 class="head-sec-inner">
+        <h4>Mohammad</h4>
+        <p>{{ 'SALES_MANAGER' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <!-- <div class="head-second">
+      
       <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
       <div class="head-sec-inner">
         <h4>Mohammad</h4>
         <p>{{ 'SALES_MANAGER' | translate }}</p>
       </div>
-    </div>
+    </div> -->
   </ion-header>
 
 
   <ion-content class="menu-list">
     <!-- <ion-list> -->
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          <ion-row>
-              <ion-col col-2>
-                  <img [src]="p.img">
-              </ion-col>
-              <ion-col col-10>
-                  <p>
-                    {{ p.title | translate }}
-                    </p>
-              </ion-col>
-            </ion-row>
-        
-        <!-- <img [src]="p.img">
+    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-row>
+        <ion-col col-2>
+          <img [src]="p.img">
+        </ion-col>
+        <ion-col col-10>
+          <p>
+            {{ p.title | translate }}
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <!-- <img [src]="p.img">
         <p>
           {{p.title}}
         </p> -->
-      </button>
+    </button>
     <!-- </ion-list> -->
 
     <ion-row class="language">
       <ion-col col-2>
-          <ion-icon name="settings"></ion-icon>
+        <ion-icon class="globeicon" name="globe"></ion-icon>
       </ion-col>
       <ion-col col-8>
-          {{  'LANGUAGE' | translate }}
+        {{ 'LANGUAGE' | translate }}
       </ion-col>
     </ion-row>
 
@@ -71,8 +82,8 @@
         English
       </div>
       <div *ngIf="logoutbtn == false" (click)="changeLanguage(2)">
-          {{  'ARABIC' | translate }}
-      
+        {{ 'ARABIC' | translate }}
+
       </div>
     </div>
   </ion-content>

@@ -108,8 +108,8 @@ page-basic-info {
 
     }
     .type{
-        width:100%;
-        // padding:5px;
+        width: 90%;
+        margin: auto;
         padding-top:6px;
         font-size: 18px;
     }
@@ -117,8 +117,11 @@ page-basic-info {
         // margin: auto;
     }
     .radio-btn{
-        width: 30%;
-        // float: left;
+        // width: 90%;
+        padding-left: 5%;
+        // padding-right: 5%;
+
+        // margin: auto;
     }
     .item-md .radio-md{
         margin-right: 0px !important;

@@ -57,7 +57,11 @@
 
       </ion-item>
     </ion-row>
-    <ion-row class="btns" radio-group [(ngModel)]="typee">
+    <ion-row class="type">
+        {{ 'SEX' | translate }}
+         
+    </ion-row>
+    <!-- <ion-row class="btns" radio-group [(ngModel)]="typee">
       <ion-row class="type">
           {{ 'SEX' | translate }}
            
@@ -66,6 +70,7 @@
         <ion-row class="radio-btn">
           <ion-item>
             <ion-radio value="male"></ion-radio>
+            <label></label>
           </ion-item>
         </ion-row>
         <ion-row class="text">
@@ -83,10 +88,26 @@
         </ion-row>
 
       </ion-col>
-    </ion-row>
+    </ion-row> -->
 
 
+    <ion-row class="radio-btn" radio-group [(ngModel)]="sexe">
+        
+        <ion-col>
+          <ion-item>
+            <ion-radio value="homme"></ion-radio>
 
+            <ion-label>{{ 'MALE' | translate }}</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-radio value="femme"></ion-radio>
+
+           <ion-label>{{ 'FEMALE' | translate }}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
     <ion-row class="inputBox">
       <ion-item>
            

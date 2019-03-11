@@ -12,29 +12,47 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
-
-
 // font-family
-
-@font-face{
+@font-face {
     font-family: Tajawal;
     src: url('../assets/fonts/tajawal.woff2') format('woff2');
-    }
-    
-    [dir=rtl] {
-        *:not(.icon):not(ion-icon) {
-            font-family: Tajawal;
-        }
-        * {
-            font-family: Tajawal;
-        }
-    }
-    // *{
-    // font-family: Tajawal;
+}
+
+[dir=rtl] {
+    // *:not(.icon):not(ion-icon) {
+    //     font-family: Tajawal;
     // }
+    * {
+        font-family: Tajawal;
+    }
+    .searchbar-input {
+        border-radius: 25px !important;
+        padding-left: 0px !important;
+        text-align: right;
+    }
+    .searchbar-search-icon {
+        right: 16px;
+    }
+    .searchbar-clear-icon {
+        left: 10px !important;
+        right: auto;
+    }
+    ion-icon {
+        font-family: "Ionicons" !important;
+    }
+} // *{
+// font-family: Tajawal;
+// }
+.tab-button-icon {
+    font-family: "Ionicons" !important;
+}
+
 .menu-head .toolbar-background {
     background: rgb(56, 128, 228) !important;
+}
+
+.ion-icon {
+    font-family: "Ionicons" !important;
 }
 
 .menu-head .top {
@@ -105,8 +123,9 @@
 }
 
 .menu-head .head-second .head-sec-inner {
-    float: left;
-    padding: 5%;
+    // float: left;
+    // padding: 5%;
+    margin: auto;
     color: #fff; // login_logo@3x@2x
 }
 
@@ -124,51 +143,47 @@
 }
 
 .menu-list p {
-    padding: 3%;
-    // float: left
-    margin:0px !important;
+    padding: 3%; // float: left
+    margin: 0px !important;
 }
 
 .bar-button-default {
     color: #fff;
 }
 
-
 //Header End
-
-
 // language
 .menu-list .label-md {
     margin: 6px 7px 9px 0px;
 }
-.language{
-    padding:1em;
-    width:100%;
-    font-size: 17px;
-    // padding-left: 1em;
+
+.language {
+    padding: 1em;
+    width: 100%;
+    font-size: 17px; // padding-left: 1em;
     color: gray;
 }
 
-.language ion-icon{
+.globeicon {
     margin-right: 7px;
     font-size: 1.7em;
+    font-family: "Ionicons" !important;
 }
-.lang-type div{
-    width:93%;
+
+.lang-type div {
+    width: 93%;
     color: gray;
     padding-left: 20%;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-width: 0.5px;
     padding-right: 5%;
-
     font-size: 14px;
     border-bottom: 1px solid #dedede;
-
 }
 
-.language-type div{
-    width:93%;
+.language-type div {
+    width: 93%;
     color: gray;
     padding-right: 20%;
     margin-bottom: 10px;
@@ -178,5 +193,8 @@
     font-size: 14px;
     border-width: 0.5px;
     border-bottom: 1px solid #dedede;
+}
 
+.ion-icon {
+    font-family: "Ionicons" !important;
 }
