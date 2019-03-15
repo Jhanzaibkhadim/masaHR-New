@@ -30,7 +30,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http} from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GeneralProvider } from '../providers/general/general';
+import {   Headers, RequestOptions } from '@angular/http';
+import { ApiProvider } from '../providers/api/api';
+import { IonicStorageModule } from '@ionic/storage';
 
+// import { HTTP } from "@ionic-native/http";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
@@ -58,7 +62,9 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
            provide: TranslateLoader,
@@ -94,8 +100,13 @@ export function createTranslateLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
     HttpClient,
+    HttpModule,
+    Http,
+   
+    HttpClientModule,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    GeneralProvider
+    GeneralProvider,
+    ApiProvider
   ]
 })
 export class AppModule { }

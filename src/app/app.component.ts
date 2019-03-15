@@ -20,6 +20,12 @@ import { BasicInfoListPage } from '../pages/basic-info-list/basic-info-list';
 import { OverviewPage } from '../pages/overview/overview';
 import { TranslateService } from '@ngx-translate/core';
 import { GeneralProvider } from '../providers/general/general';
+import { Global } from '../../src/utils/Global';
+import { Constants } from '../../src/utils/Constants';
+import { ApiProvider } from '../../src/providers/api/api';
+import { Storage } from '@ionic/storage';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -33,23 +39,18 @@ export class MyApp {
   
   pages: Array<{ title: string, component: any, img: any }>;
   menuSide: boolean= true;
+  username: any;
    
    
 
-  constructor(public translationProvider:GeneralProvider, public translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public localStore:Storage  ,public translationProvider:GeneralProvider, public translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
      
       // this language will be used as a fallback when a translation isn't found in the current language
       this.translate.setDefaultLang('ar');
      
       this.changeLanguage(2)
-      // if(this.translate.currentLang == 'ar'){
-
-      // }
-       
       
-     
-    // used for an example of ngFor and navigation
     
     this.pages = [
       { title: 'DASHBOARD', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
@@ -65,11 +66,19 @@ export class MyApp {
       { title: 'ABOUT', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
-
+    this.getLocalData()
   }
 
-   
+  getLocalData(){
+    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res)=>{
+      console.log(res,"ye hey local")
+      if(res !== null && res !== undefined){
+        this.username = res.name;
+      }
+    })
+  }
   initializeApp() {
+
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
