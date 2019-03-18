@@ -29,9 +29,9 @@ export class BasicInfoPage {
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res)=>{
       console.log(res,"ye hey local")
       if(res !== null && res !== undefined){
-        this.employeName = res.name;
+        this.EmployeName = res.name;
         this.employee_id=res.employee_id;
-        this.getBasicInfo();
+        this.getBasicInfo(); 
       }
     })
     console.log('ionViewDidLoad BasicInfoPage');
@@ -47,7 +47,7 @@ export class BasicInfoPage {
         this.EmployeEmail = data[0].work_email;
         this.EmployeDepartment = data[0].department_name;
         this.EmployeeGender = data[0].gender;
-        console.log(this.EmployeName)
+        console.log(this.EmployeDepartment)
       }
     })
   }
