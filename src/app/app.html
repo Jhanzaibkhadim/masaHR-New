@@ -54,7 +54,7 @@
           <img [src]="p.img">
         </ion-col>
         <ion-col col-10>
-          <p>
+          <p class="text-cap-class">
             {{ p.title | translate }}
           </p>
         </ion-col>
@@ -72,12 +72,18 @@
         <ion-icon class="globeicon" name="globe"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        {{ 'LANGUAGE' | translate }}
+        <div *ngIf="logoutbtn" (click)="changeLanguage(1)">
+          English
+        </div>
+        <div *ngIf="logoutbtn == false" (click)="changeLanguage(2)">
+          {{ 'Arabic' | translate }}
+
+        </div>
       </ion-col>
     </ion-row>
 
     <!-- <div class="language">  </div> -->
-    <div [ngClass]=" logoutbtn == false ? 'lang-type':'language-type'">
+    <!-- <div [ngClass]=" logoutbtn == false ? 'lang-type':'language-type'">
       <div *ngIf="logoutbtn" (click)="changeLanguage(1)">
         English
       </div>
@@ -85,7 +91,7 @@
         {{ 'ARABIC' | translate }}
 
       </div>
-    </div>
+    </div> -->
   </ion-content>
 
 </ion-menu>
