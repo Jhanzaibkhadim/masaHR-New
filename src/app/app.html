@@ -20,8 +20,16 @@
           <span> {{ 'LOGOUT' | translate }}</span>
           <img style="width: 2em;" *ngIf="logoutbtn" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
 
-        </ion-col>
-      </ion-row>
+          <ion-row class="head-second">
+            <ion-col col-3>
+              <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
+
+            </ion-col>
+            <ion-col col-9 class="head-sec-inner">
+              <h4>{{username}}</h4>
+              <p>{{ 'SALES_MANAGER' | translate }}</p>
+            </ion-col>
+          </ion-row>
 
     </ion-navbar>
 

@@ -47,13 +47,13 @@
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked>{{ 'EMPLOYEE_NAME' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="name"></ion-input>
+        <ion-input type="text" [(ngModel)]="EmployeName"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked>{{ 'EMPLOYEE_CODE' | translate }}</ion-label>
-        <ion-input type="number" [(ngModel)]="empCode"></ion-input>
+        <ion-input type="number" [(ngModel)]="EmployeCode"></ion-input>
 
       </ion-item>
     </ion-row>
@@ -91,18 +91,18 @@
     </ion-row> -->
 
 
-    <ion-row class="radio-btn" radio-group [(ngModel)]="sexe">
+    <ion-row class="radio-btn" radio-group [(ngModel)]="EmployeeGender">
         
         <ion-col>
           <ion-item>
-            <ion-radio value="homme"></ion-radio>
+            <ion-radio value="male"></ion-radio>
 
             <ion-label>{{ 'MALE' | translate }}</ion-label>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
-            <ion-radio value="femme"></ion-radio>
+            <ion-radio value="female"></ion-radio>
 
            <ion-label>{{ 'FEMALE' | translate }}</ion-label>
           </ion-item>
@@ -112,19 +112,19 @@
       <ion-item>
            
            <ion-label stacked> {{ 'MOBILE_NUMBER' | translate }}</ion-label>
-        <ion-input type="tel" [(ngModel)]="name"></ion-input>
+        <ion-input type="tel" [(ngModel)]="EmployeNumber"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked> {{ 'EMAIL_ADDRESS' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="empCode"></ion-input>
+        <ion-input type="email" [(ngModel)]="EmployeEmail"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked> {{ 'DEPARTMENT' | translate }}</ion-label>
-        <ion-input type="number" [(ngModel)]="empCode"></ion-input>
+        <ion-input type="text" [(ngModel)]="EmployeDepartment"></ion-input>
       </ion-item>
     </ion-row>
   </ion-row>
