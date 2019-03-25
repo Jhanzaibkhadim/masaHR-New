@@ -140,4 +140,11 @@ page-basic-info {
 
         background: transparent !important;
     }
+
+    .departList{
+        width: 100%;
+        background: #fff;
+        height: 40vw;
+        overflow-y: scroll;
+    }
 }

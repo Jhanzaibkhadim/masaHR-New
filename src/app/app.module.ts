@@ -33,7 +33,9 @@ import { GeneralProvider } from '../providers/general/general';
 import {   Headers, RequestOptions } from '@angular/http';
 import { ApiProvider } from '../providers/api/api';
 import { IonicStorageModule } from '@ionic/storage';
+ 
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
 // import { HTTP } from "@ionic-native/http";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -63,6 +65,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    Ng2SearchPipeModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({

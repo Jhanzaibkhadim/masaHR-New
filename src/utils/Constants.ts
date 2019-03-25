@@ -7,4 +7,10 @@ export class Constants {
     static GET_BASIC_INFO='profile_read?employee_id='
 
     static SAVE_USER_INFO_KEY = 'save_info'
+
+    static GET_DEPARTMENTS = 'departments'
+
+    static GET_JOBS = 'jobs/'
+
+    static UPDATE_PROFILE= 'profile_update'
 }
