@@ -13,4 +13,12 @@ export class Constants {
     static GET_JOBS = 'jobs/'
 
     static UPDATE_PROFILE= 'profile_update'
+
+    static GET_BANK_LIST = 'bank_list?employee_id='
+
+    static READ_BANKS = 'banks'
+
+    static CREATE_BANK ='bank_insert'
+
+    static GET_PARTNER_ID = 'get_partner_id?employee_id='
 }

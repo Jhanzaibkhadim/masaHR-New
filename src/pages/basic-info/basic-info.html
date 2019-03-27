@@ -48,14 +48,14 @@
       <ion-col col-6  >
 
       </ion-col>
-      <ion-col col-3  >
-        <button ion-button [hidden]="InfoIsEdit" (click)="EditInfo()">Edit </button>
-        <button ion-button [hidden]="!InfoIsEdit" color="danger" (click)="cancel()">Cancel </button>
-
-
+      <ion-col col-6 style="    text-align: end;" *ngIf="!InfoIsEdit">
+        <button ion-button   (click)="EditInfo()">{{  'EDIT' | translate }} </button>
       </ion-col>
-      <ion-col col-3  >
-        <button ion-button color="secondary" (click)="updateProfile()">Update</button>
+      <ion-col col-3  *ngIf="InfoIsEdit">
+          <button ion-button   color="danger" (click)="cancel()">{{  'CANCEL' | translate }} </button>
+        </ion-col>
+      <ion-col col-3  *ngIf="InfoIsEdit">
+        <button ion-button color="secondary"   (click)="updateProfile()">{{  'UPDATE' | translate }}</button>
       </ion-col>
     </ion-row>
     <ion-row class="inputBox">

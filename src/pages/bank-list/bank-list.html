@@ -1,0 +1,63 @@
+<ion-header>
+
+    <ion-navbar>
+  
+      <ion-row>
+        <ion-col no-padding col-2>
+          <button ion-button menuToggle>
+            <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+            <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+  
+          </button>
+        </ion-col>
+        <ion-col no-padding col-8>
+          <ion-title>{{ 'BASIC_INFORMATION' | translate }} </ion-title>
+  
+        </ion-col>
+        <ion-col no-padding style="text-align:center" col-2>
+          <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
+  
+        </ion-col>
+      </ion-row>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="cont-bg">
+    <div class="cont-head">
+      <ion-searchbar animated placeholder=" {{ 'SEARCH' | translate }}"></ion-searchbar>
+      
+    </div>
+  
+    <div class="cont-body">
+  
+        <ion-row style="width:100%;margin-top:5%;margin-bottom: 5%;">
+            <button ion-button round class="saveBank" (click)="addBank()">{{ 'ADD_BANK' | translate }}</button>
+        </ion-row>
+
+      <ion-row class="boxes" >
+        <ion-col col-2>
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/inbox@2x.png">
+        </ion-col>
+        <ion-col>
+          <p> {{ 'BANK_ACCOUNTS' | translate }}</p>
+  
+        </ion-col>
+      </ion-row>
+
+      
+        
+  
+  
+      
+      
+  
+  
+  
+  
+  
+  
+    </div>
+  
+  </ion-content> 

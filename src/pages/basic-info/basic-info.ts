@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { Global } from '../../utils/Global';
 import { Constants } from '../../utils/Constants';
 import { ApiProvider } from '../../providers/api/api';
@@ -23,7 +23,7 @@ export class BasicInfoPage {
   EmployeeJobTitle:any;
   EmployeeJobID:any;
   // (ionChange)="checktype()"
-  constructor(public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
+  constructor(public loadingCtrl:LoadingController, public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
 
   }
 
@@ -43,7 +43,13 @@ export class BasicInfoPage {
   }
   departmentsList:any=[];
   getDepartments(){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    loading.present();
     this.api.getRequest(`${Constants.GET_DEPARTMENTS}`).then ((data:any) =>{
+      loading.dismiss()
       if(data !== null && data !== undefined){
         console.log(data)
         this.departmentsList=data;
@@ -55,19 +61,39 @@ export class BasicInfoPage {
 
   jobsList:any=[];
   getJOBS(){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    loading.present();
     this.api.getRequest(`${Constants.GET_JOBS}`).then ((data:any) =>{
       console.log(data)
-
+      loading.dismiss();
       if(data !== null && data !== undefined){
-        console.log(data)
-        this.jobsList=data;
+        var list=[];
+        list.push(data);
+        console.log(list.length)
+        if(list.length>1){
+
+          this.jobsList=data
+        }
+        else if(list.length == 1){
+          
+          this.jobsList.push(data)
+        }
     console.log(this.jobsList)
 
       }
     });
   }
   getBasicInfo(){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    loading.present();
     this.api.getRequest(`${Constants.GET_BASIC_INFO}`+this.employee_id).then ((data:any) =>{
+      loading.dismiss();
       if(data[0] !== null && data[0] !== undefined){
       console.log(data,'basic infoooo');
 
@@ -120,13 +146,21 @@ export class BasicInfoPage {
   selectJob(objec){
     this.EmployeeJobID = objec.id;
     this.EmployeeJobTitle = objec.name;
+    this.isJobShow = false;
+
   }
 
 
   updateProfile(){
-    if(this.EmployeCode == ' ' || this.EmployeeJobTitle == ' ' || this.EmployeName == ' ' || this.EmployeNumber == ' ' || this.EmployeDepartment == ' ' || this.EmployeEmail == ' ' || this.EmployeeGender == ' ' ){
+    if(this.EmployeCode == '' || this.EmployeeJobTitle == '' || this.EmployeName == '' || this.EmployeNumber == '' || this.EmployeDepartment == '' || this.EmployeEmail == '' || this.EmployeeGender == '' ){
       this.displaySimpleToast("Please Fill all the Fields")
     }else{
+      let loading = this.loadingCtrl.create({
+        content: 'Please wait...'
+      });
+    
+      loading.present();
+    
       this.InfoIsEdit = false;
 
       var temp ={
@@ -147,8 +181,9 @@ export class BasicInfoPage {
       console.log(temp)
       this.api.postRequest(`${Constants.UPDATE_PROFILE}`,temp).then ((resp:any) =>{
         console.log(resp)
-        if(resp[0] !== null && resp[0] !== undefined){
-
+        loading.dismiss();
+        if( resp.success == 0){
+          this.displaySimpleToast("Profile Updated SuccessFully")
         }
         })
 

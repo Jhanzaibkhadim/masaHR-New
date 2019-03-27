@@ -47,9 +47,9 @@ export class MyApp {
     this.initializeApp();
      
       // this language will be used as a fallback when a translation isn't found in the current language
-      this.translate.setDefaultLang('ar');
+      this.translate.setDefaultLang('en');
      
-      this.changeLanguage(2)
+      this.changeLanguage(1)
       
     
     this.pages = [

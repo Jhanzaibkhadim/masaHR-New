@@ -1,4 +1,4 @@
-page-basic-info {
+page-add-bank {
 
     .headerr{
         background: rgb(56, 128, 228) !important;
@@ -146,5 +146,10 @@ page-basic-info {
         background: #fff;
         height: 40vw;
         overflow-y: scroll;
+    }
+
+    .saveBank{
+        width:80%;
+        margin:auto;
     }
 }
