@@ -49,7 +49,7 @@ export class BankListPage {
   }
 
   addBank(){
-    this.navCtrl.push(AddBankPage)
+    this.navCtrl.push(AddBankPage,true)
   }
 
 

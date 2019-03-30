@@ -16,6 +16,7 @@
     "ACTIVE":"نشيط",
     "DEACTIVE":"عطل",
     "NO_BANK":"لم يتم العثور على البنك",
+    "NO_RECORD":"لا يوجد سجلات",
     "INVOICES":"الفواتير",
     "EXPENSES":"نفقات",
     "TIME_TRACING":" تتبع الوقت",

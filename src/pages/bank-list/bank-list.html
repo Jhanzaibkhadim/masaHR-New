@@ -1,16 +1,16 @@
 <ion-header>
 
-    <ion-navbar>
+    <!-- <ion-navbar> -->
   
-      <ion-row>
+      <ion-row class="head-row">
         <ion-col no-padding col-2>
-          <button ion-button menuToggle>
-            <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-            <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+          <!-- <button ion-button menuToggle> -->
+            <!-- <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png"> -->
+        <ion-icon name="arrow-back" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
   
-          </button>
+          <!-- </button> -->
         </ion-col>
-        <ion-col no-padding col-8>
+        <ion-col style="    margin: auto;" no-padding col-8>
           <ion-title>{{ 'BASIC_INFORMATION' | translate }} </ion-title>
   
         </ion-col>
@@ -19,7 +19,7 @@
   
         </ion-col>
       </ion-row>
-    </ion-navbar>
+    <!-- </ion-navbar> -->
   
   </ion-header>
   
@@ -46,8 +46,8 @@
         </ion-col>
       </ion-row>
 
-      <ion-row class="boxes" style="    justify-content: center;" *ngIf="bankList.length ==0">
-        No bank found !
+      <ion-row class="boxes" style=" justify-content: center;" *ngIf="bankList.length ==0">
+        {{ 'NO_RECORD' | translate }} !
       </ion-row>
       
         

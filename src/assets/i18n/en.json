@@ -19,6 +19,7 @@
     "STATUS":"Status",
     "ACTIVE":" Active",
     "DEACTIVE":"Deactive",
+    "NO_RECORD":"No record found  ",
     "BASIC_INFO":" Basic Information",
     "LOREM_ISPUM":" lorem ispummm",
     "JOB_TERMINATION":"Job Termination",

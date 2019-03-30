@@ -16,9 +16,10 @@
   <ion-row class="top">
     <ion-row style="width:100%">
       <ion-col no-padding col-2>
-        <button class="menu-btn" ion-button menuToggle float-left>
+        <!-- <button class="menu-btn" ion-button menuToggle float-left>
           <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-        </button>
+        </button> -->
+        <ion-icon name="arrow-back" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
       </ion-col>
       <ion-col class="head-title" no-padding col-8>
         <ion-row>
@@ -44,26 +45,27 @@
   </ion-row>
 
   <ion-row class="details-row">
-    <!-- <ion-row style="width: 100%;">
+
+    <ion-row style="width: 100%;" *ngIf="hideEditbtn == false">
       <ion-col col-6>
 
       </ion-col>
-      <ion-col col-6 style="    text-align: end;" *ngIf="!InfoIsEdit">
-        <button ion-button (click)="EditInfo()">{{  'EDIT' | translate }} </button>
+      <ion-col col-6 style=" text-align: end;" *ngIf="!BankIsEdit">
+        <button ion-button (click)="EditBank()">{{  'EDIT' | translate }} </button>
       </ion-col>
-      <ion-col col-3 *ngIf="InfoIsEdit">
+      <ion-col col-3 *ngIf="BankIsEdit">
         <button ion-button color="danger" (click)="cancel()">{{  'CANCEL' | translate }} </button>
       </ion-col>
-      <ion-col col-3 *ngIf="InfoIsEdit">
-        <button ion-button color="secondary" (click)="updateProfile()">{{  'UPDATE' | translate }}</button>
+      <ion-col col-3 *ngIf="BankIsEdit">
+        <button ion-button color="secondary" (click)="updateBank()">{{  'UPDATE' | translate }}</button>
       </ion-col>
-    </ion-row> -->
+    </ion-row>
 
 
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked> {{ 'BANK_NAME' | translate }}</ion-label>
-        <ion-input (input)="searchbanks()" type="text" [(ngModel)]="bankName">
+        <ion-input [disabled]="InfoIsEdit" (input)="searchbanks()" type="text" [(ngModel)]="bankName">
         </ion-input>
       </ion-item>
 
@@ -78,7 +80,7 @@
       <ion-item>
 
         <ion-label stacked> {{ 'ACCOUNT_NO' | translate }}</ion-label>
-        <ion-input type="tel" [(ngModel)]="accountNumber"></ion-input>
+        <ion-input [disabled]="InfoIsEdit" type="tel" [(ngModel)]="accountNumber"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row class="type">
@@ -92,23 +94,23 @@
 
       <ion-col>
         <ion-item>
-          <ion-radio   value="true"></ion-radio>
+          <ion-radio [disabled]="InfoIsEdit" value="true"></ion-radio>
 
           <ion-label>{{ 'ACTIVE' | translate }}</ion-label>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
-          <ion-radio   value="false"></ion-radio>
+          <ion-radio [disabled]="InfoIsEdit" value="false"></ion-radio>
 
           <ion-label>{{ 'DEACTIVE' | translate }}</ion-label>
         </ion-item>
       </ion-col>
     </ion-row>
 
-<ion-row style="width:100%">
-  <button ion-button round class="saveBank" (click)="createBank()">{{ 'SAVE' | translate }}</button>
-</ion-row>
+    <ion-row style="width:100%">
+      <button ion-button round class="saveBank" *ngIf="hideEditbtn" (click)="createBank()">{{ 'SAVE' | translate }}</button>
+    </ion-row>
 
 
   </ion-row>

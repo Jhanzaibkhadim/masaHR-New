@@ -13,15 +13,21 @@ export class AddBankPage {
   EmployeName: any;
   employee_id: any;
   banksList: any=[];
-  bankName: string;
+  bankName: string='';
   showBank: boolean;
-  bankID: any;
-  bankStatus: string;
-  accountNumber: string;
-  partner_id: any;
-
+  bankID: any='';
+  bankStatus: string='';
+  accountNumber: string='';
+  partner_id: any='';
+  BankIsEdit:boolean = false;
+  hideEditbtn:boolean = false
   constructor(public loadingCtrl:LoadingController, public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
 
+    console.log(this.navParams.data)
+    this.BankIsEdit = this.navParams.data
+    if(this.navParams.data == true){
+      this.hideEditbtn = true;
+    }
   }
 
 
@@ -35,7 +41,7 @@ export class AddBankPage {
  
       }
     })
-    console.log('ionViewDidLoad BasicInfoPage');
+    console.log('ionViewDidLoad addbank');
     this.readBanks();
     
   }
@@ -100,7 +106,7 @@ export class AddBankPage {
       });
     
       var data ={
-        // employee_id:this.employee_id,
+        employee_id:this.employee_id,
         bank_id:this.bankID,
         // bank_name:this.bankName,
         active:this.bankStatus,
@@ -115,14 +121,76 @@ export class AddBankPage {
   
         if(data !== null && data !== undefined){
           console.log(data)
-          this.banksList=data;
-          console.log(this.banksList)
+          this.displaySimpleToast("Bank added");
+          this.navCtrl.pop();
+
+          // this.banksList=data;
+          // console.log(this.banksList)
   
         }
       });
     }
     else{
-      alert("Please provide all details")
+      this.displaySimpleToast("Please provide all details")
     }
+  }
+
+
+
+
+   // Edit profile /update
+
+   cancel() {
+    this.BankIsEdit = false;
+  }
+  
+  EditBank() {
+    this.BankIsEdit = true;
+  }
+  updateBank() {
+    if(this.bankID == '' || this.accountNumber == '' || this.bankStatus == ''){
+      
+       this.displaySimpleToast("Please Fill all the Fields")
+    } else {
+      let loading = this.loadingCtrl.create({
+        content: 'Please wait...'
+      });
+
+      loading.present();
+
+      this.BankIsEdit = false;
+
+      var temp = 
+        {
+          // employee_id:this.employee_id,
+          bank_id:this.bankID,
+          // bank_name:this.bankName,
+          active:this.bankStatus,
+          partner_id: this.partner_id,
+          acc_number:this.accountNumber
+        }
+
+       
+      console.log(temp)
+      this.api.postRequest(`${Constants.UPDATE_BANK}`, temp).then((resp: any) => {
+        console.log(resp)
+        loading.dismiss();
+        if (resp.success == 0) {
+          this.displaySimpleToast("Bank Updated SuccessFully");
+          this.navCtrl.pop();
+        }
+      })
+
+    }
+  }
+
+  displaySimpleToast(msg) {
+
+    var toast = this.toastCtrl.create({
+      message: msg,
+      duration: 2000,
+      position: 'bottom',
+    })
+    toast.present();
   }
 }
