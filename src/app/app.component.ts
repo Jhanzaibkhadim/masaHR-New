@@ -69,18 +69,14 @@ export class MyApp {
     this.getLocalData()
   }
 
-<<<<<<< HEAD
-
-=======
-  getLocalData(){
-    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res)=>{
-      console.log(res,"ye hey local")
-      if(res !== null && res !== undefined){
+  getLocalData() {
+    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+      console.log(res, "ye hey local")
+      if (res !== null && res !== undefined) {
         this.username = res.name;
       }
     })
   }
->>>>>>> 710f00b582927fb8513e1cfa46316872bded4fdc
   initializeApp() {
 
     this.platform.ready().then(() => {
