@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { BasicInfoPage } from '../basic-info/basic-info';
+import { BankListPage } from '../bank-list/bank-list';
 
 /**
  * Generated class for the BasicInfoListPage page.
@@ -22,4 +24,10 @@ export class BasicInfoListPage {
     console.log('ionViewDidLoad BasicInfoListPage');
   }
 
+  gotoBank(){
+    this.navCtrl.push(BankListPage)
+  }
+  gotoPersonalInfo(){
+    this.navCtrl.push(BasicInfoPage)
+  }
 }

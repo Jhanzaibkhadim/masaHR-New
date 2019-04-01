@@ -5,6 +5,7 @@ import { Global } from '../../utils/Global';
 import { Constants } from '../../utils/Constants';
 import { ApiProvider } from '../../providers/api/api';
 import { Storage } from '@ionic/storage';
+import { BasicInfoListPage } from '../basic-info-list/basic-info-list';
 
 /**
  * Generated class for the DashboardPage page.
@@ -37,6 +38,6 @@ export class DashboardPage {
 
 
   gotoBasicInformation(){
-    this.navCtrl.push(BasicInfoPage)
+    this.navCtrl.setRoot(BasicInfoListPage)
   }
 }

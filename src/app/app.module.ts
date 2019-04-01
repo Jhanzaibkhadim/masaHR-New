@@ -33,7 +33,11 @@ import { GeneralProvider } from '../providers/general/general';
 import {   Headers, RequestOptions } from '@angular/http';
 import { ApiProvider } from '../providers/api/api';
 import { IonicStorageModule } from '@ionic/storage';
+ 
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { BankListPage } from '../pages/bank-list/bank-list';
+import { AddBankPage } from '../pages/add-bank/add-bank';
 // import { HTTP } from "@ionic-native/http";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -57,12 +61,15 @@ export function createTranslateLoader(http: HttpClient) {
     TabsPage,
     LeavesPage,
     LeaveDetailsPage,
-    AddLeavePage
+    AddLeavePage,
+    BankListPage,
+    AddBankPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    Ng2SearchPipeModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
@@ -92,7 +99,9 @@ export function createTranslateLoader(http: HttpClient) {
     TabsPage,
     LeavesPage,
     LeaveDetailsPage,
-    AddLeavePage
+    AddLeavePage,
+    BankListPage,
+    AddBankPage
 
 
   ],

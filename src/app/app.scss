@@ -19,28 +19,50 @@
 }
 
 [dir=rtl] {
+
     // *:not(.icon):not(ion-icon) {
     //     font-family: Tajawal;
     // }
     * {
         font-family: Tajawal;
     }
+
     .searchbar-input {
         border-radius: 25px !important;
         padding-left: 0px !important;
         text-align: right;
     }
+
     .searchbar-search-icon {
         right: 16px;
     }
+
     .searchbar-clear-icon {
         left: 10px !important;
         right: auto;
+
+        .back-button {
+            font-family: inherit !important;
+        }
     }
+
+    // *{
+    // font-family: Tajawal;
+    // }
+    .back-button {
+        font-family: inherit !important;
+    }
+
+    .tab-button-icon {
+        font-family: "Ionicons" !important;
+    }
+
     ion-icon {
         font-family: "Ionicons" !important;
     }
-} // *{
+}
+
+// *{
 // font-family: Tajawal;
 // }
 .tab-button-icon {

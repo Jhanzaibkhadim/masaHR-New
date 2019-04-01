@@ -1,4 +1,4 @@
-page-basic-info {
+page-add-bank {
 
     .headerr{
         background: rgb(56, 128, 228) !important;
@@ -8,6 +8,17 @@ page-basic-info {
     .menu-btn{
         background: transparent !important;
         box-shadow: none !important;
+    }
+    .head-row{
+        background: #337de7;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .back-iconn{
+        font-family: "ionicons";
+        color: white;
+        font-size: 2em;
+        padding: 8px;
     }
     .top{
         width: 100%;
@@ -146,5 +157,10 @@ page-basic-info {
         background: #fff;
         height: 40vw;
         overflow-y: scroll;
+    }
+
+    .saveBank{
+        width:80%;
+        margin:auto;
     }
 }

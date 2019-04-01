@@ -21,6 +21,7 @@ export class ApiProvider {
     return new Promise(resolve => {
 
       var resp;
+      console.log(Constants.BASE_URL +url)
       this.http.get(Constants.BASE_URL + url)
         .subscribe((res) => {
           console.log(res)
