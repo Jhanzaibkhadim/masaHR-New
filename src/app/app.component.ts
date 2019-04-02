@@ -51,7 +51,7 @@ export class MyApp {
      
       this.changeLanguage(2)
       
-    
+      this.getLocalData()
     this.pages = [
       { title: 'DASHBOARD', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
       { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
@@ -66,7 +66,7 @@ export class MyApp {
       { title: 'ABOUT', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
-    this.getLocalData()
+    
   }
 
   getLocalData(){

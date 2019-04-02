@@ -31,7 +31,7 @@
     "DASHBOARD":"Dashboard",
     "SALES_MANAGER":"Sales Manager",
 
-    "OVERVIEW":"OVERVIEW",
+    "OVERVIEW":"Overview",
     "ATTENDANCE":"Attendance",
     "ENTRY_TIME":"Entry Time",
     "EXIT_TIME":"Exit Time",
@@ -44,7 +44,7 @@
     "EVALUATION":"Evaluation",
     "SUPPORT":"Support",
 
-    "BASIC_INFORMATION":"BASIC INFORMATION",
+    "BASIC_INFORMATION":"Basic Information",
     "PERSONAL_INFORMATION":"Personal Information",
     "SEX":"Sex",
     "EMPLOYEE_NAME":"Employee Name",
@@ -63,7 +63,7 @@
     "QUALIFICATION":"Qualification",
     "CURRENT_EMPLOYEE_SKILLS":"Current employee skills",
     "LOST_EMPLOYEE_SKILLS":"Lost employee skills",
-    "SALARIES_AND_INCENTIVES":"SALARIES AND INCENTIVES",
+    "SALARIES_AND_INCENTIVES":"Salaries And Incentives",
     "MONTHLY_SALARY":"Monthly salary details",
     "ADDITIONAL_WORK":"Additional work",
     "ANNUAL_BONUS":"Annual bonuses and promotions",
