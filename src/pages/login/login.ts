@@ -17,7 +17,7 @@ export class LoginPage {
 
   userName: any;
   password: any;
-  constructor(public localStore:Storage, public toastCtrl: ToastController, public api: ApiProvider , public navCtrl: NavController, public navParams: NavParams, public translationProvider: GeneralProvider) {
+  constructor(public localStore: Storage, public toastCtrl: ToastController, public api: ApiProvider, public navCtrl: NavController, public navParams: NavParams, public translationProvider: GeneralProvider) {
   }
 
 
@@ -51,22 +51,22 @@ export class LoginPage {
         this.displaySimpleToast("Please Enter your Password");
 
       } else {
-        this.api.postRequest(`${Constants.LOGIN}`, data).then((data:any) => {
+        this.api.postRequest(`${Constants.LOGIN}`, data).then((data: any) => {
           console.log(data)
-          if(data.success ==  0 ){
-            this.localStore.set(Constants.SAVE_USER_INFO_KEY,data);
+          if (data.success == 0) {
+            this.localStore.set(Constants.SAVE_USER_INFO_KEY, data);
 
             this.navCtrl.setRoot(TabsPage);
-            
+
           }
-          else{
+          else {
             this.displaySimpleToast("Please Try again")
           }
-         
+
         })
       }
 
   }
 
-   
+
 }
