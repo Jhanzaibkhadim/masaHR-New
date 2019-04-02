@@ -105,5 +105,7 @@
     "PENDING": "تحت الاجراء",
     "APPROVED": "تم التصديق",
     "DECEMBER": "ديسمبر",
+
+    "ADD_QUALIFICATION":"إضافة التأهيل"
     
 }

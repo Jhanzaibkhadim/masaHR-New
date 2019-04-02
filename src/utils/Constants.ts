@@ -27,4 +27,34 @@ export class Constants {
     static GET_PARTNER_ID = 'get_partner_id?employee_id='
 
     static UPDATE_BANK = 'bank_update'
+
+    // Employee Skill List
+
+    static LOST_EMPLOYEE_SKILL_LIST = 'lskill_list?employee_id='
+
+    static CURRENT_EMPLOYEE_SKILL_LIST = 'cskill_list?employee_id='
+
+    // Employee Qualification read , update 
+
+    static EMPLOYEE_QUALIFICATION_LIST = 'qualification_list?employee_id='
+
+    static EMPLOYEE_QUALIFICATION_INFO = 'qualification_info?employee_id=1&qualification_id=3'
+
+    static UPDATE_EMPLOYEE_QUALIFICATION = 'qualification_update'
+
+    static INSERT_EMPLOYEE_QUALIFICATION = 'qualification_insert'
+
+    static READ_DEGREES_LIST = 'degrees/'
+
+    static READ_SPECIALIST_LIST = 'specialists/'
+
+    static READ_JOB_CATEGORY_LIST = 'job_category/'
+
+    
+
+
+
+
+
+
 }

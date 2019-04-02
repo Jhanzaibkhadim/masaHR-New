@@ -20,16 +20,7 @@
           <span> {{ 'LOGOUT' | translate }}</span>
           <img style="width: 2em;" *ngIf="logoutbtn" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
 
-          <ion-row class="head-second">
-            <ion-col col-3>
-              <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
-
-            </ion-col>
-            <ion-col col-9 class="head-sec-inner">
-              <h4>{{username}}</h4>
-              <p>{{ 'SALES_MANAGER' | translate }}</p>
-            </ion-col>
-          </ion-row>
+         
         </ion-col>
       </ion-row>
 
@@ -41,10 +32,20 @@
 
       </ion-col>
       <ion-col col-9 class="head-sec-inner">
-        <h4>Mohammad</h4>
+        <h4>{{username}}</h4>
         <p>{{ 'SALES_MANAGER' | translate }}</p>
       </ion-col>
     </ion-row>
+    <!-- <ion-row class="head-second">
+      <ion-col col-3>
+        <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
+
+      </ion-col>
+      <ion-col col-9 class="head-sec-inner">
+        <h4>Mohammad</h4>
+        <p>{{ 'SALES_MANAGER' | translate }}</p>
+      </ion-col>
+    </ion-row> -->
     <!-- <div class="head-second">
       
       <img class="person-img" src="/assets/imgs/Dashboard/person.jpg" />
@@ -58,7 +59,6 @@
 
   <ion-content class="menu-list">
     <!-- <ion-list> -->
-<<<<<<< HEAD
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           <ion-row>
               <ion-col col-2>
@@ -72,21 +72,6 @@
             </ion-row>
         
         <!-- <img [src]="p.img">
-=======
-    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-      <ion-row>
-        <ion-col col-2>
-          <img [src]="p.img">
-        </ion-col>
-        <ion-col col-10>
-          <p class="text-cap-class">
-            {{ p.title | translate }}
-          </p>
-        </ion-col>
-      </ion-row>
-
-      <!-- <img [src]="p.img">
->>>>>>> 64d65d0e79337c04b78d460b393710697fa221b5
         <p>
           {{p.title}}
         </p> -->
