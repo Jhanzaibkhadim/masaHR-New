@@ -52,22 +52,22 @@ export class LoginPage {
         this.displaySimpleToast("Please Enter your Password");
 
       } else {
-        this.api.postRequest(`${Constants.LOGIN}`, data).then((data:any) => {
+        this.api.postRequest(`${Constants.LOGIN}`, data).then((data: any) => {
           console.log(data)
-          if(data.success ==  0 ){
-            this.localStore.set(Constants.SAVE_USER_INFO_KEY,data);
+          if (data.success == 0) {
+            this.localStore.set(Constants.SAVE_USER_INFO_KEY, data);
 
             this.navCtrl.setRoot(TabsPage);
-            
+
           }
-          else{
+          else {
             this.displaySimpleToast("Please Try again")
           }
-         
+
         })
       }
 
   }
 
-   
+
 }

@@ -1,4 +1,3 @@
- 
 <!-- <ion-header>
 
   <ion-navbar>
@@ -10,7 +9,7 @@
 
 <ion-content class="bg" padding>
   <ion-row class="text">
-      {{ 'LOGIN' | translate }}
+    {{ 'LOGIN' | translate }}
   </ion-row>
   <ion-row class="logo">
     <img src="assets/imgs/Login/splash_logo@3x@2x.png" />
@@ -19,40 +18,41 @@
   <ion-row class="input-row">
     <ion-col class="icon-col" no-padding col-2>
       <img class="icons" src="assets/imgs/Login/Vector- Smart-Object1@2x.png">
-     
     </ion-col>
     <ion-col no-padding col-10>
       <ion-item class="inputBox">
-        
-        <ion-input [ngClass]="this.translationProvider.direction =='right'?'rightside':'leftside'" placeholder="{{  'USERNAME' | translate }}" [(ngModel)]="userName" type="text"></ion-input>
+
+        <ion-input [ngClass]="this.translationProvider.direction =='right'?'rightside':'leftside'" placeholder="{{  'USERNAME' | translate }}"
+          [(ngModel)]="userName" type="text"></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
   <ion-row class="input-row">
     <ion-col class="icon-col" no-padding col-2>
-        <img class="icons2" src="assets/imgs/Login/Vector Smart Object2.png">
+      <img class="icons2" src="assets/imgs/Login/Vector Smart Object2.png">
     </ion-col>
     <ion-col no-padding col-10>
       <ion-item class="inputBox">
-        <ion-input [ngClass]="this.translationProvider.direction =='right'?'rightside':'leftside'" [(ngModel)]="password" placeholder="{{  'PASSWORD' | translate }}" type="password"></ion-input>
+        <ion-input [ngClass]="this.translationProvider.direction =='right'?'rightside':'leftside'" [(ngModel)]="password"
+          placeholder="{{  'PASSWORD' | translate }}" type="password"></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
   <ion-row class="btn-row">
-    <ion-col class="forgot" col-6 >
+    <ion-col class="forgot" col-6>
       <ion-row>
-           {{ 'FORGOT_PASSWORD' | translate }}
+        {{ 'FORGOT_PASSWORD' | translate }}
       </ion-row>
     </ion-col>
-    <ion-col col-6 class="button-col" >
-        <ion-row class="button-row">
-            <button ion-button class="btn" (click)="login()" >  {{ 'LOGIN_BTN' | translate }}</button>
-        </ion-row>
+    <ion-col col-6 class="button-col">
+      <ion-row class="button-row">
+        <button ion-button class="btn" (click)="login()"> {{ 'LOGIN_BTN' | translate }}</button>
+      </ion-row>
     </ion-col>
   </ion-row>
 </ion-content>
 <ion-footer>
   <ion-row class="footerText">
-     {{ 'NO_ACCOUNT' | translate }} <span class="register"> {{ 'REGISTER_HERE' | translate }}</span>
+    {{ 'NO_ACCOUNT' | translate }} <span class="register"> {{ 'REGISTER_HERE' | translate }}</span>
   </ion-row>
 </ion-footer>
