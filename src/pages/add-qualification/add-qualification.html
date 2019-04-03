@@ -92,21 +92,22 @@
     </ion-row>
 
     <ion-row class="inputBox">
-        <ion-label stacked>Score</ion-label>
+        <ion-label stacked> {{ 'SCORE' | translate }}</ion-label>
         <ion-select [(ngModel)]="status">
-          <ion-option value="Draft">excellent   </ion-option>
-          <ion-option value="Validated"> good  </ion-option>
-          <ion-option value="Draft">  very good </ion-option>
-          <ion-option value="Validated"> acceptable </ion-option>
+           
+          <ion-option value="ex">{{ 'EXCELLENT' | translate }}   </ion-option>
+          <ion-option value="vgood">  {{ 'VERY_GOOD' | translate }}  </ion-option>
+          <ion-option value="good">     {{ 'GOOD' | translate }} </ion-option>
+          <ion-option value="accept"> {{ 'ACCEPTABLE' | translate }} </ion-option>
   
         </ion-select>
       </ion-row>
 
     <ion-row class="inputBox">
-      <ion-label stacked>Status</ion-label>
+      <ion-label stacked>{{'STATUS' | translate}}</ion-label>
       <ion-select [(ngModel)]="status">
-        <ion-option value="Draft">Draft</ion-option>
-        <ion-option value="Validated">Validated</ion-option>
+        <ion-option value="Draft">{{ 'DRAFT' | translate }} </ion-option>
+        <ion-option value="Validated">{{ 'VALIDATED' | translate }} </ion-option>
 
       </ion-select>
     </ion-row>

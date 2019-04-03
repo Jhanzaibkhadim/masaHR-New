@@ -116,8 +116,19 @@
     "APPROVED":"Approved",
      "DECEMBER":"DECEMBER",
 
-    "ADD_QUALIFICATION":" Add Qualification"
+    "ADD_QUALIFICATION":" Add Qualification",
+    "QUALIFICATION_YEAR":" Qualification Year",
+    "UNIVERSITY_NAME":"University Name ",
+    "SPECIALIZATION":" Specialization",
+    "SCORE":"Score",
+    "QUALIFICATION_TYPE":" Qualification Type",
 
+    "EXCELLENT":" Excellent",
+    "GOOD":" Good",
+    "VERY_GOOD":" Very Good  ",
+    "ACCEPTABLE":" Acceptable",
+    "DRAFT":"  Draft",
+    "VALIDATED":" Validated "
 
     
 

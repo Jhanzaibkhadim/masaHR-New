@@ -106,6 +106,19 @@
     "APPROVED": "تم التصديق",
     "DECEMBER": "ديسمبر",
 
-    "ADD_QUALIFICATION":"إضافة التأهيل"
+    "ADD_QUALIFICATION":"إضافة التأهيل",
+    "QUALIFICATION_YEAR":"سنة التأهيل",
+    "UNIVERSITY_NAME":"اسم الجامعة",
+    "SPECIALIZATION":"تخصص",
+    "SCORE":"أحرز هدفا",
+    "QUALIFICATION_TYPE":"نوع التأهيل",
+
+    "EXCELLENT":"ممتاز",
+    "GOOD":" حسن",
+    "VERY_GOOD":"جيد جدا",
+    "ACCEPTABLE":" مقبول",
+    "DRAFT":" مشروع",
+    "VALIDATED":"التحقق من صحة"
+
     
 }
