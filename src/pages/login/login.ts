@@ -39,8 +39,8 @@ export class LoginPage {
   }
   login() {
     var data = {
-      "emp_code": this.userName,
-      "password": this.password
+      emp_code: this.userName,
+      password: this.password
     }
 
     if (this.userName == undefined || this.userName.trim() == "") {
