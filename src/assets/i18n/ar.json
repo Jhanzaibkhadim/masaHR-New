@@ -105,6 +105,7 @@
     "PENDING": "تحت الاجراء",
     "APPROVED": "تم التصديق",
     "DECEMBER": "ديسمبر",
-    "USERNAME": "اسم المستخدم",
-    "PASSWORD": "كلمه السر"
+
+    "ADD_QUALIFICATION":"إضافة التأهيل"
+    
 }

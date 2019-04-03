@@ -17,7 +17,8 @@ export class LoginPage {
 
   userName: any;
   password: any;
-  constructor(public localStore: Storage, public toastCtrl: ToastController, public api: ApiProvider, public navCtrl: NavController, public navParams: NavParams, public translationProvider: GeneralProvider) {
+  constructor(public localStore:Storage, public toastCtrl: ToastController, public api: ApiProvider , public navCtrl: NavController, public navParams: NavParams, public translationProvider: GeneralProvider) {
+  console.log(this.translationProvider.direction)
   }
 
 

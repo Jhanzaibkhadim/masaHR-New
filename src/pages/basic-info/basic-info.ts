@@ -70,17 +70,17 @@ export class BasicInfoPage {
       console.log(data)
       loading.dismiss();
       if (data !== null && data !== undefined) {
-        var list = [];
-        list.push(data);
-        console.log(list.length)
-        if (list.length > 1) {
+        // var list = [];
+        // list.push(data);
+        // console.log(list.length)
+        // if (list.length > 1) {
 
           this.jobsList = data
-        }
-        else if (list.length == 1) {
+        // }
+        // else if (list.length == 1) {
 
-          this.jobsList.push(data)
-        }
+        //   this.jobsList.push(data)
+        // }
         console.log(this.jobsList)
 
       }

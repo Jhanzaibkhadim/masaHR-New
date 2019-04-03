@@ -1,0 +1,123 @@
+<ion-content no-padding class="content-back">
+  <ion-row class="top">
+    <ion-row style="width:100%">
+      <ion-col no-padding col-2>
+
+        <ion-icon name="arrow-back" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <ion-col class="head-title" no-padding col-8>
+        <ion-row>
+          {{ 'QUALIFICATION' | translate }}
+        </ion-row>
+      </ion-col>
+      <ion-col no-padding col-2>
+
+      </ion-col>
+    </ion-row>
+
+
+  </ion-row>
+  <ion-row class="info">
+    <ion-col class="imagee" col-3>
+      <img style=" width:2.5em" src="assets/imgs/Overview/salary@2x.png">
+    </ion-col>
+    <ion-col col-9>
+      {{ 'ADD_QUALIFICATION' | translate }}
+
+
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="details-row">
+
+    <!-- <ion-row style="width: 100%;" *ngIf="hideEditbtn == false">
+      <ion-col col-6>
+
+      </ion-col>
+      <ion-col col-6 style=" text-align: end;" *ngIf="!BankIsEdit">
+        <button ion-button (click)="EditBank()">{{  'EDIT' | translate }} </button>
+      </ion-col>
+      <ion-col col-3 *ngIf="BankIsEdit">
+        <button ion-button color="danger" (click)="cancel()">{{  'CANCEL' | translate }} </button>
+      </ion-col>
+      <ion-col col-3 *ngIf="BankIsEdit">
+        <button ion-button color="secondary" (click)="updateBank()">{{  'UPDATE' | translate }}</button>
+      </ion-col>
+    </ion-row> -->
+
+
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked> {{ 'QUALIFICATION_TYPE' | translate }}</ion-label>
+        <ion-input (input)="searchDegree()" type="text" [(ngModel)]="degreeName">
+        </ion-input>
+      </ion-item>
+
+      <div *ngIf="showDegree" class="departList">
+        <ion-item detail-push *ngFor="let item of degreeList | filter : degreeName" (click)="selectDegree(item)">
+          {{item.name}}
+        </ion-item>
+      </div>
+    </ion-row>
+
+    <ion-row class="inputBox">
+      <ion-item>
+
+        <ion-label stacked> {{ 'UNIVERSITY_NAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="universityName"></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked> {{ 'SPECIALIZATION' | translate }}</ion-label>
+        <ion-input (input)="searchspecialization()" type="text" [(ngModel)]="specializationName">
+        </ion-input>
+      </ion-item>
+
+      <div *ngIf="showspecialization" class="departList">
+        <ion-item detail-push *ngFor="let item of specializationList | filter : specializationName"
+          (click)="selectspecialization(item)">
+          {{item.name}}
+        </ion-item>
+      </div>
+    </ion-row>
+
+
+    <ion-row class="inputBox">
+      <ion-item>
+        <ion-label stacked>{{ 'QUALIFICATION_YEAR' | translate}}</ion-label>
+        <ion-datetime display-format="YYYY" [(ngModel)]="qualifiedYear"></ion-datetime>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="inputBox">
+        <ion-label stacked>Score</ion-label>
+        <ion-select [(ngModel)]="status">
+          <ion-option value="Draft">excellent   </ion-option>
+          <ion-option value="Validated"> good  </ion-option>
+          <ion-option value="Draft">  very good </ion-option>
+          <ion-option value="Validated"> acceptable </ion-option>
+  
+        </ion-select>
+      </ion-row>
+
+    <ion-row class="inputBox">
+      <ion-label stacked>Status</ion-label>
+      <ion-select [(ngModel)]="status">
+        <ion-option value="Draft">Draft</ion-option>
+        <ion-option value="Validated">Validated</ion-option>
+
+      </ion-select>
+    </ion-row>
+
+
+
+    <ion-row style="width:100%">
+      <button ion-button round class="saveBank" (click)="createBank()">{{ 'SAVE' | translate }}</button>
+    </ion-row>
+
+
+  </ion-row>
+
+</ion-content>

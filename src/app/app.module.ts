@@ -27,17 +27,24 @@ import { OverviewPage } from '../pages/overview/overview';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpModule, Http} from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GeneralProvider } from '../providers/general/general';
-import {   Headers, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 import { ApiProvider } from '../providers/api/api';
 import { IonicStorageModule } from '@ionic/storage';
- 
+
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { BankListPage } from '../pages/bank-list/bank-list';
 import { AddBankPage } from '../pages/add-bank/add-bank';
+import { CurrentEmployeeSkillsPage } from '../pages/current-employee-skills/current-employee-skills';
+import { LostEmployeeSkillsPage } from '../pages/lost-employee-skills/lost-employee-skills';
+import { QualificationListPage } from '../pages/qualification-list/qualification-list';
+import { AddQualificationPage } from '../pages/add-qualification/add-qualification';
+
+
+
 // import { HTTP } from "@ionic-native/http";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -63,7 +70,11 @@ export function createTranslateLoader(http: HttpClient) {
     LeaveDetailsPage,
     AddLeavePage,
     BankListPage,
-    AddBankPage
+    AddBankPage,
+    CurrentEmployeeSkillsPage,
+    LostEmployeeSkillsPage,
+    QualificationListPage,
+    AddQualificationPage
   ],
   imports: [
     BrowserModule,
@@ -74,11 +85,11 @@ export function createTranslateLoader(http: HttpClient) {
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
-           provide: TranslateLoader,
-           useFactory: (createTranslateLoader),
-           deps: [HttpClient]
-         }
-      })
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -101,7 +112,11 @@ export function createTranslateLoader(http: HttpClient) {
     LeaveDetailsPage,
     AddLeavePage,
     BankListPage,
-    AddBankPage
+    AddBankPage,
+    CurrentEmployeeSkillsPage,
+    LostEmployeeSkillsPage,
+    QualificationListPage,
+    AddQualificationPage
 
 
   ],
@@ -111,7 +126,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClient,
     HttpModule,
     Http,
-   
+
     HttpClientModule,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     GeneralProvider,
