@@ -119,7 +119,7 @@
     "ADD_QUALIFICATION":" Add Qualification",
     "QUALIFICATION_YEAR":" Qualification Year",
     "UNIVERSITY_NAME":"University Name ",
-    "SPECIALIZATION":" Specialization",
+    "SPECIALIZATION":"Specialist",
     "SCORE":"Score",
     "QUALIFICATION_TYPE":" Qualification Type",
 
@@ -128,7 +128,9 @@
     "VERY_GOOD":" Very Good  ",
     "ACCEPTABLE":" Acceptable",
     "DRAFT":"  Draft",
-    "VALIDATED":" Validated "
+    "VALIDATED":" Validated ",
+    "SELECT_DATE":"Select Date"
+
 
     
 

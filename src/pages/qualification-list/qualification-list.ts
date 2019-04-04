@@ -17,6 +17,11 @@ export class QualificationListPage {
   }
 
   ionViewDidLoad() {
+    
+    
+    
+  }
+  ionViewWillEnter(){
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res)=>{
       console.log(res,"ye hey local")
       if(res !== null && res !== undefined){
@@ -25,8 +30,6 @@ export class QualificationListPage {
         this.getqualificationList(); 
       }
     })
-    
-    
   }
   qualificationList:any=[];
   getqualificationList(){
@@ -41,6 +44,10 @@ export class QualificationListPage {
       console.log(data)
 
       if(data !== null && data !== undefined){
+        for(var k =0;k<data.length;k++){
+          var dt = data[k].qualified_year.split(' ');
+          data[k].qualified_year = dt[1]+' '+ dt[2]+' '+dt[3];
+        }
         this.qualificationList=data;
         console.log(this.qualificationList)
 
@@ -48,6 +55,10 @@ export class QualificationListPage {
     });
   }
 
+  datecheck(date){
+    var split_date = date.split(' ');
+
+  }
   addqualification(){
     this.navCtrl.push(AddQualificationPage)
   }

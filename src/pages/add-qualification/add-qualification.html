@@ -86,14 +86,14 @@
 
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>{{ 'QUALIFICATION_YEAR' | translate}}</ion-label>
-        <ion-datetime display-format="YYYY" [(ngModel)]="qualifiedYear"></ion-datetime>
+        <ion-label  stacked>{{ 'QUALIFICATION_YEAR' | translate}}</ion-label>
+        <ion-datetime placeholder=" {{ 'SELECT_DATE' | translate}}" display-format="YYYY" [(ngModel)]="qualifiedYear"></ion-datetime>
       </ion-item>
     </ion-row>
 
     <ion-row class="inputBox">
         <ion-label stacked> {{ 'SCORE' | translate }}</ion-label>
-        <ion-select [(ngModel)]="status">
+        <ion-select [(ngModel)]="score">
            
           <ion-option value="ex">{{ 'EXCELLENT' | translate }}   </ion-option>
           <ion-option value="vgood">  {{ 'VERY_GOOD' | translate }}  </ion-option>
@@ -105,7 +105,7 @@
 
     <ion-row class="inputBox">
       <ion-label stacked>{{'STATUS' | translate}}</ion-label>
-      <ion-select [(ngModel)]="status">
+      <ion-select [(ngModel)]="state">
         <ion-option value="Draft">{{ 'DRAFT' | translate }} </ion-option>
         <ion-option value="Validated">{{ 'VALIDATED' | translate }} </ion-option>
 
@@ -115,7 +115,7 @@
 
 
     <ion-row style="width:100%">
-      <button ion-button round class="saveBank" (click)="createBank()">{{ 'SAVE' | translate }}</button>
+      <button ion-button round class="saveBank" (click)="submit()">{{ 'SAVE' | translate }}</button>
     </ion-row>
 
 

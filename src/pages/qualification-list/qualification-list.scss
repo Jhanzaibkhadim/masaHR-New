@@ -145,12 +145,15 @@ page-qualification-list {
     padding: 2%;
     border-radius: 15px;
     box-shadow: 2px 2px rgba(52, 52, 52, 0.1);
-    margin-top: 3%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+
   }
 
   .boxes ion-col {
-    font-size: 16px;
-    align-self: center;
+    // font-size: 16px;
+    // align-self: center;
+    // text-align: center;
   }
   .saveBank {
     width: 80%;
@@ -161,5 +164,25 @@ page-qualification-list {
 
   .cont-body {
     margin-top: 10%;
+  }
+
+
+  .special{
+    width: 100%;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 2%;
+  }
+  .institute{
+    width: 100%;
+    font-size: 15px;
+    // font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 2%;
+  }
+  .date{
+    color:blue;
+    margin:auto;
   }
 }

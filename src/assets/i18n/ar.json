@@ -109,7 +109,7 @@
     "ADD_QUALIFICATION":"إضافة التأهيل",
     "QUALIFICATION_YEAR":"سنة التأهيل",
     "UNIVERSITY_NAME":"اسم الجامعة",
-    "SPECIALIZATION":"تخصص",
+    "SPECIALIZATION":" متخصص",
     "SCORE":"أحرز هدفا",
     "QUALIFICATION_TYPE":"نوع التأهيل",
 
@@ -118,7 +118,8 @@
     "VERY_GOOD":"جيد جدا",
     "ACCEPTABLE":" مقبول",
     "DRAFT":" مشروع",
-    "VALIDATED":"التحقق من صحة"
+    "VALIDATED":"التحقق من صحة",
+    "SELECT_DATE":"حدد تاريخ"
 
     
 }

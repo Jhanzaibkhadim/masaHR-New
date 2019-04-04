@@ -11,20 +11,20 @@ import { Storage } from '@ionic/storage';
 })
 export class AddQualificationPage {
   employee_id: any;
-  degreeList: any=[];
+  degreeList: any = [];
   showDegree: boolean;
   degreeName: string;
   degreeID: any;
   showspecialization: boolean;
   specializationName: any;
   specializationID: any;
-  universityName:any;
-  qualifiedYear:any;
-  score:any;
-  state:any;
-  
+  universityName: any;
+  qualifiedYear: any;
+  score: any;
+  state: any;
 
-  constructor(public loadingCtrl:LoadingController, public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
+
+  constructor(public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
 
     console.log(this.navParams.data)
     // this.BankIsEdit = this.navParams.data
@@ -35,13 +35,13 @@ export class AddQualificationPage {
 
 
   ionViewDidLoad() {
-    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res)=>{
-      console.log(res,"ye hey local")
-      if(res !== null && res !== undefined){
+    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+      console.log(res, "ye hey local")
+      if (res !== null && res !== undefined) {
         // this.EmployeName = res.name;
-        this.employee_id=res.employee_id;
-      // this.getPartnerID();
- 
+        this.employee_id = res.employee_id;
+        // this.getPartnerID();
+
       }
     })
     console.log('ionViewDidLoad addbank');
@@ -49,19 +49,19 @@ export class AddQualificationPage {
     this.readspecialization();
   }
 
-  readDegree(){
+  readDegree() {
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
-  
+
     loading.present();
-    this.api.getRequest(`${Constants.READ_DEGREES_LIST}`).then ((data:any) =>{
+    this.api.getRequest(`${Constants.READ_DEGREES_LIST}`).then((data: any) => {
       loading.dismiss()
       console.log(data)
 
-      if(data !== null && data !== undefined){
+      if (data !== null && data !== undefined) {
         // console.log(data)
-        this.degreeList=data;
+        this.degreeList = data;
         console.log(this.degreeList)
 
       }
@@ -70,40 +70,40 @@ export class AddQualificationPage {
 
 
 
-  selectDegree(obj){
+  selectDegree(obj) {
     this.showDegree = false
-    this.degreeID=obj.id;
+    this.degreeID = obj.id;
     this.degreeName = obj.name
 
   }
-  searchDegree(){
-    if(this.degreeName == ""){
+  searchDegree() {
+    if (this.degreeName == "") {
       this.showDegree = true;
-    }else{
+    } else {
       this.showDegree = false;
     }
   }
 
 
-  specializationList:any[];
+  specializationList: any[];
 
 
   // For Specialization
 
 
-  readspecialization(){
+  readspecialization() {
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
-  
+
     loading.present();
-    this.api.getRequest(`${Constants.READ_SPECIALIST_LIST}`).then ((data:any) =>{
+    this.api.getRequest(`${Constants.READ_SPECIALIST_LIST}`).then((data: any) => {
       loading.dismiss()
       console.log(data)
 
-      if(data !== null && data !== undefined){
+      if (data !== null && data !== undefined) {
         // console.log(data)
-        this.specializationList=data;
+        this.specializationList = data;
         console.log(this.specializationList)
 
       }
@@ -111,17 +111,50 @@ export class AddQualificationPage {
   }
 
 
-  selectspecialization(obj){
+  selectspecialization(obj) {
     this.showspecialization = false
-    this.specializationID=obj.id;
+    this.specializationID = obj.id;
     this.specializationName = obj.name
 
   }
-  searchspecialization(){
-    if(this.specializationName == ""){
+  searchspecialization() {
+    if (this.specializationName == "") {
       this.showspecialization = true;
-    }else{
+    } else {
       this.showspecialization = false;
+    }
+  }
+
+  submit() {
+
+    if (this.degreeName !== '' && this.specializationID !== '') {
+
+      var data = {
+        degree_id: this.degreeID,
+        employee_id: this.employee_id,
+        institute_id: "النيلين",
+        qualified_year: this.qualifiedYear,
+        score: this.score,
+        special_name: this.specializationName,
+        specialt_id: this.specializationID,
+        state: this.state,
+        user_id: 1
+      }
+
+      let loading = this.loadingCtrl.create({
+        content: 'Please wait...'
+      });
+
+      loading.present();
+
+      this.api.postRequest(`${Constants.INSERT_EMPLOYEE_QUALIFICATION}`,data).then((data: any) => {
+        loading.dismiss()
+        console.log(data)
+
+        if (data !== null && data !== undefined) {
+          console.log(data)
+        }
+      })
     }
   }
 
