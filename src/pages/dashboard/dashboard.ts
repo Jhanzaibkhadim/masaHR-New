@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BasicInfoPage } from '../basic-info/basic-info';
+import { BasicInfoPage } from '../Basic-Information/basic-info/basic-info';
 import { Global } from '../../utils/Global';
 import { Constants } from '../../utils/Constants';
 import { ApiProvider } from '../../providers/api/api';
 import { Storage } from '@ionic/storage';
-import { BasicInfoListPage } from '../basic-info-list/basic-info-list';
+import { BasicInfoListPage } from '../Basic-Information/basic-info-list/basic-info-list';
 
 /**
  * Generated class for the DashboardPage page.

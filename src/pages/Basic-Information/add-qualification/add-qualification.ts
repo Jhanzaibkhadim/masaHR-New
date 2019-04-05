@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
-import { Global } from '../../utils/Global';
-import { Constants } from '../../utils/Constants';
-import { ApiProvider } from '../../providers/api/api';
+import { Global } from '../../../utils/Global';
+import { Constants } from '../../../utils/Constants';
+import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -127,7 +127,7 @@ export class AddQualificationPage {
 
   submit() {
 
-    if (this.degreeName !== '' && this.specializationID !== '') {
+    if (this.degreeName !== '' && this.specializationID !== '' && this.employee_id !== '' && this.qualifiedYear !== '' && this.score !== '' && this.state !== '') {
 
       var data = {
         degree_id: this.degreeID,
@@ -156,6 +156,19 @@ export class AddQualificationPage {
         }
       })
     }
+    else{
+      this.displaySimpleToast("Please Provide all details")
+    }
   }
 
+  
+  displaySimpleToast(msg) {
+
+    var toast = this.toastCtrl.create({
+      message: msg,
+      duration: 2000,
+      position: 'bottom',
+    })
+    toast.present();
+  }
 }

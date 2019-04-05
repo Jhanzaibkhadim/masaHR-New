@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
-import { Global } from '../../utils/Global';
-import { Constants } from '../../utils/Constants';
-import { ApiProvider } from '../../providers/api/api';
+import { Global } from '../../../utils/Global';
+import { Constants } from '../../../utils/Constants';
+import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
 
 @Component({
