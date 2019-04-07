@@ -93,7 +93,11 @@ export class QualificationListPage {
 
   }
   addqualification(){
-    this.navCtrl.push(AddQualificationPage)
+    var data = false
+    this.navCtrl.push(AddQualificationPage,data)
   }
 
+  editQualification(data){
+    this.navCtrl.push(AddQualificationPage,data)
+  }
 }

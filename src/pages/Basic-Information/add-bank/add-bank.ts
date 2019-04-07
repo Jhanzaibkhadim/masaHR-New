@@ -91,11 +91,13 @@ export class AddBankPage {
 
   }
   searchbanks(){
-    if(this.bankName == ''){
-      this.showBank = true
-    }else{
-      this.showBank = false
-    }
+    // if(this.bankName == ''){
+    //   this.showBank = true
+    // }else{
+    //   this.showBank = false
+    // }
+    this.showBank = true
+    //
   }
 
   createBank(){

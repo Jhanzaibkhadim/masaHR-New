@@ -38,6 +38,7 @@ export class ApiProvider {
   }
 
   postRequest(url, data) {
+    console.log(url)
     return new Promise(resolve => {
       this.http.post(Constants.BASE_URL + url, data)
         .subscribe((res) => {
