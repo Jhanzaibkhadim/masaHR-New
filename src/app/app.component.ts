@@ -133,4 +133,10 @@ export class MyApp {
       this.logoutbtn = false;
     }
   }
+
+  loguot(){
+    this.localStore.clear().then(()=>{
+      this.nav.setRoot(LoginPage)
+    })
+  }
 }

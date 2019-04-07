@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DashboardPage } from '../dashboard/dashboard';
 import { TabsPage } from '../tabs/tabs';
@@ -17,7 +17,9 @@ export class LoginPage {
 
   userName: any;
   password: any;
-  constructor(public localStore:Storage, public toastCtrl: ToastController, public api: ApiProvider , public navCtrl: NavController, public navParams: NavParams, public translationProvider: GeneralProvider) {
+  constructor(public localStore:Storage, public toastCtrl: ToastController, public api: ApiProvider , 
+    public navCtrl: NavController, public navParams: NavParams, public translationProvider: GeneralProvider,
+    public menu: MenuController) {
   console.log(this.translationProvider.direction)
   }
 
@@ -27,6 +29,14 @@ export class LoginPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+  ionViewWillEnter(){
+    this.menu.enable(false)
+    this.getLocalData();
+  }
+  ionViewWillLeave(){
+    this.menu.enable(true)
+
   }
 
   displaySimpleToast(msg) {
@@ -69,5 +79,13 @@ export class LoginPage {
 
   }
 
-
+  getLocalData() {
+    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+      console.log(res, "ye hey local")
+      if (res !== null && res !== undefined) {
+        // this.userName = res.name;
+        this.navCtrl.setRoot(TabsPage);
+      }
+    })
+  }
 }
