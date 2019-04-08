@@ -45,13 +45,13 @@ export class MyApp {
 
   constructor(public localStore: Storage, public translationProvider: GeneralProvider, public translate: TranslateService, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-     
-      // this language will be used as a fallback when a translation isn't found in the current language
-      this.translate.setDefaultLang('en');
-     
-      this.changeLanguage(1)
-      
-      this.getLocalData()
+
+    // this language will be used as a fallback when a translation isn't found in the current language
+    this.translate.setDefaultLang('ar');
+
+    this.changeLanguage(2)
+
+    this.getLocalData()
     this.pages = [
       { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
       { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
@@ -66,7 +66,7 @@ export class MyApp {
       { title: 'ABOUT', component: TabsPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
-    
+
   }
 
   getLocalData() {
