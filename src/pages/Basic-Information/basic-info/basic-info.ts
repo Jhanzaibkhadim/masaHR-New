@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
-import { Global } from '../../utils/Global';
-import { Constants } from '../../utils/Constants';
-import { ApiProvider } from '../../providers/api/api';
+import { Global } from '../../../utils/Global';
+import { Constants } from '../../../utils/Constants';
+import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -115,12 +115,12 @@ export class BasicInfoPage {
 
 
   searchDepartments() {
-    if (this.EmployeDepartment == '') {
+    // if (this.EmployeDepartment == '') {
       this.isDepartShow = true;
-    } else {
-      this.isDepartShow = false;
+    // } else {
+    //   this.isDepartShow = false;
 
-    }
+    // }
   }
   selectDeparment(obj) {
     this.EmployeDepartment = obj.name;
@@ -131,12 +131,12 @@ export class BasicInfoPage {
 
   isJobShow: boolean = false;
   searchjobs() {
-    if (this.EmployeeJobTitle == '') {
+    // if (this.EmployeeJobTitle == '') {
       this.isJobShow = true;
-    } else {
-      this.isJobShow = false;
+    // } else {
+    //   this.isJobShow = false;
 
-    }
+    // }
   }
   selectJob(objec) {
     this.EmployeeJobID = objec.id;
@@ -149,6 +149,8 @@ export class BasicInfoPage {
   // Edit profile /update
 
   cancel() {
+    this.isJobShow = false;
+    this.isDepartShow = false;
     this.InfoIsEdit = false;
   }
   InfoIsEdit: boolean = false;

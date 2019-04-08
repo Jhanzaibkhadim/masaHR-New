@@ -86,27 +86,28 @@
 
     <ion-row class="inputBox">
       <ion-item>
-        <ion-label stacked>{{ 'QUALIFICATION_YEAR' | translate}}</ion-label>
-        <ion-datetime display-format="YYYY" [(ngModel)]="qualifiedYear"></ion-datetime>
+        <ion-label  stacked>{{ 'QUALIFICATION_YEAR' | translate}}</ion-label>
+        <ion-datetime placeholder=" {{ 'SELECT_DATE' | translate}}" display-format="YYYY" [(ngModel)]="qualifiedYear"></ion-datetime>
       </ion-item>
     </ion-row>
 
     <ion-row class="inputBox">
-        <ion-label stacked>Score</ion-label>
-        <ion-select [(ngModel)]="status">
-          <ion-option value="Draft">excellent   </ion-option>
-          <ion-option value="Validated"> good  </ion-option>
-          <ion-option value="Draft">  very good </ion-option>
-          <ion-option value="Validated"> acceptable </ion-option>
+        <ion-label stacked> {{ 'SCORE' | translate }}</ion-label>
+        <ion-select [(ngModel)]="score">
+           
+          <ion-option value="excellent">{{ 'EXCELLENT' | translate }}   </ion-option>
+          <ion-option value="vgood">  {{ 'VERY_GOOD' | translate }}  </ion-option>
+          <ion-option value="good">     {{ 'GOOD' | translate }} </ion-option>
+          <ion-option value="acceptable"> {{ 'ACCEPTABLE' | translate }} </ion-option>
   
         </ion-select>
       </ion-row>
 
     <ion-row class="inputBox">
-      <ion-label stacked>Status</ion-label>
-      <ion-select [(ngModel)]="status">
-        <ion-option value="Draft">Draft</ion-option>
-        <ion-option value="Validated">Validated</ion-option>
+      <ion-label stacked>{{'STATUS' | translate}}</ion-label>
+      <ion-select [(ngModel)]="state">
+        <ion-option value="draft">{{ 'DRAFT' | translate }} </ion-option>
+        <ion-option value="Validated">{{ 'VALIDATED' | translate }} </ion-option>
 
       </ion-select>
     </ion-row>
@@ -114,7 +115,10 @@
 
 
     <ion-row style="width:100%">
-      <button ion-button round class="saveBank" (click)="createBank()">{{ 'SAVE' | translate }}</button>
+      
+      <button ion-button round *ngIf="editable==false"  class="saveBank" (click)="updateQualificationInfo()">{{ 'SAVE' | translate }}</button>
+
+      <button ion-button round class="saveBank" *ngIf="editable==true" (click)="submit()">{{ 'SAVE' | translate }}</button>
     </ion-row>
 
 

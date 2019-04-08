@@ -1,0 +1,130 @@
+<ion-header>
+
+  <!-- <ion-navbar> -->
+
+    <ion-row class="head-row">
+      <ion-col no-padding col-2>
+        <!-- <button ion-button menuToggle> -->
+          <!-- <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png"> -->
+      <ion-icon name="arrow-back" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+
+        <!-- </button> -->
+      </ion-col>
+      <ion-col style="    margin: auto;" no-padding col-8>
+        <ion-title>{{ 'QUALIFICATION' | translate }} </ion-title>
+
+      </ion-col>
+      <ion-col no-padding style="text-align:center" col-2>
+        <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
+
+      </ion-col>
+    </ion-row>
+  <!-- </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content class="cont-bg">
+  <div class="cont-head">
+    <ion-searchbar animated placeholder=" {{ 'SEARCH' | translate }}"></ion-searchbar>
+    
+  </div>
+
+  <div class="cont-body">
+
+      <ion-row style="width:100%;margin-top:5%;margin-bottom: 5%;">
+          <button ion-button round class="saveBank" (click)="addqualification()">{{ 'ADD_QUALIFICATION' | translate }}</button>
+      </ion-row>
+
+    <ion-row class="boxes" *ngFor=" let qual of qualificationList">
+      <!-- <ion-col col-2> -->
+        <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/salary@2x.png"> -->
+      <!-- </ion-col> -->
+      <!-- <ion-col> -->
+        <!-- <p> {{ 'BANK_ACCOUNTS' | translate }}</p> -->
+
+        <ion-col col-2>
+          <img   style="width: 3em;" src="assets/imgs/Basic Information/qualifications@2x.png">
+        </ion-col>
+        <ion-col col-10>
+          <p class="special">
+            <!-- {{ 'SPECIALIZATION' | translate }} : -->
+               {{qual.special_name}}
+          </p>
+          <p class="institute">
+            {{qual.degreeName}} , 
+            {{qual.institute_id}}
+          </p>
+           
+          <ion-row style="width:100%;margin-top:1%;">
+            <!-- <ion-col class="date" col-2>
+             <ion-icon name="calendar"></ion-icon>
+            </ion-col> -->
+            <ion-col col-4>
+              {{'SCORE' | translate}}:
+            </ion-col> 
+            <ion-col col-6>
+             <div *ngIf="qual.score == 'excellent'" style="color:rgb(19, 107, 19); font-weight: 600">
+              {{ 'EXCELLENT' | translate }}
+             </div>
+             <div *ngIf="qual.score == 'vgood'" style="color:rgb(55, 133, 55); font-weight: 600">
+              {{ 'VERY_GOOD' | translate }}
+             </div>
+             <div *ngIf="qual.score == 'good'" style="color:rgb(255, 175, 2); font-weight: 600">
+              {{ 'GOOD' | translate }}
+             </div>
+             <div *ngIf="qual.score == 'acceptable'" style="color:rgb(199, 212, 10); font-weight: 600">
+              {{ 'ACCEPTABLE' | translate }} 
+             </div>
+             
+            </ion-col>
+            <!-- <ion-col col-5>
+              {{'STATUS' | translate}}: {{qual.state}}
+            </ion-col> -->
+           </ion-row>
+          <ion-row style="width:100%;margin-top:1%;">
+           <ion-col class="date" col-1>
+            <ion-icon name="calendar"></ion-icon>
+           </ion-col>
+           <ion-col col-5>
+            {{qual.qualified_year}}
+           </ion-col> 
+           <ion-col col-6>
+            {{'STATUS' | translate}}: 
+            <span *ngIf="qual.state == 'Validated'">
+              {{ 'VALIDATED' | translate }}
+            </span> 
+            <span *ngIf="qual.state == 'draft'">
+              {{ 'DRAFT' | translate }}
+            </span> 
+          </ion-col>
+          </ion-row>
+  
+          <ion-row  class="editBtn">
+              <button ion-button round class="edit" (click)="editQualification(qual)" >{{ 'EDIT' | translate }}</button>
+          </ion-row>
+  
+  
+        </ion-col>
+       
+      <!-- </ion-col> -->
+    </ion-row>
+
+    <ion-row class="boxes" style=" justify-content: center;" *ngIf="qualificationList.length == 0">
+      {{ 'NO_RECORD' | translate }} !
+    </ion-row>
+    
+      
+
+
+    
+    
+
+
+
+
+
+
+  </div>
+
+</ion-content> 

@@ -7,7 +7,8 @@ import { LoansListPage } from './../pages/loans-list/loans-list';
 import { HrProceduresListPage } from './../pages/hr-procedures-list/hr-procedures-list';
 import { JobTerminationListingPage } from './../pages/job-termination-listing/job-termination-listing';
 import { ContractsListPage } from './../pages/contracts-list/contracts-list';
-import { BasicInfoListPage } from './../pages/basic-info-list/basic-info-list';
+import { BasicInfoListPage } from './../pages/Basic-Information/basic-info-list/basic-info-list';
+
 import { AdminComumnicationsPage } from './../pages/admin-comumnications/admin-comumnications';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -20,7 +21,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
-import { BasicInfoPage } from '../pages/basic-info/basic-info';
 import { OverviewPage } from '../pages/overview/overview';
 
 
@@ -36,13 +36,21 @@ import { IonicStorageModule } from '@ionic/storage';
 
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
-import { BankListPage } from '../pages/bank-list/bank-list';
-import { AddBankPage } from '../pages/add-bank/add-bank';
-import { CurrentEmployeeSkillsPage } from '../pages/current-employee-skills/current-employee-skills';
-import { LostEmployeeSkillsPage } from '../pages/lost-employee-skills/lost-employee-skills';
-import { QualificationListPage } from '../pages/qualification-list/qualification-list';
-import { AddQualificationPage } from '../pages/add-qualification/add-qualification';
-import { EmployeeLocationPage } from '../pages/employee-location/employee-location';
+// import { BankListPage } from '../pages/bank-list/bank-list';
+// import { AddBankPage } from '../pages/add-bank/add-bank';
+// import { CurrentEmployeeSkillsPage } from '../pages/current-employee-skills/current-employee-skills';
+// import { LostEmployeeSkillsPage } from '../pages/lost-employee-skills/lost-employee-skills';
+// import { QualificationListPage } from '../pages/qualification-list/qualification-list';
+// import { AddQualificationPage } from '../pages/add-qualification/add-qualification';
+// import { EmployeeLocationPage } from '../pages/employee-location/employee-location';
+import { BankListPage } from '../pages/Basic-Information/bank-list/bank-list';
+import { AddBankPage } from '../pages/Basic-Information/add-bank/add-bank';
+import { CurrentEmployeeSkillsPage } from '../pages/Basic-Information/current-employee-skills/current-employee-skills';
+import { LostEmployeeSkillsPage } from '../pages/Basic-Information/lost-employee-skills/lost-employee-skills';
+import { QualificationListPage } from '../pages/Basic-Information/qualification-list/qualification-list';
+import { AddQualificationPage } from '../pages/Basic-Information/add-qualification/add-qualification';
+import { BasicInfoPage } from '../pages/Basic-Information/basic-info/basic-info';
+import { EmployeeLocationPage } from '../pages/Basic-Information/employee-location/employee-location';
 
 
 

@@ -152,7 +152,7 @@
         <ion-input [disabled]="!InfoIsEdit" type="email" [(ngModel)]="EmployeEmail"></ion-input>
       </ion-item>
     </ion-row>
-    <ion-row class="inputBox">
+    <ion-row class="inputBox" style="padding-bottom: 20px;">
       <ion-item>
         <ion-label stacked> {{ 'DEPARTMENT' | translate }}</ion-label>
         <ion-input [disabled]="!InfoIsEdit" (input)="searchDepartments()" type="text" [(ngModel)]="EmployeDepartment">

@@ -14,7 +14,7 @@
         <ion-col col-6>
 
         </ion-col>
-        <ion-col col-4>
+        <ion-col col-4 (click)="loguot()">
           <img style="width: 2em;" *ngIf="!logoutbtn" class="noti-icon" src="assets/imgs/SideMenu/logout@2x.png">
 
           <span> {{ 'LOGOUT' | translate }}</span>

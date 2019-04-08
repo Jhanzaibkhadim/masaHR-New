@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { Constants } from '../../utils/Constants';
+import { Constants } from '../../../utils/Constants';
 import { Storage } from '@ionic/storage';
-import { ApiProvider } from '../../providers/api/api';
+import { ApiProvider } from '../../../providers/api/api';
 import { AddBankPage } from '../add-bank/add-bank';
  
 @Component({

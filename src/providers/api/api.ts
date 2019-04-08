@@ -38,6 +38,7 @@ export class ApiProvider {
   }
 
   postRequest(url, data) {
+    console.log(url)
     return new Promise(resolve => {
       console.log(Constants.BASE_URL + url)
       console.log(data)
