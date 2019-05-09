@@ -6,6 +6,8 @@ import { Constants } from '../../utils/Constants';
 import { ApiProvider } from '../../providers/api/api';
 import { Storage } from '@ionic/storage';
 import { BasicInfoListPage } from '../Basic-Information/basic-info-list/basic-info-list';
+import { ContractsListPage } from '../contracts-list/contracts-list';
+import { HrProceduresListPage } from '../hr-procedures-list/hr-procedures-list';
 
 /**
  * Generated class for the DashboardPage page.
@@ -38,6 +40,13 @@ export class DashboardPage {
 
 
   gotoBasicInformation(){
-    this.navCtrl.setRoot(BasicInfoListPage)
+    this.navCtrl.push(BasicInfoListPage)
+  }
+
+  gotoContracts(){
+    this.navCtrl.push(ContractsListPage)
+  }
+  gotoHRProcedures(){
+    this.navCtrl.push(HrProceduresListPage)
   }
 }
