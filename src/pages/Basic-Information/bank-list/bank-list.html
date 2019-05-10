@@ -33,7 +33,7 @@
     <div class="cont-body">
   
         <ion-row style="width:100%;margin-top:5%;margin-bottom: 5%;">
-            <button ion-button round class="saveBank" (click)="addBank()">{{ 'ADD_BANK' | translate }}</button>
+            <button ion-button round class="saveBank" (click)="addBank()">{{ 'ADD_BANK' | translate }} <ion-icon ios="ios-add" class="edit-icon" md="md-add"></ion-icon></button>
         </ion-row>
 
       <ion-row class="boxes" *ngIf="bankList.length >1">

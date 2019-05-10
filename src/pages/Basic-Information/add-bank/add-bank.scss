@@ -70,14 +70,27 @@ page-add-bank {
     .inputBox ion-item{
         background: transparent !important;
         color:black;
-        border-bottom: 1px solid rgb(122, 122, 122);
+        border-bottom: 0px solid rgb(122, 122, 122);
         padding-left: 0px !important;
         font-size: 16px;
+    }
+    .borderbox{
+        border: 1px solid rgb(122, 122, 122);
+        padding: 6px !important;
+        font-size: 16px;
+        margin-top: 2%;
+        border-radius: 10px;
     }
     .item-input .label-md{
         color:black !important;
         font-size: 15px;
     }
+    .edit-icon{
+        margin-left: 10%;
+        font-size: 18px;
+        margin-right: 8%;
+      }
+    
     .inputBox {
         margin-top: 2% !important;
         background: transparent;

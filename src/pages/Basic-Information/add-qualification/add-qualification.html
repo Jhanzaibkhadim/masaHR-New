@@ -49,7 +49,7 @@
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked> {{ 'QUALIFICATION_TYPE' | translate }}</ion-label>
-        <ion-input (input)="searchDegree()" type="text" [(ngModel)]="degreeName">
+        <ion-input class="borderbox" (input)="searchDegree()" type="text" [(ngModel)]="degreeName">
         </ion-input>
       </ion-item>
 
@@ -64,14 +64,14 @@
       <ion-item>
 
         <ion-label stacked> {{ 'UNIVERSITY_NAME' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="universityName"></ion-input>
+        <ion-input type="text" class="borderbox" [(ngModel)]="universityName"></ion-input>
       </ion-item>
     </ion-row>
 
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked> {{ 'SPECIALIZATION' | translate }}</ion-label>
-        <ion-input (input)="searchspecialization()" type="text" [(ngModel)]="specializationName">
+        <ion-input (input)="searchspecialization()" type="text" class="borderbox" [(ngModel)]="specializationName">
         </ion-input>
       </ion-item>
 
@@ -116,9 +116,9 @@
 
     <ion-row style="width:100%">
       
-      <button ion-button round *ngIf="editable==false"  class="saveBank" (click)="updateQualificationInfo()">{{ 'SAVE' | translate }}</button>
+      <button ion-button round *ngIf="editable==false"  class="saveBank" (click)="updateQualificationInfo()">{{ 'SAVE' | translate }}   <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
 
-      <button ion-button round class="saveBank" *ngIf="editable==true" (click)="submit()">{{ 'SAVE' | translate }}</button>
+      <button ion-button round class="saveBank" *ngIf="editable==true" (click)="submit()">{{ 'SAVE' | translate }}   <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
     </ion-row>
 
 
