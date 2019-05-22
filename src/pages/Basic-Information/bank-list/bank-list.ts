@@ -12,6 +12,8 @@ import { AddBankPage } from '../add-bank/add-bank';
 export class BankListPage {
   EmployeName: any;
   employee_id: any;
+  bankList:any=[];
+  partner_id:any;
 
   constructor(public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,13 +24,33 @@ export class BankListPage {
       if(res !== null && res !== undefined){
         this.EmployeName = res.name;
         this.employee_id=res.employee_id;
-        this.getBankList(); 
+        this.getPartnerID();
+       
       }
     })
     
     
   }
-  bankList:any=[];
+
+  getPartnerID(){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    loading.present();
+    this.api.getRequest(`${Constants.GET_PARTNER_ID}`+this.employee_id).then ((data:any) =>{
+      loading.dismiss()
+      console.log(data)
+
+      if(data !== null && data !== undefined){
+        console.log(data)
+        
+         this.partner_id = data[0].id
+         this.getBankList(); 
+      }
+    });
+
+  }
   getBankList(){
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
@@ -36,7 +58,7 @@ export class BankListPage {
   
     loading.present();
 
-    this.api.getRequest(`${Constants.GET_BANK_LIST}`+this.employee_id).then ((data:any) =>{
+    this.api.getRequest(`${Constants.GET_BANK_LIST}`+this.employee_id+'&partner_bank_id=1').then ((data:any) =>{
       loading.dismiss()
       console.log(data)
 

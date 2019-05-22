@@ -108,7 +108,7 @@ export class AddBankPage {
       });
     
       var data ={
-        employee_id:this.employee_id,
+        // employee_id:this.employee_id,
         bank_id:this.bankID,
         // bank_name:this.bankName,
         active:this.bankStatus,

@@ -45,7 +45,7 @@ page-basic-info {
     .info{
         width: 80%;
         background: white;
-        padding: 0.8;
+        padding: 10px;
         border-radius: 8px;
         position: fixed;
         margin-top: 60px;
@@ -55,7 +55,6 @@ page-basic-info {
     .info ion-col{
         margin:auto;
         font-size: 16px;
-
     }
     .info .imagee{
         text-align: center;
@@ -132,7 +131,7 @@ page-basic-info {
         margin-top: -3%;
       }
     .type{
-        width: 90%;
+        width: 85%;
         margin: auto;
         padding-top:6px;
         font-size: 18px;
@@ -143,12 +142,12 @@ page-basic-info {
     .radio-btn{
         // width: 90%;
         padding-left: 5%;
-        // padding-right: 5%;
+        padding-right: 5%;
 
         // margin: auto;
     }
     .item-md .radio-md{
-        margin-right: 0px !important;
+        margin-right: 7px !important;
         margin-left: 0px !important;
     }
     .text{

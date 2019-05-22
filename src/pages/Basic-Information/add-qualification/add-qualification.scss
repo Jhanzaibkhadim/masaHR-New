@@ -9,7 +9,22 @@ page-add-qualification {
         background: transparent !important;
         box-shadow: none !important;
     }
-
+    .alert-radio-icon {
+        left: -13px !important;
+        
+    }
+    [dir="rtl"] .alert-radio-icon , [dir="rtl"] .alert-checkbox-icon{
+        right: 16px!important;
+        left: 0px!important;
+      } 
+      [dir="rtl"] .alert-radio-label.sc-ion-alert-md {
+        padding: 13px 52px 13px 26px
+      }
+      
+      [dir="rtl"] .alert-radio-icon.sc-ion-alert-md {
+        right: 26px;
+        left: unset;
+      }
     .head-row {
         background: #337de7;
         padding-top: 10px;
@@ -84,7 +99,7 @@ page-add-qualification {
         background: transparent !important;
         color: black;
         border-bottom: 0px solid rgb(122, 122, 122);
-        padding-left: 0px !important;
+        // padding-left: 0px !important;
         font-size: 16px;
     }
     .edit-icon{
@@ -162,22 +177,22 @@ page-add-qualification {
         font-size: 18px;
     }
 
-    .btns ion-col {
-        // margin: auto;
-    }
+    // .btns ion-col {
+    //     // margin: auto;
+    // }
 
-    .radio-btn {
-        // width: 90%;
-        padding-left: 5%;
-        // padding-right: 5%;
+    // .radio-btn {
+    //     // width: 90%;
+    //     padding-left: 5%;
+    //     // padding-right: 5%;
 
-        // margin: auto;
-    }
+    //     // margin: auto;
+    // }
 
-    .item-md .radio-md {
-        margin-right: 0px !important;
-        margin-left: 0px !important;
-    }
+    // .item-md .radio-md {
+    //     margin-right: 0px !important;
+    //     margin-left: 0px !important;
+    // }
 
     .text {
         width: 65%;
@@ -188,11 +203,11 @@ page-add-qualification {
         justify-content: flex-start;
     }
 
-    .radio-btn ion-item {
-        padding-left: 0px !important;
+    // .radio-btn ion-item {
+    //     padding-left: 0px !important;
 
-        background: transparent !important;
-    }
+    //     background: transparent !important;
+    // }
 
     .departList {
         width: 100%;
