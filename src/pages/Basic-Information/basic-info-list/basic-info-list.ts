@@ -5,6 +5,7 @@ import { BankListPage } from '../bank-list/bank-list';
 import { LostEmployeeSkillsPage } from '../lost-employee-skills/lost-employee-skills';
 import { CurrentEmployeeSkillsPage } from '../current-employee-skills/current-employee-skills';
 import { QualificationListPage } from '../qualification-list/qualification-list';
+import { EmployeeExperiencePage } from '../employee-experience/employee-experience';
 
 /**
  * Generated class for the BasicInfoListPage page.
@@ -35,6 +36,9 @@ export class BasicInfoListPage {
   }
   gotoBank(){
     this.navCtrl.push(BankListPage)
+  }
+  gotoEmployeeExp(){
+    this.navCtrl.push(EmployeeExperiencePage)
   }
   gotoPersonalInfo(){
     this.navCtrl.push(BasicInfoPage)

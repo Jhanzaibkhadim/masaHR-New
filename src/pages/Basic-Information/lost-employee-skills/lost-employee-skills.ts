@@ -4,6 +4,7 @@ import { Constants } from '../../../utils/Constants';
 import { Storage } from '@ionic/storage';
 import { ApiProvider } from '../../../providers/api/api';
 import { AddBankPage } from '../add-bank/add-bank';
+import { GeneralProvider } from '../../../providers/general/general';
  
  
 @Component({
@@ -14,7 +15,7 @@ export class LostEmployeeSkillsPage {
 
   employee_id: any;
 
-  constructor(public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public directionParam:GeneralProvider,public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

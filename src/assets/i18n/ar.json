@@ -55,6 +55,7 @@
     "LOCATION": "الموقع ( خريطة)",
     "MEDICAL_INSURANCE": "التامين الطبي",
     "SOCIAL_INSURANCE": "التامين الاجتماعي",
+    "EMPLOYEE_EXPERIENCE":"تجربة الموظف",
     "BANK_ACCOUNTS": "الحسابات البنكية",
     "QUALIFICATION": "المؤهلات",
     "CURRENT_EMPLOYEE_SKILLS": "الجدارات الحالية",
@@ -119,7 +120,8 @@
     "ACCEPTABLE":" مقبول",
     "DRAFT":" مشروع",
     "VALIDATED":"التحقق من صحة",
-    "SELECT_DATE":"حدد تاريخ"
+    "SELECT_DATE":"حدد تاريخ",
 
+    "ADD_EXPERIENCE":"إضافة تجربة"
     
 }

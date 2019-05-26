@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { Constants } from '../../../utils/Constants';
 import { Storage } from '@ionic/storage';
 import { ApiProvider } from '../../../providers/api/api';
 import { AddBankPage } from '../add-bank/add-bank';
+import { GeneralProvider } from '../../../providers/general/general';
  
 @Component({
   selector: 'page-bank-list',
@@ -15,7 +16,7 @@ export class BankListPage {
   bankList:any=[];
   partner_id:any;
 
-  constructor(public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public toastCtrl:ToastController, public directionParam:GeneralProvider,public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -31,6 +32,15 @@ export class BankListPage {
     
     
   }
+  displaySimpleToast(msg) {
+
+    var toast = this.toastCtrl.create({
+      message: msg,
+      duration: 2000,
+      position: 'bottom',
+    })
+    toast.present();
+  }
 
   getPartnerID(){
     let loading = this.loadingCtrl.create({
@@ -42,11 +52,13 @@ export class BankListPage {
       loading.dismiss()
       console.log(data)
 
-      if(data !== null && data !== undefined){
+      if(data !== null && data !== undefined && data.length >0){
         console.log(data)
         
          this.partner_id = data[0].id
          this.getBankList(); 
+      }else{
+        this.displaySimpleToast("Please try again")
       }
     });
 

@@ -115,7 +115,7 @@
     "PENDING":"Pending",
     "APPROVED":"Approved",
      "DECEMBER":"DECEMBER",
-
+     "EMPLOYEE_EXPERIENCE":"Employee Experience",
     "ADD_QUALIFICATION":" Add Qualification",
     "QUALIFICATION_YEAR":" Qualification Year",
     "UNIVERSITY_NAME":"University Name ",
@@ -129,7 +129,10 @@
     "ACCEPTABLE":" Acceptable",
     "DRAFT":"  Draft",
     "VALIDATED":" Validated ",
-    "SELECT_DATE":"Select Date"
+    "SELECT_DATE":"Select Date",
+
+    "ADD_EXPERIENCE":"Add Experience"
+
 
 
     

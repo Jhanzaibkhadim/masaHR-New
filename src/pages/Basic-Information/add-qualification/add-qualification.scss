@@ -73,7 +73,7 @@ page-add-qualification {
     .info {
         width: 80%;
         background: white;
-        padding: 0.8;
+        padding: 10px;
         border-radius: 8px;
         position: fixed;
         margin-top: 60px;
@@ -137,6 +137,10 @@ page-add-qualification {
         margin: auto;
         // padding-left: 0px !important;
         // border: 1px solid white;
+    }
+    .selectBox{
+        width: 81%;
+        margin: auto;
     }
 
     .text-input-md {
@@ -210,10 +214,12 @@ page-add-qualification {
     // }
 
     .departList {
-        width: 100%;
-        background: #fff;
+        width: 90%;
+        margin: auto;
+        background: #ffffffad;
         height: 40vw;
         overflow-y: scroll;
+        border-radius: 5px;
     }
 
     .saveBank {

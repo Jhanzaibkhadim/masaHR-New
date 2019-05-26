@@ -4,6 +4,7 @@ import { Global } from '../../../utils/Global';
 import { Constants } from '../../../utils/Constants';
 import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
+import { GeneralProvider } from '../../../providers/general/general';
 
 @Component({
   selector: 'page-basic-info',
@@ -23,8 +24,8 @@ export class BasicInfoPage {
   EmployeeJobTitle: any;
   EmployeeJobID: any;
   // (ionChange)="checktype()"
-  constructor(public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
-
+  constructor(public directionParam:GeneralProvider,public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+    
   }
 
 

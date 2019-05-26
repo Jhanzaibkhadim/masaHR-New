@@ -43,6 +43,8 @@ import { LostEmployeeSkillsPage } from '../pages/Basic-Information/lost-employee
 import { QualificationListPage } from '../pages/Basic-Information/qualification-list/qualification-list';
 import { AddQualificationPage } from '../pages/Basic-Information/add-qualification/add-qualification';
 import { BasicInfoPage } from '../pages/Basic-Information/basic-info/basic-info';
+import { EmployeeExperiencePage } from '../pages/Basic-Information/employee-experience/employee-experience';
+import { AddEmployeeExperiencePage } from '../pages/Basic-Information/add-employee-experience/add-employee-experience';
 
 
 
@@ -75,7 +77,9 @@ export function createTranslateLoader(http: HttpClient) {
     CurrentEmployeeSkillsPage,
     LostEmployeeSkillsPage,
     QualificationListPage,
-    AddQualificationPage
+    AddQualificationPage,
+    EmployeeExperiencePage,
+    AddEmployeeExperiencePage
   ],
   imports: [
     BrowserModule,
@@ -117,7 +121,9 @@ export function createTranslateLoader(http: HttpClient) {
     CurrentEmployeeSkillsPage,
     LostEmployeeSkillsPage,
     QualificationListPage,
-    AddQualificationPage
+    AddQualificationPage,
+    EmployeeExperiencePage,
+    AddEmployeeExperiencePage
 
 
   ],

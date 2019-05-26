@@ -4,6 +4,7 @@ import { Global } from '../../../utils/Global';
 import { Constants } from '../../../utils/Constants';
 import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
+import { GeneralProvider } from '../../../providers/general/general';
 
 @Component({
   selector: 'page-add-qualification',
@@ -27,7 +28,7 @@ export class AddQualificationPage {
   userID: any;
   qualifId: any;
 
-  constructor(public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+  constructor(public directionParam:GeneralProvider,public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
 
     this.monthShortNames=["Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"]
     console.log(this.navParams.data)

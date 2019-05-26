@@ -3,11 +3,15 @@
     <ion-row style="width:100%">
       <ion-col no-padding col-2>
 
-        <ion-icon name="arrow-back" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+       <ion-icon name="arrow-back" class="back-iconn"  *ngIf="this.directionParam.direction =='left'" (click)="navCtrl.pop()"></ion-icon>
+        <ion-icon name="arrow-forward" *ngIf="this.directionParam.direction !=='left'" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+  
       </ion-col>
       <ion-col class="head-title" no-padding col-8>
         <ion-row>
-          {{ 'QUALIFICATION' | translate }}
+          <!-- {{ 'QUALIFICATION' | translate }} -->
+      {{ 'ADD_QUALIFICATION' | translate }}
+
         </ion-row>
       </ion-col>
       <ion-col no-padding col-2>
@@ -18,14 +22,18 @@
 
   </ion-row>
   <ion-row class="info">
-    <ion-col class="imagee" col-3>
+      <button ion-button round *ngIf="editable==false"  class="saveBank" (click)="updateQualificationInfo()">{{ 'SAVE' | translate }}   <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
+
+      <button ion-button round class="saveBank" *ngIf="editable==true" (click)="submit()">{{ 'SAVE' | translate }}   <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
+    
+    <!-- <ion-col class="imagee" col-3>
       <img style=" width:2.5em" src="assets/imgs/Overview/salary@2x.png">
     </ion-col>
     <ion-col col-9>
       {{ 'ADD_QUALIFICATION' | translate }}
 
 
-    </ion-col>
+    </ion-col> -->
   </ion-row>
 
   <ion-row class="details-row">
@@ -54,7 +62,7 @@
       </ion-item>
 
       <div *ngIf="showDegree" class="departList">
-        <ion-item detail-push *ngFor="let item of degreeList | filter : degreeName" (click)="selectDegree(item)">
+        <ion-item detail-push *ngFor="let item of degreeList  " (click)="selectDegree(item)">
           {{item.name}}
         </ion-item>
       </div>
@@ -76,7 +84,7 @@
       </ion-item>
 
       <div *ngIf="showspecialization" class="departList">
-        <ion-item detail-push *ngFor="let item of specializationList | filter : specializationName"
+        <ion-item detail-push *ngFor="let item of specializationList  "
           (click)="selectspecialization(item)">
           {{item.name}}
         </ion-item>
@@ -91,7 +99,7 @@
       </ion-item>
     </ion-row>
 
-    <ion-row class="inputBox">
+    <ion-row class="selectBox">
         <ion-label stacked> {{ 'SCORE' | translate }}</ion-label>
         <ion-select [(ngModel)]="score">
            
@@ -103,7 +111,7 @@
         </ion-select>
       </ion-row>
 
-    <ion-row class="inputBox">
+    <ion-row class="selectBox">
       <ion-label stacked>{{'STATUS' | translate}}</ion-label>
       <ion-select [(ngModel)]="state">
         <ion-option value="draft">{{ 'DRAFT' | translate }} </ion-option>
@@ -114,12 +122,12 @@
 
 
 
-    <ion-row style="width:100%">
+    <!-- <ion-row style="width:100%">
       
       <button ion-button round *ngIf="editable==false"  class="saveBank" (click)="updateQualificationInfo()">{{ 'SAVE' | translate }}   <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
 
       <button ion-button round class="saveBank" *ngIf="editable==true" (click)="submit()">{{ 'SAVE' | translate }}   <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
-    </ion-row>
+    </ion-row> -->
 
 
   </ion-row>

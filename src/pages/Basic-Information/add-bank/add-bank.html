@@ -19,11 +19,15 @@
         <!-- <button class="menu-btn" ion-button menuToggle float-left>
           <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
         </button> -->
-        <ion-icon name="arrow-back" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+       <ion-icon name="arrow-back" class="back-iconn"  *ngIf="this.directionParam.direction =='left'" (click)="navCtrl.pop()"></ion-icon>
+        <ion-icon name="arrow-forward" *ngIf="this.directionParam.direction !=='left'" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+  
       </ion-col>
       <ion-col class="head-title" no-padding col-8>
         <ion-row>
-          {{ 'BANK_ACCOUNTS' | translate }}
+      {{ 'ADD_BANK' | translate }}
+
+          <!-- {{ 'BANK_ACCOUNTS' | translate }} -->
         </ion-row>
       </ion-col>
       <ion-col no-padding col-2>
@@ -34,14 +38,16 @@
     <!-- <ion-title class="head-title"></ion-title> -->
   </ion-row>
   <ion-row class="info">
-    <ion-col class="imagee" col-3>
+      <button ion-button round class="saveBank" *ngIf="hideEditbtn" (click)="createBank()">{{ 'SAVE' | translate }} <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
+
+    <!-- <ion-col class="imagee" col-3>
       <img style=" width:2.5em" src="assets/imgs/Overview/salary@2x.png">
     </ion-col>
     <ion-col col-9>
       {{ 'ADD_BANK' | translate }}
 
 
-    </ion-col>
+    </ion-col> -->
   </ion-row>
 
   <ion-row class="details-row">
@@ -108,9 +114,9 @@
       </ion-col>
     </ion-row>
 
-    <ion-row style="width:100%">
+    <!-- <ion-row style="width:100%">
       <button ion-button round class="saveBank" *ngIf="hideEditbtn" (click)="createBank()">{{ 'SAVE' | translate }} <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
-    </ion-row>
+    </ion-row> -->
 
 
   </ion-row>

@@ -4,6 +4,7 @@ import { Global } from '../../../utils/Global';
 import { Constants } from '../../../utils/Constants';
 import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
+import { GeneralProvider } from '../../../providers/general/general';
  
 @Component({
   selector: 'page-add-bank',
@@ -21,7 +22,7 @@ export class AddBankPage {
   partner_id: any='';
   BankIsEdit:boolean = false;
   hideEditbtn:boolean = false
-  constructor(public loadingCtrl:LoadingController, public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
+  constructor(public directionParam:GeneralProvider,public loadingCtrl:LoadingController, public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
 
     console.log(this.navParams.data)
     this.BankIsEdit = this.navParams.data
@@ -75,7 +76,7 @@ export class AddBankPage {
       loading.dismiss()
       console.log(data)
 
-      if(data !== null && data !== undefined){
+      if(data !== null && data !== undefined && data.length >0){
         console.log(data)
         
          this.partner_id = data[0].id
