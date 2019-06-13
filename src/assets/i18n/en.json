@@ -78,6 +78,9 @@
     "EVALUATION_PERIOD":"Evaluation Period",
     "VACATIONS":"Vacations",
     "PERMISSION":"Permission",
+    "PERMISSIONS":"Permissions",
+
+    "MISSIONS":"Missions",
     "VIOLATIONS":"Violations and penalties",
     "TRAINING_COURSES":"Training Courses",
     "GENERAL":"General Services",

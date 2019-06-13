@@ -130,7 +130,7 @@
           </ion-input>
         </ion-item>
   
-        <div *ngIf="isJobShow" class="departList">
+        <div *ngIf="isJobShow && jobsList.length>0" class="departList">
           <ion-item detail-push *ngFor="let job of jobsList | filter : EmployeeJobTitle"
             (click)="selectJob(job)">
             {{job.name}}
@@ -160,7 +160,7 @@
         </ion-input>
       </ion-item>
 
-      <div *ngIf="isDepartShow" class="departList">
+      <div *ngIf="isDepartShow && departmentsList.length>0" class="departList">
         <ion-item detail-push *ngFor="let item of departmentsList | filter : EmployeDepartment"
           (click)="selectDeparment(item)">
           {{item.name}}

@@ -1,0 +1,27 @@
+<div class="main-div">
+
+
+  <ion-row class="icon-row">
+    <img [src]="icon" class="alert-img" /> </ion-row>
+
+  <div class="submain-div">
+    <ion-row class="alertTitle">
+      {{alertTitle}}
+    </ion-row>
+
+    <ion-row class="alertMessage">
+      {{alertMessage}}
+    </ion-row>
+
+    <ion-row class="button-row">
+      <ion-col col-4 (click)='clickYes()'>
+        <button ion-button round class="ok-button">{{yesButtonText}}</button>
+      </ion-col>
+      <ion-col col-4 (click)='clickNo()' *ngIf='buttonshow'>
+        <button ion-button round class="cancel-button">{{noButtonText}}</button>
+      </ion-col>
+     
+    </ion-row>
+  </div>
+
+</div>

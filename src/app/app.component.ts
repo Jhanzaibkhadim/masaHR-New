@@ -54,15 +54,18 @@ export class MyApp {
       this.getLocalData()
     this.pages = [
       { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
-      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
-      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
       { title: 'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
       { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
-      { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
-      { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
-      { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
-      { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
-      { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
+      { title: 'ATTENDANCE', component: OverviewPage, img: "assets/imgs/SideMenu/attendance.svg" },
+      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/Dashboard/time_tracting.png" },
+      { title: 'MISSIONS', component: HrProceduresListPage, img: "assets/imgs/Overview/mission.png" },
+      { title: 'PERMISSIONS', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+
+      // { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+      // { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
+      // { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
+      // { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
+      // { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
       { title: 'ABOUT', component: TabsPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 

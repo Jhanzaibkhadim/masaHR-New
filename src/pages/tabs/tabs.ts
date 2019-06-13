@@ -1,6 +1,7 @@
 import { DashboardPage } from './../dashboard/dashboard';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { OverviewPage } from '../overview/overview';
 
 /**
  * Generated class for the TabsPage page.
@@ -16,6 +17,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class TabsPage {
 
   tab1Root: any = DashboardPage;
+  tab2Root:any = OverviewPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

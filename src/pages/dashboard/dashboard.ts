@@ -8,6 +8,8 @@ import { Storage } from '@ionic/storage';
 import { BasicInfoListPage } from '../Basic-Information/basic-info-list/basic-info-list';
 import { ContractsListPage } from '../contracts-list/contracts-list';
 import { HrProceduresListPage } from '../hr-procedures-list/hr-procedures-list';
+import { LeavesPage } from '../leaves/leaves';
+import { OverviewPage } from '../overview/overview';
 
 /**
  * Generated class for the DashboardPage page.
@@ -42,11 +44,18 @@ export class DashboardPage {
   gotoBasicInformation(){
     this.navCtrl.push(BasicInfoListPage)
   }
+  gotobasicEdit(){
+    this.navCtrl.push(BasicInfoPage)
 
+  }
   gotoContracts(){
     this.navCtrl.push(ContractsListPage)
   }
-  gotoHRProcedures(){
-    this.navCtrl.push(HrProceduresListPage)
+  gotoLeaves(){
+    this.navCtrl.push(LeavesPage)
+  }
+
+  gotoAttendance(){
+    this.navCtrl.push(OverviewPage)
   }
 }
