@@ -31,9 +31,11 @@ export class CurrentEmployeeSkillsPage {
   }
   currentSkillList:any=[];
   getcurrentSkillList(){
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+     let loading = this.loadingCtrl.create({
+        spinner:'hide',
+        content: ' <img src="assets/imgs/loading.gif" />'
+  
+      });
   
     loading.present();
 

@@ -46,6 +46,23 @@ ion-icon {
 .no-display{
     display: none !important;
 }
+
+// .loading-wrapper .loading-spinner{
+//     display: none !important;
+// }
+.loading-wrapper .loading-content{
+    background: transparent !important;
+}
+ .loading-wrapper {
+    border-radius: 2px;
+    max-width: 280px;
+    max-height: 90%;
+    color: rgba(0, 0, 0, 0.5);
+     background: transparent !important; 
+    
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+    padding: 24px;
+}
 // ion-icon {
 //     &[class*="custom-"] {
 //       mask-size: contain;

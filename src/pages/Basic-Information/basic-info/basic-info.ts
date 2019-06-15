@@ -46,7 +46,9 @@ export class BasicInfoPage {
   departmentsList: any = [];
   getDepartments() {
     let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      spinner:'hide',
+      content: ' <img src="assets/imgs/loading.gif" />'
+
     });
 
     loading.present();
@@ -64,7 +66,9 @@ export class BasicInfoPage {
   jobsList: any = [];
   getJOBS() {
     let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      spinner:'hide',
+      content: ' <img src="assets/imgs/loading.gif" />'
+      // content: 'Please wait...'
     });
 
     loading.present();
@@ -90,7 +94,9 @@ export class BasicInfoPage {
   }
   getBasicInfo() {
     let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      spinner:'hide',
+      content: ' <img src="assets/imgs/loading.gif" />'
+
     });
 
     loading.present();
@@ -164,7 +170,9 @@ export class BasicInfoPage {
       // this.displaySimpleToast("Please Fill all the Fields")
     } else {
       let loading = this.loadingCtrl.create({
-        content: 'Please wait...'
+        spinner:'hide',
+        content: ' <img src="assets/imgs/loading.gif" />'
+  
       });
 
       loading.present();

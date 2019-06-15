@@ -58,8 +58,8 @@ export class MyApp {
       { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
       { title: 'ATTENDANCE', component: OverviewPage, img: "assets/imgs/SideMenu/attendance.svg" },
       { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/Dashboard/time_tracting.png" },
-      { title: 'MISSIONS', component: HrProceduresListPage, img: "assets/imgs/Overview/mission.png" },
-      { title: 'PERMISSIONS', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+      { title: 'MISSIONS', component: TabsPage, img: "assets/imgs/Overview/mission.png" },
+      { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
 
       // { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
       // { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },

@@ -25,6 +25,20 @@ export class OverviewPage {
 
   }
 
+
+  ionViewWillEnter() {
+    let elem = <HTMLElement>document.querySelector(".tabbar");
+    if (elem != null) {
+      elem.style.display = 'none';
+    }
+  }
+  ionViewWillLeave() {
+    let elem = <HTMLElement>document.querySelector(".tabbar");
+    if (elem != null) {
+      elem.style.display = 'flex';
+    }
+  }
+  
   ionViewDidLoad() {
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
       console.log(res, "ye hey local")

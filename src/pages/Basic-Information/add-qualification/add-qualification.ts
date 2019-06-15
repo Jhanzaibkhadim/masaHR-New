@@ -81,9 +81,11 @@ export class AddQualificationPage {
   }
 
   readDegree() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+     let loading = this.loadingCtrl.create({
+        spinner:'hide',
+        content: ' <img src="assets/imgs/loading.gif" />'
+  
+      });
 
     loading.present();
     this.api.getRequest(`${Constants.READ_DEGREES_LIST}`).then((data: any) => {
@@ -123,9 +125,11 @@ export class AddQualificationPage {
 
 
   readspecialization() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+     let loading = this.loadingCtrl.create({
+        spinner:'hide',
+        content: ' <img src="assets/imgs/loading.gif" />'
+  
+      });
 
     loading.present();
     this.api.getRequest(`${Constants.READ_SPECIALIST_LIST}`).then((data: any) => {

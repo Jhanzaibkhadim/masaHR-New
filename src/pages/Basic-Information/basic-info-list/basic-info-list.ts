@@ -27,6 +27,18 @@ export class BasicInfoListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasicInfoListPage');
   }
+  ionViewWillEnter() {
+    let elem = <HTMLElement>document.querySelector(".tabbar");
+    if (elem != null) {
+      elem.style.display = 'none';
+    }
+  }
+  ionViewWillLeave() {
+    let elem = <HTMLElement>document.querySelector(".tabbar");
+    if (elem != null) {
+      elem.style.display = 'flex';
+    }
+  }
 
   gotoLost(){
     this.navCtrl.push(LostEmployeeSkillsPage)

@@ -39,14 +39,23 @@ export class DashboardPage {
     })
     console.log('ionViewDidLoad DashboardPage');
   }
-
-
+  ionViewWillEnter() {
+    let elem = <HTMLElement>document.querySelector(".tabbar");
+    if (elem != null) {
+      elem.style.display = 'none';
+    }
+  }
+  ionViewWillLeave() {
+    let elem = <HTMLElement>document.querySelector(".tabbar");
+    if (elem != null) {
+      elem.style.display = 'flex';
+    }
+  }
   gotoBasicInformation(){
     this.navCtrl.push(BasicInfoListPage)
   }
   gotobasicEdit(){
     this.navCtrl.push(BasicInfoPage)
-
   }
   gotoContracts(){
     this.navCtrl.push(ContractsListPage)

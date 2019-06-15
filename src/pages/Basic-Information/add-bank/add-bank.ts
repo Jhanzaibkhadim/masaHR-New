@@ -48,9 +48,11 @@ export class AddBankPage {
   }
 
   readBanks(){
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+     let loading = this.loadingCtrl.create({
+        spinner:'hide',
+        content: ' <img src="assets/imgs/loading.gif" />'
+  
+      });
   
     loading.present();
     this.api.getRequest(`${Constants.READ_BANKS}`).then ((data:any) =>{
@@ -67,9 +69,11 @@ export class AddBankPage {
   }
 
   getPartnerID(){
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+     let loading = this.loadingCtrl.create({
+        spinner:'hide',
+        content: ' <img src="assets/imgs/loading.gif" />'
+  
+      });
   
     loading.present();
     this.api.getRequest(`${Constants.GET_PARTNER_ID}`+this.employee_id).then ((data:any) =>{
