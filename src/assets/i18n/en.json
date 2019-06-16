@@ -135,7 +135,20 @@
     "SELECT_DATE":"Select Date",
 
     "ADD_EXPERIENCE":"Add Experience",
-    "PLEASE_WAIT":"Please wait"
+    "PLEASE_WAIT":"Please wait",
+    "PROFILE_UPDATED":"Profile updated successfully",
+    "SUCCESS":"Success",
+    "TRY_AGAIN":"Please try again",
+    "Error":"Error",
+    "RECORD_UPDATED":"Record updated successfully",
+    "Ok":"Ok",
+    "Cancel":"Cancel",
+    "FILL_DETAILS":"Please fill all details ",
+    "RECORD_ADDED":"Record added successfully"
+
+
+
+
 
 
 

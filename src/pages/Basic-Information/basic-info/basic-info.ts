@@ -27,7 +27,7 @@ export class BasicInfoPage {
   EmployeeJobID: any;
   // (ionChange)="checktype()"
   constructor(public translateService: TranslateService, public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public modal: ModalController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
-    this.displaySimpleToast('cancel','Success',"Profile Updated SuccessFully",true)
+
 
   }
 
@@ -228,7 +228,24 @@ export class BasicInfoPage {
         console.log(resp)
         loading.dismiss();
         if (resp.success == 0) {
-          this.displaySimpleToast('success','Success',"Profile Updated SuccessFully",true)
+          var record_updated;
+          var success;
+          this.translateService.get('PROFILE_UPDATED').subscribe(
+            value => {
+              // value is our translated string
+              record_updated = value;
+            }
+          )
+          this.translateService.get('SUCCESS').subscribe(
+            value => {
+              // value is our translated string
+              success = value;
+            }
+          )
+
+          this.displaySimpleToast('success', success, record_updated, false)
+
+          // this.displaySimpleToast('success','Success',"Profile Updated SuccessFully",true)
         }
       })
 
@@ -237,20 +254,12 @@ export class BasicInfoPage {
 
   displaySimpleToast(icon, messageTitle, messageText, button) {
 
-    // var toast = this.toastCtrl.create({
-    //   message: msg,
-    //   duration: 2000,
-    //   position: 'bottom',
-    // })
-    // toast.present();
-
-
     var addSuccess = {
       icon: `assets/imgs/${icon}.svg`,
       title: messageTitle,
       message: messageText,
-      yesButtonText: 'OK',
-      noButtonText: 'NO',
+      yesButtonText: 'Ok',
+      noButtonText: 'Cancel',
       singleButton: button
     };
     var modal = this.modal.create(MessageDialoguePage, { data: addSuccess }, { enableBackdropDismiss: false, cssClass: "picture-option" })

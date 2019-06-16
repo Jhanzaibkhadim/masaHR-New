@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController, ModalController } from 'ionic-angular';
 import { Global } from '../../../utils/Global';
 import { Constants } from '../../../utils/Constants';
 import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
 import { GeneralProvider } from '../../../providers/general/general';
 import { TranslateService } from '@ngx-translate/core';
+import { MessageDialoguePage } from '../../message-dialogue/message-dialogue';
 
 @Component({
   selector: 'page-add-qualification',
@@ -24,43 +25,43 @@ export class AddQualificationPage {
   qualifiedYear: any;
   score: any;
   state: any;
-  editable:boolean=true;
+  editable: boolean = true;
   monthShortNames: string[];
   userID: any;
   qualifId: any;
 
-  constructor(public translateService: TranslateService,public directionParam:GeneralProvider,public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+  constructor(public modal: ModalController, public translateService: TranslateService, public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
 
-    this.monthShortNames=["Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"]
+    this.monthShortNames = ["Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"]
     console.log(this.navParams.data)
     // this.BankIsEdit = this.navParams.data
-    if(this.navParams.data == false){
+    if (this.navParams.data == false) {
       this.editable = true;
-    }else{
-      this.editable=false
-      this.qualifId=this.navParams.data.id;
+    } else {
+      this.editable = false
+      this.qualifId = this.navParams.data.id;
       this.score = this.navParams.data.score;
       this.degreeID = this.navParams.data.degree_id;
       var date_year = this.navParams.data.qualified_year.split(' ')
-      var month=0;
+      var month = 0;
       // for (let index = 0; index < this.monthShortNames.length; index++) {
       //    if(this.monthShortNames[index] == date_year[1]){
       //     month=index+1;
       //    }
       // }
-      var dd = new Date(date_year[2]+'-'+date_year[1]+'-'+date_year[0]).toJSON().split('T')[0];;
+      var dd = new Date(date_year[2] + '-' + date_year[1] + '-' + date_year[0]).toJSON().split('T')[0];;
       // month = dd.getMonth()+1;
-      this.qualifiedYear =  dd;
+      this.qualifiedYear = dd;
 
       // this.qualifiedYear =  date_year[2]+'-'+month+'-'+date_year[0]
       //  new Date(date_year[2]+'-'+date_year[1]+'-'+date_year[0]);
-      this.universityName =  this.navParams.data.institute_id;
-      this.specializationID =  this.navParams.data.specialt_id;
-      this.specializationName =  this.navParams.data.special_name
+      this.universityName = this.navParams.data.institute_id;
+      this.specializationID = this.navParams.data.specialt_id;
+      this.specializationName = this.navParams.data.special_name
       this.state = this.navParams.data.state
       this.degreeName = this.navParams.data.degreeName;
       this.employee_id = this.navParams.data.employee_id
-      console.log(this.specializationName,this.navParams.data.qualified_year,this.qualifiedYear)
+      console.log(this.specializationName, this.navParams.data.qualified_year, this.qualifiedYear)
     }
   }
 
@@ -71,7 +72,7 @@ export class AddQualificationPage {
       if (res !== null && res !== undefined) {
         // this.EmployeName = res.name;
         this.employee_id = res.employee_id;
-        this.userID= res.user_id;
+        this.userID = res.user_id;
         // this.getPartnerID();
 
       }
@@ -82,10 +83,10 @@ export class AddQualificationPage {
   }
 
   readDegree() {
-      var please_wait;
+    var please_wait;
     this.translateService.get('PLEASE_WAIT').subscribe(
       value => {
-        // value is our translated string
+
         please_wait = value;
       }
     )
@@ -119,7 +120,7 @@ export class AddQualificationPage {
   }
   searchDegree() {
     // if (this.degreeName == "") {
-      this.showDegree = true;
+    this.showDegree = true;
     // } else {
     //   this.showDegree = false;
     // }
@@ -133,7 +134,7 @@ export class AddQualificationPage {
 
 
   readspecialization() {
-      var please_wait;
+    var please_wait;
     this.translateService.get('PLEASE_WAIT').subscribe(
       value => {
         // value is our translated string
@@ -169,7 +170,7 @@ export class AddQualificationPage {
   }
   searchspecialization() {
     // if (this.specializationName == "") {
-      this.showspecialization = true;
+    this.showspecialization = true;
     // } else {
     //   this.showspecialization = false;
     // }
@@ -188,47 +189,97 @@ export class AddQualificationPage {
         special_name: this.specializationName,
         specialt_id: this.specializationID,
         state: this.state,
-        user_id:  this.userID
+        user_id: this.userID
       }
 
+      var please_wait;
+      this.translateService.get('PLEASE_WAIT').subscribe(
+        value => {
+
+          please_wait = value;
+        }
+      )
+      console.log(please_wait)
       let loading = this.loadingCtrl.create({
-        content: 'Please wait...'
+        spinner: 'hide',
+        content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
       });
 
       loading.present();
 
-      this.api.postRequest(`${Constants.INSERT_EMPLOYEE_QUALIFICATION}`,data).then((data: any) => {
+      this.api.postRequest(`${Constants.INSERT_EMPLOYEE_QUALIFICATION}`, data).then((data: any) => {
         loading.dismiss()
         console.log(data)
 
         if (data !== null && data !== undefined) {
           console.log(data)
+          var record_added;
+          var success;
+          this.translateService.get('RECORD_ADDED').subscribe(
+            value => {
+              // value is our translated string
+              record_added = value;
+            }
+          )
+          this.translateService.get('SUCCESS').subscribe(
+            value => {
+              // value is our translated string
+              success = value;
+            }
+          )
+
+          this.displaySimpleToast('success', success, record_added, false)
         }
       })
     }
-    else{
-      this.displaySimpleToast("Please Provide all details")
+    else {
+      var fillDetails;
+      var error;
+      this.translateService.get('FILL_DETAILS').subscribe(
+        value => {
+          // value is our translated string
+          fillDetails = value;
+        }
+      )
+      this.translateService.get('Error').subscribe(
+        value => {
+          // value is our translated string
+          error = value;
+        }
+      )
+
+      this.displaySimpleToast('error', error, fillDetails, false)
     }
   }
 
-  
-  displaySimpleToast(msg) {
 
-    var toast = this.toastCtrl.create({
-      message: msg,
-      duration: 2000,
-      position: 'bottom',
+  displaySimpleToast(icon, messageTitle, messageText, button) {
+
+    var addSuccess = {
+      icon: `assets/imgs/${icon}.svg`,
+      title: messageTitle,
+      message: messageText,
+      yesButtonText: 'Ok',
+      noButtonText: 'Cancel',
+      singleButton: button
+    };
+    var modal = this.modal.create(MessageDialoguePage, { data: addSuccess }, { enableBackdropDismiss: false, cssClass: "picture-option" })
+
+    modal.onDidDismiss(data => {
+      // if (data === 1) {
+      // }
+      // else {
+      // }
     })
-    toast.present();
+    modal.present()
   }
 
-
-  updateQualificationInfo(){
+  updateQualificationInfo() {
     if (this.degreeName.trim() !== '' && this.specializationID !== '' && this.employee_id !== '' && this.qualifiedYear !== '' && this.score !== '' && this.state !== '') {
 
       var data = {
         degree_id: this.degreeID,
-        id:this.qualifId,
+        id: this.qualifId,
         employee_id: this.employee_id,
         institute_id: this.universityName,
         qualified_year: this.qualifiedYear,
@@ -236,26 +287,69 @@ export class AddQualificationPage {
         special_name: this.specializationName,
         specialt_id: this.specializationID,
         state: this.state,
-        user_id:  this.userID
+        user_id: this.userID
       }
       console.log(data)
+      var please_wait;
+      this.translateService.get('PLEASE_WAIT').subscribe(
+        value => {
+
+          please_wait = value;
+        }
+      )
+      console.log(please_wait)
       let loading = this.loadingCtrl.create({
-        content: 'Please wait...'
+        spinner: 'hide',
+        content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
       });
 
       loading.present();
 
-      this.api.postRequest(`${Constants.UPDATE_EMPLOYEE_QUALIFICATION}`,data).then((data: any) => {
+      this.api.postRequest(`${Constants.UPDATE_EMPLOYEE_QUALIFICATION}`, data).then((data: any) => {
         loading.dismiss()
         console.log(data)
 
         if (data !== null && data !== undefined) {
           console.log(data)
+          var record_updated;
+          var success;
+          this.translateService.get('RECORD_UPDATED').subscribe(
+            value => {
+              // value is our translated string
+              record_updated = value;
+            }
+          )
+          this.translateService.get('SUCCESS').subscribe(
+            value => {
+              // value is our translated string
+              success = value;
+            }
+          )
+
+          this.displaySimpleToast('success', success, record_updated, false)
+
         }
       })
     }
-    else{
-      this.displaySimpleToast("Please Provide all details")
+    else {
+      var fillDetails;
+      var error;
+      this.translateService.get('FILL_DETAILS').subscribe(
+        value => {
+          // value is our translated string
+          fillDetails = value;
+        }
+      )
+      this.translateService.get('Error').subscribe(
+        value => {
+          // value is our translated string
+          error = value;
+        }
+      )
+
+      this.displaySimpleToast('error', error, fillDetails, false)
+
+
     }
 
   }

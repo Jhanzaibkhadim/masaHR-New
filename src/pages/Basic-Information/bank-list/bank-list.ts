@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, ModalController } from 'ionic-angular';
 import { Constants } from '../../../utils/Constants';
 import { Storage } from '@ionic/storage';
 import { ApiProvider } from '../../../providers/api/api';
 import { AddBankPage } from '../add-bank/add-bank';
 import { GeneralProvider } from '../../../providers/general/general';
 import { TranslateService } from '@ngx-translate/core';
+import { MessageDialoguePage } from '../../message-dialogue/message-dialogue';
  
 @Component({
   selector: 'page-bank-list',
@@ -17,7 +18,7 @@ export class BankListPage {
   bankList:any=[];
   partner_id:any;
 
-  constructor(public translateService: TranslateService,public toastCtrl:ToastController, public directionParam:GeneralProvider,public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modal:ModalController,public translateService: TranslateService,public toastCtrl:ToastController, public directionParam:GeneralProvider,public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -33,16 +34,26 @@ export class BankListPage {
     
     
   }
-  displaySimpleToast(msg) {
+    displaySimpleToast(icon, messageTitle, messageText, button) {
 
-    var toast = this.toastCtrl.create({
-      message: msg,
-      duration: 2000,
-      position: 'bottom',
+    var addSuccess = {
+      icon: `assets/imgs/${icon}.svg`,
+      title: messageTitle,
+      message: messageText,
+      yesButtonText: 'Ok',
+      noButtonText: 'Cancel',
+      singleButton: button
+    };
+    var modal = this.modal.create(MessageDialoguePage, { data: addSuccess }, { enableBackdropDismiss: false, cssClass: "picture-option" })
+
+    modal.onDidDismiss(data => {
+      // if (data === 1) {
+      // }
+      // else {
+      // }
     })
-    toast.present();
+    modal.present()
   }
-
   getPartnerID(){
       var please_wait;
     this.translateService.get('PLEASE_WAIT').subscribe(
@@ -68,7 +79,22 @@ export class BankListPage {
          this.partner_id = data[0].id
          this.getBankList(); 
       }else{
-        this.displaySimpleToast("Please try again")
+        var try_again;
+          var error;
+          this.translateService.get('TRY_AGAIN').subscribe(
+            value => {
+              // value is our translated string
+              try_again = value;
+            }
+          )
+          this.translateService.get('Error').subscribe(
+            value => {
+              // value is our translated string
+              error = value;
+            }
+          )
+
+          this.displaySimpleToast('error', error, try_again, false)
       }
     });
 

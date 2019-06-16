@@ -85,7 +85,7 @@ export class QualificationListPage {
       loading.dismiss()
       console.log(data)
 
-      if (data !== null && data !== undefined) {
+      if (data !== null && data !== undefined && data.status== undefined) {
         for (var k = 0; k < data.length; k++) {
           var dt = data[k].qualified_year.split(' ');
           data[k].qualified_year = dt[1] + ' ' + dt[2] + ' ' + dt[3];

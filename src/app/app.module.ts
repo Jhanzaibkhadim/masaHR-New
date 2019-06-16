@@ -46,6 +46,7 @@ import { BasicInfoPage } from '../pages/Basic-Information/basic-info/basic-info'
 import { EmployeeExperiencePage } from '../pages/Basic-Information/employee-experience/employee-experience';
 import { AddEmployeeExperiencePage } from '../pages/Basic-Information/add-employee-experience/add-employee-experience';
 import { MessageDialoguePage } from '../pages/message-dialogue/message-dialogue';
+import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup';
 
 
 
@@ -81,7 +82,8 @@ export function createTranslateLoader(http: HttpClient) {
     AddQualificationPage,
     EmployeeExperiencePage,
     AddEmployeeExperiencePage,
-    MessageDialoguePage
+    MessageDialoguePage,
+    AttendancePopupPage
   ],
   imports: [
     BrowserModule,
@@ -126,7 +128,8 @@ export function createTranslateLoader(http: HttpClient) {
     AddQualificationPage,
     EmployeeExperiencePage,
     AddEmployeeExperiencePage,
-    MessageDialoguePage
+    MessageDialoguePage,
+    AttendancePopupPage
 
   ],
   providers: [

@@ -125,6 +125,17 @@
     "SELECT_DATE":"حدد تاريخ",
 
     "ADD_EXPERIENCE":"إضافة تجربة",
-    "PLEASE_WAIT":"ارجوك انتظر"
+    "PLEASE_WAIT":"ارجوك انتظر",
+    "PROFILE_UPDATED":"تم تحديث الملف الشخصي بنجاح",
+    "SUCCESS":"نجاح",
+    "TRY_AGAIN":"حاول مرة اخرى",
+    "Error":"خطأ",
+    "RECORD_UPDATED":"سجل تحديث بنجاح",
+    "Ok":"حسنا",
+    "Cancel":"إلغاء",
+    "FILL_DETAILS":"يرجى ملء جميع التفاصيل",
+    "RECORD_ADDED":"سجل المضافة بنجاح"
+
     
 }
+
