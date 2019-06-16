@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { ApiProvider } from '../../../providers/api/api';
 import { AddBankPage } from '../add-bank/add-bank';
 import { GeneralProvider } from '../../../providers/general/general';
+import { TranslateService } from '@ngx-translate/core';
  
 @Component({
   selector: 'page-bank-list',
@@ -16,7 +17,7 @@ export class BankListPage {
   bankList:any=[];
   partner_id:any;
 
-  constructor(public toastCtrl:ToastController, public directionParam:GeneralProvider,public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public translateService: TranslateService,public toastCtrl:ToastController, public directionParam:GeneralProvider,public api:ApiProvider, public loadingCtrl:LoadingController,  public localStore:Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -43,11 +44,18 @@ export class BankListPage {
   }
 
   getPartnerID(){
-     let loading = this.loadingCtrl.create({
-        spinner:'hide',
-        content: ' <img src="assets/imgs/loading.gif" />'
-  
-      });
+      var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
   
     loading.present();
     this.api.getRequest(`${Constants.GET_PARTNER_ID}`+this.employee_id).then ((data:any) =>{
@@ -66,11 +74,18 @@ export class BankListPage {
 
   }
   getBankList(){
-     let loading = this.loadingCtrl.create({
-        spinner:'hide',
-        content: ' <img src="assets/imgs/loading.gif" />'
-  
-      });
+      var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
   
     loading.present();
 

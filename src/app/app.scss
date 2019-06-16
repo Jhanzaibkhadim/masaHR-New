@@ -52,6 +52,12 @@ ion-icon {
 // }
 .loading-wrapper .loading-content{
     background: transparent !important;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+}
+.loading-content img{
+    height: 4em;
 }
  .loading-wrapper {
     border-radius: 2px;

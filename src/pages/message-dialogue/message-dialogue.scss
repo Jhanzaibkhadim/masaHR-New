@@ -2,14 +2,14 @@ page-message-dialogue {
 
     .main-div{
         width: 80%;
-        top: 25vh;
+        top: 25%;
         margin: auto;
         position: relative;
     }
 
     .submain-div{
         background: white;
-        margin-top: -8%;
+        margin-top: -27%;
         padding-top: 15%;
         padding-bottom: 4%;
         border-radius: 12px;        
@@ -19,42 +19,52 @@ page-message-dialogue {
     }
 
     .alert-img{
-        width: 5vw;
-        height: 5vw;
+        width: 4.5em;
+        // height: 5vw;
     }
 
     .alertTitle{
         justify-content: center;
-        font-size: 2vw;
-
+        font-size: 1.3em;
+        margin-bottom: 7%;
     }
 
     .alertMessage{
         justify-content: center;
         font-weight: normal;
-        font-size: 1.6vw;
+        font-size: 1em;
         padding-top: 2%;
         text-align: center;
         width: 98%;
         margin: auto;
+        margin-bottom: 7%;
     }
 
     .button-row{
-        height: 5.5vw;
+        // height: 5.5vw;
         justify-content: center;
         padding-top: 2%;
+        margin-bottom: 5%;
     }
 
     .ok-button{
         width: 100%;
-        height:  100%;
+        // height:  100%;
+        background-color: #5cbb56 !important;
+        font-size: 1.8rem !important;
+        font-weight: 400 !important;
+    }
+    .ok2-button{
+        width: 90%;
+        // height:  100%;
+        margin: auto;
         background-color: #5cbb56 !important;
         font-size: 1.8rem !important;
         font-weight: 400 !important;
     }
 
     .cancel-button{
-        height:  100%;
+        // height:  100%;
         width: 100%;
         background-color: #E54848 !important;   
         font-size: 1.8rem !important;

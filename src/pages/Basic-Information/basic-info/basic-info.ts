@@ -6,6 +6,7 @@ import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
 import { GeneralProvider } from '../../../providers/general/general';
 import { MessageDialoguePage } from '../../message-dialogue/message-dialogue';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'page-basic-info',
@@ -25,7 +26,8 @@ export class BasicInfoPage {
   EmployeeJobTitle: any;
   EmployeeJobID: any;
   // (ionChange)="checktype()"
-  constructor(public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public modal: ModalController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+  constructor(public translateService: TranslateService, public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public modal: ModalController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+    this.displaySimpleToast('cancel','Success',"Profile Updated SuccessFully",true)
 
   }
 
@@ -39,16 +41,23 @@ export class BasicInfoPage {
         this.getBasicInfo();
       }
     })
-    console.log('ionViewDidLoad BasicInfoPage');
+    // console.log('ionViewDidLoad BasicInfoPage');
     this.getJOBS();
     this.getDepartments();
   }
   departmentsList: any = [];
   getDepartments() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
     let loading = this.loadingCtrl.create({
-      spinner:'hide',
-      content: ' <img src="assets/imgs/loading.gif" />'
-
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
     });
 
     loading.present();
@@ -65,10 +74,17 @@ export class BasicInfoPage {
 
   jobsList: any = [];
   getJOBS() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
     let loading = this.loadingCtrl.create({
-      spinner:'hide',
-      content: ' <img src="assets/imgs/loading.gif" />'
-      // content: 'Please wait...'
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
     });
 
     loading.present();
@@ -93,10 +109,17 @@ export class BasicInfoPage {
     });
   }
   getBasicInfo() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
     let loading = this.loadingCtrl.create({
-      spinner:'hide',
-      content: ' <img src="assets/imgs/loading.gif" />'
-
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
     });
 
     loading.present();
@@ -169,10 +192,16 @@ export class BasicInfoPage {
     if (this.EmployeCode == '' || this.EmployeeJobTitle == '' || this.EmployeName == '' || this.EmployeNumber == '' || this.EmployeDepartment == '' || this.EmployeEmail == '' || this.EmployeeGender == '') {
       // this.displaySimpleToast("Please Fill all the Fields")
     } else {
+      var please_wait;
+      this.translateService.get('PLEASE_WAIT').subscribe(
+        value => {
+          // value is our translated string
+          please_wait = value;
+        }
+      )
       let loading = this.loadingCtrl.create({
-        spinner:'hide',
-        content: ' <img src="assets/imgs/loading.gif" />'
-  
+        spinner: 'hide',
+        content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
       });
 
       loading.present();
@@ -199,7 +228,7 @@ export class BasicInfoPage {
         console.log(resp)
         loading.dismiss();
         if (resp.success == 0) {
-          // this.displaySimpleToast("Profile Updated SuccessFully")
+          this.displaySimpleToast('success','Success',"Profile Updated SuccessFully",true)
         }
       })
 
@@ -217,7 +246,7 @@ export class BasicInfoPage {
 
 
     var addSuccess = {
-      icon: `assets/imgs/${icon}.png`,
+      icon: `assets/imgs/${icon}.svg`,
       title: messageTitle,
       message: messageText,
       yesButtonText: 'OK',

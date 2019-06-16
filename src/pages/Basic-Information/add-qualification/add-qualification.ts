@@ -5,6 +5,7 @@ import { Constants } from '../../../utils/Constants';
 import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
 import { GeneralProvider } from '../../../providers/general/general';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'page-add-qualification',
@@ -28,7 +29,7 @@ export class AddQualificationPage {
   userID: any;
   qualifId: any;
 
-  constructor(public directionParam:GeneralProvider,public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+  constructor(public translateService: TranslateService,public directionParam:GeneralProvider,public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
 
     this.monthShortNames=["Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"]
     console.log(this.navParams.data)
@@ -81,11 +82,18 @@ export class AddQualificationPage {
   }
 
   readDegree() {
-     let loading = this.loadingCtrl.create({
-        spinner:'hide',
-        content: ' <img src="assets/imgs/loading.gif" />'
-  
-      });
+      var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
 
     loading.present();
     this.api.getRequest(`${Constants.READ_DEGREES_LIST}`).then((data: any) => {
@@ -125,11 +133,18 @@ export class AddQualificationPage {
 
 
   readspecialization() {
-     let loading = this.loadingCtrl.create({
-        spinner:'hide',
-        content: ' <img src="assets/imgs/loading.gif" />'
-  
-      });
+      var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
 
     loading.present();
     this.api.getRequest(`${Constants.READ_SPECIALIST_LIST}`).then((data: any) => {

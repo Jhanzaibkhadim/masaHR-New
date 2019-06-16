@@ -5,6 +5,7 @@ import { Constants } from '../../../utils/Constants';
 import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
 import { GeneralProvider } from '../../../providers/general/general';
+import { TranslateService } from '@ngx-translate/core';
  
 @Component({
   selector: 'page-add-bank',
@@ -22,7 +23,7 @@ export class AddBankPage {
   partner_id: any='';
   BankIsEdit:boolean = false;
   hideEditbtn:boolean = false
-  constructor(public directionParam:GeneralProvider,public loadingCtrl:LoadingController, public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
+  constructor(public translateService: TranslateService,public directionParam:GeneralProvider,public loadingCtrl:LoadingController, public toastCtrl:ToastController, public navCtrl: NavController, public navParams: NavParams,public localStore:Storage,public api:ApiProvider,) {
 
     console.log(this.navParams.data)
     this.BankIsEdit = this.navParams.data
@@ -48,11 +49,18 @@ export class AddBankPage {
   }
 
   readBanks(){
-     let loading = this.loadingCtrl.create({
-        spinner:'hide',
-        content: ' <img src="assets/imgs/loading.gif" />'
-  
-      });
+      var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
   
     loading.present();
     this.api.getRequest(`${Constants.READ_BANKS}`).then ((data:any) =>{
@@ -69,11 +77,18 @@ export class AddBankPage {
   }
 
   getPartnerID(){
-     let loading = this.loadingCtrl.create({
-        spinner:'hide',
-        content: ' <img src="assets/imgs/loading.gif" />'
-  
-      });
+      var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
   
     loading.present();
     this.api.getRequest(`${Constants.GET_PARTNER_ID}`+this.employee_id).then ((data:any) =>{
