@@ -75,8 +75,8 @@
         </ion-input>
       </ion-item>
 
-      <div *ngIf="showBank" class="departList">
-        <ion-item detail-push *ngFor="let item of banksList | filter : bankName" (click)="selectbank(item)">
+      <div *ngIf="showBank && banksList.length>0" class="departList">
+        <ion-item detail-push *ngFor="let item of banksList " (click)="selectbank(item)">
           {{item.name}}
         </ion-item>
       </div>

@@ -144,8 +144,20 @@
     "Ok":"Ok",
     "Cancel":"Cancel",
     "FILL_DETAILS":"Please fill all details ",
-    "RECORD_ADDED":"Record added successfully"
+    "RECORD_ADDED":"Record added successfully",
 
+    "January": "Jan",
+    "February":"Feb",
+    "March":"Mar",
+    "April":"April",
+    "May":"May",
+    "June":"Jun",
+    "July":"Jul",
+    "August":"Aug",
+    "September":"Sep",
+    "October":"Oct",
+    "November":"Nov" ,
+    "December":"Dec"
 
 
 

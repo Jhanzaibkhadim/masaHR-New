@@ -17,7 +17,10 @@ export class AttendancePopupPage {
 
   }
 
+  goto(){
+    // this.navCtrl.setRoot(tabsPage);
 
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AttendancePopupPage');
   }

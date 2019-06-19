@@ -95,13 +95,13 @@
     <ion-row class="inputBox">
       <ion-item>
         <ion-label  stacked>{{ 'QUALIFICATION_YEAR' | translate}}</ion-label>
-        <ion-datetime placeholder=" {{ 'SELECT_DATE' | translate}}" display-format="YYYY" [(ngModel)]="qualifiedYear"></ion-datetime>
+        <ion-datetime placeholder=" {{ 'SELECT_DATE' | translate}}" monthNames="{{arabicMonthnames}}" display-format="YYYY" [(ngModel)]="qualifiedYear"></ion-datetime>
       </ion-item>
     </ion-row>
 
     <ion-row class="selectBox">
         <ion-label stacked> {{ 'SCORE' | translate }}</ion-label>
-        <ion-select [(ngModel)]="score">
+        <ion-select [(ngModel)]="score" okText="{{ 'Ok' | translate}}" cancelText=" {{ 'Cancel' | translate}} ">
            
           <ion-option value="excellent">{{ 'EXCELLENT' | translate }}   </ion-option>
           <ion-option value="vgood">  {{ 'VERY_GOOD' | translate }}  </ion-option>
@@ -113,7 +113,7 @@
 
     <ion-row class="selectBox">
       <ion-label stacked>{{'STATUS' | translate}}</ion-label>
-      <ion-select [(ngModel)]="state">
+      <ion-select [(ngModel)]="state" okText="{{ 'Ok' | translate}}" cancelText=" {{ 'Cancel' | translate}} ">
         <ion-option value="draft">{{ 'DRAFT' | translate }} </ion-option>
         <ion-option value="Validated">{{ 'VALIDATED' | translate }} </ion-option>
 

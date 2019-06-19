@@ -19,7 +19,10 @@ export class MessageDialoguePage {
   alertDialog:any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
+    
+    
     this.alertDialog = navParams.get('data');
+    console.log( this.alertDialog)
     this.icon = this.alertDialog.icon;
     this.alertTitle = this.alertDialog.title;
     this.alertMessage = this.alertDialog.message;

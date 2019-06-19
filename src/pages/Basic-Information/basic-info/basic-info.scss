@@ -1,173 +1,175 @@
 page-basic-info {
+  .headerr {
+    background: rgb(56, 128, 228) !important;
+    padding: 2%;
+    height: 10%;
+  }
+  .menu-btn {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .top {
+    width: 100%;
+    position: fixed;
+    background: rgb(56, 128, 228);
+    height: 30vw;
+    border-bottom-left-radius: 45% 57%;
+    border-bottom-right-radius: 45% 57%;
+  }
+  .back-iconn {
+    font-family: "ionicons";
+    color: white;
+    font-size: 2em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+  }
+  .head-title {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+  }
+  .head-title ion-row {
+    justify-content: center;
+  }
 
-    .headerr{
-        background: rgb(56, 128, 228) !important;
-        padding: 2%;
-        height: 10%;
-    }
-    .menu-btn{
-        background: transparent !important;
-        box-shadow: none !important;
-    }
-    .top{
-        width: 100%;
-        position: fixed;
-        background: rgb(56, 128, 228) ;
-        height: 30vw;
-        border-bottom-left-radius: 45% 57%;
-        border-bottom-right-radius: 45% 57%;
-        
-    }
-    .back-iconn{
-        font-family: "ionicons";
-        color: white;
-        font-size: 2em;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 5px;
+  .content-back {
+    background: #ebebeb;
+  }
+  .content-back .scroll-content {
+    padding-bottom: 0px !important;
+  }
+  .info {
+    width: 80%;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    position: fixed;
+    margin-top: 60px;
+    left: 10%;
+    // font-size: 16px;
+  }
+  .info ion-col {
+    margin: auto;
+    font-size: 16px;
+  }
+  .info .imagee {
+    text-align: center;
+  }
+  .details-row {
+    width: 100%;
+    margin-top: 30%;
+  }
+  .inputBox ion-item {
+    background: transparent !important;
+    color: black;
+    border-bottom: 0px solid rgb(122, 122, 122);
+    padding-left: 0px !important;
+    font-size: 16px;
+  }
+  .borderbox {
+    border: 1px solid rgb(122, 122, 122);
+    padding: 6px !important;
+    font-size: 16px;
+    margin-top: 2%;
+    border-radius: 10px;
+  }
 
-    }
-    .head-title{
-        margin-top: 10px;
-        font-size: 16px;
-        color: white;
-    }
-    .head-title ion-row{
-        justify-content: center;
-    }
-    
-    .content-back{
-        background: #EBEBEB;
-    }
-    .content-back .scroll-content{
-        padding-bottom: 0px !important;
-    }
-    .info{
-        width: 80%;
-        background: white;
-        padding: 10px;
-        border-radius: 8px;
-        position: fixed;
-        margin-top: 60px;
-        left: 10%;
-        // font-size: 16px;
-    }
-    .info ion-col{
-        margin:auto;
-        font-size: 16px;
-    }
-    .info .imagee{
-        text-align: center;
+  .item-input .label-md {
+    color: black !important;
+    font-size: 15px;
+  }
+  .inputBox {
+    margin-top: 2% !important;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+    // height: 100%;
+    width: 90%;
+    margin: auto;
+    // padding-left: 0px !important;
+    // border: 1px solid white;
+  }
+  .text-input-md {
+    color: rgb(129, 124, 124);
+  }
+  // .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+  //     color:white;
+  // }
+  .input-has-focus {
+    // border:none !important;
+    // box-shadow: 0px !important;
+  }
+  .item-input-has-focus {
+    // border:none !important;
+    // box-shadow: 0px !important;
+  }
+  ::placeholder {
+    color: white !important;
+  }
+  .item-md.item-block .item-inner {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .btns {
+    width: 90%;
+    margin: auto;
+  }
+  .edit-icon {
+    margin-left: 10%;
+    margin-right: 8%;
+    font-size: 18px;
+    margin-top: -3%;
+  }
+  .type {
+    width: 85%;
+    margin: auto;
+    padding-top: 6px;
+    font-size: 18px;
+  }
+  .btns ion-col {
+    // margin: auto;
+  }
+  .cloned-input {
+    width: 100%;
+    height: 100%;
+    // padding: 0 !important;
+    border: 0px !important;
+    outline: 0 !important;
+    background: transparent !important;
+  }
+  //   .text-input-md{
+  //       border:0px !important;
+  //   }
+  .radio-btn {
+    // width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
 
-    }
-    .details-row{
-        width:100%;
-        margin-top:30%;
-    }
-    .inputBox ion-item{
-        background: transparent !important;
-        color:black;
-        border-bottom: 0px solid rgb(122, 122, 122);
-        padding-left: 0px !important;
-        font-size: 16px;
-    }
-    .borderbox{
-        border: 1px solid rgb(122, 122, 122);
-        padding: 6px !important;
-        font-size: 16px;
-        margin-top: 2%;
-        border-radius: 10px;
-    }
-    
-    
-    .item-input .label-md{
-        color:black !important;
-        font-size: 15px;
-    }
-    .inputBox {
-        margin-top: 2% !important;
-        background: transparent;
-        color: rgb(0, 0, 0);
-        font-weight: 100;
-        // height: 100%;
-        width: 90%;
-        margin:auto;
-        // padding-left: 0px !important;
-        // border: 1px solid white;
-    }
-    .text-input-md {
-        color:rgb(129, 124, 124);
-    }
-    // .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
-    //     color:white;
-    // }
-     .input-has-focus{
-        // border:none !important;
-        // box-shadow: 0px !important;
+    // margin: auto;
+  }
+  .item-md .radio-md {
+    margin-right: 7px !important;
+    margin-left: 0px !important;
+  }
+  .text {
+    width: 65%;
+    // float: right;
 
-    }
-    .item-input-has-focus{
-        // border:none !important;
-        // box-shadow: 0px !important;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .radio-btn ion-item {
+    padding-left: 0px !important;
 
-    }
-    ::placeholder{
-        color:white !important;
-    }
-    .item-md.item-block .item-inner{
-        border:none !important;
-        box-shadow: none !important;
+    background: transparent !important;
+  }
 
-    }
-    .btns{
-        width: 90%;
-        margin: auto;
-
-    }
-    .edit-icon{
-        margin-left: 10%;
-        margin-right: 8%;
-        font-size: 18px;
-        margin-top: -3%;
-      }
-    .type{
-        width: 85%;
-        margin: auto;
-        padding-top:6px;
-        font-size: 18px;
-    }
-    .btns ion-col{
-        // margin: auto;
-    }
-    .radio-btn{
-        // width: 90%;
-        padding-left: 5%;
-        padding-right: 5%;
-
-        // margin: auto;
-    }
-    .item-md .radio-md{
-        margin-right: 7px !important;
-        margin-left: 0px !important;
-    }
-    .text{
-        width: 65%;
-        // float: right;
-        
-        height: 100%;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    .radio-btn ion-item{
-        padding-left: 0px !important;
-
-        background: transparent !important;
-    }
-
-    .departList{
-        width: 100%;
-        background: #fff;
-        height: 40vw;
-        overflow-y: scroll;
-    }
+  .departList {
+    width: 100%;
+    background: #fff;
+    height: 40vw;
+    overflow-y: scroll;
+  }
 }

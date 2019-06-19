@@ -6,6 +6,8 @@ import { LostEmployeeSkillsPage } from '../lost-employee-skills/lost-employee-sk
 import { CurrentEmployeeSkillsPage } from '../current-employee-skills/current-employee-skills';
 import { QualificationListPage } from '../qualification-list/qualification-list';
 import { EmployeeExperiencePage } from '../employee-experience/employee-experience';
+import { Constants } from '../../../utils/Constants';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the BasicInfoListPage page.
@@ -21,10 +23,19 @@ import { EmployeeExperiencePage } from '../employee-experience/employee-experien
 })
 export class BasicInfoListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  username: any;
+  employee_id: any;
+  constructor(public navCtrl: NavController, public localStore: Storage, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+      console.log(res, "ye hey local")
+      if (res !== null && res !== undefined) {
+        this.username = res.name;
+        this.employee_id = res.employee_id
+      }
+    })
     console.log('ionViewDidLoad BasicInfoListPage');
   }
   ionViewWillEnter() {

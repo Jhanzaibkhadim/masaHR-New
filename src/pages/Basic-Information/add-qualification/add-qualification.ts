@@ -66,7 +66,24 @@ export class AddQualificationPage {
   }
 
 
+  arabicMonthnames:any=[];
+  forArabicCalender(){
+   var monthNames=[ "January","February", "March","April", "May", "June", "July", "August","September", "October",
+    "November", "December"]
+
+    for(var j =0;j<monthNames.length;j++){
+      this.translateService.get(monthNames[j]).subscribe(
+        value => {
+          // value is our translated string
+         this.arabicMonthnames.push(value)
+        }
+      )
+    }
+    console.log(this.arabicMonthnames)
+
+  }
   ionViewDidLoad() {
+    this.forArabicCalender();
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
       console.log(res, "ye hey local")
       if (res !== null && res !== undefined) {

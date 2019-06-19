@@ -4,9 +4,9 @@
   <ion-row class="icon-row">
     <img [src]="icon" class="alert-img" /> </ion-row>
 
-  <div class="submain-div">
+  <div class="submain-div" [ngClass]=" alertTitle == error || alertTitle == 'خطأ'?'errorDiv':'successDiv'">
     <ion-row class="alertTitle">
-      {{alertTitle}}
+      <!-- {{alertTitle}} -->
     </ion-row>
 
     <ion-row class="alertMessage">
@@ -15,21 +15,22 @@
 
     <ion-row class="button-row" *ngIf='buttonshow'>
       <ion-col col-5 (click)='clickYes()'>
-        <button ion-button   class="ok-button">{{ 'Ok' | translate}}</button>
+        <button ion-button class="ok-button">{{ 'Ok' | translate}}</button>
       </ion-col>
-      <ion-col col-5 (click)='clickNo()' >
-        <button ion-button   class="cancel-button">  {{ ' Cancel' | translate}}</button>
+      <ion-col col-5 (click)='clickNo()'>
+        <button ion-button class="cancel-button"> {{ ' Cancel' | translate}}</button>
       </ion-col>
-     
+
     </ion-row>
     <ion-row class="button-row" *ngIf='!buttonshow'>
       <!-- <ion-col col-12 > -->
-        <button ion-button   (click)='clickYes()' class="ok2-button">{{ 'Ok' | translate}}</button>
+      <button ion-button (click)='clickYes()'
+        [ngClass]=" alertTitle == error || alertTitle == 'خطأ'?'errorbtn':'ok2-button'">{{ 'Ok' | translate}}</button>
       <!-- </ion-col> -->
       <!-- <ion-col col-4 (click)='clickNo()' *ngIf='buttonshow'>
         <button ion-button round class="cancel-button">{{noButtonText}}</button>
       </ion-col> -->
-     
+
     </ion-row>
   </div>
 
