@@ -38,6 +38,7 @@
     "DELAYED_TIME": "مدة التاخير",
     "INBOX": "صندوق الوارد",
     "MISSION": "مهام العمل",
+    "MISSIONS":"البعثات",
     "SALARY": "الرواتب",
     "VACATION": "الاجازات",
     "EVALUATION": "تقييم الأداء",
@@ -55,6 +56,7 @@
     "LOCATION": "الموقع ( خريطة)",
     "MEDICAL_INSURANCE": "التامين الطبي",
     "SOCIAL_INSURANCE": "التامين الاجتماعي",
+    "EMPLOYEE_EXPERIENCE":"تجربة الموظف",
     "BANK_ACCOUNTS": "الحسابات البنكية",
     "QUALIFICATION": "المؤهلات",
     "CURRENT_EMPLOYEE_SKILLS": "الجدارات الحالية",
@@ -73,6 +75,7 @@
     "EVALUATION_PERIOD": "فترة التجربة",
     "VACATIONS": "الاجازات",
     "PERMISSION": "اذونات العمل",
+    "PERMISSIONS":"أذونات",
     "VIOLATIONS": "المخالفات والعقوبات",
     "TRAINING_COURSES": "الدورات التدريبية",
     "GENERAL": "الخدمات العامة",
@@ -119,7 +122,20 @@
     "ACCEPTABLE":" مقبول",
     "DRAFT":" مشروع",
     "VALIDATED":"التحقق من صحة",
-    "SELECT_DATE":"حدد تاريخ"
+    "SELECT_DATE":"حدد تاريخ",
+
+    "ADD_EXPERIENCE":"إضافة تجربة",
+    "PLEASE_WAIT":"ارجوك انتظر",
+    "PROFILE_UPDATED":"تم تحديث الملف الشخصي بنجاح",
+    "SUCCESS":"نجاح",
+    "TRY_AGAIN":"حاول مرة اخرى",
+    "Error":"خطأ",
+    "RECORD_UPDATED":"سجل تحديث بنجاح",
+    "Ok":"حسنا",
+    "Cancel":"إلغاء",
+    "FILL_DETAILS":"يرجى ملء جميع التفاصيل",
+    "RECORD_ADDED":"سجل المضافة بنجاح"
 
     
 }
+

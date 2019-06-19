@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController, ModalController } from 'ionic-angular';
 import { Global } from '../../../utils/Global';
 import { Constants } from '../../../utils/Constants';
 import { ApiProvider } from '../../../providers/api/api';
 import { Storage } from '@ionic/storage';
+import { GeneralProvider } from '../../../providers/general/general';
+import { MessageDialoguePage } from '../../message-dialogue/message-dialogue';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'page-basic-info',
@@ -23,7 +26,8 @@ export class BasicInfoPage {
   EmployeeJobTitle: any;
   EmployeeJobID: any;
   // (ionChange)="checktype()"
-  constructor(public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+  constructor(public translateService: TranslateService, public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public modal: ModalController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
+
 
   }
 
@@ -37,14 +41,23 @@ export class BasicInfoPage {
         this.getBasicInfo();
       }
     })
-    console.log('ionViewDidLoad BasicInfoPage');
+    // console.log('ionViewDidLoad BasicInfoPage');
     this.getJOBS();
     this.getDepartments();
   }
   departmentsList: any = [];
   getDepartments() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
     let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
     });
 
     loading.present();
@@ -61,8 +74,17 @@ export class BasicInfoPage {
 
   jobsList: any = [];
   getJOBS() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
     let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
     });
 
     loading.present();
@@ -75,7 +97,7 @@ export class BasicInfoPage {
         // console.log(list.length)
         // if (list.length > 1) {
 
-          this.jobsList = data
+        this.jobsList = data
         // }
         // else if (list.length == 1) {
 
@@ -87,8 +109,17 @@ export class BasicInfoPage {
     });
   }
   getBasicInfo() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
     let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
     });
 
     loading.present();
@@ -116,7 +147,7 @@ export class BasicInfoPage {
 
   searchDepartments() {
     // if (this.EmployeDepartment == '') {
-      this.isDepartShow = true;
+    this.isDepartShow = true;
     // } else {
     //   this.isDepartShow = false;
 
@@ -132,7 +163,7 @@ export class BasicInfoPage {
   isJobShow: boolean = false;
   searchjobs() {
     // if (this.EmployeeJobTitle == '') {
-      this.isJobShow = true;
+    this.isJobShow = true;
     // } else {
     //   this.isJobShow = false;
 
@@ -159,10 +190,18 @@ export class BasicInfoPage {
   }
   updateProfile() {
     if (this.EmployeCode == '' || this.EmployeeJobTitle == '' || this.EmployeName == '' || this.EmployeNumber == '' || this.EmployeDepartment == '' || this.EmployeEmail == '' || this.EmployeeGender == '') {
-      this.displaySimpleToast("Please Fill all the Fields")
+      // this.displaySimpleToast("Please Fill all the Fields")
     } else {
+      var please_wait;
+      this.translateService.get('PLEASE_WAIT').subscribe(
+        value => {
+          // value is our translated string
+          please_wait = value;
+        }
+      )
       let loading = this.loadingCtrl.create({
-        content: 'Please wait...'
+        spinner: 'hide',
+        content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
       });
 
       loading.present();
@@ -189,20 +228,50 @@ export class BasicInfoPage {
         console.log(resp)
         loading.dismiss();
         if (resp.success == 0) {
-          this.displaySimpleToast("Profile Updated SuccessFully")
+          var record_updated;
+          var success;
+          this.translateService.get('PROFILE_UPDATED').subscribe(
+            value => {
+              // value is our translated string
+              record_updated = value;
+            }
+          )
+          this.translateService.get('SUCCESS').subscribe(
+            value => {
+              // value is our translated string
+              success = value;
+            }
+          )
+
+          this.displaySimpleToast('success', success, record_updated, false)
+
+          // this.displaySimpleToast('success','Success',"Profile Updated SuccessFully",true)
         }
       })
 
     }
   }
 
-  displaySimpleToast(msg) {
+  displaySimpleToast(icon, messageTitle, messageText, button) {
 
-    var toast = this.toastCtrl.create({
-      message: msg,
-      duration: 2000,
-      position: 'bottom',
+    var addSuccess = {
+      icon: `assets/imgs/${icon}.svg`,
+      title: messageTitle,
+      message: messageText,
+      yesButtonText: 'Ok',
+      noButtonText: 'Cancel',
+      singleButton: button
+    };
+    var modal = this.modal.create(MessageDialoguePage, { data: addSuccess }, { enableBackdropDismiss: false, cssClass: "picture-option" })
+
+    modal.onDidDismiss(data => {
+      // if (data === 1) {
+      // }
+      // else {
+      // }
     })
-    toast.present();
+    modal.present()
   }
+
 }
+

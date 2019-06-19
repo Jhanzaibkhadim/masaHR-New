@@ -50,6 +50,10 @@ import { LostEmployeeSkillsPage } from '../pages/Basic-Information/lost-employee
 import { QualificationListPage } from '../pages/Basic-Information/qualification-list/qualification-list';
 import { AddQualificationPage } from '../pages/Basic-Information/add-qualification/add-qualification';
 import { BasicInfoPage } from '../pages/Basic-Information/basic-info/basic-info';
+import { EmployeeExperiencePage } from '../pages/Basic-Information/employee-experience/employee-experience';
+import { AddEmployeeExperiencePage } from '../pages/Basic-Information/add-employee-experience/add-employee-experience';
+import { MessageDialoguePage } from '../pages/message-dialogue/message-dialogue';
+import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup';
 import { EmployeeLocationPage } from '../pages/Basic-Information/employee-location/employee-location';
 
 
@@ -84,6 +88,10 @@ export function createTranslateLoader(http: HttpClient) {
     LostEmployeeSkillsPage,
     QualificationListPage,
     AddQualificationPage,
+    EmployeeExperiencePage,
+    AddEmployeeExperiencePage,
+    MessageDialoguePage,
+    AttendancePopupPage,
     EmployeeLocationPage
   ],
   imports: [
@@ -91,7 +99,9 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     HttpModule,
     Ng2SearchPipeModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: false
+    }),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -127,6 +137,10 @@ export function createTranslateLoader(http: HttpClient) {
     LostEmployeeSkillsPage,
     QualificationListPage,
     AddQualificationPage,
+    EmployeeExperiencePage,
+    AddEmployeeExperiencePage,
+    MessageDialoguePage,
+    AttendancePopupPage,
     EmployeeLocationPage
 
   ],

@@ -12,12 +12,82 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+
+ion-icon {
+    &[class*="appname-"] {
+        // Instead of using the font-based icons
+        // // We're applying SVG masks
+        // mask-size: contain;
+        // mask-position: 50% 50%;
+        // mask-repeat: no-repeat;
+        // background: currentColor;
+        // width: 1em;
+        // height: 1em;
+    }
+
+    // custom icons
+    // &[class*="appname-customicon1"] {
+    //     mask-image: url(../assets/img/customicon1.svg);
+    // }
+    // &[class*="appname-customicon2"] {
+    //     mask-image: url(../assets/img/customicon2.svg);
+    // }
+    &[class*="appname-customicon3"] {
+        mask-image: url(../assets/imgs/Overview/mission@2x.png);
+        // mask-image: url(../assets/img/customicon3.svg);
+    }
+}
+
 // font-family
 @font-face {
     font-family: Tajawal;
     src: url('../assets/fonts/tajawal.woff2') format('woff2');
 }
 
+.no-display {
+    display: none !important;
+}
+
+// .loading-wrapper .loading-spinner{
+//     display: none !important;
+// }
+.loading-wrapper .loading-content {
+    background: transparent !important;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+}
+
+.loading-content img {
+    height: 4em;
+}
+
+.loading-wrapper {
+    border-radius: 2px;
+    max-width: 280px;
+    max-height: 90%;
+    color: rgba(0, 0, 0, 0.5);
+    background: transparent !important;
+
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+    padding: 24px;
+}
+
+// ion-icon {
+//     &[class*="custom-"] {
+//       mask-size: contain;
+//       mask-position: 50% 50%;
+//       mask-repeat: no-repeat;
+//       background: currentColor;
+//       width: 1em;
+//       height: 1em;
+//     }
+//     &[class*="custom-mission"] {
+//       mask-image: url(../assets/imgs/Overview/mission@2x.png);
+//     }
+// }
 [dir=rtl] {
 
     // *:not(.icon):not(ion-icon) {
@@ -223,4 +293,12 @@
 
 .text-cap-class {
     text-transform: capitalize !important;
+}
+
+.alert-radio-icon {
+    left: -17px !important;
+}
+
+.tab-button-text {
+    display: block !important;
 }

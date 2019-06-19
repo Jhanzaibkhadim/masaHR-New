@@ -5,7 +5,9 @@
   <ion-row class="head-row">
     <ion-col no-padding col-2>
 
-      <ion-icon name="arrow-back" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+     <ion-icon name="arrow-back" class="back-iconn"  *ngIf="this.directionParam.direction =='left'" (click)="navCtrl.pop()"></ion-icon>
+        <ion-icon name="arrow-forward" *ngIf="this.directionParam.direction !=='left'" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+  
 
 
     </ion-col>

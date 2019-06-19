@@ -13,7 +13,7 @@
         <!-- </button> -->
       </ion-col>
       <ion-col style="    margin: auto;" no-padding col-8>
-        <ion-title>{{ 'QUALIFICATION' | translate }} </ion-title>
+        <ion-title>{{ 'EMPLOYEE_EXPERIENCE' | translate }} </ion-title>
 
       </ion-col>
       <ion-col no-padding style="text-align:center" col-2>
@@ -35,10 +35,10 @@
   <div class="cont-body">
 
       <ion-row style="width:100%;margin-top:5%;margin-bottom: 5%;">
-          <button ion-button round class="saveBank" (click)="addqualification()">{{ 'ADD_QUALIFICATION' | translate }}  <ion-icon ios="ios-add" class="edit-icon" md="md-add"></ion-icon></button>
+          <button ion-button round class="saveBank" (click)="addexperience()">{{ 'ADD_EXPERIENCE' | translate }}  <ion-icon ios="ios-add" class="edit-icon" md="md-add"></ion-icon></button>
       </ion-row>
 
-    <ion-row class="boxes" *ngFor=" let qual of qualificationList">
+    <ion-row class="boxes" *ngFor=" let qual of experienceList">
       <!-- <ion-col col-2> -->
         <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/salary@2x.png"> -->
       <!-- </ion-col> -->
@@ -112,7 +112,7 @@
       <!-- </ion-col> -->
     </ion-row>
 
-    <ion-row class="boxes" style=" justify-content: center;" *ngIf="qualificationList.length == 0">
+    <ion-row class="boxes" style=" justify-content: center;" *ngIf="experienceList.length == 0">
       {{ 'NO_RECORD' | translate }} !
     </ion-row>
     
@@ -130,3 +130,4 @@
   </div>
 
 </ion-content> 
+

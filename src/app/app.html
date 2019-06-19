@@ -62,7 +62,8 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           <ion-row>
               <ion-col col-2>
-                  <img [src]="p.img">
+                  <img [src]="p.img"   >
+                  <!-- <ion-icon [name]="p.img" class="calender-side-menu" *ngIf='p.img == "calendar"' item-left></ion-icon> -->
               </ion-col>
               <ion-col style="    margin: auto;" col-10>
                   <p>

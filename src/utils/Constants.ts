@@ -18,7 +18,10 @@ export class Constants {
 
     // for banks
 
-    static GET_BANK_LIST = 'bank_list?employee_id='
+    // static GET_BANK_LIST = 'bank_list?employee_id='
+    // /api/bank_info/employee_id/partner_bank_id
+    static GET_BANK_LIST = 'bank_info/'
+
 
     static READ_BANKS = 'banks'
 
@@ -50,8 +53,13 @@ export class Constants {
 
     static READ_JOB_CATEGORY_LIST = 'job_category/'
 
-    
 
+    // ?Employee  Experience 
+
+    static GET_EXPERIENCE = 'experience_list/employee_id='
+
+    
+    static CREATE_EXPERIENCE = 'experience_insert'
 
 
 

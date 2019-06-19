@@ -8,7 +8,7 @@ import { ContractsListPage } from './../pages/contracts-list/contracts-list';
 import { DashboardPage } from './../pages/dashboard/dashboard';
 import { AdminComumnicationsPage } from './../pages/admin-comumnications/admin-comumnications';
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -24,6 +24,7 @@ import { Global } from '../../src/utils/Global';
 import { Constants } from '../../src/utils/Constants';
 import { ApiProvider } from '../../src/providers/api/api';
 import { Storage } from '@ionic/storage';
+import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup';
 
 
 
@@ -34,6 +35,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage
+  // rootPage: any = TabsPage
 
   logoutbtn: boolean = false;
 
@@ -43,7 +45,7 @@ export class MyApp {
 
 
 
-  constructor(public localStore: Storage, public translationProvider: GeneralProvider, public translate: TranslateService, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public localStore: Storage, public translationProvider: GeneralProvider, public translate: TranslateService, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public app: App) {
     this.initializeApp();
 
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -54,15 +56,19 @@ export class MyApp {
     this.getLocalData()
     this.pages = [
       { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
-      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
-      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
       { title: 'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
       { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
-      { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
-      { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
-      { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
-      { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
-      { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
+      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/Overview.png" },
+      // { title: 'ATTENDANCE', component: AttendancePopupPage, img: "assets/imgs/SideMenu/attendace.svg" },
+      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/Dashboard/time_tracting.png" },
+      { title: 'MISSIONS', component: TabsPage, img: "assets/imgs/Overview/mission.png" },
+      { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+
+      // { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+      // { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
+      // { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
+      // { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
+      // { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
       { title: 'ABOUT', component: TabsPage, img: "assets/imgs/SideMenu/about.png" },
     ];
 
@@ -90,7 +96,23 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+
+    // DASHBOARD
+    // BASIC_INFORMATION
+    // console.log(page)
+    // if (page.title !== "DASHBOARD" && page.title !== "BASIC_INFORMATION") {
+    //   console.log("here")
+    //   let elem = <HTMLElement>document.querySelector(".tabbar");
+    //   console.log(elem)
+
+    //   if (elem != null) {
+    //     elem.style.display = 'flex';
+    //   }
+    // }
+
+    this.app.getActiveNav().setRoot(page.component);
+    // this.nav.setRoot(TabsPage);
+    // this.nav.push(page.component);
   }
 
 
@@ -134,8 +156,8 @@ export class MyApp {
     }
   }
 
-  loguot(){
-    this.localStore.clear().then(()=>{
+  loguot() {
+    this.localStore.clear().then(() => {
       this.nav.setRoot(LoginPage)
     })
   }

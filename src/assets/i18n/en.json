@@ -78,6 +78,9 @@
     "EVALUATION_PERIOD":"Evaluation Period",
     "VACATIONS":"Vacations",
     "PERMISSION":"Permission",
+    "PERMISSIONS":"Permissions",
+
+    "MISSIONS":"Missions",
     "VIOLATIONS":"Violations and penalties",
     "TRAINING_COURSES":"Training Courses",
     "GENERAL":"General Services",
@@ -115,7 +118,7 @@
     "PENDING":"Pending",
     "APPROVED":"Approved",
      "DECEMBER":"DECEMBER",
-
+     "EMPLOYEE_EXPERIENCE":"Employee Experience",
     "ADD_QUALIFICATION":" Add Qualification",
     "QUALIFICATION_YEAR":" Qualification Year",
     "UNIVERSITY_NAME":"University Name ",
@@ -129,7 +132,24 @@
     "ACCEPTABLE":" Acceptable",
     "DRAFT":"  Draft",
     "VALIDATED":" Validated ",
-    "SELECT_DATE":"Select Date"
+    "SELECT_DATE":"Select Date",
+
+    "ADD_EXPERIENCE":"Add Experience",
+    "PLEASE_WAIT":"Please wait",
+    "PROFILE_UPDATED":"Profile updated successfully",
+    "SUCCESS":"Success",
+    "TRY_AGAIN":"Please try again",
+    "Error":"Error",
+    "RECORD_UPDATED":"Record updated successfully",
+    "Ok":"Ok",
+    "Cancel":"Cancel",
+    "FILL_DETAILS":"Please fill all details ",
+    "RECORD_ADDED":"Record added successfully"
+
+
+
+
+
 
 
     

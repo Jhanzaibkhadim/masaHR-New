@@ -5,6 +5,7 @@ import { BankListPage } from '../bank-list/bank-list';
 import { LostEmployeeSkillsPage } from '../lost-employee-skills/lost-employee-skills';
 import { CurrentEmployeeSkillsPage } from '../current-employee-skills/current-employee-skills';
 import { QualificationListPage } from '../qualification-list/qualification-list';
+import { EmployeeExperiencePage } from '../employee-experience/employee-experience';
 
 /**
  * Generated class for the BasicInfoListPage page.
@@ -26,20 +27,41 @@ export class BasicInfoListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasicInfoListPage');
   }
+  ionViewWillEnter() {
+    // let elem = <HTMLElement>document.querySelector(".tabbar");
+    // if (elem != null) {
+    //   elem.style.display = 'none';
+    // }
 
-  gotoLost(){
+    // let elem = <HTMLElement>document.querySelector(".tabbar");
+    // if (elem != null) {
+    //   elem.style.display = 'flex';
+    // }
+
+  }
+  ionViewWillLeave() {
+    // let elem = <HTMLElement>document.querySelector(".tabbar");
+    // if (elem != null) {
+    //   elem.style.display = 'flex';
+    // }
+  }
+
+  gotoLost() {
     this.navCtrl.push(LostEmployeeSkillsPage)
   }
-  gotoCurrent(){
+  gotoCurrent() {
     this.navCtrl.push(CurrentEmployeeSkillsPage)
   }
-  gotoBank(){
+  gotoBank() {
     this.navCtrl.push(BankListPage)
   }
-  gotoPersonalInfo(){
+  gotoEmployeeExp() {
+    this.navCtrl.push(EmployeeExperiencePage)
+  }
+  gotoPersonalInfo() {
     this.navCtrl.push(BasicInfoPage)
   }
-  gotoQualificationsPage(){
+  gotoQualificationsPage() {
     this.navCtrl.push(QualificationListPage)
   }
 }
