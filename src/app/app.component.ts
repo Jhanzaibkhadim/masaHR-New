@@ -58,9 +58,9 @@ export class MyApp {
       { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
       { title: 'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
       { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
-      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/Overview.png" },
+      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
       // { title: 'ATTENDANCE', component: AttendancePopupPage, img: "assets/imgs/SideMenu/attendace.svg" },
-      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs//Overview/vacation@2x.png" },
+      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/Overview/vacation@2x.png" },
       { title: 'MISSIONS', component: TabsPage, img: "assets/imgs/Overview/mission.png" },
           { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/Overview/support@2x.png" },
 
