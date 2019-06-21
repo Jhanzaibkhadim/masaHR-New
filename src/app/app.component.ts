@@ -51,18 +51,18 @@ export class MyApp {
     // this language will be used as a fallback when a translation isn't found in the current language
     this.translate.setDefaultLang('ar');
 
-    this.changeLanguage(2)
+    this.changeLanguage(1)
 
     this.getLocalData()
     this.pages = [
       { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
       { title: 'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
       { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
-      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/Overview.png" },
+      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
       // { title: 'ATTENDANCE', component: AttendancePopupPage, img: "assets/imgs/SideMenu/attendace.svg" },
-      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/Dashboard/time_tracting.png" },
+      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/Overview/vacation@2x.png" },
       { title: 'MISSIONS', component: TabsPage, img: "assets/imgs/Overview/mission.png" },
-      { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+          { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/Overview/support@2x.png" },
 
       // { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
       // { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
