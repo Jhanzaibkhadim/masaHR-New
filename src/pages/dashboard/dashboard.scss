@@ -110,6 +110,7 @@ page-dashboard {
   .image img {
     width: 3.5em;
     height: 3.5em;
+    margin-bottom: 8px;
   }
   .image {
     // height: 50%;
@@ -120,7 +121,7 @@ page-dashboard {
     width: 100%;
   }
   .text {
-    border-bottom: 4px solid rgb(56, 128, 228);
+    // border-bottom: 4px solid rgb(56, 128, 228);
     padding-bottom: 3%;
     // border-radius: 5px;
   }

@@ -68,19 +68,32 @@
     </ion-row>
 
 
-    <ion-row class="inputBox">
+    <ion-row class="input-text">
+      {{ 'BANK_NAME' | translate }}
+    </ion-row>
+    <ion-row class="inputSelectBox" (click)="searchbanks()">
+      <ion-col col-10>
+
+        {{bankName}}
+      </ion-col>
+      <ion-col col-2 class="arrow-down">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <div *ngIf="showBank && banksList.length>0" class="departList">
+      <ion-item detail-push *ngFor="let item of banksList " (click)="selectbank(item)">
+        {{item.name}}
+      </ion-item>
+    </div>
+    <!-- <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked> {{ 'BANK_NAME' | translate }}</ion-label>
         <ion-input [disabled]="InfoIsEdit" class="borderbox" (input)="searchbanks()" type="text" [(ngModel)]="bankName">
         </ion-input>
       </ion-item>
 
-      <div *ngIf="showBank && banksList.length>0" class="departList">
-        <ion-item detail-push *ngFor="let item of banksList " (click)="selectbank(item)">
-          {{item.name}}
-        </ion-item>
-      </div>
-    </ion-row>
+     
+    </ion-row> -->
 
     <ion-row class="inputBox">
       <ion-item>

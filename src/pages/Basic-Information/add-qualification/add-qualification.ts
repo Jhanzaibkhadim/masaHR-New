@@ -8,6 +8,8 @@ import { GeneralProvider } from '../../../providers/general/general';
 import { TranslateService } from '@ngx-translate/core';
 import { MessageDialoguePage } from '../../message-dialogue/message-dialogue';
 
+ 
+
 @Component({
   selector: 'page-add-qualification',
   templateUrl: 'add-qualification.html',
@@ -30,6 +32,14 @@ export class AddQualificationPage {
   userID: any;
   qualifId: any;
 
+
+
+
+
+
+
+
+   
   constructor(public modal: ModalController, public translateService: TranslateService, public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
 
     this.monthShortNames = ["Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"]
