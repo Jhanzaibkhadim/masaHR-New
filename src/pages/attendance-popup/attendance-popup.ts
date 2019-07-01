@@ -22,6 +22,13 @@ export class AttendancePopupPage {
 
   }
   ionViewDidLoad() {
+    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+      console.log(res, "ye hey local")
+      if (res !== null && res !== undefined) {
+        this.username = res.name;
+        // this.employee_id = res.employee_id
+      }
+    })
     console.log('ionViewDidLoad AttendancePopupPage');
   }
 

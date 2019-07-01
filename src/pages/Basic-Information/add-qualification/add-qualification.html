@@ -56,7 +56,7 @@
         <ion-icon name="arrow-dropdown"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="showDegree" class="openlist">
+    <ion-row *ngIf="showDegree && degreeList.length>0" class="openlist">
 
 
       <div class="departList">
@@ -89,7 +89,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="showspecialization" class="openlist">
+    <ion-row *ngIf="showspecialization && specializationList.length>0" class="openlist">
       <div *ngIf="showspecialization" class="departList">
         <ion-item detail-push *ngFor="let item of specializationList  " (click)="selectspecialization(item)">
           {{item.name}}
