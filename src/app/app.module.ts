@@ -100,7 +100,10 @@ export function createTranslateLoader(http: HttpClient) {
     HttpModule,
     Ng2SearchPipeModule,
     IonicModule.forRoot(MyApp, {
-      tabsHideOnSubPages: false
+      tabsHideOnSubPages: false,
+      // monthNames: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre'],
+      // monthShortNames: ['jan', 'fev', 'mar', 'avr', 'mai', 'jui', 'jui', 'aou', 'sep', 'oct', 'nov', 'dec'],
+      // dayNames: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
     }),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({

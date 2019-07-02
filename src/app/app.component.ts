@@ -34,8 +34,8 @@ import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup'
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage
-  // rootPage: any = TabsPage
+  // rootPage: any = LoginPage
+  rootPage: any = TabsPage
 
   logoutbtn: boolean = false;
 
@@ -62,7 +62,7 @@ export class MyApp {
       // { title: 'ATTENDANCE', component: AttendancePopupPage, img: "assets/imgs/SideMenu/attendace.svg" },
       { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/Overview/vacation@2x.png" },
       { title: 'MISSIONS', component: TabsPage, img: "assets/imgs/Overview/mission.png" },
-          { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/Overview/support@2x.png" },
+      { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/Overview/support@2x.png" },
 
       // { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
       // { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
