@@ -1,12 +1,12 @@
 export class Constants {
-    
+
     static BASE_URL = 'http://www.masa-hr.info/api/';
 
     static LOGIN = 'login'
 
     // for basicinfo / profile
 
-    static GET_BASIC_INFO='profile_read?employee_id='
+    static GET_BASIC_INFO = 'profile_read?employee_id='
 
     static SAVE_USER_INFO_KEY = 'save_info'
 
@@ -14,7 +14,7 @@ export class Constants {
 
     static GET_JOBS = 'jobs/'
 
-    static UPDATE_PROFILE= 'profile_update'
+    static UPDATE_PROFILE = 'profile_update'
 
     // for banks
 
@@ -25,7 +25,7 @@ export class Constants {
 
     static READ_BANKS = 'banks'
 
-    static CREATE_BANK ='bank_insert'
+    static CREATE_BANK = 'bank_insert'
 
     static GET_PARTNER_ID = 'get_partner_id?employee_id='
 
@@ -58,10 +58,10 @@ export class Constants {
 
     static GET_EXPERIENCE = 'experience_list/employee_id='
 
-    
+
     static CREATE_EXPERIENCE = 'experience_insert'
 
-
+    static GET_EMP_DETAIL = "employee_job?employee_id="
 
 
 

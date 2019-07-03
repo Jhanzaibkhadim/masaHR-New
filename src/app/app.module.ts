@@ -57,7 +57,6 @@ import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup'
 import { EmployeeLocationPage } from '../pages/Basic-Information/employee-location/employee-location';
 
 
-
 // import { HTTP } from "@ionic-native/http";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');

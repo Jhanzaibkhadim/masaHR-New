@@ -39,126 +39,235 @@
 // }
 
 ion-icon {
-  &[class*="custom-"] {
-    margin: 0 5px 0 0;
-    vertical-align: middle;
-    width: 20px;
-    height: 20px;
-  } // custom icons
-  &[class*="mission"][ng-reflect-is-active="true"] {
-    background: url("../assets/imgs/Overview/mission@2x.png") no-repeat 50% 50%;
-    background-size: contain;
-  } //in case of active
-  &[class*="mission"][ng-reflect-is-active="false"] {
-    background: url("../assets/imgs/Overview/mission@2x.png") no-repeat 50% 50%;
-    background-size: contain;
-  } //in case of inactive
+    &[class*="custom-"] {
+        margin: 0 5px 0 0;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+    }
 
-  &[class*="permission"][ng-reflect-is-active="true"] {
-    background: url("../assets/imgs/Overview/support@2x.png") no-repeat 50% 50%;
-    background-size: contain;
-  } //in case of active
-  &[class*="permission"][ng-reflect-is-active="false"] {
-    background: url("../assets/imgs/Overview/support@2x.png") no-repeat 50% 50%;
-    background-size: contain;
-  } //in case of inactive
+    // custom icons
+    &[class*="mission"][ng-reflect-is-active="true"] {
+        background: url("../assets/imgs/Overview/mission@2x.png") no-repeat 50% 50%;
+        background-size: contain;
+    }
 
-  &[class*="attend"][ng-reflect-is-active="true"] {
-    background: url("../assets/imgs/Overview/inbox@2x.png") no-repeat 50% 50%;
-    background-size: contain;
-  } //in case of active
-  &[class*="attend"][ng-reflect-is-active="false"] {
-    background: url("../assets/imgs/Overview/inbox@2x.png") no-repeat 50% 50%;
-    background-size: contain;
-  } //in case of inactive
+    //in case of active
+    &[class*="mission"][ng-reflect-is-active="false"] {
+        background: url("../assets/imgs/Overview/mission@2x.png") no-repeat 50% 50%;
+        background-size: contain;
+    }
+
+    //in case of inactive
+
+    &[class*="permission"][ng-reflect-is-active="true"] {
+        background: url("../assets/imgs/Overview/support@2x.png") no-repeat 50% 50%;
+        background-size: contain;
+    }
+
+    //in case of active
+    &[class*="permission"][ng-reflect-is-active="false"] {
+        background: url("../assets/imgs/Overview/support@2x.png") no-repeat 50% 50%;
+        background-size: contain;
+    }
+
+    //in case of inactive
+
+    &[class*="attend"][ng-reflect-is-active="true"] {
+        background: url("../assets/imgs/Overview/inbox@2x.png") no-repeat 50% 50%;
+        background-size: contain;
+    }
+
+    //in case of active
+    &[class*="attend"][ng-reflect-is-active="false"] {
+        background: url("../assets/imgs/Overview/inbox@2x.png") no-repeat 50% 50%;
+        background-size: contain;
+    }
+
+    //in case of inactive
 }
 
-// .tabbar, .tabs-ios, .tabs-md , .tabs-wp{
-//     .tab-button-icon {
-//         background-repeat:no-repeat;
-//         background-position:center;
-//         height:24px;
-//         width:24px;
-//         background-size:contain;
-//         -webkit-background-size: contain;
-//         -moz-background-size: contain;
-//         -o-background-size: contain;
-//         &:before {
-//             display:none;
-//         }
-//     }
-// }
-// .tabs-ios {
-//     a[aria-selected=false]{
-//     //    .tab-button-icon[ng-reflect-name=categories], .tab-button-icon[aria-label="categories"] {
-//     //     background-image: url(../assets/img/categories_inactive.png);
-//     //   }
-//     //   .tab-button-icon[ng-reflect-name=home], .tab-button-icon[aria-label=home] {
-//     //     background-image: url(../assets/img/explore_inactive.png);
-//     //   }
-//       .tab-button-icon[ng-reflect-name=Missions], .tab-button-icon[aria-label=Missions] {
-//         background-image: url(../assets/imgs/Overview/mission@2x.png);
-//       }
-//     }
-//       a[aria-selected=true] {
 
-//          .tab-button-icon[ng-reflect-name=Missions], .tab-button-icon[aria-label=Missions] {
-//            background-image: url(../assets/imgs/Overview/mission@2x.png);
-//          }
-//        }
-//      }
 
-//      .tabs-md {
-//         a[aria-selected=false]{
 
-//           .tab-button-icon[ng-reflect-name=Missions], .tab-button-icon[aria-label=Missions] {
-//             background-image: url(../assets/imgs/Overview/mission@2x.png);
-//             // background-image: url(../assets/img/Missions_inactive.png);
-//           }
-//         }
+.tabs-ios {
+    a[aria-selected=false] {
 
-//        a[aria-selected=true] {
-//           .tab-button-icon[ng-reflect-name=Missions], .tab-button-icon[aria-label=Missions] {
-//             // background-image: url(../assets/img/hot_active.png);
-//            background-image: url(../assets/imgs/Overview/mission@2x.png);
+        .tab-button-icon[ng-reflect-name=mission],
+        .tab-button-icon[aria-label=mission],
+        .ion-ios-overviewcustom-outline {
+            background-image: url(../assets/imgs/Overview/mission@2x.png);
+        }
 
-//           }
-//         }
-//       }
+        .tab-button-icon[ng-reflect-name=permission],
+        .tab-button-icon[aria-label=permission],
+        .ion-ios-listcustom-outline {
+            background-image: url(../assets/imgs/Overview/support@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=attend],
+        .tab-button-icon[aria-label=attend],
+        .ion-ios-createcustom-outline {
+            background-image: url(../assets/imgs/Overview/inbox@2x.png);
+        }
+
+    }
+
+    a[aria-selected=true] {
+
+        //führ eventuellen text
+        //span {
+        //color: #f00; //whatever colour you want to use for the text
+        //}
+        .tab-button-icon[ng-reflect-name=mission],
+        .tab-button-icon[aria-label=mission] {
+            background-image: url(../assets/imgs/Overview/mission@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=permission],
+        .tab-button-icon[aria-label=permission] {
+            background-image: url(../assets/imgs/Overview/support@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=attend],
+        .tab-button-icon[aria-label=attend] {
+            background-image: url(../assets/imgs/Overview/inbox@2x.png);
+        }
+
+    }
+}
+
+.tabs-md {
+    a[aria-selected=false] {
+
+        .tab-button-icon[ng-reflect-name=mission],
+        .tab-button-icon[aria-label=mission] {
+            background-image: url(../assets/imgs/Overview/mission@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=permission],
+        .tab-button-icon[aria-label=permission] {
+            background-image: url(../assets/imgs/Overview/support@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=attend],
+        .tab-button-icon[aria-label=attend] {
+            background-image: url(../assets/imgs/Overview/inbox@2x.png);
+        }
+
+
+    }
+
+    a[aria-selected=true] {
+
+        //führ eventuellen text
+        //span {
+        //color: #f00; //whatever colour you want to use for the text
+        //}
+        .tab-button-icon[ng-reflect-name=mission],
+        .tab-button-icon[aria-label=mission] {
+            background-image: url(../assets/imgs/Overview/mission@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=permission],
+        .tab-button-icon[aria-label=permission] {
+            background-image: url(../assets/imgs/Overview/support@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=attend],
+        .tab-button-icon[aria-label=attend] {
+            background-image: url(../assets/imgs/Overview/inbox@2x.png);
+        }
+
+
+    }
+}
+
+.tabs-wp {
+    a[aria-selected=false] {
+
+        .tab-button-icon[ng-reflect-name=mission],
+        .tab-button-icon[aria-label=mission] {
+            background-image: url(../assets/imgs/Overview/mission@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=permission],
+        .tab-button-icon[aria-label=permission] {
+            background-image: url(../assets/imgs/Overview/support@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=attend],
+        .tab-button-icon[aria-label=attend] {
+            background-image: url(../assets/imgs/Overview/inbox@2x.png);
+        }
+
+
+    }
+
+    a[aria-selected=true] {
+
+        //führ eventuellen text
+        //span {
+        //color: #f00; //whatever colour you want to use for the text
+        //}
+        .tab-button-icon[ng-reflect-name=mission],
+        .tab-button-icon[aria-label=mission] {
+            background-image: url(../assets/imgs/Overview/mission@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=permission],
+        .tab-button-icon[aria-label=permission] {
+            background-image: url(../assets/imgs/Overview/support@2x.png);
+        }
+
+        .tab-button-icon[ng-reflect-name=attend],
+        .tab-button-icon[aria-label=attend] {
+            background-image: url(../assets/imgs/Overview/inbox@2x.png);
+        }
+
+
+    }
+}
+
+
+
+
+
+
 
 // font-family
 @font-face {
-  font-family: Tajawal;
-  src: url("../assets/fonts/tajawal.woff2") format("woff2");
+    font-family: Tajawal;
+    src: url("../assets/fonts/tajawal.woff2") format("woff2");
 }
 
 .no-display {
-  display: none !important;
+    display: none !important;
 }
 
 // .loading-wrapper .loading-spinner{
 //     display: none !important;
 // }
 .loading-wrapper .loading-content {
-  background: transparent !important;
-  text-align: center;
-  font-size: 1.2em;
-  color: white;
+    background: transparent !important;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
 }
 
 .loading-content img {
-  height: 4em;
+    height: 4em;
 }
 
 .loading-wrapper {
-  border-radius: 2px;
-  max-width: 280px;
-  max-height: 90%;
-  color: rgba(0, 0, 0, 0.5);
-  background: transparent !important;
+    border-radius: 2px;
+    max-width: 280px;
+    max-height: 90%;
+    color: rgba(0, 0, 0, 0.5);
+    background: transparent !important;
 
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
-  padding: 24px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+    padding: 24px;
 }
 
 // ion-icon {
@@ -175,215 +284,216 @@ ion-icon {
 //     }
 // }
 [dir="rtl"] {
-  // *:not(.icon):not(ion-icon) {
-  //     font-family: Tajawal;
-  // }
-  * {
-    font-family: Tajawal;
-  }
 
-  .searchbar-input {
-    border-radius: 25px !important;
-    padding-left: 0px !important;
-    text-align: right;
-  }
-
-  .searchbar-search-icon {
-    right: 16px;
-  }
-
-  .searchbar-clear-icon {
-    left: 10px !important;
-    right: auto;
-
-    .back-button {
-      font-family: inherit !important;
+    // *:not(.icon):not(ion-icon) {
+    //     font-family: Tajawal;
+    // }
+    * {
+        font-family: Tajawal;
     }
-  }
 
-  // *{
-  // font-family: Tajawal;
-  // }
-  .back-button {
-    font-family: inherit !important;
-  }
+    .searchbar-input {
+        border-radius: 25px !important;
+        padding-left: 0px !important;
+        text-align: right;
+    }
 
-  .tab-button-icon {
-    font-family: "Ionicons" !important;
-  }
+    .searchbar-search-icon {
+        right: 16px;
+    }
 
-  ion-icon {
-    font-family: "Ionicons" !important;
-  }
+    .searchbar-clear-icon {
+        left: 10px !important;
+        right: auto;
+
+        .back-button {
+            font-family: inherit !important;
+        }
+    }
+
+    // *{
+    // font-family: Tajawal;
+    // }
+    .back-button {
+        font-family: inherit !important;
+    }
+
+    .tab-button-icon {
+        font-family: "Ionicons" !important;
+    }
+
+    ion-icon {
+        font-family: "Ionicons" !important;
+    }
 }
 
 // *{
 // font-family: Tajawal;
 // }
 .tab-button-icon {
-  font-family: "Ionicons" !important;
+    font-family: "Ionicons" !important;
 }
 
 .menu-head .toolbar-background {
-  background: rgb(56, 128, 228) !important;
+    background: rgb(56, 128, 228) !important;
 }
 
 .ion-icon {
-  font-family: "Ionicons" !important;
+    font-family: "Ionicons" !important;
 }
 
 .menu-head .top {
-  width: 100%; // height: 3em;
-  background: rgb(56, 128, 228); // width: 500px;
-  height: 70px; // border: solid 5px #000;
-  // border-color: transparent transparent #000 transparent;
-  // border-radius: 0 0 85% 85%/30%;
-  border-bottom-left-radius: 45% 77%;
-  border-bottom-right-radius: 45% 77%; // border-radius: 0 0 240px 50%/60px;
-  // border-bottom-left-radius: 100%;
-  // border-bottom-right-radius: 100%;
+    width: 100%; // height: 3em;
+    background: rgb(56, 128, 228); // width: 500px;
+    height: 70px; // border: solid 5px #000;
+    // border-color: transparent transparent #000 transparent;
+    // border-radius: 0 0 85% 85%/30%;
+    border-bottom-left-radius: 45% 77%;
+    border-bottom-right-radius: 45% 77%; // border-radius: 0 0 240px 50%/60px;
+    // border-bottom-left-radius: 100%;
+    // border-bottom-right-radius: 100%;
 }
 
 .menu-head .toolbar {
-  min-height: 60px !important;
+    min-height: 60px !important;
 }
 
 .menu-head .toolbar-title {
-  color: white;
-  text-align: left;
-  font-weight: 400 !important;
-  text-transform: uppercase;
-  font-size: 1.6rem !important;
+    color: white;
+    text-align: left;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    font-size: 1.6rem !important;
 }
 
 .menu-head .header::after,
-.tabs[tabsPlacement="top"] > .tabbar::after,
+.tabs[tabsPlacement="top"]>.tabbar::after,
 .footer::before,
-.tabs[tabsPlacement="bottom"] > .tabbar::before {
-  height: 0px !important;
-  background-position: left 0 top 0px !important; // position: absolute;
-  width: 100%;
-  height: 0px !important;
-  background-image: none !important;
+.tabs[tabsPlacement="bottom"]>.tabbar::before {
+    height: 0px !important;
+    background-position: left 0 top 0px !important; // position: absolute;
+    width: 100%;
+    height: 0px !important;
+    background-image: none !important;
 }
 
 .menu-head .noti-icon {
-  float: right;
+    float: right;
 }
 
 .menu-head .toolbar-content {
-  text-align: right;
-  color: #fff;
+    text-align: right;
+    color: #fff;
 }
 
 .menu-head .toolbar-content span {
-  margin-right: 4%;
-  font-size: 18px;
+    margin-right: 4%;
+    font-size: 18px;
 }
 
 .menu-head .head-second {
-  background-color: #2f87fe;
-  width: 100%;
-  height: 16vh;
-  padding: 5%;
-  background-image: url(../assets/imgs/SideMenu/login_logo@3x@2x.png);
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 70%;
+    background-color: #2f87fe;
+    width: 100%;
+    height: 16vh;
+    padding: 5%;
+    background-image: url(../assets/imgs/SideMenu/login_logo@3x@2x.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 70%;
 }
 
 .person-img {
-  width: 4.5em;
-  border-radius: 150px;
-  border: 2px solid #fff;
-  float: left;
+    width: 4.5em;
+    border-radius: 150px;
+    border: 2px solid #fff;
+    float: left;
 }
 
 .menu-head .head-second .head-sec-inner {
-  // float: left;
-  // padding: 5%;
-  margin: auto;
-  color: #fff; // login_logo@3x@2x
+    // float: left;
+    // padding: 5%;
+    margin: auto;
+    color: #fff; // login_logo@3x@2x
 }
 
 .menu-head .head-second .head-sec-inner p {
-  margin: auto;
+    margin: auto;
 }
 
 .menu-head .head-second .head-sec-inner h4 {
-  margin: auto;
+    margin: auto;
 }
 
 .menu-list img {
-  // width: 10%;
-  // float: left
+    // width: 10%;
+    // float: left
 }
 
 .menu-list p {
-  padding: 3%; // float: left
-  margin: 0px !important;
+    padding: 3%; // float: left
+    margin: 0px !important;
 }
 
 .bar-button-default {
-  color: #fff;
+    color: #fff;
 }
 
 //Header End
 // language
 .menu-list .label-md {
-  margin: 6px 7px 9px 0px;
+    margin: 6px 7px 9px 0px;
 }
 
 .language {
-  padding: 1em;
-  width: 100%;
-  font-size: 17px; // padding-left: 1em;
-  color: gray;
+    padding: 1em;
+    width: 100%;
+    font-size: 17px; // padding-left: 1em;
+    color: gray;
 }
 
 .globeicon {
-  margin-right: 7px;
-  font-size: 1.7em;
-  font-family: "Ionicons" !important;
+    margin-right: 7px;
+    font-size: 1.7em;
+    font-family: "Ionicons" !important;
 }
 
 .lang-type div {
-  width: 93%;
-  color: gray;
-  padding-left: 20%;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-width: 0.5px;
-  padding-right: 5%;
-  font-size: 14px;
-  border-bottom: 1px solid #dedede;
+    width: 93%;
+    color: gray;
+    padding-left: 20%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-width: 0.5px;
+    padding-right: 5%;
+    font-size: 14px;
+    border-bottom: 1px solid #dedede;
 }
 
 .language-type div {
-  width: 93%;
-  color: gray;
-  padding-right: 20%;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  padding-top: 2%;
-  padding-left: 5%;
-  font-size: 14px;
-  border-width: 0.5px;
-  border-bottom: 1px solid #dedede;
+    width: 93%;
+    color: gray;
+    padding-right: 20%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 2%;
+    padding-left: 5%;
+    font-size: 14px;
+    border-width: 0.5px;
+    border-bottom: 1px solid #dedede;
 }
 
 .ion-icon {
-  font-family: "Ionicons" !important;
+    font-family: "Ionicons" !important;
 }
 
 .text-cap-class {
-  text-transform: capitalize !important;
+    text-transform: capitalize !important;
 }
 
 .alert-radio-icon {
-  left: -17px !important;
+    left: -17px !important;
 }
 
 .tab-button-text {
-  display: block !important;
+    display: block !important;
 }

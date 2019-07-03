@@ -110,6 +110,7 @@ page-basic-info {
   .item-md.item-block .item-inner {
     border: none !important;
     box-shadow: none !important;
+    padding-right: 0px !important;
   }
   .btns {
     width: 90%;
@@ -172,4 +173,42 @@ page-basic-info {
     height: 40vw;
     overflow-y: scroll;
   }
+
+
+
+    // change
+
+    .inputSelectBox {
+      margin-top: 2% !important;
+      background: transparent;
+      color: black;
+      font-weight: 100;
+      width: 90%;
+      margin: auto;
+      padding: 7px;
+      border: 1px solid #7a7a7a;
+      border-radius: 10px;
+    }
+    .openlist {
+      margin-top: 2% !important;
+      background: white;
+      color: black;
+      font-weight: 100;
+      width: 81%;
+      margin: auto;
+      // padding: 8px;
+      // border: 1px solid;
+      // border-radius: 7px;
+    }
+    .input-text {
+      width: 90%;
+      margin: auto;
+      font-size: 15px;
+      padding-bottom: 4px;
+      margin-top: 5%;
+    }
+    .arrow-down {
+      font-size: 16px;
+      text-align: center;
+    }
 }

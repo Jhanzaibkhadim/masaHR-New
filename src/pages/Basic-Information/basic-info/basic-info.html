@@ -123,23 +123,36 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row class="inputBox">
+    <ion-row class="input-text">
+      {{ 'JOB' | translate }}
+    </ion-row>
+    <ion-row class="inputSelectBox"  (click)="searchjobs()">
+      <ion-col col-10>
+
+        {{EmployeeJobTitle}}
+      </ion-col>
+      <ion-col col-2 class="arrow-down">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="openlist">
+      <div *ngIf="isJobShow && jobsList.length>0" class="departList">
+        <ion-item detail-push *ngFor="let job of jobsList | filter : EmployeeJobTitle"
+          (click)="selectJob(job)">
+          {{job.name}}
+        </ion-item>
+      </div>
+    </ion-row>
+    <!-- <ion-row class="inputBox">
         <ion-item>
           <ion-label stacked> {{ 'JOB' | translate }}</ion-label>
           <ion-input [disabled]="!InfoIsEdit" class="borderbox" (input)="searchjobs()" type="text" [(ngModel)]="EmployeeJobTitle">
           </ion-input>
         </ion-item>
   
-        <div *ngIf="isJobShow && jobsList.length>0" class="departList">
-          <ion-item detail-push *ngFor="let job of jobsList | filter : EmployeeJobTitle"
-            (click)="selectJob(job)">
-            {{job.name}}
-          </ion-item>
-        </div>
-        <!-- <datalist id="departments">
-          <option *ngFor="let depart of departmentsList" [value]="depart.name">
-        </datalist> -->
-      </ion-row>
+        
+        
+      </ion-row> -->
     <ion-row class="inputBox">
       <ion-item>
 
@@ -153,23 +166,38 @@
         <ion-input [disabled]="!InfoIsEdit" class="borderbox" type="email" [(ngModel)]="EmployeEmail"></ion-input>
       </ion-item>
     </ion-row>
-    <ion-row class="inputBox" style="padding-bottom: 20px;">
-      <ion-item>
-        <ion-label stacked> {{ 'DEPARTMENT' | translate }}</ion-label>
-        <ion-input [disabled]="!InfoIsEdit" class="borderbox" (input)="searchDepartments()" type="text" [(ngModel)]="EmployeDepartment">
-        </ion-input>
-      </ion-item>
 
+    <ion-row class="input-text">
+      {{ 'DEPARTMENT' | translate }}
+    </ion-row>
+    <ion-row class="inputSelectBox"  (click)="searchDepartments()">
+      <ion-col col-10>
+
+        {{EmployeDepartment}}
+      </ion-col>
+      <ion-col col-2 class="arrow-down">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="openlist">
       <div *ngIf="isDepartShow && departmentsList.length>0" class="departList">
         <ion-item detail-push *ngFor="let item of departmentsList | filter : EmployeDepartment"
           (click)="selectDeparment(item)">
           {{item.name}}
         </ion-item>
       </div>
-      <!-- <datalist id="departments">
-        <option *ngFor="let depart of departmentsList" [value]="depart.name">
-      </datalist> -->
     </ion-row>
+    <!-- <ion-row class="inputBox" >
+      <ion-item>
+        <ion-label stacked> {{ 'DEPARTMENT' | translate }}</ion-label>
+        <ion-input [disabled]="!InfoIsEdit" class="borderbox" (input)="searchDepartments()" type="text" [(ngModel)]="EmployeDepartment">
+        </ion-input>
+      </ion-item>
+
+     
+       
+    </ion-row> -->
   </ion-row>
 
 </ion-content>
