@@ -27,6 +27,7 @@ export class DashboardPage {
 
   username: any;
   employee_id: any;
+  employeeJob: any;
   constructor(public localStore: Storage, public navCtrl: NavController, public navParams: NavParams,
     public translateService: TranslateService,
     public api: ApiProvider,
@@ -92,6 +93,8 @@ export class DashboardPage {
     this.api.getRequest(`${Constants.GET_EMP_DETAIL}` + this.employee_id).then((data: any) => {
       loading.dismiss()
       console.log(data)
+      // this.username = data[0].name
+      this.employeeJob = data[0].name
 
     });
 

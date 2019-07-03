@@ -39,7 +39,8 @@
         {{username}}
       </ion-row>
       <ion-row class="designation">
-        {{ 'SALES_MANAGER' | translate }}
+        <!-- {{ 'SALES_MANAGER' | translate }} -->
+        {{employeeJob}}
       </ion-row>
     </div>
 
@@ -101,9 +102,9 @@
       </ion-col>
       <ion-col class="box" col-6 (click)="gotoAttendance()">
         <div class="image">
-           <img src=" assets/imgs/Overview/inbox@2x.png">
-           
-           <!-- <ion-icon name="ios-calendar" class="calendar-icon"></ion-icon> -->
+          <img src=" assets/imgs/Overview/inbox@2x.png">
+
+          <!-- <ion-icon name="ios-calendar" class="calendar-icon"></ion-icon> -->
         </div>
         <ion-row class="text">
           <div class="heading-text">
@@ -138,8 +139,8 @@
       <ion-col class="box" col-6>
         <div class="image">
           <img src="assets/imgs/Overview/support@2x.png">
-            
-            <!-- <ion-icon name="checkmark-circle-outline" class="calendar-icon"></ion-icon> -->
+
+          <!-- <ion-icon name="checkmark-circle-outline" class="calendar-icon"></ion-icon> -->
         </div>
         <ion-row class="text">
           <div class="heading-text">
