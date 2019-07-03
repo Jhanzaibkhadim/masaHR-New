@@ -136,7 +136,7 @@
       </ion-col>
     </ion-row>
     <ion-row class="openlist">
-      <div *ngIf="isJobShow && jobsList.length>0" class="departList">
+      <div *ngIf="isJobShow && jobsList.length>0 && InfoIsEdit" class="departList">
         <ion-item detail-push *ngFor="let job of jobsList | filter : EmployeeJobTitle"
           (click)="selectJob(job)">
           {{job.name}}
@@ -163,7 +163,7 @@
     <ion-row class="inputBox">
       <ion-item>
         <ion-label stacked> {{ 'EMAIL_ADDRESS' | translate }}</ion-label>
-        <ion-input [disabled]="!InfoIsEdit" class="borderbox" type="email" [(ngModel)]="EmployeEmail"></ion-input>
+        <ion-input [disabled]="!InfoIsEdit" class="borderbox" type="email" placeholder="{{ 'EMAIL_ADDRESS' | translate }}" [(ngModel)]="EmployeEmail"></ion-input>
       </ion-item>
     </ion-row>
 
@@ -181,7 +181,7 @@
     </ion-row>
 
     <ion-row class="openlist">
-      <div *ngIf="isDepartShow && departmentsList.length>0" class="departList">
+      <div *ngIf="isDepartShow && departmentsList.length>0 && InfoIsEdit" class="departList">
         <ion-item detail-push *ngFor="let item of departmentsList | filter : EmployeDepartment"
           (click)="selectDeparment(item)">
           {{item.name}}
