@@ -89,7 +89,7 @@ export class QualificationListPage {
         for (var k = 0; k < data.length; k++) {
           var dt = data[k].qualified_year.split(' ');
           data[k].qualified_year = dt[1] + ' ' + dt[2] + ' ' + dt[3];
-          data[k].degreeName = this.getDegreeNme(data[k].degree_id)
+          // data[k].degree_name = this.getDegreeNme(data[k].degree_id)
         }
 
         this.qualificationList = data;

@@ -69,7 +69,7 @@ export class AddQualificationPage {
       this.specializationID = this.navParams.data.specialt_id;
       this.specializationName = this.navParams.data.special_name
       this.state = this.navParams.data.state
-      this.degreeName = this.navParams.data.degreeName;
+      this.degreeName = this.navParams.data.degree_name;
       this.employee_id = this.navParams.data.employee_id
       console.log(this.specializationName, this.navParams.data.qualified_year, this.qualifiedYear)
     }

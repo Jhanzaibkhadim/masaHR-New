@@ -114,8 +114,9 @@ export class BankListPage {
     });
   
     loading.present();
+    // +'&partner_bank_id=1'
 
-    this.api.getRequest(`${Constants.GET_BANK_LIST}`+this.employee_id+'&partner_bank_id=1').then ((data:any) =>{
+    this.api.getRequest(`${Constants.GET_BANK_LIST}`+this.employee_id).then ((data:any) =>{
       loading.dismiss()
       console.log(data)
 

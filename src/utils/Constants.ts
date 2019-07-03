@@ -20,7 +20,7 @@ export class Constants {
 
     // static GET_BANK_LIST = 'bank_list?employee_id='
     // /api/bank_info/employee_id/partner_bank_id
-    static GET_BANK_LIST = 'bank_info/'
+    static GET_BANK_LIST = 'bank_list?employee_id='
 
 
     static READ_BANKS = 'banks'

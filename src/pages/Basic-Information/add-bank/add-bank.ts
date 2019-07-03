@@ -142,7 +142,7 @@ export class AddBankPage {
         bank_id: this.bankID,
         // bank_name:this.bankName,
         active: this.bankStatus,
-        partner_id: this.partner_id,
+        partner_id: "1",
         acc_number: this.accountNumber
       }
       console.log(data)
