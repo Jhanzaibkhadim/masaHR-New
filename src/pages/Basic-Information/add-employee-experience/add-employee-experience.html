@@ -1,18 +1,146 @@
-<!--
-  Generated template for the AddEmployeeExperiencePage page.
+ 
+<ion-content no-padding class="content-back">
+  <ion-row class="top">
+    <ion-row style="width:100%">
+      <ion-col no-padding col-2>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+        <ion-icon name="arrow-back" class="back-iconn" *ngIf="this.directionParam.direction =='left'"
+          (click)="navCtrl.pop()"></ion-icon>
+        <ion-icon name="arrow-forward" *ngIf="this.directionParam.direction !=='left'" class="back-iconn"
+          (click)="navCtrl.pop()"></ion-icon>
 
-  <ion-navbar>
-    <ion-title>add_employeeExperience</ion-title>
-  </ion-navbar>
+      </ion-col>
+      <ion-col class="head-title" no-padding col-8>
+        <ion-row>
+          <!-- {{ 'QUALIFICATION' | translate }} -->
+          {{ 'ADD_EXPERIENCE' | translate }}
 
-</ion-header>
+        </ion-row>
+      </ion-col>
+      <ion-col no-padding col-2>
+
+      </ion-col>
+    </ion-row>
 
 
-<ion-content padding>
+  </ion-row>
+  <ion-row class="info">
+    <button ion-button round *ngIf="editable==false" class="saveBank"
+      (click)="updateExperience()">{{ 'SAVE' | translate }} <ion-icon class="edit-icon" name="checkmark">
+      </ion-icon></button>
+
+    <button ion-button round class="saveBank" *ngIf="editable==true" (click)="submit()">{{ 'SAVE' | translate }}
+      <ion-icon class="edit-icon" name="checkmark"></ion-icon></button>
+ 
+  </ion-row>
+
+  <ion-row class="details-row">
+
+
+    <ion-row class="input-text">
+      {{ 'JOB' | translate }}
+    </ion-row>
+    <ion-row class="inputSelectBox" (click)="searchjobs()">
+      <ion-col col-10>
+
+        {{JobTitle}}
+      </ion-col>
+      <ion-col col-2 class="arrow-down">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="isJobShow && jobsList.length>0" class="openlist">
+
+
+      <div class="departList">
+        <ion-item detail-push *ngFor="let item of jobsList  " (click)="selectJob(item)">
+          {{item.name}}
+        </ion-item>
+      </div>
+    </ion-row>
+
+    <ion-row class="input-text">
+      {{ 'JOB_CAT' | translate }}
+    </ion-row>
+    <ion-row class="inputSelectBox" (click)="searchjobsCategory()">
+      <ion-col col-10>
+
+        {{EmployeeJobCategory}}
+      </ion-col>
+      <ion-col col-2 class="arrow-down">
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="isJobCategoryShow && jobscategoryList.length>0" class="openlist">
+
+
+      <div class="departList">
+        <ion-item detail-push *ngFor="let item of jobscategoryList  " (click)="selectJobCategory(item)">
+          {{item.name}}
+        </ion-item>
+      </div>
+    </ion-row>
+    <ion-row class="inputBox">
+      <ion-item>
+
+        <ion-label stacked> {{ 'LOC' | translate }}</ion-label>
+        <ion-input type="text" class="borderbox" [(ngModel)]="location"></ion-input>
+
+      </ion-item>
+    </ion-row>
+  
+
+    <ion-row class="inputBox"  >
+      <ion-item>
+        <ion-label stacked>{{ 'FROM_DATE' | translate}}</ion-label>
+        <ion-datetime placeholder=" {{ 'SELECT_DATE' | translate}}" display-format="YYYY" [(ngModel)]="fromDate">
+        </ion-datetime>
+      </ion-item>
+    </ion-row>
+
+
+    <ion-row class="inputBox"  >
+      <ion-item>
+        <ion-label stacked>{{ 'TO_DATE' | translate}}</ion-label>
+        <ion-datetime placeholder=" {{ 'SELECT_DATE' | translate}}" display-format="YYYY" [(ngModel)]="toDate">
+        </ion-datetime>
+      </ion-item>
+    </ion-row>
+
+  
+
+     
+    <ion-row class="selectBox">
+      <ion-label stacked>{{'STATUS' | translate}}</ion-label>
+      <ion-select [(ngModel)]="state" okText="{{ 'Ok' | translate}}" cancelText=" {{ 'Cancel' | translate}} ">
+        <ion-option value="draft">{{ 'DRAFT' | translate }} </ion-option>
+        <ion-option value="Validated">{{ 'VALIDATED' | translate }} </ion-option>
+
+      </ion-select>
+    </ion-row>
+
+  </ion-row>
 
 </ion-content>
+
+
+<!-- <ion-row class="input-text">
+  {{ 'JOB' | translate }}
+</ion-row>
+<ion-row class="inputSelectBox"  (click)="searchjobs()">
+  <ion-col col-10>
+
+    {{EmployeeJobTitle}}
+  </ion-col>
+  <ion-col col-2 class="arrow-down">
+    <ion-icon name="arrow-dropdown"></ion-icon>
+  </ion-col>
+</ion-row>
+<ion-row class="openlist">
+  <div *ngIf="isJobShow && jobsList.length>0 && InfoIsEdit" class="departList">
+    <ion-item detail-push *ngFor="let job of jobsList | filter : EmployeeJobTitle"
+      (click)="selectJob(job)">
+      {{job.name}}
+    </ion-item>
+  </div>
+</ion-row> -->

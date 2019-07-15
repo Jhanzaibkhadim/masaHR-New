@@ -56,7 +56,7 @@ export class Constants {
 
     // ?Employee  Experience 
 
-    static GET_EXPERIENCE = 'experience_list/employee_id='
+    static GET_EXPERIENCE = 'experience_list/?employee_id='
 
 
     static CREATE_EXPERIENCE = 'experience_insert'
