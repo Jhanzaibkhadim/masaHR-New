@@ -100,6 +100,7 @@ export class AddBankPage {
         console.log(data)
 
         this.partner_id = data[0].id
+        console.log( this.partner_id)
 
       }
     });
@@ -142,7 +143,7 @@ export class AddBankPage {
         bank_id: this.bankID,
         // bank_name:this.bankName,
         active: this.bankStatus,
-        partner_id: "1",
+        partner_id: this.partner_id,
         acc_number: this.accountNumber
       }
       console.log(data)

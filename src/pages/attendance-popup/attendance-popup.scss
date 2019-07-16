@@ -164,12 +164,8 @@ page-attendance-popup {
     background: #ffffff;
     border-radius: 10px;
     padding: 10px;
-    // position: fixed;
     margin: auto;
-    // margin-bottom: 10px;
-    // top: 8%;
-    // left: 8%;
-    width: 85%;
+    width: 93%;
     color: black;
   }
   
@@ -373,5 +369,20 @@ page-attendance-popup {
     margin-top: 2%;
     color: white;
     background: #2c374d;
+  }
+
+  .btn-row{
+    margin-top: 5%;
+    width:100%;
+  }
+  .sign-in{
+    background: green;
+    width:90%;
+    margin:auto;
+  }
+  .sign-out{
+    background: red;
+    width:90%;
+    margin:auto;
   }
 }

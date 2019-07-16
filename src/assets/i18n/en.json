@@ -159,7 +159,9 @@
     "November":"Nov" ,
     "December":"Dec",
     "JOB_CAT":" Job Category",
-    "LOC":"Location"
+    "LOC":"Location",
+    "SIGNIN":"Sign In",
+    "SIGNOUT":"Sign Out"
 
 
 

@@ -5,7 +5,6 @@
       <ion-col no-padding col-2>
         <button ion-button menuToggle>
           <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-          <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
 
         </button>
       </ion-col>
@@ -14,7 +13,6 @@
 
       </ion-col>
       <ion-col no-padding style="text-align:center" col-2>
-        <!-- <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png"> -->
 
       </ion-col>
     </ion-row>
@@ -51,7 +49,7 @@
       <ion-col col-10 class="name-col" no-padding>
         <ion-row class="name">
           <!-- {{ 'ATTENDANCE' | translate }} -->
-          02 {{ 'DECEMBER' | translate }} 2019
+         {{todayDate|date}}
 
         </ion-row>
         <!-- <ion-row class="designation">
@@ -92,7 +90,7 @@
 
               </ion-row>
               <ion-row class="time-num">
-                08:30 Am
+                {{timeIn}}
               </ion-row>
             </div>
 
@@ -104,7 +102,7 @@
 
               </ion-row>
               <ion-row class="time-num">
-                05:30 Pm
+                {{timeout}}
               </ion-row>
             </div>
 
@@ -116,7 +114,7 @@
 
               </ion-row>
               <ion-row class="time-num">
-                00:30 M
+                {{delayTime}}
               </ion-row>
             </div>
 
@@ -127,6 +125,12 @@
       </ion-col>
     </ion-row>
 
+    <ion-row class="btn-row">
+      <button ion-button class="sign-in"  (click)="checkinAttendance()">{{'SIGNIN' | translate}}</button>
+    </ion-row>
+    <ion-row class="btn-row">
+      <button ion-button color='danger' (click)="checkoutAttendance()" class="sign-out" >{{'SIGNOUT' | translate}}</button>
+    </ion-row>
   </ion-row>
 
 

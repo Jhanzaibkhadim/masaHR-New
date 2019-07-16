@@ -31,7 +31,7 @@ export class AddEmployeeExperiencePage {
   editable: boolean = true;
   monthShortNames: string[];
   userID: any;
-  qualifId: any;
+  experienceID: any;
 
   JobTitle:any;
 
@@ -53,9 +53,10 @@ export class AddEmployeeExperiencePage {
       this.editable = true;
     } else {
       this.editable = false
-      this.qualifId = this.navParams.data.qualification_id;
-      this.score = this.navParams.data.score;
-      this.degreeID = this.navParams.data.degree_id;
+      this.experienceID = this.navParams.data.id;
+      this.location = this.navParams.data.location
+      this.EmployeeJobID = this.navParams.data.degree_id;
+      this.EmployeeJobCategoryID = this.navParams.data.categ_id
       // var date_year = this.navParams.data.qualified_year.split(' ')
       var month = 0;
       // for (let index = 0; index < this.monthShortNames.length; index++) {
