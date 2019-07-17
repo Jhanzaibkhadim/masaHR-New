@@ -51,7 +51,7 @@
       <ion-col col-10 class="name-col" no-padding>
         <ion-row class="name">
           <!-- {{ 'ATTENDANCE' | translate }} -->
-         {{todayDate|date}}
+          {{todayDate }}
 
         </ion-row>
         <!-- <ion-row class="designation">
@@ -73,7 +73,7 @@
         <div id="container" class="outerCircle">
           <div class="innercircle">
             <ion-row class="timein">
-             {{progress+'%'}}
+              {{progress+'%'}}
             </ion-row>
             <ion-row class="timeout">
               <!-- 5:00 PM -->
@@ -127,10 +127,11 @@
     </ion-row>
 
     <ion-row class="btn-row" *ngIf="!hidesignInBtn">
-      <button ion-button class="sign-in"  (click)="checkinAttendance()">{{'SIGNIN' | translate}}</button>
+      <button ion-button class="sign-in" (click)="checkinAttendance()">{{'SIGNIN' | translate}}</button>
     </ion-row>
     <ion-row class="btn-row" *ngIf="hidesignInBtn && !hidesignoutbtn">
-      <button ion-button color='danger' (click)="checkoutAttendance()" class="sign-out" >{{'SIGNOUT' | translate}}</button>
+      <button ion-button color='danger' (click)="checkoutAttendance()"
+        class="sign-out">{{'SIGNOUT' | translate}}</button>
     </ion-row>
   </ion-row>
 

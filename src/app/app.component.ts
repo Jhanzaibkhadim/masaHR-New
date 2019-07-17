@@ -34,8 +34,8 @@ import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup'
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // rootPage: any = LoginPage
-  rootPage: any = TabsPage
+  rootPage: any = LoginPage
+  // rootPage: any = TabsPage
 
   logoutbtn: boolean = false;
 
