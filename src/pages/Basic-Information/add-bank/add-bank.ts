@@ -100,6 +100,7 @@ export class AddBankPage {
         console.log(data)
 
         this.partner_id = data[0].id
+        console.log( this.partner_id)
 
       }
     });

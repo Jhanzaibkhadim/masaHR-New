@@ -143,5 +143,11 @@
     "September":"أيلول",
     "October":"تشرين",
     "November":"تشرين" ,
-    "December":"كانون"
+    "December":"كانون",
+    "JOB_CAT":"تصنيف الوظيفة",
+    "LOC":"موقعك",
+    "SIGNIN":"تسجيل الدخول",
+    "SIGNOUT":"خروج"
+
+
 }

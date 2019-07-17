@@ -49,7 +49,7 @@ export class AddQualificationPage {
       this.editable = true;
     } else {
       this.editable = false
-      this.qualifId = this.navParams.data.id;
+      this.qualifId = this.navParams.data.qualification_id;
       this.score = this.navParams.data.score;
       this.degreeID = this.navParams.data.degree_id;
       var date_year = this.navParams.data.qualified_year.split(' ')
@@ -69,7 +69,7 @@ export class AddQualificationPage {
       this.specializationID = this.navParams.data.specialt_id;
       this.specializationName = this.navParams.data.special_name
       this.state = this.navParams.data.state
-      this.degreeName = this.navParams.data.degreeName;
+      this.degreeName = this.navParams.data.degree_name;
       this.employee_id = this.navParams.data.employee_id
       console.log(this.specializationName, this.navParams.data.qualified_year, this.qualifiedYear)
     }
@@ -254,6 +254,7 @@ export class AddQualificationPage {
               success = value;
             }
           )
+            this.navCtrl.pop();
 
           this.displaySimpleToast('success', success, record_added, false)
         }
@@ -306,7 +307,7 @@ export class AddQualificationPage {
 
       var data = {
         degree_id: this.degreeID,
-        id: this.qualifId,
+        qualification_id: this.qualifId,
         employee_id: this.employee_id,
         institute_id: this.universityName,
         qualified_year: this.qualifiedYear,
@@ -352,7 +353,7 @@ export class AddQualificationPage {
               success = value;
             }
           )
-
+            this.navCtrl.pop();
           this.displaySimpleToast('success', success, record_updated, false)
 
         }

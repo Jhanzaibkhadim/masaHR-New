@@ -85,7 +85,11 @@ export class EmployeeExperiencePage {
 
 
   addexperience() {
-    this.navCtrl.push(AddEmployeeExperiencePage)
+    var data = false
+    this.navCtrl.push(AddEmployeeExperiencePage,data)
+  }
+  editExperience(qual){
+
   }
 
 }
