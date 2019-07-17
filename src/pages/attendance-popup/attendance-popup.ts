@@ -204,6 +204,9 @@ export class AttendancePopupPage {
 
   getAttendanceConfig() {
 
+    // sat = 0
+    // fri = 6
+
     // var findDayOfWeek = new Date().getDay()
 
     this.api.getRequest(`${Constants.GET_ATTENDANCE_CONFIG}` + this.employee_id + '&day=1').then((resp: any) => {
@@ -217,8 +220,6 @@ export class AttendancePopupPage {
 
 
         // progress = ((hour_from - checkin_time) - (hour_to - hour_from)) * 100
-
-
 
 
       }
