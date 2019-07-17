@@ -27,22 +27,23 @@
 <ion-content class="cont-bg">
   <div class="cont-head">
     <ion-row class="top-card">
-        <ion-col no-padding col-2>
-          <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
-        </ion-col>
-        <ion-col col-10 class="name-col" no-padding>
-          <ion-row class="name">
-            {{username}}
-    
-          </ion-row>
-          <ion-row class="designation">
-              {{ 'SALES_MANAGER' | translate }}
-            
-          </ion-row>
-        </ion-col>
-     
-    
-      </ion-row>
+      <ion-col no-padding col-2>
+        <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
+      </ion-col>
+      <ion-col col-10 class="name-col" no-padding>
+        <ion-row class="name">
+          {{username}}
+
+        </ion-row>
+        <ion-row class="designation">
+          <!-- {{ 'SALES_MANAGER' | translate }} -->
+          <p>{{api.employeeJobGlobal }}</p>
+
+        </ion-row>
+      </ion-col>
+
+
+    </ion-row>
   </div>
 
   <div class="cont-body">
@@ -116,7 +117,7 @@
         </ion-row>
       </ion-col>
     </ion-row>
-   
+
 
 
 
@@ -159,7 +160,7 @@
 
         </ion-row>
       </ion-col> -->
-      <!-- <ion-col col-6 no-padding (click)="gotoCurrent()">
+    <!-- <ion-col col-6 no-padding (click)="gotoCurrent()">
             <ion-row class="img-row">
                 <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/current_skill@2x.png">
         
@@ -211,7 +212,7 @@
 
 
 
- <!-- <ion-row class="boxes" (click)="gotoPersonalInfo()">
+<!-- <ion-row class="boxes" (click)="gotoPersonalInfo()">
       <ion-col col-2>
         <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/personal_info@2x.png">
 
@@ -224,7 +225,7 @@
     </ion-row> -->
 
 
-    <!-- <ion-row class="boxes">
+<!-- <ion-row class="boxes">
       <ion-col col-2>
         <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/location@2x.png">
         

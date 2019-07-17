@@ -56,13 +56,23 @@ export class Constants {
 
     // ?Employee  Experience 
 
-    static GET_EXPERIENCE = 'experience_list/employee_id='
+    static GET_EXPERIENCE = 'experience_list/?employee_id='
 
 
     static CREATE_EXPERIENCE = 'experience_insert'
 
     static GET_EMP_DETAIL = "employee_job?employee_id="
 
+
+    static INSERT_ATTENDECE = "insert_attendance"
+
+    static TODAY_ATTENDANCE = 'attendance_today?employee_id='
+
+    static ATTENDANCE_STATUS = 'attendance_status?employee_id='
+
+    static CONTRACT_ID = 'employee_contract?employee_id='
+
+    static GET_ATTENDANCE_CONFIG = 'attendance_config?employee_id='
 
 
 }

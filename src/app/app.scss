@@ -85,150 +85,148 @@ ion-icon {
     }
 
     //in case of inactive
+
+
+
+    // .tabs-ios {
+    //     a[aria-selected=false] {
+
+    //         .tab-button-icon[ng-reflect-name=mission],
+    //         .tab-button-icon[aria-label=mission],
+    //         .ion-ios-overviewcustom-outline {
+    //             background-image: url(../assets/imgs/Overview/mission@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=permission],
+    //         .tab-button-icon[aria-label=permission],
+    //         .ion-ios-listcustom-outline {
+    //             background-image: url(../assets/imgs/Overview/support@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=attend],
+    //         .tab-button-icon[aria-label=attend],
+    //         .ion-ios-createcustom-outline {
+    //             background-image: url(../assets/imgs/Overview/inbox@2x.png);
+    //         }
+
+    //     }
+
+    //     a[aria-selected=true] {
+
+    //         //führ eventuellen text
+    //         //span {
+    //         //color: #f00; //whatever colour you want to use for the text
+    //         //}
+    //         .tab-button-icon[ng-reflect-name=mission],
+    //         .tab-button-icon[aria-label=mission] {
+    //             background-image: url(../assets/imgs/Overview/mission@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=permission],
+    //         .tab-button-icon[aria-label=permission] {
+    //             background-image: url(../assets/imgs/Overview/support@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=attend],
+    //         .tab-button-icon[aria-label=attend] {
+    //             background-image: url(../assets/imgs/Overview/inbox@2x.png);
+    //         }
+
+    //     }
+    // }
+
+    // .tabs-md {
+    //     a[aria-selected=false] {
+
+    //         .tab-button-icon[ng-reflect-name=mission],
+    //         .tab-button-icon[aria-label=mission] {
+    //             background-image: url(../assets/imgs/Overview/mission@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=permission],
+    //         .tab-button-icon[aria-label=permission] {
+    //             background-image: url(../assets/imgs/Overview/support@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=attend],
+    //         .tab-button-icon[aria-label=attend] {
+    //             background-image: url(../assets/imgs/Overview/inbox@2x.png);
+    //         }
+
+    //     }
+
+    //     a[aria-selected=true] {
+
+    //         //führ eventuellen text
+    //         //span {
+    //         //color: #f00; //whatever colour you want to use for the text
+    //         //}
+    //         .tab-button-icon[ng-reflect-name=mission],
+    //         .tab-button-icon[aria-label=mission] {
+    //             background-image: url(../assets/imgs/Overview/mission@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=permission],
+    //         .tab-button-icon[aria-label=permission] {
+    //             background-image: url(../assets/imgs/Overview/support@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=attend],
+    //         .tab-button-icon[aria-label=attend] {
+    //             background-image: url(../assets/imgs/Overview/inbox@2x.png);
+    //         }
+
+
+    //     }
+    // }
+
+    // .tabs-wp {
+    //     a[aria-selected=false] {
+
+    //         .tab-button-icon[ng-reflect-name=mission],
+    //         .tab-button-icon[aria-label=mission] {
+    //             background-image: url(../assets/imgs/Overview/mission@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=permission],
+    //         .tab-button-icon[aria-label=permission] {
+    //             background-image: url(../assets/imgs/Overview/support@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=attend],
+    //         .tab-button-icon[aria-label=attend] {
+    //             background-image: url(../assets/imgs/Overview/inbox@2x.png);
+    //         }
+
+
+    //     }
+
+    //     a[aria-selected=true] {
+
+    //         //führ eventuellen text
+    //         //span {
+    //         //color: #f00; //whatever colour you want to use for the text
+    //         //}
+    //         .tab-button-icon[ng-reflect-name=mission],
+    //         .tab-button-icon[aria-label=mission] {
+    //             background-image: url(../assets/imgs/Overview/mission@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=permission],
+    //         .tab-button-icon[aria-label=permission] {
+    //             background-image: url(../assets/imgs/Overview/support@2x.png);
+    //         }
+
+    //         .tab-button-icon[ng-reflect-name=attend],
+    //         .tab-button-icon[aria-label=attend] {
+    //             background-image: url(../assets/imgs/Overview/inbox@2x.png);
+    //         }
+
+
+    //     }
+    // }
+
 }
-
-
-
-
-.tabs-ios {
-    a[aria-selected=false] {
-
-        .tab-button-icon[ng-reflect-name=mission],
-        .tab-button-icon[aria-label=mission],
-        .ion-ios-overviewcustom-outline {
-            background-image: url(../assets/imgs/Overview/mission@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=permission],
-        .tab-button-icon[aria-label=permission],
-        .ion-ios-listcustom-outline {
-            background-image: url(../assets/imgs/Overview/support@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=attend],
-        .tab-button-icon[aria-label=attend],
-        .ion-ios-createcustom-outline {
-            background-image: url(../assets/imgs/Overview/inbox@2x.png);
-        }
-
-    }
-
-    a[aria-selected=true] {
-
-        //führ eventuellen text
-        //span {
-        //color: #f00; //whatever colour you want to use for the text
-        //}
-        .tab-button-icon[ng-reflect-name=mission],
-        .tab-button-icon[aria-label=mission] {
-            background-image: url(../assets/imgs/Overview/mission@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=permission],
-        .tab-button-icon[aria-label=permission] {
-            background-image: url(../assets/imgs/Overview/support@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=attend],
-        .tab-button-icon[aria-label=attend] {
-            background-image: url(../assets/imgs/Overview/inbox@2x.png);
-        }
-
-    }
-}
-
-.tabs-md {
-    a[aria-selected=false] {
-
-        .tab-button-icon[ng-reflect-name=mission],
-        .tab-button-icon[aria-label=mission] {
-            background-image: url(../assets/imgs/Overview/mission@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=permission],
-        .tab-button-icon[aria-label=permission] {
-            background-image: url(../assets/imgs/Overview/support@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=attend],
-        .tab-button-icon[aria-label=attend] {
-            background-image: url(../assets/imgs/Overview/inbox@2x.png);
-        }
-
-
-    }
-
-    a[aria-selected=true] {
-
-        //führ eventuellen text
-        //span {
-        //color: #f00; //whatever colour you want to use for the text
-        //}
-        .tab-button-icon[ng-reflect-name=mission],
-        .tab-button-icon[aria-label=mission] {
-            background-image: url(../assets/imgs/Overview/mission@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=permission],
-        .tab-button-icon[aria-label=permission] {
-            background-image: url(../assets/imgs/Overview/support@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=attend],
-        .tab-button-icon[aria-label=attend] {
-            background-image: url(../assets/imgs/Overview/inbox@2x.png);
-        }
-
-
-    }
-}
-
-.tabs-wp {
-    a[aria-selected=false] {
-
-        .tab-button-icon[ng-reflect-name=mission],
-        .tab-button-icon[aria-label=mission] {
-            background-image: url(../assets/imgs/Overview/mission@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=permission],
-        .tab-button-icon[aria-label=permission] {
-            background-image: url(../assets/imgs/Overview/support@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=attend],
-        .tab-button-icon[aria-label=attend] {
-            background-image: url(../assets/imgs/Overview/inbox@2x.png);
-        }
-
-
-    }
-
-    a[aria-selected=true] {
-
-        //führ eventuellen text
-        //span {
-        //color: #f00; //whatever colour you want to use for the text
-        //}
-        .tab-button-icon[ng-reflect-name=mission],
-        .tab-button-icon[aria-label=mission] {
-            background-image: url(../assets/imgs/Overview/mission@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=permission],
-        .tab-button-icon[aria-label=permission] {
-            background-image: url(../assets/imgs/Overview/support@2x.png);
-        }
-
-        .tab-button-icon[ng-reflect-name=attend],
-        .tab-button-icon[aria-label=attend] {
-            background-image: url(../assets/imgs/Overview/inbox@2x.png);
-        }
-
-
-    }
-}
-
 
 
 

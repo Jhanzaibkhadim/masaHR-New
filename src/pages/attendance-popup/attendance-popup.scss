@@ -164,12 +164,9 @@ page-attendance-popup {
     background: #ffffff;
     border-radius: 10px;
     padding: 10px;
-    // position: fixed;
     margin: auto;
-    // margin-bottom: 10px;
-    // top: 8%;
-    // left: 8%;
-    width: 85%;
+    margin-top: 5% !important;
+    width: 93%;
     color: black;
   }
   
@@ -235,7 +232,7 @@ page-attendance-popup {
     color: white;
   }
   #container {
-    margin-left: 5%;
+    margin-left: 6%;
     // margin-top: 10%;
 
     // padding: 7px;
@@ -246,7 +243,7 @@ page-attendance-popup {
     border: 4px solid #427feb;
     // height: 85%;
     // width: 66%;
-    padding: 22px 0px 22px 0px;
+    padding: 26px 0px 27px 0px;
     background: #76b4ff;
     // position: absolute;
     // margin: 10%;
@@ -255,7 +252,7 @@ page-attendance-popup {
   .timein {
     height: 50%;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     align-items: flex-end;
     color: #ffffff;
     justify-content: center;
@@ -373,5 +370,20 @@ page-attendance-popup {
     margin-top: 2%;
     color: white;
     background: #2c374d;
+  }
+
+  .btn-row{
+    margin-top: 5%;
+    width:100%;
+  }
+  .sign-in{
+    background: green;
+    width:90%;
+    margin:auto;
+  }
+  .sign-out{
+    background: red;
+    width:90%;
+    margin:auto;
   }
 }

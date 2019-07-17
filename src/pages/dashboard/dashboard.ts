@@ -91,10 +91,14 @@ export class DashboardPage {
 
     loading.present();
     this.api.getRequest(`${Constants.GET_EMP_DETAIL}` + this.employee_id).then((data: any) => {
-      loading.dismiss()
       console.log(data)
-      // this.username = data[0].name
-      this.employeeJob = data[0].name
+      if (data.length > 0 && data !== undefined) {
+        // this.username = data[0].name
+        loading.dismiss()
+
+        this.api.employeeJobGlobal = data[0].name
+      }
+
 
     });
 
