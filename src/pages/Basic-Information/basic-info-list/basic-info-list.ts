@@ -8,6 +8,7 @@ import { QualificationListPage } from '../qualification-list/qualification-list'
 import { EmployeeExperiencePage } from '../employee-experience/employee-experience';
 import { Constants } from '../../../utils/Constants';
 import { Storage } from '@ionic/storage';
+import { ApiProvider } from '../../../providers/api/api';
 
 /**
  * Generated class for the BasicInfoListPage page.
@@ -25,7 +26,8 @@ export class BasicInfoListPage {
 
   username: any;
   employee_id: any;
-  constructor(public navCtrl: NavController, public localStore: Storage, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public localStore: Storage, public navParams: NavParams,
+    public api: ApiProvider) {
   }
 
   ionViewDidLoad() {

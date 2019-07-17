@@ -94,7 +94,7 @@ export class DashboardPage {
       loading.dismiss()
       console.log(data)
       // this.username = data[0].name
-      this.employeeJob = data[0].name
+      this.api.employeeJobGlobal = data[0].name
 
     });
 

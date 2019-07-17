@@ -45,7 +45,7 @@ export class MyApp {
 
 
 
-  constructor(public localStore: Storage, public translationProvider: GeneralProvider, public translate: TranslateService, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public app: App) {
+  constructor(public localStore: Storage, public translationProvider: GeneralProvider, public translate: TranslateService, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public app: App, public api: ApiProvider) {
     this.initializeApp();
 
     // this language will be used as a fallback when a translation isn't found in the current language

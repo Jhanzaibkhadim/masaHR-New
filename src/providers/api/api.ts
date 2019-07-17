@@ -12,6 +12,8 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 @Injectable()
 export class ApiProvider {
 
+  employeeJobGlobal: any = ""
+
   constructor(public http: HttpClient, public alertCtrl: AlertController, ) {
     console.log('Hello ApiProvider Provider');
   }

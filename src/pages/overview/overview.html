@@ -34,22 +34,24 @@
 
       </ion-row>
       <ion-row class="designation">
-          {{ 'SALES_MANAGER' | translate }}
+        <!-- {{ 'SALES_MANAGER' | translate }} -->
+        <p>{{api.employeeJobGlobal }}</p>
+
         <!-- 02 {{ 'DECEMBER' | translate }} 2019 -->
       </ion-row>
     </ion-col>
 
     <!-- <ion-col class="icon-col" no-padding col-2> -->
-      <!-- <img src=" assets/imgs/Overview/calendar@2x.png" /> -->
-      <!-- <ion-icon class="notification-icon" ios="ios-calendar" md="md-calendar"></ion-icon> -->
+    <!-- <img src=" assets/imgs/Overview/calendar@2x.png" /> -->
+    <!-- <ion-icon class="notification-icon" ios="ios-calendar" md="md-calendar"></ion-icon> -->
     <!-- </ion-col> -->
 
 
   </ion-row>
 
-   <ion-row class="times-row">
+  <ion-row class="times-row">
 
-   <!-- <ion-col col-3 style="margin:auto" no-padding>
+    <!-- <ion-col col-3 style="margin:auto" no-padding>
       <div id="container" class="outerCircle">
         <div class="innercircle">
           <ion-row class="timein">
@@ -105,7 +107,7 @@
          
       </ion-row>
     </ion-col>-->
-  </ion-row> 
+  </ion-row>
 
   <ion-row class="boxes">
     <ion-col col-6 no-padding>
@@ -120,8 +122,7 @@
     </ion-col>
     <ion-col col-6 no-padding>
 
-      <ion-row
-        [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
+      <ion-row [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
         21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/mission@2x.png">
@@ -146,8 +147,7 @@
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-      <ion-row
-        [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
+      <ion-row [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
         21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src="assets/imgs/Overview/salary@2x.png">
@@ -172,8 +172,7 @@
       </ion-row>
     </ion-col>
     <ion-col col-6 no-padding>
-      <ion-row
-        [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
+      <ion-row [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
         21</ion-row>
       <ion-row class="img-row">
         <img class="svg-icon" src=" assets/imgs/Overview/support@2x.png">
