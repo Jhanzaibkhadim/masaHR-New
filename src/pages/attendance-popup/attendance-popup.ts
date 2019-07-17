@@ -20,6 +20,8 @@ export class AttendancePopupPage {
   timeIn: any = 0;
   timeout: any = 0;
   delayTime; any = 0;
+  hidesignInBtn: boolean = false;
+
   constructor(public api: ApiProvider, public loadingCtrl: LoadingController, public localStore: Storage, public modal: ModalController, public translateService: TranslateService, public translationProvider: GeneralProvider, public navCtrl: NavController, public navParams: NavParams) {
     console.log(this.translationProvider.direction)
     // this.getContractID();
@@ -30,14 +32,18 @@ export class AttendancePopupPage {
 
   }
   ionViewWillEnter() {
+    this.todayDate = new Date().toLocaleDateString();
+    console.log(this.todayDate)
+    
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
       console.log(res, "ye hey local")
       if (res !== null && res !== undefined) {
         this.username = res.name;
         this.employee_id = res.employee_id
-        this.getTodayAttendance();
+        this.getTodayAttendance()
+
         this.getContractID()
-        this.getAttendanceConfig()
+
 
       }
     })
@@ -77,6 +83,18 @@ export class AttendancePopupPage {
   }
 
 
+
+
+  timeStringToFloat(time) {
+    var hoursMinutes = time.split(':');
+    var hours = parseInt(hoursMinutes[0], 10);
+    var minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
+    return hours + minutes / 60;
+  }
+
+
+
+
   checkinAttendance() {
     var checkinTime = new Date();
     var day = checkinTime.getDate();
@@ -114,7 +132,10 @@ export class AttendancePopupPage {
       console.log(resp)
       loading.dismiss();
       if (resp.success == 0) {
-        this.getTodayAttendance();
+        this.localStore.set('SIGNIN', true);
+        this.hidesignInBtn = true;
+
+        this.checkIDone();
         var record_updated;
         var success;
         this.translateService.get('RECORD_UPDATED').subscribe(
@@ -132,12 +153,20 @@ export class AttendancePopupPage {
 
         this.displaySimpleToast('success', success, record_updated, false)
 
-        // this.displaySimpleToast('success','Success',"Profile Updated SuccessFully",true)
       }
     })
 
   }
 
+
+
+  checkIDone() {
+    this.getTodayAttendance();
+
+    // this.getAttendanceConfig()
+    // this.getTodayAttendance();
+
+  }
 
   diff(start, end) {
     start = start.split(":");
@@ -159,64 +188,82 @@ export class AttendancePopupPage {
     var j = dat.split(' ');
     var hours = j[4].split(':')[0];
     var minutes = j[4].split(':')[1]
-
+    console.log(hours, minutes, 'hours and minutesss')
     var ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0' + minutes : minutes;
     var strTime = hours + ':' + minutes + ' ' + ampm;
     if (checkin == true) {
-      this.delayTime = this.diff('9:00', (hours + ':' + minutes))
+
+      this.checkinTiminDecimal = this.timeStringToFloat((hours + ':' + minutes));
+      console.log(this.checkinTiminDecimal.toFixed(1))
+      // this.delayTime = this.diff('9:00', (hours + ':' + minutes))
     }
     return strTime;
   }
-
+  checkinTiminDecimal: any = 0;
 
 
 
   getTodayAttendance() {
+    this.attendanceList=[];
     this.api.getRequest(`${Constants.TODAY_ATTENDANCE}` + this.employee_id).then((resp: any) => {
       console.log(resp)
 
       if (resp.length > 0 && resp !== undefined) {
-
         this.attendanceList = resp;
+        // this.attendanceList.push(resp[0]);
+        // this.attendanceList.push(resp[resp.length-1]);
+        console.log(this.attendanceList)
         for (let index = 0; index < this.attendanceList.length; index++) {
           if (this.attendanceList[index].action == "check_in") {
+            this.hidesignInBtn = true;
             var today = this.attendanceList[index].action_datetime.split(' ')
-
-
-            this.todayDate = today[1] + ' ' + today[2] + ' ' + today[3]
-
             this.timeIn = this.formatAMPM(this.attendanceList[index].action_datetime, true);
           } else if (this.attendanceList[index].action == "check_out") {
-            // this.todayDate = this.attendanceList[index].action_datetime
+            this.hidesignInBtn = true;
+            this.hidesignoutbtn = true;
             this.timeout = this.formatAMPM(this.attendanceList[index].action_datetime);
           }
 
         }
-
+        // if (this.attendanceList.length > 0 && this.attendanceList !== undefined && this.attendanceList[1].action == "check_out") {
+        //   this.hidesignInBtn = true;
+        //   this.hidesignoutbtn = true;
+        // }
+        this.getAttendanceConfig();
         // this.displaySimpleToast('success','Success',"Profile Updated SuccessFully",true)
+      } else {
+        this.hidesignInBtn = false;
+        // this.hidesignoutbtn=false;
       }
+
     })
   }
 
+  progress: any = 0
 
   getAttendanceConfig() {
 
     // sat = 0
     // fri = 6
 
-    // var findDayOfWeek = new Date().getDay()
+    var findDayOfWeek = new Date().getDay() + 1
 
-    this.api.getRequest(`${Constants.GET_ATTENDANCE_CONFIG}` + this.employee_id + '&day=1').then((resp: any) => {
+    console.log(findDayOfWeek)
+    this.api.getRequest(`${Constants.GET_ATTENDANCE_CONFIG}` + this.employee_id + '&day=' + findDayOfWeek).then((resp: any) => {
       console.log(resp)
 
       if (resp.length > 0 && resp !== undefined) {
 
         console.log(resp)
 
-        // delay = (actual_checkin - config_time_in)
+        this.delayTime = ((this.checkinTiminDecimal - resp[0].hour_from).toFixed(2))
+        console.log(this.delayTime, this.checkinTiminDecimal),
+          // delay = (actual_checkin - hour_from)
+          this.progress = (((resp[0].hour_from - this.checkinTiminDecimal) - (resp[0].hour_to - resp[0].hour_from)) * 100).toFixed(0)
+        console.log(this.progress)
 
 
         // progress = ((hour_from - checkin_time) - (hour_to - hour_from)) * 100
@@ -230,7 +277,7 @@ export class AttendancePopupPage {
 
 
 
-
+  hidesignoutbtn: boolean = false;
   checkoutAttendance() {
     var checkout = new Date();
     var day = checkout.getDate();
@@ -268,6 +315,8 @@ export class AttendancePopupPage {
       console.log(resp)
       loading.dismiss();
       if (resp.success == 0) {
+        this.hidesignoutbtn = true;
+
         this.getTodayAttendance();
 
         var record_updated;
