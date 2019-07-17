@@ -8,15 +8,15 @@ import { ContractsListPage } from './../pages/contracts-list/contracts-list';
 import { DashboardPage } from './../pages/dashboard/dashboard';
 import { AdminComumnicationsPage } from './../pages/admin-comumnications/admin-comumnications';
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
-import { BasicInfoPage } from '../pages/basic-info/basic-info';
-import { BasicInfoListPage } from '../pages/basic-info-list/basic-info-list';
+import { BasicInfoPage } from '../pages/Basic-Information/basic-info/basic-info';
+import { BasicInfoListPage } from '../pages/Basic-Information/basic-info-list/basic-info-list';
 import { OverviewPage } from '../pages/overview/overview';
 import { TranslateService } from '@ngx-translate/core';
 import { GeneralProvider } from '../providers/general/general';
@@ -24,6 +24,7 @@ import { Global } from '../../src/utils/Global';
 import { Constants } from '../../src/utils/Constants';
 import { ApiProvider } from '../../src/providers/api/api';
 import { Storage } from '@ionic/storage';
+import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup';
 
 
 
@@ -33,46 +34,51 @@ import { Storage } from '@ionic/storage';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage
+  // rootPage: any = LoginPage
+  rootPage: any = TabsPage
 
-  logoutbtn:boolean=false;
-  
+  logoutbtn: boolean = false;
+
   pages: Array<{ title: string, component: any, img: any }>;
-  menuSide: boolean= true;
+  menuSide: boolean = true;
   username: any;
-   
-   
 
-  constructor(public localStore:Storage  ,public translationProvider:GeneralProvider, public translate: TranslateService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+
+
+  constructor(public localStore: Storage, public translationProvider: GeneralProvider, public translate: TranslateService, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public app: App) {
     this.initializeApp();
-     
-      // this language will be used as a fallback when a translation isn't found in the current language
-      this.translate.setDefaultLang('ar');
-     
-      this.changeLanguage(2)
-      
-    
-    this.pages = [
-      { title: 'DASHBOARD', component: DashboardPage, img: "assets/imgs/SideMenu/dashboard.png" },
-      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/about.png" },
-      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
-      { title:  'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
-      { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
-      { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
-      { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
-      { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
-      { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
-      { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
-      { title: 'ABOUT', component: DashboardPage, img: "assets/imgs/SideMenu/about.png" },
-    ];
+
+    // this language will be used as a fallback when a translation isn't found in the current language
+    this.translate.setDefaultLang('ar');
+
+    this.changeLanguage(1)
 
     this.getLocalData()
+    this.pages = [
+      { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
+      { title: 'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
+      { title: 'CONTRACTS', component: ContractsListPage, img: "assets/imgs/SideMenu/contracts.png" },
+      { title: 'OVERVIEW', component: OverviewPage, img: "assets/imgs/SideMenu/overview.png" },
+      // { title: 'ATTENDANCE', component: AttendancePopupPage, img: "assets/imgs/SideMenu/attendace.svg" },
+      { title: 'LEAVES', component: LeavesPage, img: "assets/imgs/SideMenu/job_termination@2x.png" },
+      { title: 'MISSIONS', component: TabsPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
+      { title: 'PERMISSIONS', component: TabsPage, img: "assets/imgs/SideMenu/hr_procedures@2x.png" },
+
+      // { title: 'HR_PROCEDURES', component: HrProceduresListPage, img: "assets/imgs/SideMenu/hr_procedures.png" },
+      // { title: 'SALARIES_AND_INCENTIVES', component: SalariesAndIncentiveListPage, img: "assets/imgs/SideMenu/salaries_incentives.png" },
+      // { title: 'LOANS', component: LoansListPage, img: "assets/imgs/SideMenu/loans.png" },
+      // { title: 'JOB_TERMINATION', component: JobTerminationListingPage, img: "assets/imgs/SideMenu/job_termination.png" },
+      // { title: 'ADMIN_COMM', component: AdminComumnicationsPage, img: "assets/imgs/SideMenu/admin_communications.png" },
+      { title: 'ABOUT', component: TabsPage, img: "assets/imgs/SideMenu/about.png" },
+    ];
+
+
   }
 
-  getLocalData(){
-    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res)=>{
-      console.log(res,"ye hey local")
-      if(res !== null && res !== undefined){
+  getLocalData() {
+    this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+      console.log(res, "ye hey local")
+      if (res !== null && res !== undefined) {
         this.username = res.name;
       }
     })
@@ -90,12 +96,28 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+
+    // DASHBOARD
+    // BASIC_INFORMATION
+    // console.log(page)
+    // if (page.title !== "DASHBOARD" && page.title !== "BASIC_INFORMATION") {
+    //   console.log("here")
+    //   let elem = <HTMLElement>document.querySelector(".tabbar");
+    //   console.log(elem)
+
+    //   if (elem != null) {
+    //     elem.style.display = 'flex';
+    //   }
+    // }
+
+    this.app.getActiveNav().setRoot(page.component);
+    // this.nav.setRoot(TabsPage);
+    // this.nav.push(page.component);
   }
 
 
-  changeLanguage(id){
-    if(id ==1){
+  changeLanguage(id) {
+    if (id == 1) {
       this.menuSide = true;
       // let element: HTMLElement = document.getElementById("sidemenu");
       // console.log(element)
@@ -106,12 +128,12 @@ export class MyApp {
 
 
       // }
-      this.translationProvider.direction="left"
-      this.platform.setDir("ltr",true)
+      this.translationProvider.direction = "left"
+      this.platform.setDir("ltr", true)
       this.translate.setDefaultLang('en');
-    }else if(id == 2){
+    } else if (id == 2) {
       this.menuSide = false;
-      this.translationProvider.direction="right"
+      this.translationProvider.direction = "right"
 
       // let element: HTMLElement = document.getElementById("sidemenu");
       // console.log(element)
@@ -121,16 +143,22 @@ export class MyApp {
 
 
       // }
-      this.platform.setDir("rtl",true)
+      this.platform.setDir("rtl", true)
       this.translate.setDefaultLang('ar');
-      
+
     }
     console.log(this.platform.dir())
-    if(this.platform.dir() == 'rtl'){
+    if (this.platform.dir() == 'rtl') {
       this.logoutbtn = true;
     }
-    else{
+    else {
       this.logoutbtn = false;
     }
+  }
+
+  loguot() {
+    this.localStore.clear().then(() => {
+      this.nav.setRoot(LoginPage)
+    })
   }
 }

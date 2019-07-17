@@ -43,14 +43,19 @@ page-login {
         color:white;
         text-align: right;
     }
-    
+    .rightside .text-input-ios{
+        color:white;
+        text-align: right;
+    }
     .leftside .text-input-md {
         color:white;
         // text-align: right;
     }
-    // .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
-    //     color:white;
-    // }
+    .leftside .text-input-ios{
+        color:white;
+        // text-align: right;
+    }
+    
      .input-has-focus{
         border:none !important;
         box-shadow: 0px !important;

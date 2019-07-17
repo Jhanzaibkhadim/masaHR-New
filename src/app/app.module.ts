@@ -7,7 +7,8 @@ import { LoansListPage } from './../pages/loans-list/loans-list';
 import { HrProceduresListPage } from './../pages/hr-procedures-list/hr-procedures-list';
 import { JobTerminationListingPage } from './../pages/job-termination-listing/job-termination-listing';
 import { ContractsListPage } from './../pages/contracts-list/contracts-list';
-import { BasicInfoListPage } from './../pages/basic-info-list/basic-info-list';
+import { BasicInfoListPage } from './../pages/Basic-Information/basic-info-list/basic-info-list';
+
 import { AdminComumnicationsPage } from './../pages/admin-comumnications/admin-comumnications';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -20,24 +21,42 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { DashboardPage } from '../pages/dashboard/dashboard';
-import { BasicInfoPage } from '../pages/basic-info/basic-info';
 import { OverviewPage } from '../pages/overview/overview';
 
 
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpModule, Http} from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GeneralProvider } from '../providers/general/general';
-import {   Headers, RequestOptions } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 import { ApiProvider } from '../providers/api/api';
 import { IonicStorageModule } from '@ionic/storage';
- 
+
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
-import { BankListPage } from '../pages/bank-list/bank-list';
-import { AddBankPage } from '../pages/add-bank/add-bank';
+// import { BankListPage } from '../pages/bank-list/bank-list';
+// import { AddBankPage } from '../pages/add-bank/add-bank';
+// import { CurrentEmployeeSkillsPage } from '../pages/current-employee-skills/current-employee-skills';
+// import { LostEmployeeSkillsPage } from '../pages/lost-employee-skills/lost-employee-skills';
+// import { QualificationListPage } from '../pages/qualification-list/qualification-list';
+// import { AddQualificationPage } from '../pages/add-qualification/add-qualification';
+// import { EmployeeLocationPage } from '../pages/employee-location/employee-location';
+import { BankListPage } from '../pages/Basic-Information/bank-list/bank-list';
+import { AddBankPage } from '../pages/Basic-Information/add-bank/add-bank';
+import { CurrentEmployeeSkillsPage } from '../pages/Basic-Information/current-employee-skills/current-employee-skills';
+import { LostEmployeeSkillsPage } from '../pages/Basic-Information/lost-employee-skills/lost-employee-skills';
+import { QualificationListPage } from '../pages/Basic-Information/qualification-list/qualification-list';
+import { AddQualificationPage } from '../pages/Basic-Information/add-qualification/add-qualification';
+import { BasicInfoPage } from '../pages/Basic-Information/basic-info/basic-info';
+import { EmployeeExperiencePage } from '../pages/Basic-Information/employee-experience/employee-experience';
+import { AddEmployeeExperiencePage } from '../pages/Basic-Information/add-employee-experience/add-employee-experience';
+import { MessageDialoguePage } from '../pages/message-dialogue/message-dialogue';
+import { AttendancePopupPage } from '../pages/attendance-popup/attendance-popup';
+import { EmployeeLocationPage } from '../pages/Basic-Information/employee-location/employee-location';
+
+
 // import { HTTP } from "@ionic-native/http";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -63,22 +82,36 @@ export function createTranslateLoader(http: HttpClient) {
     LeaveDetailsPage,
     AddLeavePage,
     BankListPage,
-    AddBankPage
+    AddBankPage,
+    CurrentEmployeeSkillsPage,
+    LostEmployeeSkillsPage,
+    QualificationListPage,
+    AddQualificationPage,
+    EmployeeExperiencePage,
+    AddEmployeeExperiencePage,
+    MessageDialoguePage,
+    AttendancePopupPage,
+    EmployeeLocationPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
     Ng2SearchPipeModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: false,
+      // monthNames: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre'],
+      // monthShortNames: ['jan', 'fev', 'mar', 'avr', 'mai', 'jui', 'jui', 'aou', 'sep', 'oct', 'nov', 'dec'],
+      // dayNames: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
+    }),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
-           provide: TranslateLoader,
-           useFactory: (createTranslateLoader),
-           deps: [HttpClient]
-         }
-      })
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -101,8 +134,16 @@ export function createTranslateLoader(http: HttpClient) {
     LeaveDetailsPage,
     AddLeavePage,
     BankListPage,
-    AddBankPage
-
+    AddBankPage,
+    CurrentEmployeeSkillsPage,
+    LostEmployeeSkillsPage,
+    QualificationListPage,
+    AddQualificationPage,
+    EmployeeExperiencePage,
+    AddEmployeeExperiencePage,
+    MessageDialoguePage,
+    AttendancePopupPage,
+    EmployeeLocationPage
 
   ],
   providers: [
@@ -111,7 +152,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClient,
     HttpModule,
     Http,
-   
+
     HttpClientModule,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     GeneralProvider,

@@ -1,0 +1,55 @@
+<ion-header>
+
+
+
+  <ion-row class="head-row">
+    <ion-col no-padding col-2>
+
+     <ion-icon name="arrow-back" class="back-iconn"  *ngIf="this.directionParam.direction =='left'" (click)="navCtrl.pop()"></ion-icon>
+        <ion-icon name="arrow-forward" *ngIf="this.directionParam.direction !=='left'" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
+  
+
+
+    </ion-col>
+    <ion-col style="    margin: auto;" no-padding col-8>
+      <ion-title>{{ 'CURRENT_EMPLOYEE_SKILLS' | translate }} </ion-title>
+
+    </ion-col>
+    <ion-col no-padding style="text-align:center" col-2>
+      <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
+
+    </ion-col>
+  </ion-row>
+
+
+</ion-header>
+
+
+<ion-content class="cont-bg">
+  <div class="cont-head">
+    <ion-searchbar animated placeholder=" {{ 'SEARCH' | translate }}"></ion-searchbar>
+
+  </div>
+
+  <div class="cont-body">
+
+
+     
+    <ion-row class="boxes"  *ngFor="let skill of currentSkillList" >
+      <p>{{skill.Skill_name}}</p>>
+    </ion-row>
+
+
+ 
+    <ion-row class="boxes" style=" justify-content: center;" *ngIf="currentSkillList.length ==0">
+      {{ 'NO_RECORD' | translate }} !
+    </ion-row>
+
+
+
+
+
+
+  </div>
+
+</ion-content>

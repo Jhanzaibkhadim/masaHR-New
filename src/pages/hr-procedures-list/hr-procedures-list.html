@@ -1,11 +1,28 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-row class="head-row">
+    <ion-col no-padding col-2>
+      <button ion-button class="menu-btn" menuToggle>
+        <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+        <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+
+      </button>
+    </ion-col>
+    <ion-col no-padding style="    margin: auto;" col-8>
+      <ion-title> {{ 'HR_PROCEDURES' | translate }}</ion-title>
+
+    </ion-col>
+    <ion-col no-padding style="text-align:center;margin:auto" col-2>
+      <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
+
+    </ion-col>
+  </ion-row>
+  <!-- <ion-navbar>
     <ion-row>
       <ion-col no-padding col-2>
         <button ion-button menuToggle>
           <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
-          <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+       
 
         </button>
       </ion-col>
@@ -20,7 +37,7 @@
       </ion-col>
     </ion-row>
 
-  </ion-navbar>
+  </ion-navbar> -->
 
 </ion-header>
 

@@ -1,0 +1,135 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col no-padding col-2>
+        <button ion-button menuToggle>
+          <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+          <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+
+        </button>
+      </ion-col>
+      <ion-col no-padding col-8>
+        <ion-title>{{ 'ATTENDANCE' | translate }} </ion-title>
+
+      </ion-col>
+      <ion-col no-padding style="text-align:center" col-2>
+        <!-- <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png"> -->
+
+      </ion-col>
+    </ion-row>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="second-row" no-padding>
+
+  <ion-row class="top">
+
+  </ion-row>
+  <ion-row class="top-row">
+    <div class="img-div">
+      <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
+
+      <ion-row class="name">
+        {{username}}
+      </ion-row>
+      <ion-row class="designation">
+        {{ 'SALES_MANAGER' | translate }}
+      </ion-row>
+    </div>
+
+  </ion-row>
+
+  <ion-row class="attendance-row">
+    <ion-row class="top-card">
+      <!-- <ion-col no-padding col-2>
+        <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
+      </ion-col> -->
+      <ion-col col-10 class="name-col" no-padding>
+        <ion-row class="name">
+          <!-- {{ 'ATTENDANCE' | translate }} -->
+          02 {{ 'DECEMBER' | translate }} 2019
+
+        </ion-row>
+        <!-- <ion-row class="designation">
+  
+        </ion-row> -->
+      </ion-col>
+
+      <ion-col class="icon-col" no-padding col-2>
+        <img src=" assets/imgs/Overview/calendar@2x.png" />
+        <!-- <ion-icon class="notification-icon" ios="ios-calendar" md="md-calendar"></ion-icon> -->
+      </ion-col>
+
+
+    </ion-row>
+
+    <ion-row class="times-row">
+
+      <ion-col col-3 style="margin:auto" no-padding>
+        <div id="container" class="outerCircle">
+          <div class="innercircle">
+            <ion-row class="timein">
+              8:00 AM
+
+            </ion-row>
+            <ion-row class="timeout">
+              5:00 PM
+
+            </ion-row>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col style="margin:auto" col-9 no-padding>
+        <ion-row class="time-row">
+          <ion-col class="entryTime" col-4>
+            <div class="orangeImage">
+              <ion-row [ngClass]="this.translationProvider.direction =='right'?'time-text-right':'time-text-left'">
+                {{ 'ENTRY_TIME' | translate }}
+
+              </ion-row>
+              <ion-row class="time-num">
+                08:30 Am
+              </ion-row>
+            </div>
+
+          </ion-col>
+          <ion-col class="exitTime" col-4>
+            <div class="blueImage">
+              <ion-row [ngClass]="this.translationProvider.direction =='right'?'time-text-right':'time-text-left'">
+                {{ 'EXIT_TIME' | translate }}
+
+              </ion-row>
+              <ion-row class="time-num">
+                05:30 Pm
+              </ion-row>
+            </div>
+
+          </ion-col>
+          <ion-col class="delayedTime" col-4>
+            <div [ngClass]="this.translationProvider.direction =='right'?'redImage-right':'redImage'">
+              <ion-row [ngClass]="this.translationProvider.direction =='right'?'time-text-right':'time-text-left'">
+                {{ 'DELAYED_TIME' | translate }}
+
+              </ion-row>
+              <ion-row class="time-num">
+                00:30 M
+              </ion-row>
+            </div>
+
+          </ion-col>
+
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+  </ion-row>
+
+
+
+
+</ion-content>

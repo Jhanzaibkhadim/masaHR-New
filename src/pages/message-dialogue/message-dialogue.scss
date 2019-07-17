@@ -1,0 +1,87 @@
+page-message-dialogue {
+  .main-div {
+    width: 80%;
+    top: 25%;
+    margin: auto;
+    position: relative;
+  }
+
+  .submain-div {
+    background: white;
+    margin-top: -27%;
+    padding-top: 15%;
+    padding-bottom: 4%;
+    border-radius: 12px;
+  }
+  .errorDiv {
+    border: 1px solid #e54848;
+  }
+  .successDiv {
+    border: 1px solid #5cbb56;
+  }
+  .icon-row {
+    justify-content: center;
+  }
+
+  .alert-img {
+    width: 4.5em;
+  }
+
+  .alertTitle {
+    justify-content: center;
+    font-size: 1.3em;
+    margin-bottom: 7%;
+  }
+
+  .alertMessage {
+    justify-content: center;
+    font-weight: normal;
+    font-size: 1em;
+    padding-top: 2%;
+    text-align: center;
+    width: 98%;
+    margin: auto;
+    margin-bottom: 7%;
+  }
+
+  .button-row {
+    // height: 5.5vw;
+    justify-content: center;
+    padding-top: 2%;
+    margin-bottom: 5%;
+  }
+
+  .ok-button {
+    width: 100%;
+    background-color: #5cbb56 !important;
+    font-size: 1.8rem !important;
+    font-weight: 400 !important;
+  }
+  .ok2-button {
+    width: 90%;
+    margin: auto;
+    background-color: #5cbb56 !important;
+    font-size: 1.8rem !important;
+    font-weight: 400 !important;
+  }
+  .errorbtn {
+    width: 90%;
+    margin: auto;
+    background-color: #e54848 !important;
+    font-size: 1.8rem !important;
+    font-weight: 400 !important;
+  }
+  .cancel-button {
+    width: 100%;
+    background-color: #e54848 !important;
+    font-size: 1.8rem !important;
+    font-weight: 400 !important;
+  }
+}
+
+.picture-option {
+  .modal-wrapper {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+}

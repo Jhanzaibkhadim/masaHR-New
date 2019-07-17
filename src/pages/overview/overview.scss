@@ -18,7 +18,7 @@ page-overview {
         width: 100%;
         position: fixed;
         background: rgb(56, 128, 228) ;
-        height: 180px;
+        height: 100px;
         border-bottom-left-radius: 45% 37%;
         border-bottom-right-radius: 45% 37%;
         
@@ -83,9 +83,9 @@ page-overview {
         position: fixed;
         margin-top: 10px;
         margin-bottom: 10px;
-        top: 19%;
-        left: 15%;
-        width: 70%;
+        top: 8%;
+        left: 5%;
+        width: 90%;
         color: black;
 
     }
@@ -249,9 +249,9 @@ page-overview {
     .times-row{
         width: 94%;
         color: #ffffff;
-        margin-top: 60% !important;
+        margin-top: 40% !important;
         margin: auto;
-        margin-bottom: 5% !important;
+        margin-bottom: 2% !important;
     }
     .timeout{
         height: 50%;

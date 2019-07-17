@@ -12,7 +12,7 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 @Injectable()
 export class ApiProvider {
 
-  constructor(public http: HttpClient, public alertCtrl: AlertController,) {
+  constructor(public http: HttpClient, public alertCtrl: AlertController, ) {
     console.log('Hello ApiProvider Provider');
   }
 
@@ -21,7 +21,7 @@ export class ApiProvider {
     return new Promise(resolve => {
 
       var resp;
-      console.log(Constants.BASE_URL +url)
+      console.log(Constants.BASE_URL + url)
       this.http.get(Constants.BASE_URL + url)
         .subscribe((res) => {
           console.log(res)
@@ -38,7 +38,10 @@ export class ApiProvider {
   }
 
   postRequest(url, data) {
+    console.log(url)
     return new Promise(resolve => {
+      console.log(Constants.BASE_URL + url)
+      console.log(data)
       this.http.post(Constants.BASE_URL + url, data)
         .subscribe((res) => {
           console.log(res, ' res')
@@ -185,7 +188,7 @@ export class ApiProvider {
       ]
     });
 
-    
+
 
 
   }

@@ -33,13 +33,14 @@
     <div class="img-div">
       <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
       <div class="edit">
-        <img class="editt" src="assets/imgs/Dashboard/edit@2x.png" />
+        <img class="editt" (click)="gotobasicEdit()" src="assets/imgs/Dashboard/edit@2x.png" />
       </div>
       <ion-row class="name">
         {{username}}
       </ion-row>
       <ion-row class="designation">
-        {{ 'SALES_MANAGER' | translate }}
+        <!-- {{ 'SALES_MANAGER' | translate }} -->
+        {{employeeJob}}
       </ion-row>
     </div>
 
@@ -58,14 +59,14 @@
               {{ 'BASIC_INFO' | translate }}
 
             </div>
-            <div class="contentt">
+            <!-- <div class="contentt">
               {{ 'LOREM_ISPUM' | translate }}
 
-            </div>
+            </div> -->
           </ion-row>
         </div>
       </ion-col>
-      <ion-col class="box" col-6>
+      <ion-col class="box" col-6 (click)="gotoContracts()">
         <div class="image">
           <img src=" assets/imgs/Dashboard/dashboard_contracts@2x.png">
         </div>
@@ -74,10 +75,46 @@
             {{ 'CONTRACTS' | translate }}
 
           </div>
-          <div class="contentt">
+          <!-- <div class="contentt">
             {{ 'LOREM_ISPUM' | translate }}
 
+          </div> -->
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="box" col-6 (click)="gotoLeaves()">
+        <div class="text">
+          <div class="image">
+            <img src="assets/imgs/Overview/vacation@2x.png">
           </div>
+          <ion-row>
+            <div class="heading-text">
+              {{ 'LEAVES' | translate }}
+
+            </div>
+            <!-- <div class="contentt">
+              {{ 'LOREM_ISPUM' | translate }}
+
+            </div> -->
+          </ion-row>
+        </div>
+      </ion-col>
+      <ion-col class="box" col-6 (click)="gotoAttendance()">
+        <div class="image">
+          <img src=" assets/imgs/Overview/inbox@2x.png">
+
+          <!-- <ion-icon name="ios-calendar" class="calendar-icon"></ion-icon> -->
+        </div>
+        <ion-row class="text">
+          <div class="heading-text">
+            {{ 'ATTENDANCE' | translate }}
+
+          </div>
+          <!-- <div class="contentt">
+            {{ 'LOREM_ISPUM' | translate }}
+
+          </div> -->
         </ion-row>
       </ion-col>
     </ion-row>
@@ -85,67 +122,35 @@
       <ion-col class="box" col-6>
         <div class="text">
           <div class="image">
-            <img src="assets/imgs/Dashboard/dashboard_procedures.png">
+            <img src="assets/imgs/Overview/mission@2x.png">
           </div>
           <ion-row>
             <div class="heading-text">
-              {{ 'HR_PROCEDURES' | translate }}
+              {{ 'MISSIONS' | translate }}
 
             </div>
-            <div class="contentt">
+            <!-- <div class="contentt">
               {{ 'LOREM_ISPUM' | translate }}
 
-            </div>
+            </div> -->
           </ion-row>
         </div>
       </ion-col>
       <ion-col class="box" col-6>
         <div class="image">
-          <img src=" assets/imgs/Dashboard/dashboard_Salaries.png">
+          <img src="assets/imgs/Overview/support@2x.png">
+
+          <!-- <ion-icon name="checkmark-circle-outline" class="calendar-icon"></ion-icon> -->
         </div>
         <ion-row class="text">
           <div class="heading-text">
-            {{ 'SALARIES_INCENTIVES' | translate }}
+            {{ 'PERMISSIONS' | translate }}
 
           </div>
-          <div class="contentt">
+          <!-- <div class="contentt">
             {{ 'LOREM_ISPUM' | translate }}
 
-          </div>
-        </ion-row>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="box" col-6>
-        <div class="text">
-          <div class="image">
-            <img src="assets/imgs/Dashboard/dasboard_loans@2x.png">
-          </div>
-          <ion-row>
-            <div class="heading-text">
-              {{ 'LOANS' | translate }}
-
-            </div>
-            <div class="contentt">
-              {{ 'LOREM_ISPUM' | translate }}
-
-            </div>
-          </ion-row>
-        </div>
-      </ion-col>
-      <ion-col class="box" col-6>
-        <div class="image">
-          <img src="assets/imgs/Dashboard/dashboard_termination@2x.png">
-        </div>
-        <ion-row class="text">
-          <div class="heading-text">
-            {{ 'JOB_TERMINATION' | translate }}
-
-          </div>
-          <div class="contentt">
-            {{ 'LOREM_ISPUM' | translate }}
-
-          </div>
+          </div> -->
         </ion-row>
       </ion-col>
     </ion-row>

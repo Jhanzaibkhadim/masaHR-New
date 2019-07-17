@@ -31,7 +31,7 @@
     "DASHBOARD":"Dashboard",
     "SALES_MANAGER":"Sales Manager",
 
-    "OVERVIEW":"OVERVIEW",
+    "OVERVIEW":"Overview",
     "ATTENDANCE":"Attendance",
     "ENTRY_TIME":"Entry Time",
     "EXIT_TIME":"Exit Time",
@@ -44,7 +44,7 @@
     "EVALUATION":"Evaluation",
     "SUPPORT":"Support",
 
-    "BASIC_INFORMATION":"BASIC INFORMATION",
+    "BASIC_INFORMATION":"Basic Information",
     "PERSONAL_INFORMATION":"Personal Information",
     "SEX":"Sex",
     "EMPLOYEE_NAME":"Employee Name",
@@ -63,7 +63,7 @@
     "QUALIFICATION":"Qualification",
     "CURRENT_EMPLOYEE_SKILLS":"Current employee skills",
     "LOST_EMPLOYEE_SKILLS":"Lost employee skills",
-    "SALARIES_AND_INCENTIVES":"SALARIES AND INCENTIVES",
+    "SALARIES_AND_INCENTIVES":"Salaries And Incentives",
     "MONTHLY_SALARY":"Monthly salary details",
     "ADDITIONAL_WORK":"Additional work",
     "ANNUAL_BONUS":"Annual bonuses and promotions",
@@ -78,6 +78,9 @@
     "EVALUATION_PERIOD":"Evaluation Period",
     "VACATIONS":"Vacations",
     "PERMISSION":"Permission",
+    "PERMISSIONS":"Permissions",
+
+    "MISSIONS":"Missions",
     "VIOLATIONS":"Violations and penalties",
     "TRAINING_COURSES":"Training Courses",
     "GENERAL":"General Services",
@@ -114,7 +117,52 @@
     "SICK_LEAVES":"Sick Leaves",
     "PENDING":"Pending",
     "APPROVED":"Approved",
-     "DECEMBER":"DECEMBER"
+     "DECEMBER":"DECEMBER",
+     "EMPLOYEE_EXPERIENCE":"Employee Experience",
+    "ADD_QUALIFICATION":" Add Qualification",
+    "QUALIFICATION_YEAR":" Qualification Year",
+    "UNIVERSITY_NAME":"University Name ",
+    "SPECIALIZATION":"Specialist",
+    "SCORE":"Score",
+    "QUALIFICATION_TYPE":" Qualification Type",
+
+    "EXCELLENT":" Excellent",
+    "GOOD":" Good",
+    "VERY_GOOD":" Very Good  ",
+    "ACCEPTABLE":" Acceptable",
+    "DRAFT":"  Draft",
+    "VALIDATED":" Validated ",
+    "SELECT_DATE":"Select Date",
+
+    "ADD_EXPERIENCE":"Add Experience",
+    "PLEASE_WAIT":"Please wait",
+    "PROFILE_UPDATED":"Profile updated successfully",
+    "SUCCESS":"Success",
+    "TRY_AGAIN":"Please try again",
+    "Error":"Error",
+    "RECORD_UPDATED":"Record updated successfully",
+    "Ok":"Ok",
+    "Cancel":"Cancel",
+    "FILL_DETAILS":"Please fill all details ",
+    "RECORD_ADDED":"Record added successfully",
+
+    "January": "Jan",
+    "February":"Feb",
+    "March":"Mar",
+    "April":"April",
+    "May":"May",
+    "June":"Jun",
+    "July":"Jul",
+    "August":"Aug",
+    "September":"Sep",
+    "October":"Oct",
+    "November":"Nov" ,
+    "December":"Dec"
+
+
+
+
+
 
     
 

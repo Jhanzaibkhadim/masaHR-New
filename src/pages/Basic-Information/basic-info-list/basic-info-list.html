@@ -1,0 +1,297 @@
+<ion-header>
+
+  <!-- <ion-navbar> -->
+
+  <ion-row class="head-row">
+    <ion-col no-padding col-2>
+      <button ion-button class="menu-btn" menuToggle>
+        <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png">
+        <!-- <ion-icon class="menu-icon" name="menu"></ion-icon> -->
+
+      </button>
+    </ion-col>
+    <ion-col no-padding style="    margin: auto;" col-8>
+      <ion-title>{{ 'BASIC_INFORMATION' | translate }} </ion-title>
+
+    </ion-col>
+    <ion-col no-padding style="text-align:center;margin:auto" col-2>
+      <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
+
+    </ion-col>
+  </ion-row>
+  <!-- </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content class="cont-bg">
+  <div class="cont-head">
+    <ion-row class="top-card">
+        <ion-col no-padding col-2>
+          <img class="imagee" src="assets/imgs/Dashboard/person.jpg" />
+        </ion-col>
+        <ion-col col-10 class="name-col" no-padding>
+          <ion-row class="name">
+            {{username}}
+    
+          </ion-row>
+          <ion-row class="designation">
+              {{ 'SALES_MANAGER' | translate }}
+            
+          </ion-row>
+        </ion-col>
+     
+    
+      </ion-row>
+  </div>
+
+  <div class="cont-body">
+
+
+
+    <ion-row class="boxes">
+      <ion-col col-6 no-padding (click)="gotoPersonalInfo()">
+        <ion-row class="img-row">
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/personal_info@2x.png">
+
+        </ion-row>
+        <ion-row class="text-row">
+          <p> {{ 'PERSONAL_INFORMATION' | translate }} </p>
+
+
+        </ion-row>
+      </ion-col>
+      <ion-col col-6 no-padding>
+
+        <!-- <ion-row
+          [ngClass]="this.translationProvider.direction =='left'?'notification-count-div-right':'notification-count-div-left'">
+          21</ion-row> -->
+        <ion-row class="img-row">
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/location@2x.png">
+        </ion-row>
+        <ion-row class="text-row">
+
+          <p> {{ 'LOCATION' | translate }}</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="boxes">
+      <ion-col col-6 no-padding (click)="gotoPersonalInfo()">
+        <ion-row class="img-row">
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/medical_insurance@2x.png">
+        </ion-row>
+        <ion-row class="text-row">
+          <p> {{ 'MEDICAL_INSURANCE' | translate }} </p>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6 no-padding>
+        <ion-row class="img-row">
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/social_insurance@2x.png">
+        </ion-row>
+        <ion-row class="text-row">
+          <p> {{ 'SOCIAL_INSURANCE' | translate }}</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="boxes">
+      <ion-col col-6 no-padding (click)="gotoBank()">
+        <ion-row class="img-row">
+
+          <img style=" width:3em" class="atn-img1" src="assets/imgs/Overview/salary@2x.png">
+
+        </ion-row>
+        <ion-row class="text-row">
+          <p> {{ 'BANK_ACCOUNTS' | translate }}</p>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6 no-padding (click)="gotoEmployeeExp()">
+        <ion-row class="img-row">
+          <img style=" width:3em" class="atn-img1" src="assets/imgs/Overview/inbox@2x.png">
+        </ion-row>
+        <ion-row class="text-row">
+          <p> {{ 'EMPLOYEE_EXPERIENCE' | translate }}</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+   
+
+
+
+    <ion-row class="boxes">
+      <ion-col col-6 no-padding (click)="gotoQualificationsPage()">
+        <ion-row class="img-row">
+
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/qualifications@2x.png">
+
+
+        </ion-row>
+        <ion-row class="text-row">
+          <p>{{ 'QUALIFICATION' | translate }}</p>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6 no-padding (click)="gotoCurrent()">
+        <ion-row class="img-row">
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/current_skill@2x.png">
+
+        </ion-row>
+        <ion-row class="text-row">
+          <p> {{ 'CURRENT_EMPLOYEE_SKILLS' | translate }}</p>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+
+    <!-- <ion-row class="boxes" style="justify-content: flex-start !important;">
+      <ion-col col-6 no-padding (click)="gotoLost()">
+        <ion-row class="img-row">
+
+          <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/lost_skill@2x.png">
+
+
+
+        </ion-row>
+        <ion-row class="text-row">
+          <p> {{ 'LOST_EMPLOYEE_SKILLS' | translate }}</p>
+
+        </ion-row>
+      </ion-col> -->
+      <!-- <ion-col col-6 no-padding (click)="gotoCurrent()">
+            <ion-row class="img-row">
+                <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/current_skill@2x.png">
+        
+            </ion-row>
+            <ion-row class="text-row">
+                <p> {{ 'CURRENT_EMPLOYEE_SKILLS' | translate }}</p>
+               
+            </ion-row>
+          </ion-col> -->
+    <!-- </ion-row> -->
+    <!-- <ion-row class="boxes" (click)="gotoLost()">
+      <ion-col col-2>
+        <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/lost_skill@2x.png">
+
+      </ion-col>
+      <ion-col>
+        <p> {{ 'LOST_EMPLOYEE_SKILLS' | translate }}</p>
+      </ion-col>
+    </ion-row> -->
+
+
+
+
+
+
+  </div>
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <ion-row class="boxes" (click)="gotoPersonalInfo()">
+      <ion-col col-2>
+        <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/personal_info@2x.png">
+
+       
+
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
+    </ion-row> -->
+
+
+    <!-- <ion-row class="boxes">
+      <ion-col col-2>
+        <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/location@2x.png">
+        
+      </ion-col>
+      <ion-col>
+
+        <p> {{ 'LOCATION' | translate }}</p>
+
+      </ion-col>
+    </ion-row> -->
+
+<!-- <ion-row class="boxes" (click)="gotoQualificationsPage()">
+  <ion-col col-2>
+    <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/qualifications@2x.png">
+  </ion-col>
+  <ion-col>
+    <p>{{ 'QUALIFICATION' | translate }}</p>
+
+
+  </ion-col>
+</ion-row>
+<ion-row class="boxes" (click)="gotoCurrent()">
+  <ion-col col-2>
+    <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/current_skill@2x.png">
+
+  </ion-col>
+  <ion-col>
+    <p> {{ 'CURRENT_EMPLOYEE_SKILLS' | translate }}</p>
+
+  </ion-col>
+</ion-row>
+
+
+<ion-row class="boxes">
+  <ion-col col-2>
+    <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/medical_insurance@2x.png">
+
+  </ion-col>
+  <ion-col>
+
+    <p> {{ 'MEDICAL_INSURANCE' | translate }} </p>
+  </ion-col>
+</ion-row>
+<ion-row class="boxes">
+  <ion-col col-2>
+    <img class="atn-img1" style="width: 3em;" src="assets/imgs/Basic Information/social_insurance@2x.png">
+  </ion-col>
+  <ion-col>
+    <p> {{ 'SOCIAL_INSURANCE' | translate }}</p>
+
+  </ion-col>
+</ion-row>
+<ion-row class="boxes" (click)="gotoBank()">
+  <ion-col col-2>
+    <img style=" width:3em" class="atn-img1" src="assets/imgs/Overview/salary@2x.png">
+  </ion-col>
+  <ion-col>
+    <p> {{ 'BANK_ACCOUNTS' | translate }}</p>
+
+  </ion-col>
+</ion-row>
+<ion-row class="boxes" (click)="gotoEmployeeExp()">
+  <ion-col col-2>
+    <img style=" width:3em" class="atn-img1" src="assets/imgs/Overview/salary@2x.png">
+  </ion-col>
+  <ion-col>
+    <p> {{ 'EMPLOYEE_EXPERIENCE' | translate }}</p>
+
+  </ion-col>
+</ion-row> -->
