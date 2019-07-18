@@ -13,7 +13,7 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 export class ApiProvider {
 
   employeeJobGlobal: any = ""
-
+  employeeNmeGlobal:any = ""
   constructor(public http: HttpClient, public alertCtrl: AlertController, ) {
     console.log('Hello ApiProvider Provider');
   }

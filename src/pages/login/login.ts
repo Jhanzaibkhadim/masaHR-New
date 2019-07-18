@@ -78,6 +78,10 @@ export class LoginPage {
         this.api.postRequest(`${Constants.LOGIN}`, data).then((data: any) => {
           console.log(data)
           if (data.success == 0) {
+            if(data.name !== undefined){
+              this.api.employeeNmeGlobal= data.name;
+
+            }
             this.localStore.set(Constants.SAVE_USER_INFO_KEY, data);
 
             this.navCtrl.setRoot(TabsPage);

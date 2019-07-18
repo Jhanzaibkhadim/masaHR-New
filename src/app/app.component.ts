@@ -35,7 +35,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // rootPage: any = LoginPage
-  rootPage: any = TabsPage
+  rootPage: any;
 
   logoutbtn: boolean = false;
 
@@ -49,11 +49,7 @@ export class MyApp {
     this.initializeApp();
 
     // this language will be used as a fallback when a translation isn't found in the current language
-    this.translate.setDefaultLang('ar');
 
-    this.changeLanguage(1)
-
-    this.getLocalData()
     this.pages = [
       { title: 'DASHBOARD', component: TabsPage, img: "assets/imgs/SideMenu/dashboard.png" },
       { title: 'BASIC_INFORMATION', component: BasicInfoListPage, img: "assets/imgs/SideMenu/basic_info.png" },
@@ -79,13 +75,22 @@ export class MyApp {
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
       console.log(res, "ye hey local")
       if (res !== null && res !== undefined) {
+        this.rootPage=TabsPage
         this.username = res.name;
+      }else{
+        this.rootPage =LoginPage
       }
     })
   }
   initializeApp() {
 
     this.platform.ready().then(() => {
+      this.getLocalData()
+
+      this.translate.setDefaultLang('ar');
+
+      this.changeLanguage(2)
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();

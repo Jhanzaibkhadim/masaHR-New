@@ -39,6 +39,9 @@ export class DashboardPage {
       console.log(res, "ye hey local")
       if (res !== null && res !== undefined) {
         this.username = res.name;
+        if(res.name !== undefined){
+          this.api.employeeNmeGlobal= res.name;
+        }
         this.employee_id = res.employee_id
         this.getEmployeeDetail()
       }
