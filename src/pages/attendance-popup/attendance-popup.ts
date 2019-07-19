@@ -34,7 +34,7 @@ export class AttendancePopupPage {
   ionViewWillEnter() {
     this.todayDate = new Date().toLocaleDateString();
     console.log(this.todayDate)
-    
+
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
       console.log(res, "ye hey local")
       if (res !== null && res !== undefined) {
@@ -204,11 +204,26 @@ export class AttendancePopupPage {
   }
   checkinTiminDecimal: any = 0;
 
+  dateFormat(date) {
+    var d = new Date(date)
 
+    var month = d.getMonth()
+    var day = d.getDate()
+    var year = d.getFullYear()
+
+    return year + "-" + month + "-" + day
+
+  }
 
   getTodayAttendance() {
-    this.attendanceList=[];
-    this.api.getRequest(`${Constants.TODAY_ATTENDANCE}` + this.employee_id).then((resp: any) => {
+    this.attendanceList = [];
+
+    var data = {
+      employee_id: this.employee_id,
+      date: this.dateFormat(new Date())
+    }
+
+    this.api.postRequest(`${Constants.TODAY_ATTENDANCE}`, data).then((resp: any) => {
       console.log(resp)
 
       if (resp.length > 0 && resp !== undefined) {
@@ -228,11 +243,15 @@ export class AttendancePopupPage {
           }
 
         }
+
+        this.delayTime = resp.delay
+        this.progress = (resp.progress).toFixed(2)
+
         // if (this.attendanceList.length > 0 && this.attendanceList !== undefined && this.attendanceList[1].action == "check_out") {
         //   this.hidesignInBtn = true;
         //   this.hidesignoutbtn = true;
         // }
-        this.getAttendanceConfig();
+        // this.getAttendanceConfig();
         // this.displaySimpleToast('success','Success',"Profile Updated SuccessFully",true)
       } else {
         this.hidesignInBtn = false;
