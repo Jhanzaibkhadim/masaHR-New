@@ -66,7 +66,7 @@ export class Constants {
 
     static INSERT_ATTENDECE = "insert_attendance"
 
-    static TODAY_ATTENDANCE = 'attendance_today?employee_id='
+    static TODAY_ATTENDANCE = 'attendance_today'
 
     static ATTENDANCE_STATUS = 'attendance_status?employee_id='
 
