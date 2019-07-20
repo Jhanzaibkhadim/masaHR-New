@@ -64,9 +64,9 @@ export class Constants {
     static GET_EMP_DETAIL = "employee_job?employee_id="
 
 
-    static INSERT_ATTENDECE = "insert_attendance/"
+    static INSERT_ATTENDECE = "insert_attendance"
 
-    static TODAY_ATTENDANCE = 'attendance_today/'
+    static TODAY_ATTENDANCE = 'attendance_today'
 
     static ATTENDANCE_STATUS = 'attendance_status?employee_id='
 
