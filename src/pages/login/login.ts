@@ -121,3 +121,9 @@ export class LoginPage {
     })
   }
 }
+
+
+
+// this.http.post('http://www.masa-hr.info/api/login',data).subscribe((resp)=>{
+//   console.log(resp)
+// })
