@@ -21,6 +21,8 @@ export class AttendancePopupPage {
   timeout: any = 0;
   delayTime; any = 0;
   hidesignInBtn: boolean = false;
+  attendanceDate:any;
+  contractID: any = 0;
 
   constructor(public api: ApiProvider, public loadingCtrl: LoadingController, public localStore: Storage, public modal: ModalController, public translateService: TranslateService, public translationProvider: GeneralProvider, public navCtrl: NavController, public navParams: NavParams) {
     console.log(this.translationProvider.direction)
@@ -55,7 +57,7 @@ export class AttendancePopupPage {
 
   }
 
-  contractID: any = 0;
+ 
   getContractID() {
     var please_wait;
     this.translateService.get('PLEASE_WAIT').subscribe(
@@ -207,7 +209,7 @@ export class AttendancePopupPage {
   dateFormat(date) {
     var d = new Date(date)
 
-    var month = d.getMonth()
+    var month = d.getMonth()+1
     var day = d.getDate()
     var year = d.getFullYear()
 
@@ -215,14 +217,17 @@ export class AttendancePopupPage {
 
   }
 
+
   getTodayAttendance() {
     this.attendanceList = [];
 
     var data = {
-      employee_id: this.employee_id,
-      date: this.dateFormat(new Date())
+      // employee_id: this.employee_id,
+      // date: this.dateFormat(new Date())
+      "employee_id": this.employee_id,
+      "date": "2019-07-20"
     }
-
+    console.log(data)
     this.api.postRequest(`${Constants.TODAY_ATTENDANCE}`, data).then((resp: any) => {
       console.log(resp)
 

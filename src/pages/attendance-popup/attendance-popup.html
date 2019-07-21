@@ -60,7 +60,9 @@
       </ion-col>
 
       <ion-col class="icon-col" no-padding col-2>
-        <img src=" assets/imgs/Overview/calendar@2x.png" />
+        <img src=" assets/imgs/Overview/calendar@2x.png" (click)="picker.open()" />
+        <ion-datetime style="    height: 0px;padding:0px !important" #picker placeholder=" {{ 'SELECT_DATE' | translate}}" display-format="YYYY" [(ngModel)]="attendanceDate">
+        </ion-datetime>
         <!-- <ion-icon class="notification-icon" ios="ios-calendar" md="md-calendar"></ion-icon> -->
       </ion-col>
 
