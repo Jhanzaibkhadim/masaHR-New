@@ -43,7 +43,7 @@ export class AddEmployeeExperiencePage {
    
   constructor(public modal: ModalController, public translateService: TranslateService, public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
 
-    this.monthShortNames = ["Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"]
+    this.monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
     this.getJOBS();
     this.getJobCategory();
@@ -54,32 +54,101 @@ export class AddEmployeeExperiencePage {
     } else {
       this.editable = false
       this.experienceID = this.navParams.data.id;
-      this.location = this.navParams.data.location
-      this.EmployeeJobID = this.navParams.data.degree_id;
-      this.EmployeeJobCategoryID = this.navParams.data.categ_id
-      // var date_year = this.navParams.data.qualified_year.split(' ')
-      var month = 0;
-      // for (let index = 0; index < this.monthShortNames.length; index++) {
-      //    if(this.monthShortNames[index] == date_year[1]){
-      //     month=index+1;
-      //    }
-      // }
-      // var dd = new Date(date_year[2] + '-' + date_year[1] + '-' + date_year[0]).toJSON().split('T')[0];;
-      // month = dd.getMonth()+1;
-      // this.qualifiedYear = dd;
+      this.getExpInfo()
+      // this.location = this.navParams.data.location
+      // this.EmployeeJobID = this.navParams.data.degree_id;
+      // this.EmployeeJobCategoryID = this.navParams.data.categ_id
+      // // var date_year = this.navParams.data.qualified_year.split(' ')
+      // var month = 0;
+      // // for (let index = 0; index < this.monthShortNames.length; index++) {
+      // //    if(this.monthShortNames[index] == date_year[1]){
+      // //     month=index+1;
+      // //    }
+      // // }
+      // // var dd = new Date(date_year[2] + '-' + date_year[1] + '-' + date_year[0]).toJSON().split('T')[0];;
+      // // month = dd.getMonth()+1;
+      // // this.qualifiedYear = dd;
  
-      this.universityName = this.navParams.data.institute_id;
-      this.specializationID = this.navParams.data.specialt_id;
-      this.specializationName = this.navParams.data.special_name
-      this.state = this.navParams.data.state
-      this.degreeName = this.navParams.data.degree_name;
-      this.employee_id = this.navParams.data.employee_id
-      console.log(this.specializationName, this.navParams.data.qualified_year, this.qualifiedYear)
+      // this.universityName = this.navParams.data.institute_id;
+      // this.specializationID = this.navParams.data.specialt_id;
+      // this.specializationName = this.navParams.data.special_name
+      // this.state = this.navParams.data.state
+      // this.degreeName = this.navParams.data.degree_name;
+      // this.employee_id = this.navParams.data.employee_id
+      // console.log(this.'specializationName', this.navParams.data.qualified_year, this.qualifiedYear)
     }
   }
 
+  getExpInfo() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
 
+    loading.present();
+    this.api.getRequest(`${Constants.GET_EXP_INFO}`+this.experienceID).then((data: any) => {
+      console.log(data)
+      loading.dismiss();
+      if (data !== null && data !== undefined) {
+        // categ_id: 95
+        // experience_id: 126
+        // from_date: "Tue, 11 Mar 2014 00:00:00 GMT"
+        // job_category: "امن وسلامة"
+        // job_id: null
+        // location: "شركة 111"
+        // state: "draft"
+        // to_date: "Fri,
 
+      this.location = data[0].location
+      this.EmployeeJobID = data[0].job_id;
+      this.EmployeeJobCategory = data[0].job_category
+      this.EmployeeJobCategoryID = data[0].categ_id
+      this.fromDate = this.api.setDate(data[0].from_date)
+      this.toDate = this.api.setDate(data[0].to_date)
+
+      // var date_year = data[0].from_date.split(' ')
+      // var month = 0;
+      // for (let index = 0; index < this.monthShortNames.length; index++) {
+      //    if(this.monthShortNames[index] == date_year[2]){
+      //     month=index+1;
+      //     var dd = new Date(date_year[3] + '-' + month + '-' + date_year[1]).toISOString();
+      //     console.log(date_year,dd)
+      //     // // var dd = new Date(date_year[2] + '-' + date_year[1] + '-' + date_year[0]).toJSON().split('T')[0];
+      //     // // month = dd.getMonth()+1;
+      //     this.fromDate = dd;
+      //    }
+      // }
+      // console.log(date_year[3] + '-' + month + '-' + date_year[1])
+      
+ 
+       
+      this.state = data[0].state
+      // this.employee_id = this.navParams.data.employee_id
+
+      }
+    });
+  }
+
+  setDate(dt){
+    var date_year = dt.from_date.split(' ')
+    var month = 0;
+    for (let index = 0; index < this.monthShortNames.length; index++) {
+       if(this.monthShortNames[index] == date_year[2]){
+        month=index+1;
+        var dd = new Date(date_year[3] + '-' + month + '-' + date_year[1]).toISOString();
+        console.log(date_year,dd)
+        return dd;
+       }
+    }
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddEmployeeExperiencePage');
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
@@ -266,7 +335,80 @@ export class AddEmployeeExperiencePage {
   }
 
   updateExperience(){
+    if (this.location.trim() !== '' && this.EmployeeJobCategoryID !== '' && this.employee_id !== '' && this.employee_id !== undefined && this.EmployeeJobID !== ''  && this.state !== '') {
 
+      var data = 
+        {
+          "from_date": this.fromDate,
+          "employee_id":this.employee_id,
+          "categ_id": this.EmployeeJobCategoryID,
+          "job_id": this.EmployeeJobID,
+          "location": this.location,
+          "state": this.state,
+          "to_date": this.toDate,
+          "user_id":this.userID
+      }
+
+ 
+      var please_wait;
+      this.translateService.get('PLEASE_WAIT').subscribe(
+        value => {
+
+          please_wait = value;
+        }
+      )
+      console.log(please_wait)
+      let loading = this.loadingCtrl.create({
+        spinner: 'hide',
+        content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+      });
+
+      loading.present();
+
+      this.api.postRequest(`${Constants.UPDATE_EXP}`, data).then((data: any) => {
+        loading.dismiss()
+        console.log(data)
+
+        if (data !== null && data !== undefined) {
+          console.log(data)
+          var record_added;
+          var success;
+          this.translateService.get('RECORD_ADDED').subscribe(
+            value => {
+              // value is our translated string
+              record_added = value;
+            }
+          )
+          this.translateService.get('SUCCESS').subscribe(
+            value => {
+              // value is our translated string
+              success = value;
+            }
+          )
+          this.navCtrl.pop();
+
+          this.displaySimpleToast('success', success, record_added, false)
+        }
+      })
+    }
+    else {
+      var fillDetails;
+      var error;
+      this.translateService.get('FILL_DETAILS').subscribe(
+        value => {
+          // value is our translated string
+          fillDetails = value;
+        }
+      )
+      this.translateService.get('Error').subscribe(
+        value => {
+          // value is our translated string
+          error = value;
+        }
+      )
+
+      this.displaySimpleToast('error', error, fillDetails, false)
+    }
   }
   displaySimpleToast(icon, messageTitle, messageText, button) {
 

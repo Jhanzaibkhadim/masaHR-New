@@ -59,8 +59,11 @@ export class Constants {
 
     static GET_EXPERIENCE = 'experience_list'
 
+    static GET_EXP_INFO = 'experience_info/?experience_id='
 
     static CREATE_EXPERIENCE = 'experience_insert'
+
+    static UPDATE_EXP = 'experience_update'
 
     static GET_EMP_DETAIL = "employee_job"
 

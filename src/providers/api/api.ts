@@ -15,6 +15,8 @@ export class ApiProvider {
 
   employeeJobGlobal: any = ""
   employeeNmeGlobal:any = ""
+  monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
   constructor(public http: HttpClient, public alertCtrl: AlertController,public localStore:Storage ) {
     console.log('Hello ApiProvider Provider');
   }
@@ -104,6 +106,19 @@ export class ApiProvider {
     })
   }
 
+
+  setDate(dt){
+    var date_year = dt.split(' ')
+    var month = 0;
+    for (let index = 0; index < this.monthShortNames.length; index++) {
+       if(this.monthShortNames[index] == date_year[2]){
+        month=index+1;
+        var dd = new Date(date_year[3] + '-' + month + '-' + date_year[1]).toISOString();
+        console.log(date_year,dd)
+        return dd;
+       }
+    }
+  }
   getRequestWithoutBaseURL(url) {
     return new Promise(resolve => {
       var resp;
