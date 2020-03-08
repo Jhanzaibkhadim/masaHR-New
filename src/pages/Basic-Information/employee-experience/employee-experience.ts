@@ -51,7 +51,7 @@ export class EmployeeExperiencePage {
 
     loading.present();
 
-    this.api.getRequest(`${Constants.GET_EXPERIENCE}` + this.employee_id).then((data: any) => {
+    this.api.getRequest(Constants.GET_EXPERIENCE).then((data: any) => {
       loading.dismiss()
       console.log(data)
 
@@ -89,6 +89,7 @@ export class EmployeeExperiencePage {
     this.navCtrl.push(AddEmployeeExperiencePage,data)
   }
   editExperience(qual){
+    this.navCtrl.push(AddEmployeeExperiencePage,qual)
 
   }
 

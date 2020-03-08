@@ -27,12 +27,57 @@ export class AddBankPage {
   constructor(public modal:ModalController,  public translateService: TranslateService, public directionParam: GeneralProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public localStore: Storage, public api: ApiProvider, ) {
 
     console.log(this.navParams.data)
-    this.BankIsEdit = this.navParams.data
-    if (this.navParams.data == true) {
+    if (this.navParams.data == 'true') {
       this.hideEditbtn = true;
+      this.BankIsEdit = true
+
+    }else{
+      this.BankIsEdit =false
+      this.hideEditbtn = false;
+      // def_account: false
+      // name: "Al Rajhi Bank"
+      // partner_bank_id: 677
+      // sanitized_acc_number: "77767676767"
+      // sequence: 10
+      // this.bankName=this.navParams.data.name
+       
+      // this.bankID=this.navParams.data.partner_bank_id
+      // this.bankStatus=this.navParams.data.state
+      // this.accountNumber=this.navParams.data.sanitized_acc_number
+      this.partner_id=this.navParams.data.partner_bank_id;
+      this.getBankInfo()
     }
   }
+  
+  getBankInfo() {
+    var please_wait;
+    this.translateService.get('PLEASE_WAIT').subscribe(
+      value => {
+        // value is our translated string
+        please_wait = value;
+      }
+    )
+    console.log(please_wait)
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: ' <img src="assets/imgs/loading.gif" /> <br>' + please_wait
+    });
 
+    loading.present();
+    this.api.getRequest(Constants.GET_BANK_INFO + this.partner_id).then((data: any) => {
+      loading.dismiss()
+      console.log(data)
+
+      if (data !== null && data !== undefined) {
+        console.log(data)
+
+        // this.partner_id = data[0].id
+        // console.log( this.partner_id)
+
+      }
+    });
+
+  }
 
   ionViewDidLoad() {
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
@@ -40,7 +85,7 @@ export class AddBankPage {
       if (res !== null && res !== undefined) {
         this.EmployeName = res.name;
         this.employee_id = res.employee_id;
-        this.getPartnerID();
+        // this.getPartnerID();
 
       }
     })

@@ -43,9 +43,10 @@ export class DashboardPage {
           this.api.employeeNmeGlobal= res.name;
         }
         this.employee_id = res.employee_id
-        this.getEmployeeDetail()
       }
     })
+    this.getEmployeeDetail()
+
     console.log('ionViewDidLoad DashboardPage');
   }
   ionViewWillEnter() {
@@ -93,11 +94,12 @@ export class DashboardPage {
     });
 
     loading.present();
-    this.api.getRequest(`${Constants.GET_EMP_DETAIL}` + this.employee_id).then((data: any) => {
+    this.api.getRequest(Constants.GET_EMP_DETAIL).then((data: any) => {
       console.log(data)
+      loading.dismiss()
+
       if (data.length > 0 && data !== undefined) {
         // this.username = data[0].name
-        loading.dismiss()
 
         this.api.employeeJobGlobal = data[0].name
       }

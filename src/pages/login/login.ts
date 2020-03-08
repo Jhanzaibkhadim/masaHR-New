@@ -63,7 +63,7 @@ export class LoginPage {
   }
   login() {
     var data = {
-      emp_code: this.userName,
+      login: this.userName,
       password: this.password
     }
 
@@ -77,14 +77,25 @@ export class LoginPage {
       } else {
         this.api.postRequest(`${Constants.LOGIN}`, data).then((data: any) => {
           console.log(data)
-          if (data.success == 0) {
+          if (data) {
             if(data.name !== undefined){
               this.api.employeeNmeGlobal= data.name;
+              this.localStore.set(Constants.SAVE_USER_INFO_KEY, data);
+
+              this.navCtrl.setRoot(TabsPage);
+            }else if(data.msg){
+              var try_again;
+              var error;
+              this.translateService.get('TRY_AGAIN').subscribe(
+                value => {
+                  // value is our translated string
+                  try_again = value;
+                }
+              )
+            this.displaySimpleToast('error', data.msg, try_again, false)
 
             }
-            this.localStore.set(Constants.SAVE_USER_INFO_KEY, data);
-
-            this.navCtrl.setRoot(TabsPage);
+           
 
           }
           else {

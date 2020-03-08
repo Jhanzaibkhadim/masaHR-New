@@ -22,12 +22,14 @@ export class BankListPage {
   }
 
   ionViewDidLoad() {
+    this.getBankList(); 
+
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res)=>{
       console.log(res,"ye hey local")
       if(res !== null && res !== undefined){
         this.EmployeName = res.name;
         this.employee_id=res.employee_id;
-        this.getPartnerID();
+        // this.getPartnerID();
        
       }
     })
@@ -116,7 +118,7 @@ export class BankListPage {
     loading.present();
     // +'&partner_bank_id=1'
 
-    this.api.getRequest(`${Constants.GET_BANK_LIST}`+this.employee_id).then ((data:any) =>{
+    this.api.getRequest(`${Constants.GET_BANK_LIST}`).then ((data:any) =>{
       loading.dismiss()
       console.log(data)
 
@@ -128,8 +130,8 @@ export class BankListPage {
     });
   }
 
-  addBank(){
-    this.navCtrl.push(AddBankPage,true)
+  addBank(obj){
+    this.navCtrl.push(AddBankPage,obj)
   }
 
 

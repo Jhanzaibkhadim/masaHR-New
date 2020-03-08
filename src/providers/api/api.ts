@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Constants } from "../../utils/Constants"
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
+import { Storage } from '@ionic/storage';
 /*
   Generated class for the ApiProvider provider.
 
@@ -14,7 +15,7 @@ export class ApiProvider {
 
   employeeJobGlobal: any = ""
   employeeNmeGlobal:any = ""
-  constructor(public http: HttpClient, public alertCtrl: AlertController, ) {
+  constructor(public http: HttpClient, public alertCtrl: AlertController,public localStore:Storage ) {
     console.log('Hello ApiProvider Provider');
   }
 
@@ -23,19 +24,41 @@ export class ApiProvider {
     return new Promise(resolve => {
 
       var resp;
-      console.log(Constants.BASE_URL + url)
-      this.http.get(Constants.BASE_URL + url)
-        .subscribe((res) => {
-          console.log(res)
-          resp = res;
-          resolve(resp)
-        }, (err) => {
-          console.log(err, 'err')
-          if (err.status == 0) {
-            this.presentErrorAlert()
-          }
-          resolve(err)
-        })
+      this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+        console.log(res, "ye hey local")
+        if (res !== null && res !== undefined) {
+          console.log(Constants.BASE_URL + url)
+          this.http.get(Constants.BASE_URL + url, {
+            headers: { token: res.token }
+          })
+            .subscribe((res) => {
+              console.log(res)
+              resp = res;
+              resolve(resp)
+            }, (err) => {
+              console.log(err, 'err')
+              if (err.status == 0) {
+                this.presentErrorAlert()
+              }
+              resolve(err)
+            })
+        }else{
+          console.log(Constants.BASE_URL + url)
+          this.http.get(Constants.BASE_URL + url)
+          .subscribe((res) => {
+            console.log(res)
+            resp = res;
+            resolve(resp)
+          }, (err) => {
+            console.log(err, 'err')
+            if (err.status == 0) {
+              this.presentErrorAlert()
+            }
+            resolve(err)
+          })
+        }
+      })
+     
     })
   }
 
@@ -44,18 +67,40 @@ export class ApiProvider {
     return new Promise(resolve => {
       console.log(Constants.BASE_URL + url)
       console.log(data)
-      this.http.post(Constants.BASE_URL + url, data)
-        .subscribe((res) => {
-          console.log(res, ' res')
+      this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
+        console.log(res, "ye hey local")
+        if (res !== null && res !== undefined) {
+          this.http.post(Constants.BASE_URL + url, data, {
+            headers: { token: res.token }
+          })
+          .subscribe((res) => {
+            console.log(res, ' res')
 
-          resolve(res)
-        }, (err) => {
-          console.log(err, 'err')
-          if (err.status == 0) {
-            this.presentErrorAlert()
-          }
-          resolve(err)
-        })
+            resolve(res)
+          }, (err) => {
+            console.log(err, 'err')
+            if (err.status == 0) {
+              this.presentErrorAlert()
+            }
+            resolve(err)
+          })
+        }else{
+          this.http.post(Constants.BASE_URL + url, data)
+          .subscribe((res) => {
+            console.log(res, ' res')
+
+            resolve(res)
+          }, (err) => {
+            console.log(err, 'err')
+            if (err.status == 0) {
+              this.presentErrorAlert()
+            }
+            resolve(err)
+          })
+        }
+      })
+
+      
     })
   }
 

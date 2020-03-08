@@ -1,86 +1,84 @@
 <ion-header>
 
-  <!-- <ion-navbar> -->
+    <!-- <ion-navbar> -->
 
-  <ion-row class="head-row">
-    <ion-col no-padding col-2>
-      <!-- <button ion-button menuToggle> -->
-      <!-- <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png"> -->
-      <ion-icon name="arrow-back" class="back-iconn" *ngIf="this.directionParam.direction =='left'"
-        (click)="navCtrl.pop()"></ion-icon>
-      <ion-icon name="arrow-forward" *ngIf="this.directionParam.direction !=='left'" class="back-iconn"
-        (click)="navCtrl.pop()"></ion-icon>
+    <ion-row class="head-row">
+        <ion-col no-padding col-2>
+            <!-- <button ion-button menuToggle> -->
+            <!-- <img style="width: 2em;" src="assets/imgs/Dashboard/menu@2x.png"> -->
+            <ion-icon name="arrow-back" class="back-iconn" *ngIf="this.directionParam.direction =='left'" (click)="navCtrl.pop()"></ion-icon>
+            <ion-icon name="arrow-forward" *ngIf="this.directionParam.direction !=='left'" class="back-iconn" (click)="navCtrl.pop()"></ion-icon>
 
 
-      <!-- </button> -->
-    </ion-col>
-    <ion-col style="    margin: auto;" no-padding col-8>
-      <ion-title>{{ 'EMPLOYEE_EXPERIENCE' | translate }} </ion-title>
+            <!-- </button> -->
+        </ion-col>
+        <ion-col style="    margin: auto;" no-padding col-8>
+            <ion-title>{{ 'EMPLOYEE_EXPERIENCE' | translate }} </ion-title>
 
-    </ion-col>
-    <ion-col no-padding style="text-align:center" col-2>
-      <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
+        </ion-col>
+        <ion-col no-padding style="text-align:center" col-2>
+            <img style="width: 2em;" src="assets/imgs/Overview/notification@2x.png">
 
-    </ion-col>
-  </ion-row>
-  <!-- </ion-navbar> -->
+        </ion-col>
+    </ion-row>
+    <!-- </ion-navbar> -->
 
 </ion-header>
 
 
 <ion-content class="cont-bg">
-  <div class="cont-head">
-    <ion-searchbar animated placeholder=" {{ 'SEARCH' | translate }}"></ion-searchbar>
+    <div class="cont-head">
+        <ion-searchbar animated placeholder=" {{ 'SEARCH' | translate }}"></ion-searchbar>
 
-  </div>
+    </div>
 
-  <div class="cont-body">
+    <div class="cont-body">
 
-    <ion-row style="width:100%;margin-top:5%;margin-bottom: 5%;">
-      <button ion-button round class="saveBank" (click)="addexperience()">{{ 'ADD_EXPERIENCE' | translate }} <ion-icon
+        <ion-row style="width:100%;margin-top:5%;margin-bottom: 5%;">
+            <button ion-button round class="saveBank" (click)="addexperience()">{{ 'ADD_EXPERIENCE' | translate }} <ion-icon
           ios="ios-add" class="edit-icon" md="md-add"></ion-icon></button>
-    </ion-row>
+        </ion-row>
 
-    <ion-row class="boxes" *ngFor=" let qual of experienceList">
-      <!-- <ion-col col-2> -->
-      <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/salary@2x.png"> -->
-      <!-- </ion-col> -->
-      <!-- <ion-col> -->
-      <!-- <p> {{ 'BANK_ACCOUNTS' | translate }}</p> -->
+        <ion-row class="boxes" *ngFor=" let qual of experienceList" (click)="editExperience(qual)">
+            <!-- <ion-col col-2> -->
+            <!-- <img class="atn-img1" style="width: 3em;" src="assets/imgs/Overview/salary@2x.png"> -->
+            <!-- </ion-col> -->
+            <!-- <ion-col> -->
+            <!-- <p> {{ 'BANK_ACCOUNTS' | translate }}</p> -->
 
 
-      <!-- from_date: "Sat, 11 Feb 2017 00:00:00 GMT"
+            <!-- from_date: "Sat, 11 Feb 2017 00:00:00 GMT"
 id: 8
 job_category: "تصنيف عام"
 location: "test"
 state: "draft"
 to_date:  -->
-      <ion-col col-2>
-        <img style="width: 3em;" src="assets/imgs/Basic Information/qualifications@2x.png">
-      </ion-col>
-      <ion-col col-10>
-        <p class="special">
+            <ion-col col-2>
+                <img style="width: 3em;" src="assets/imgs/Basic Information/qualifications@2x.png">
+            </ion-col>
+            <ion-col col-10>
+                <p class="special">
 
-          {{qual.job_category}}
-        </p>
-        <p class="institute">
-          {{qual.location}}
+                    {{qual.job_category}}
+                </p>
+                <p class="institute">
+                    {{qual.location}}
 
-        </p>
+                </p>
 
 
-        <ion-row style="width:100%;margin-top:1%;">
-          <ion-col class="date" col-1>
-            <ion-icon name="calendar"></ion-icon>
-          </ion-col>
-          <ion-col col-5>
-            {{qual.from_date |date }}
-          </ion-col>
-          <ion-col col-1>-</ion-col>
-          <ion-col col-5>
-            {{qual.to_date |date }}
-          </ion-col>
-          <!-- <ion-col col-6>
+                <ion-row style="width:100%;margin-top:1%;">
+                    <ion-col class="date" col-1>
+                        <ion-icon name="calendar"></ion-icon>
+                    </ion-col>
+                    <ion-col col-5>
+                        {{qual.from_date |date }}
+                    </ion-col>
+                    <ion-col col-1>-</ion-col>
+                    <ion-col col-5>
+                        {{qual.to_date |date }}
+                    </ion-col>
+                    <!-- <ion-col col-6>
             {{'STATUS' | translate}}: 
             <span *ngIf="qual.state == 'Validated'">
               {{ 'VALIDATED' | translate }}
@@ -89,32 +87,30 @@ to_date:  -->
               {{ 'DRAFT' | translate }}
             </span>  -->
 
-        </ion-row>
-        <ion-row>
-          {{'STATUS' | translate}}:
-          <span *ngIf="qual.state == 'Validated'">
+                </ion-row>
+                <ion-row>
+                    {{'STATUS' | translate}}:
+                    <span *ngIf="qual.state == 'Validated'">
             {{ 'VALIDATED' | translate }}
           </span>
-          <span *ngIf="qual.state == 'draft'">
+                    <span *ngIf="qual.state == 'draft'">
             {{ 'DRAFT' | translate }}
           </span>
-        </ion-row>
-        <!-- <ion-row class="editBtn">
+                </ion-row>
+                <!-- <ion-row class="editBtn">
           <button ion-button round class="edit" (click)="editExperience(qual)">{{ 'EDIT' | translate }} <ion-icon
               ios="ios-create" class="edit-icon" md="md-create"></ion-icon> </button>
         </ion-row> -->
 
 
-      </ion-col>
+            </ion-col>
 
-      <!-- </ion-col> -->
-    </ion-row>
+            <!-- </ion-col> -->
+        </ion-row>
 
-    <ion-row class="boxes" style=" justify-content: center;" *ngIf="experienceList.length == 0">
-      {{ 'NO_RECORD' | translate }} !
-    </ion-row>
-
-
+        <ion-row class="boxes" style=" justify-content: center;" *ngIf="experienceList.length == 0">
+            {{ 'NO_RECORD' | translate }} !
+        </ion-row>
 
 
 
@@ -125,6 +121,8 @@ to_date:  -->
 
 
 
-  </div>
+
+
+    </div>
 
 </ion-content>

@@ -21,6 +21,7 @@ export class BasicInfoPage {
   EmployeDepartment: any;
   EmployeDepartmentID: any;
   typee: any;
+  userInfo:any;
   employee_id: any;
   EmployeeGender: any;
   EmployeeJobTitle: any;
@@ -36,6 +37,7 @@ export class BasicInfoPage {
     this.localStore.get(Constants.SAVE_USER_INFO_KEY).then((res) => {
       console.log(res, "ye hey local")
       if (res !== null && res !== undefined) {
+        this.userInfo = res;
         this.EmployeName = res.name;
         this.employee_id = res.employee_id;
         this.getBasicInfo();
@@ -108,6 +110,7 @@ export class BasicInfoPage {
       }
     });
   }
+  job_join_date:any;
   getBasicInfo() {
     var please_wait;
     this.translateService.get('PLEASE_WAIT').subscribe(
@@ -123,20 +126,21 @@ export class BasicInfoPage {
     });
 
     loading.present();
-    this.api.getRequest(`${Constants.GET_BASIC_INFO}` + this.employee_id).then((data: any) => {
+    this.api.getRequest(Constants.GET_BASIC_INFO).then((data: any) => {
       loading.dismiss();
-      if (data[0] !== null && data[0] !== undefined) {
-        console.log(data, 'basic infoooo');
+      console.log(data, 'basic infoooo');
 
-        this.EmployeName = data[0].name;
-        this.EmployeCode = data[0].emp_code;
-        this.EmployeNumber = data[0].mobile_phone;
-        this.EmployeEmail = data[0].work_email;
-        this.EmployeDepartment = data[0].department_name;
-        this.EmployeeGender = data[0].gender;
-        this.EmployeeJobTitle = data[0].job_name;
-        this.EmployeeJobID = data[0].job_id;
-        this.EmployeDepartmentID = data[0].department_id;
+      if (data) {
+        this.job_join_date = data.job_join_date
+        this.EmployeName = data.name;
+        this.EmployeCode = data.emp_code;
+        this.EmployeNumber = data.mobile_phone;
+        this.EmployeEmail = data.work_email;
+        this.EmployeDepartment = data.department_name;
+        this.EmployeeGender = data.gender;
+        this.EmployeeJobTitle = data.job_name;
+        this.EmployeeJobID = data.job_id;
+        this.EmployeDepartmentID = data.department_id;
         console.log(this.EmployeDepartment)
       }
     })
@@ -218,9 +222,9 @@ export class BasicInfoPage {
         job_name: this.EmployeeJobTitle,
         job_id: this.EmployeeJobID,
         department_id: this.EmployeDepartmentID,
-        job_join_date: "2018-07-11",
+        job_join_date:this.job_join_date,
         employee_id: this.employee_id,
-        user_id: 1,
+        user_id: this.userInfo.user_id,
 
       }
       console.log(temp)
